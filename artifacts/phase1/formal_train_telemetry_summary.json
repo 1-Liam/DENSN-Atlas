@@ -1,0 +1,17 @@
+{
+  "event_count": 7,
+  "event_type_counts": {
+    "cycle": 4,
+    "verification_feedback": 1,
+    "candidate_evaluated": 1,
+    "tsl_event": 1
+  },
+  "latest_metrics": {},
+  "last_cycle": {
+    "cycle": 3,
+    "psi": 0.0,
+    "q": 0.0,
+    "collapse_method": "stalled",
+    "active_constraints": 3
+  }
+}

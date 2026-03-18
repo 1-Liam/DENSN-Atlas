@@ -1,0 +1,88 @@
+{
+  "artifact_version": {
+    "phase": "phase12",
+    "timestamp_utc": "20260318T201333450669Z",
+    "git_sha": "ad9f6a1"
+  },
+  "family": "credit_window",
+  "source_artifacts": {
+    "phase11_final_proof_bundle": "artifacts\\phase11\\final_proof_bundle.json",
+    "phase12_credit_window_summary": "artifacts\\phase12\\credit_window_summary.json",
+    "phase12_credit_window_transfer_summary": "artifacts\\phase12\\credit_window_transfer_summary.json"
+  },
+  "ingested_bundle": {
+    "manifest_path": "fixtures\\credit_window\\train\\manifest.json",
+    "artifact_files": {
+      "credit_window_train_graph": "artifacts\\phase12\\credit_window_train_graph.json",
+      "credit_window_train_telemetry": "artifacts\\phase12\\credit_window_train_telemetry.jsonl",
+      "credit_window_registry": "artifacts\\phase12\\credit_window_registry.json"
+    }
+  },
+  "proposal_quarantine": {
+    "zero_direct_ontology_mutation": true,
+    "proposal_adapter": {
+      "backend": "Groq OpenAI-compatible API",
+      "model_name": "openai/gpt-oss-120b",
+      "adapter": "GroqChatTransformerAdapter"
+    }
+  },
+  "invention": {
+    "meta_symbol_id": "meta_60e5fcb4",
+    "semantic_label": "BalanceChargeGrantRevoke",
+    "cycles_to_first_accepted_symbol": 4,
+    "final_psi": 0.0,
+    "verifier_passed": true,
+    "interface_non_constant": true,
+    "interface_truth_table_preview": {
+      "TRAIN_CREDIT_BALANCE=0,TRAIN_CREDIT_CHARGE_1=0,TRAIN_CREDIT_CHARGE_2=0": false,
+      "TRAIN_CREDIT_BALANCE=0,TRAIN_CREDIT_CHARGE_1=0,TRAIN_CREDIT_CHARGE_2=1": false,
+      "TRAIN_CREDIT_BALANCE=0,TRAIN_CREDIT_CHARGE_1=1,TRAIN_CREDIT_CHARGE_2=0": false,
+      "TRAIN_CREDIT_BALANCE=0,TRAIN_CREDIT_CHARGE_1=1,TRAIN_CREDIT_CHARGE_2=1": false
+    },
+    "bridge_audits": [
+      {
+        "label": "CreditLive",
+        "delta_psi": 0.2,
+        "accepted": false,
+        "reason": "bridge_reject"
+      },
+      {
+        "label": "BalanceChargeGrantRevoke",
+        "delta_psi": 0.05,
+        "accepted": true,
+        "reason": "bridge_pass"
+      }
+    ]
+  },
+  "positive_transfer": {
+    "task_id": "credit_window_heldout_3",
+    "mapping_class": "exact_blanket_expansion",
+    "mapping_confidence": 1.0,
+    "baseline_final_psi": 10.6,
+    "transfer_final_psi": 0.0,
+    "contradiction_gain": 10.6,
+    "verifier_passed": true
+  },
+  "blocked_transfer": {
+    "task_id": "credit_window_negative_wrap",
+    "baseline_final_psi": 10.6,
+    "transfer_final_psi": 10.6,
+    "blocker_reason": "valid_trace_rejected",
+    "verifier_passed": false
+  },
+  "baseline_contrast": {
+    "status": "completed",
+    "label": "CreditWindow",
+    "verifier_passed": false,
+    "final_psi": 10.6,
+    "contradiction_gain": 0.0,
+    "failure_reason": "missing_balance_blanket_role"
+  },
+  "checks": {
+    "invention_verified": true,
+    "positive_transfer_verified": true,
+    "negative_transfer_blocked": true,
+    "baseline_beaten": true,
+    "proposal_quarantine_intact": true
+  }
+}

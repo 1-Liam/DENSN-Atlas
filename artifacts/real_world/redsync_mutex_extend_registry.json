@@ -1,0 +1,205 @@
+{
+  "meta_d00b93d6": {
+    "meta_symbol_id": "meta_d00b93d6",
+    "structural_name": "META_D00B93D6",
+    "status": "accepted",
+    "semantic_label": "ExtendWindowReady",
+    "semantic_status": "grounded",
+    "interface_kind": "exact",
+    "interface_definition": {
+      "truth_table": {
+        "REDSYNC_REAL_EXTEND_1=0,REDSYNC_REAL_EXTEND_2=0": false,
+        "REDSYNC_REAL_EXTEND_1=0,REDSYNC_REAL_EXTEND_2=1": false,
+        "REDSYNC_REAL_EXTEND_1=1,REDSYNC_REAL_EXTEND_2=0": true,
+        "REDSYNC_REAL_EXTEND_1=1,REDSYNC_REAL_EXTEND_2=1": true
+      },
+      "notes": "exact_boundary_projection_interface"
+    },
+    "parent_cluster_symbol_ids": [
+      "REDSYNC_REAL_ACQUIRE",
+      "REDSYNC_REAL_RELEASE"
+    ],
+    "markov_blanket_symbol_ids": [
+      "REDSYNC_REAL_EXTEND_1",
+      "REDSYNC_REAL_EXTEND_2"
+    ],
+    "admission_metrics": {
+      "novel": true,
+      "novelty_conflicts": [],
+      "verifier_passed": true,
+      "reuse_passed": true,
+      "heldout_contradiction_gain": 5.2,
+      "complexity_penalty": 3.0,
+      "rent_paid": true,
+      "verifier_agreement": {
+        "verifier_count": 3,
+        "passed_count": 3,
+        "failed_count": 0,
+        "agreement_rate": 1.0,
+        "all_agree": true,
+        "disagreed": false
+      },
+      "semantic_accept_count": 3,
+      "pathway": "B"
+    },
+    "audits": [
+      {
+        "label": "ExtendWindowReady",
+        "delta_psi": 0.06666666666666668,
+        "accepted": true,
+        "reason": "bridge_pass"
+      },
+      {
+        "label": "RedsyncExtendWindow",
+        "delta_psi": 0.06666666666666668,
+        "accepted": true,
+        "reason": "bridge_pass"
+      },
+      {
+        "label": "AcquireExtendRelease",
+        "delta_psi": 0.05,
+        "accepted": true,
+        "reason": "bridge_pass"
+      }
+    ],
+    "verifications": [
+      {
+        "status": "pass",
+        "passed": true,
+        "failed": false,
+        "counterexample": null,
+        "cost": 0.06289319999632426,
+        "artifact_ids": [],
+        "verifier_name": "redsync_mutex_extend_verifier",
+        "details": {
+          "manifest_path": "fixtures\\redsync_mutex_extend\\train\\manifest.json",
+          "source_path": "fixtures\\redsync_mutex_extend\\train\\source_excerpt.go",
+          "valid_trace_count": 2,
+          "invalid_trace_count": 4,
+          "upstream_commit": "7a6f793e6fdad02673681d67bac13a1f04c9c7de",
+          "markers": {
+            "ExtendContext": true,
+            "ErrExtendFailed": true,
+            "touch(": true,
+            "TestMutexExtendExpired": true,
+            "TestSetNXOnExtendFailsToAcquireLockWhenKeyIsTaken": true,
+            "redsync: failed to extend lock": true
+          },
+          "command": [
+            "python",
+            "verifiers\\redsync_mutex_extend_verifier.py"
+          ],
+          "returncode": 0
+        }
+      },
+      {
+        "status": "pass",
+        "passed": true,
+        "failed": false,
+        "counterexample": null,
+        "cost": 5.509998300112784e-05,
+        "artifact_ids": [],
+        "verifier_name": "role_count_verifier",
+        "details": {
+          "parent_roles": {
+            "open": 1,
+            "close": 1
+          },
+          "blanket_roles": {
+            "write": 2
+          },
+          "expected_parent": {
+            "open": 1,
+            "close": 1
+          },
+          "expected_blanket": {
+            "write": 2
+          }
+        }
+      },
+      {
+        "status": "pass",
+        "passed": true,
+        "failed": false,
+        "counterexample": null,
+        "cost": 0.00044329999946057796,
+        "artifact_ids": [],
+        "verifier_name": "trace_contract_verifier",
+        "details": {
+          "manifest_path": "fixtures\\redsync_mutex_extend\\train\\manifest.json",
+          "trace_contract_type": "window_guard"
+        }
+      }
+    ],
+    "reuse": [],
+    "rejection_history": [],
+    "retirement_history": [],
+    "lineage": {
+      "created_at": "2026-03-18T22:33:42.889505+00:00",
+      "parent_cluster_symbol_ids": [
+        "REDSYNC_REAL_ACQUIRE",
+        "REDSYNC_REAL_RELEASE"
+      ],
+      "markov_blanket_symbol_ids": [
+        "REDSYNC_REAL_EXTEND_1",
+        "REDSYNC_REAL_EXTEND_2"
+      ]
+    },
+    "support_count": 3,
+    "failure_count": 0,
+    "verification_pass_count": 3,
+    "verification_fail_count": 0,
+    "reuse_pass_count": 0,
+    "reuse_fail_count": 0,
+    "times_reused": 0,
+    "metadata": {
+      "cluster_id": "hotspot_1",
+      "tsl_pathway": "B",
+      "structural_roles": [
+        "acquire",
+        "release",
+        "extend",
+        "extend"
+      ],
+      "proposal_support_roles": [],
+      "proposal_hidden_variables": []
+    },
+    "reuse_signature": {
+      "parent_roles": [
+        "acquire",
+        "release"
+      ],
+      "blanket_roles": [
+        "extend",
+        "extend"
+      ],
+      "retired_constraint_signatures": [
+        {
+          "kind": "xor",
+          "roles": [
+            "acquire",
+            "release"
+          ]
+        }
+      ],
+      "canonical_parent_roles": [
+        "open",
+        "close"
+      ],
+      "canonical_blanket_roles": [
+        "write",
+        "write"
+      ],
+      "canonical_retired_constraint_signatures": [
+        {
+          "kind": "xor",
+          "roles": [
+            "open",
+            "close"
+          ]
+        }
+      ]
+    },
+    "admission_reason": "accepted:structural_relief"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "artifact_version": {
+    "phase": "phase3",
+    "timestamp_utc": "20260318T201347301082Z",
+    "git_sha": "ad9f6a1"
+  },
+  "files": {
+    "quorum_train_graph": {
+      "phase": "phase3",
+      "timestamp_utc": "20260318T201347301082Z",
+      "git_sha": "ad9f6a1",
+      "stable_path": "artifacts\\phase3\\quorum_train_graph.json",
+      "versioned_path": "artifacts\\phase3\\quorum_train_graph.phase3.20260318T201347301082Z.ad9f6a1.json"
+    },
+    "quorum_train_telemetry": {
+      "phase": "phase3",
+      "timestamp_utc": "20260318T201347301082Z",
+      "git_sha": "ad9f6a1",
+      "stable_path": "artifacts\\phase3\\quorum_train_telemetry.jsonl",
+      "versioned_path": "artifacts\\phase3\\quorum_train_telemetry.phase3.20260318T201347301082Z.ad9f6a1.jsonl"
+    },
+    "quorum_registry": {
+      "phase": "phase3",
+      "timestamp_utc": "20260318T201347301082Z",
+      "git_sha": "ad9f6a1",
+      "stable_path": "artifacts\\phase3\\quorum_registry.json",
+      "versioned_path": "artifacts\\phase3\\quorum_registry.phase3.20260318T201347301082Z.ad9f6a1.json"
+    },
+    "quorum_train_telemetry_summary": {
+      "phase": "phase3",
+      "timestamp_utc": "20260318T201347301082Z",
+      "git_sha": "ad9f6a1",
+      "stable_path": "artifacts\\phase3\\quorum_train_telemetry_summary.json",
+      "versioned_path": "artifacts\\phase3\\quorum_train_telemetry_summary.phase3.20260318T201347301082Z.ad9f6a1.json"
+    },
+    "quorum_summary": {
+      "phase": "phase3",
+      "timestamp_utc": "20260318T201347301082Z",
+      "git_sha": "ad9f6a1",
+      "stable_path": "artifacts\\phase3\\quorum_summary.json",
+      "versioned_path": "artifacts\\phase3\\quorum_summary.phase3.20260318T201347301082Z.ad9f6a1.json"
+    }
+  }
+}

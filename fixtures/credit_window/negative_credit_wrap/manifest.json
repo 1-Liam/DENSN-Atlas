@@ -1,0 +1,71 @@
+{
+  "task_id": "credit_window_negative_wrap",
+  "family": "credit_window",
+  "split": "negative_transfer",
+  "description": "Credit-window negative-transfer case that omits the balance gate and should reject transferred abstractions requiring a balance blanket role.",
+  "roles": {
+    "grant": "GRANT",
+    "revoke": "REVOKE",
+    "charge": "CHARGE"
+  },
+  "canonical_roles": {
+    "grant": "open",
+    "revoke": "close",
+    "charge": "write"
+  },
+  "natural_language_spec": "GRANT opens a simplified charge window. CHARGE is legal immediately after GRANT. REVOKE closes the window.",
+  "formal_spec": {
+    "rules": [
+      "GRANT -> credit_live",
+      "CHARGE -> credit_live",
+      "REVOKE -> previously credit_live",
+      "trace_end -> not credit_live"
+    ],
+    "safety_property": "No CHARGE occurs while the simplified charge window is inactive."
+  },
+  "execution_traces": [
+    [
+      "GRANT",
+      "CHARGE",
+      "REVOKE"
+    ],
+    [
+      "GRANT",
+      "CHARGE",
+      "CHARGE",
+      "REVOKE"
+    ]
+  ],
+  "failing_tests": [
+    {
+      "name": "charge_after_revoke",
+      "trace": [
+        "GRANT",
+        "CHARGE",
+        "REVOKE",
+        "CHARGE"
+      ],
+      "expected": "fail"
+    }
+  ],
+  "logs": [
+    {
+      "level": "ERROR",
+      "message": "CHARGE observed outside simplified charge window",
+      "trace": [
+        "CHARGE"
+      ]
+    }
+  ],
+  "counterexamples": [
+    {
+      "name": "charge_without_grant",
+      "trace": [
+        "CHARGE"
+      ],
+      "reason": "charge_without_credit_window"
+    }
+  ],
+  "source_code_path": "validator.py",
+  "write_count": 2
+}

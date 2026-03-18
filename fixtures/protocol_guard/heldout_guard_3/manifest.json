@@ -1,0 +1,80 @@
+{
+  "task_id": "protocol_guard_heldout_3",
+  "family": "protocol_guard",
+  "split": "heldout",
+  "description": "Held-out guarded write protocol with longer valid traces and new invalid counterexamples.",
+  "roles": {
+    "open": "BEGIN",
+    "close": "END",
+    "action": "WRITE"
+  },
+  "natural_language_spec": "BEGIN opens a guarded region. Multiple WRITE events may occur while the region is active. END closes the region and any WRITE after END is invalid.",
+  "formal_spec": {
+    "rules": [
+      "BEGIN -> guard_active",
+      "WRITE -> guard_active",
+      "END -> previously guard_active",
+      "trace_end -> not guard_active"
+    ],
+    "safety_property": "No WRITE occurs while the guard is inactive."
+  },
+  "execution_traces": [
+    [
+      "BEGIN",
+      "WRITE",
+      "WRITE",
+      "WRITE",
+      "END"
+    ],
+    [
+      "BEGIN",
+      "WRITE",
+      "END"
+    ]
+  ],
+  "failing_tests": [
+    {
+      "name": "write_after_close",
+      "trace": [
+        "BEGIN",
+        "WRITE",
+        "END",
+        "WRITE"
+      ],
+      "expected": "fail"
+    },
+    {
+      "name": "double_end",
+      "trace": [
+        "BEGIN",
+        "WRITE",
+        "END",
+        "END"
+      ],
+      "expected": "fail"
+    }
+  ],
+  "logs": [
+    {
+      "level": "ERROR",
+      "message": "WRITE observed after guard close",
+      "trace": [
+        "BEGIN",
+        "END",
+        "WRITE"
+      ]
+    }
+  ],
+  "counterexamples": [
+    {
+      "name": "unclosed_guard",
+      "trace": [
+        "BEGIN",
+        "WRITE"
+      ],
+      "reason": "trace_ended_while_guard_open"
+    }
+  ],
+  "source_code_path": "validator.py",
+  "write_count": 3
+}

@@ -1,0 +1,1499 @@
+{
+  "graph_version": "0.1.0",
+  "created_at": "2026-03-18T22:33:41.242665+00:00",
+  "updated_at": "2026-03-18T22:33:41.322556+00:00",
+  "nodes": [
+    {
+      "id": "raft_rs_read_index_current_term_train",
+      "family": "raft_rs_read_index_current_term",
+      "split": "train",
+      "description": "Real-world external artifact bundle derived from tikv/raft-rs. The target invariant is the new-leader read-index rule: a leader only accepts MsgReadIndex after it has committed at least one log entry in its current term.",
+      "created_at": "2026-03-18T22:33:41.243002+00:00",
+      "metadata": {
+        "manifest_path": "fixtures\\raft_rs_read_index_current_term\\train\\manifest.json"
+      },
+      "node_type": "Task"
+    },
+    {
+      "id": "evidence_5d28fad6",
+      "kind": "natural_language_spec",
+      "content_ref": "fixtures\\raft_rs_read_index_current_term\\train\\manifest.json#natural_language_spec",
+      "source": "artifact_manifest",
+      "created_at": "2026-03-18T22:33:41.243030+00:00",
+      "task_id": "raft_rs_read_index_current_term_train",
+      "metadata": {
+        "inline": true
+      },
+      "node_type": "Evidence"
+    },
+    {
+      "id": "evidence_6575913d",
+      "kind": "formal_spec",
+      "content_ref": "fixtures\\raft_rs_read_index_current_term\\train\\manifest.json#formal_spec",
+      "source": "artifact_manifest",
+      "created_at": "2026-03-18T22:33:41.243045+00:00",
+      "task_id": "raft_rs_read_index_current_term_train",
+      "metadata": {
+        "inline": true
+      },
+      "node_type": "Evidence"
+    },
+    {
+      "id": "evidence_e332e9cb",
+      "kind": "execution_traces",
+      "content_ref": "fixtures\\raft_rs_read_index_current_term\\train\\manifest.json#execution_traces",
+      "source": "artifact_manifest",
+      "created_at": "2026-03-18T22:33:41.243057+00:00",
+      "task_id": "raft_rs_read_index_current_term_train",
+      "metadata": {
+        "inline": true
+      },
+      "node_type": "Evidence"
+    },
+    {
+      "id": "evidence_9c476795",
+      "kind": "failing_tests",
+      "content_ref": "fixtures\\raft_rs_read_index_current_term\\train\\manifest.json#failing_tests",
+      "source": "artifact_manifest",
+      "created_at": "2026-03-18T22:33:41.243068+00:00",
+      "task_id": "raft_rs_read_index_current_term_train",
+      "metadata": {
+        "inline": true
+      },
+      "node_type": "Evidence"
+    },
+    {
+      "id": "evidence_a7cc5925",
+      "kind": "logs",
+      "content_ref": "fixtures\\raft_rs_read_index_current_term\\train\\manifest.json#logs",
+      "source": "artifact_manifest",
+      "created_at": "2026-03-18T22:33:41.243079+00:00",
+      "task_id": "raft_rs_read_index_current_term_train",
+      "metadata": {
+        "inline": true
+      },
+      "node_type": "Evidence"
+    },
+    {
+      "id": "evidence_f9fe016e",
+      "kind": "counterexamples",
+      "content_ref": "fixtures\\raft_rs_read_index_current_term\\train\\manifest.json#counterexamples",
+      "source": "artifact_manifest",
+      "created_at": "2026-03-18T22:33:41.243089+00:00",
+      "task_id": "raft_rs_read_index_current_term_train",
+      "metadata": {
+        "inline": true
+      },
+      "node_type": "Evidence"
+    },
+    {
+      "id": "evidence_89494962",
+      "kind": "source_code_path",
+      "content_ref": "fixtures\\raft_rs_read_index_current_term\\train\\source_excerpt.rs",
+      "source": "artifact_manifest",
+      "created_at": "2026-03-18T22:33:41.243217+00:00",
+      "task_id": "raft_rs_read_index_current_term_train",
+      "metadata": {
+        "path": "fixtures\\raft_rs_read_index_current_term\\train\\source_excerpt.rs"
+      },
+      "node_type": "Evidence"
+    },
+    {
+      "id": "RAFT_RS_REAL_LEADER_READY",
+      "name": "BECOME_LEADER",
+      "truth_value": true,
+      "locked": true,
+      "created_at": "2026-03-18T22:33:41.243249+00:00",
+      "updated_at": "2026-03-18T22:33:41.243250+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "provenance_ids": [
+        "evidence_5d28fad6",
+        "evidence_6575913d",
+        "evidence_e332e9cb",
+        "evidence_9c476795",
+        "evidence_a7cc5925",
+        "evidence_f9fe016e",
+        "evidence_89494962"
+      ],
+      "task_ids": [],
+      "metadata": {
+        "role": "leader_ready",
+        "canonical_role": "prepare",
+        "token": "BECOME_LEADER",
+        "task_id": "raft_rs_read_index_current_term_train"
+      },
+      "node_type": "AtomicSymbol"
+    },
+    {
+      "id": "RAFT_RS_REAL_ACCEPT_READ_INDEX",
+      "name": "ACCEPT_READ_INDEX",
+      "truth_value": true,
+      "locked": true,
+      "created_at": "2026-03-18T22:33:41.243254+00:00",
+      "updated_at": "2026-03-18T22:33:41.243256+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "provenance_ids": [
+        "evidence_5d28fad6",
+        "evidence_6575913d",
+        "evidence_e332e9cb",
+        "evidence_9c476795",
+        "evidence_a7cc5925",
+        "evidence_f9fe016e",
+        "evidence_89494962"
+      ],
+      "task_ids": [],
+      "metadata": {
+        "role": "accept_read_index",
+        "canonical_role": "commit",
+        "token": "ACCEPT_READ_INDEX",
+        "task_id": "raft_rs_read_index_current_term_train"
+      },
+      "node_type": "AtomicSymbol"
+    },
+    {
+      "id": "RAFT_RS_REAL_READ_PENDING",
+      "name": "READ_PENDING",
+      "truth_value": true,
+      "locked": true,
+      "created_at": "2026-03-18T22:33:41.243260+00:00",
+      "updated_at": "2026-03-18T22:33:41.243261+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "provenance_ids": [
+        "evidence_5d28fad6",
+        "evidence_6575913d",
+        "evidence_e332e9cb",
+        "evidence_9c476795",
+        "evidence_a7cc5925",
+        "evidence_f9fe016e",
+        "evidence_89494962"
+      ],
+      "task_ids": [],
+      "metadata": {
+        "role": "read_pending",
+        "canonical_role": "pending",
+        "token": "READ_PENDING",
+        "task_id": "raft_rs_read_index_current_term_train"
+      },
+      "node_type": "AtomicSymbol"
+    },
+    {
+      "id": "RAFT_RS_REAL_READ_CTX_READY",
+      "name": "READ_CTX_READY",
+      "truth_value": true,
+      "locked": true,
+      "created_at": "2026-03-18T22:33:41.243265+00:00",
+      "updated_at": "2026-03-18T22:33:41.243266+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "provenance_ids": [
+        "evidence_5d28fad6",
+        "evidence_6575913d",
+        "evidence_e332e9cb",
+        "evidence_9c476795",
+        "evidence_a7cc5925",
+        "evidence_f9fe016e",
+        "evidence_89494962"
+      ],
+      "task_ids": [],
+      "metadata": {
+        "role": "read_ctx_ready",
+        "canonical_role": "clear",
+        "token": "READ_CTX_READY",
+        "task_id": "raft_rs_read_index_current_term_train"
+      },
+      "node_type": "AtomicSymbol"
+    },
+    {
+      "id": "RAFT_RS_REAL_CURRENT_TERM_COMMITTED",
+      "name": "CURRENT_TERM_COMMITTED",
+      "truth_value": true,
+      "locked": true,
+      "created_at": "2026-03-18T22:33:41.243277+00:00",
+      "updated_at": "2026-03-18T22:33:41.243278+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "provenance_ids": [
+        "evidence_5d28fad6",
+        "evidence_6575913d",
+        "evidence_e332e9cb",
+        "evidence_9c476795",
+        "evidence_a7cc5925",
+        "evidence_f9fe016e",
+        "evidence_89494962"
+      ],
+      "task_ids": [],
+      "metadata": {
+        "role": "current_term_committed",
+        "canonical_role": "stable",
+        "token": "CURRENT_TERM_COMMITTED",
+        "task_id": "raft_rs_read_index_current_term_train"
+      },
+      "node_type": "AtomicSymbol"
+    },
+    {
+      "id": "RAFT_RS_REAL_APPEND_RESPONSE_1",
+      "name": "APPEND_RESPONSE_1",
+      "truth_value": true,
+      "locked": true,
+      "created_at": "2026-03-18T22:33:41.243286+00:00",
+      "updated_at": "2026-03-18T22:33:41.243287+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "provenance_ids": [
+        "evidence_5d28fad6",
+        "evidence_6575913d",
+        "evidence_e332e9cb",
+        "evidence_9c476795",
+        "evidence_a7cc5925",
+        "evidence_f9fe016e",
+        "evidence_89494962"
+      ],
+      "task_ids": [],
+      "metadata": {
+        "role": "append_response",
+        "canonical_role": "ack",
+        "position": 1,
+        "task_id": "raft_rs_read_index_current_term_train"
+      },
+      "node_type": "AtomicSymbol"
+    },
+    {
+      "id": "RAFT_RS_REAL_APPEND_RESPONSE_2",
+      "name": "APPEND_RESPONSE_2",
+      "truth_value": true,
+      "locked": true,
+      "created_at": "2026-03-18T22:33:41.243292+00:00",
+      "updated_at": "2026-03-18T22:33:41.243293+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "provenance_ids": [
+        "evidence_5d28fad6",
+        "evidence_6575913d",
+        "evidence_e332e9cb",
+        "evidence_9c476795",
+        "evidence_a7cc5925",
+        "evidence_f9fe016e",
+        "evidence_89494962"
+      ],
+      "task_ids": [],
+      "metadata": {
+        "role": "append_response",
+        "canonical_role": "ack",
+        "position": 2,
+        "task_id": "raft_rs_read_index_current_term_train"
+      },
+      "node_type": "AtomicSymbol"
+    },
+    {
+      "id": "RAFT_RS_REAL_APPEND_RESPONSE_3",
+      "name": "APPEND_RESPONSE_3",
+      "truth_value": true,
+      "locked": true,
+      "created_at": "2026-03-18T22:33:41.243299+00:00",
+      "updated_at": "2026-03-18T22:33:41.243300+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "provenance_ids": [
+        "evidence_5d28fad6",
+        "evidence_6575913d",
+        "evidence_e332e9cb",
+        "evidence_9c476795",
+        "evidence_a7cc5925",
+        "evidence_f9fe016e",
+        "evidence_89494962"
+      ],
+      "task_ids": [],
+      "metadata": {
+        "role": "append_response",
+        "canonical_role": "ack",
+        "position": 3,
+        "task_id": "raft_rs_read_index_current_term_train"
+      },
+      "node_type": "AtomicSymbol"
+    },
+    {
+      "id": "RAFT_RS_REAL_C_COMMIT_PENDING_MUTEX",
+      "constraint_kind": "mutex",
+      "symbol_ids": [
+        "RAFT_RS_REAL_ACCEPT_READ_INDEX",
+        "RAFT_RS_REAL_READ_PENDING"
+      ],
+      "weight": 1.0,
+      "base_weight": 1.0,
+      "max_weight": 16.0,
+      "locked": false,
+      "active": false,
+      "created_at": "2026-03-18T22:33:41.243309+00:00",
+      "updated_at": "2026-03-18T22:33:41.243310+00:00",
+      "support_count": 0,
+      "failure_count": 8,
+      "persistence": 0,
+      "provenance_ids": [
+        "evidence_6575913d",
+        "evidence_9c476795"
+      ],
+      "evaluator_key": "",
+      "metadata": {
+        "rule": "commit_pending_mutex",
+        "manifest_path": "fixtures\\raft_rs_read_index_current_term\\train\\manifest.json",
+        "abstracted_by": "meta_0fbd1e16"
+      },
+      "node_type": "Constraint"
+    },
+    {
+      "id": "RAFT_RS_REAL_C_PENDING_PREPARE",
+      "constraint_kind": "implies",
+      "symbol_ids": [
+        "RAFT_RS_REAL_READ_PENDING",
+        "RAFT_RS_REAL_LEADER_READY"
+      ],
+      "weight": 1.0,
+      "base_weight": 1.0,
+      "max_weight": 16.0,
+      "locked": false,
+      "active": true,
+      "created_at": "2026-03-18T22:33:41.243314+00:00",
+      "updated_at": "2026-03-18T22:33:41.243315+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "persistence": 0,
+      "provenance_ids": [
+        "evidence_6575913d",
+        "evidence_5d28fad6"
+      ],
+      "evaluator_key": "",
+      "metadata": {
+        "rule": "pending_requires_prepare",
+        "manifest_path": "fixtures\\raft_rs_read_index_current_term\\train\\manifest.json"
+      },
+      "node_type": "Constraint"
+    },
+    {
+      "id": "RAFT_RS_REAL_C_COMMIT_CLEAR",
+      "constraint_kind": "implies",
+      "symbol_ids": [
+        "RAFT_RS_REAL_ACCEPT_READ_INDEX",
+        "RAFT_RS_REAL_READ_CTX_READY"
+      ],
+      "weight": 1.0,
+      "base_weight": 1.0,
+      "max_weight": 16.0,
+      "locked": false,
+      "active": true,
+      "created_at": "2026-03-18T22:33:41.243318+00:00",
+      "updated_at": "2026-03-18T22:33:41.243319+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "persistence": 0,
+      "provenance_ids": [
+        "evidence_6575913d",
+        "evidence_a7cc5925"
+      ],
+      "evaluator_key": "",
+      "metadata": {
+        "rule": "commit_requires_clear",
+        "manifest_path": "fixtures\\raft_rs_read_index_current_term\\train\\manifest.json"
+      },
+      "node_type": "Constraint"
+    },
+    {
+      "id": "RAFT_RS_REAL_C_COMMIT_ACK_1",
+      "constraint_kind": "implies",
+      "symbol_ids": [
+        "RAFT_RS_REAL_ACCEPT_READ_INDEX",
+        "RAFT_RS_REAL_APPEND_RESPONSE_1"
+      ],
+      "weight": 1.0,
+      "base_weight": 1.0,
+      "max_weight": 16.0,
+      "locked": false,
+      "active": true,
+      "created_at": "2026-03-18T22:33:41.243324+00:00",
+      "updated_at": "2026-03-18T22:33:41.243325+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "persistence": 0,
+      "provenance_ids": [
+        "evidence_e332e9cb",
+        "evidence_f9fe016e"
+      ],
+      "evaluator_key": "",
+      "metadata": {
+        "rule": "commit_requires_ack",
+        "manifest_path": "fixtures\\raft_rs_read_index_current_term\\train\\manifest.json"
+      },
+      "node_type": "Constraint"
+    },
+    {
+      "id": "RAFT_RS_REAL_C_COMMIT_ACK_2",
+      "constraint_kind": "implies",
+      "symbol_ids": [
+        "RAFT_RS_REAL_ACCEPT_READ_INDEX",
+        "RAFT_RS_REAL_APPEND_RESPONSE_2"
+      ],
+      "weight": 1.0,
+      "base_weight": 1.0,
+      "max_weight": 16.0,
+      "locked": false,
+      "active": true,
+      "created_at": "2026-03-18T22:33:41.243329+00:00",
+      "updated_at": "2026-03-18T22:33:41.243330+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "persistence": 0,
+      "provenance_ids": [
+        "evidence_e332e9cb",
+        "evidence_f9fe016e"
+      ],
+      "evaluator_key": "",
+      "metadata": {
+        "rule": "commit_requires_ack",
+        "manifest_path": "fixtures\\raft_rs_read_index_current_term\\train\\manifest.json"
+      },
+      "node_type": "Constraint"
+    },
+    {
+      "id": "RAFT_RS_REAL_C_COMMIT_STABLE",
+      "constraint_kind": "implies",
+      "symbol_ids": [
+        "RAFT_RS_REAL_ACCEPT_READ_INDEX",
+        "RAFT_RS_REAL_CURRENT_TERM_COMMITTED"
+      ],
+      "weight": 1.0,
+      "base_weight": 1.0,
+      "max_weight": 16.0,
+      "locked": false,
+      "active": true,
+      "created_at": "2026-03-18T22:33:41.243334+00:00",
+      "updated_at": "2026-03-18T22:33:41.243335+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "persistence": 0,
+      "provenance_ids": [
+        "evidence_6575913d",
+        "evidence_e332e9cb"
+      ],
+      "evaluator_key": "",
+      "metadata": {
+        "rule": "commit_requires_stable",
+        "manifest_path": "fixtures\\raft_rs_read_index_current_term\\train\\manifest.json"
+      },
+      "node_type": "Constraint"
+    },
+    {
+      "id": "meta_0fbd1e16",
+      "structural_name": "META_0FBD1E16",
+      "truth_value": true,
+      "locked": false,
+      "semantic_label": null,
+      "semantic_status": "deferred",
+      "interface_kind": "exact",
+      "interface_inputs": [
+        "RAFT_RS_REAL_APPEND_RESPONSE_1",
+        "RAFT_RS_REAL_APPEND_RESPONSE_2",
+        "RAFT_RS_REAL_CURRENT_TERM_COMMITTED",
+        "RAFT_RS_REAL_LEADER_READY",
+        "RAFT_RS_REAL_READ_CTX_READY"
+      ],
+      "interface_definition": {
+        "truth_table": {
+          "RAFT_RS_REAL_APPEND_RESPONSE_1=0,RAFT_RS_REAL_APPEND_RESPONSE_2=0,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=0,RAFT_RS_REAL_LEADER_READY=0,RAFT_RS_REAL_READ_CTX_READY=0": false,
+          "RAFT_RS_REAL_APPEND_RESPONSE_1=0,RAFT_RS_REAL_APPEND_RESPONSE_2=0,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=0,RAFT_RS_REAL_LEADER_READY=0,RAFT_RS_REAL_READ_CTX_READY=1": false,
+          "RAFT_RS_REAL_APPEND_RESPONSE_1=0,RAFT_RS_REAL_APPEND_RESPONSE_2=0,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=0,RAFT_RS_REAL_LEADER_READY=1,RAFT_RS_REAL_READ_CTX_READY=0": false,
+          "RAFT_RS_REAL_APPEND_RESPONSE_1=0,RAFT_RS_REAL_APPEND_RESPONSE_2=0,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=0,RAFT_RS_REAL_LEADER_READY=1,RAFT_RS_REAL_READ_CTX_READY=1": false,
+          "RAFT_RS_REAL_APPEND_RESPONSE_1=0,RAFT_RS_REAL_APPEND_RESPONSE_2=0,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=1,RAFT_RS_REAL_LEADER_READY=0,RAFT_RS_REAL_READ_CTX_READY=0": false,
+          "RAFT_RS_REAL_APPEND_RESPONSE_1=0,RAFT_RS_REAL_APPEND_RESPONSE_2=0,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=1,RAFT_RS_REAL_LEADER_READY=0,RAFT_RS_REAL_READ_CTX_READY=1": false,
+          "RAFT_RS_REAL_APPEND_RESPONSE_1=0,RAFT_RS_REAL_APPEND_RESPONSE_2=0,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=1,RAFT_RS_REAL_LEADER_READY=1,RAFT_RS_REAL_READ_CTX_READY=0": false,
+          "RAFT_RS_REAL_APPEND_RESPONSE_1=0,RAFT_RS_REAL_APPEND_RESPONSE_2=0,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=1,RAFT_RS_REAL_LEADER_READY=1,RAFT_RS_REAL_READ_CTX_READY=1": false,
+          "RAFT_RS_REAL_APPEND_RESPONSE_1=0,RAFT_RS_REAL_APPEND_RESPONSE_2=1,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=0,RAFT_RS_REAL_LEADER_READY=0,RAFT_RS_REAL_READ_CTX_READY=0": false,
+          "RAFT_RS_REAL_APPEND_RESPONSE_1=0,RAFT_RS_REAL_APPEND_RESPONSE_2=1,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=0,RAFT_RS_REAL_LEADER_READY=0,RAFT_RS_REAL_READ_CTX_READY=1": false,
+          "RAFT_RS_REAL_APPEND_RESPONSE_1=0,RAFT_RS_REAL_APPEND_RESPONSE_2=1,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=0,RAFT_RS_REAL_LEADER_READY=1,RAFT_RS_REAL_READ_CTX_READY=0": false,
+          "RAFT_RS_REAL_APPEND_RESPONSE_1=0,RAFT_RS_REAL_APPEND_RESPONSE_2=1,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=0,RAFT_RS_REAL_LEADER_READY=1,RAFT_RS_REAL_READ_CTX_READY=1": false,
+          "RAFT_RS_REAL_APPEND_RESPONSE_1=0,RAFT_RS_REAL_APPEND_RESPONSE_2=1,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=1,RAFT_RS_REAL_LEADER_READY=0,RAFT_RS_REAL_READ_CTX_READY=0": false,
+          "RAFT_RS_REAL_APPEND_RESPONSE_1=0,RAFT_RS_REAL_APPEND_RESPONSE_2=1,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=1,RAFT_RS_REAL_LEADER_READY=0,RAFT_RS_REAL_READ_CTX_READY=1": false,
+          "RAFT_RS_REAL_APPEND_RESPONSE_1=0,RAFT_RS_REAL_APPEND_RESPONSE_2=1,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=1,RAFT_RS_REAL_LEADER_READY=1,RAFT_RS_REAL_READ_CTX_READY=0": false,
+          "RAFT_RS_REAL_APPEND_RESPONSE_1=0,RAFT_RS_REAL_APPEND_RESPONSE_2=1,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=1,RAFT_RS_REAL_LEADER_READY=1,RAFT_RS_REAL_READ_CTX_READY=1": false,
+          "RAFT_RS_REAL_APPEND_RESPONSE_1=1,RAFT_RS_REAL_APPEND_RESPONSE_2=0,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=0,RAFT_RS_REAL_LEADER_READY=0,RAFT_RS_REAL_READ_CTX_READY=0": false,
+          "RAFT_RS_REAL_APPEND_RESPONSE_1=1,RAFT_RS_REAL_APPEND_RESPONSE_2=0,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=0,RAFT_RS_REAL_LEADER_READY=0,RAFT_RS_REAL_READ_CTX_READY=1": false,
+          "RAFT_RS_REAL_APPEND_RESPONSE_1=1,RAFT_RS_REAL_APPEND_RESPONSE_2=0,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=0,RAFT_RS_REAL_LEADER_READY=1,RAFT_RS_REAL_READ_CTX_READY=0": false,
+          "RAFT_RS_REAL_APPEND_RESPONSE_1=1,RAFT_RS_REAL_APPEND_RESPONSE_2=0,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=0,RAFT_RS_REAL_LEADER_READY=1,RAFT_RS_REAL_READ_CTX_READY=1": false,
+          "RAFT_RS_REAL_APPEND_RESPONSE_1=1,RAFT_RS_REAL_APPEND_RESPONSE_2=0,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=1,RAFT_RS_REAL_LEADER_READY=0,RAFT_RS_REAL_READ_CTX_READY=0": false,
+          "RAFT_RS_REAL_APPEND_RESPONSE_1=1,RAFT_RS_REAL_APPEND_RESPONSE_2=0,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=1,RAFT_RS_REAL_LEADER_READY=0,RAFT_RS_REAL_READ_CTX_READY=1": false,
+          "RAFT_RS_REAL_APPEND_RESPONSE_1=1,RAFT_RS_REAL_APPEND_RESPONSE_2=0,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=1,RAFT_RS_REAL_LEADER_READY=1,RAFT_RS_REAL_READ_CTX_READY=0": false,
+          "RAFT_RS_REAL_APPEND_RESPONSE_1=1,RAFT_RS_REAL_APPEND_RESPONSE_2=0,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=1,RAFT_RS_REAL_LEADER_READY=1,RAFT_RS_REAL_READ_CTX_READY=1": false,
+          "RAFT_RS_REAL_APPEND_RESPONSE_1=1,RAFT_RS_REAL_APPEND_RESPONSE_2=1,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=0,RAFT_RS_REAL_LEADER_READY=0,RAFT_RS_REAL_READ_CTX_READY=0": false,
+          "RAFT_RS_REAL_APPEND_RESPONSE_1=1,RAFT_RS_REAL_APPEND_RESPONSE_2=1,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=0,RAFT_RS_REAL_LEADER_READY=0,RAFT_RS_REAL_READ_CTX_READY=1": false,
+          "RAFT_RS_REAL_APPEND_RESPONSE_1=1,RAFT_RS_REAL_APPEND_RESPONSE_2=1,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=0,RAFT_RS_REAL_LEADER_READY=1,RAFT_RS_REAL_READ_CTX_READY=0": false,
+          "RAFT_RS_REAL_APPEND_RESPONSE_1=1,RAFT_RS_REAL_APPEND_RESPONSE_2=1,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=0,RAFT_RS_REAL_LEADER_READY=1,RAFT_RS_REAL_READ_CTX_READY=1": false,
+          "RAFT_RS_REAL_APPEND_RESPONSE_1=1,RAFT_RS_REAL_APPEND_RESPONSE_2=1,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=1,RAFT_RS_REAL_LEADER_READY=0,RAFT_RS_REAL_READ_CTX_READY=0": false,
+          "RAFT_RS_REAL_APPEND_RESPONSE_1=1,RAFT_RS_REAL_APPEND_RESPONSE_2=1,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=1,RAFT_RS_REAL_LEADER_READY=0,RAFT_RS_REAL_READ_CTX_READY=1": false,
+          "RAFT_RS_REAL_APPEND_RESPONSE_1=1,RAFT_RS_REAL_APPEND_RESPONSE_2=1,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=1,RAFT_RS_REAL_LEADER_READY=1,RAFT_RS_REAL_READ_CTX_READY=0": false,
+          "RAFT_RS_REAL_APPEND_RESPONSE_1=1,RAFT_RS_REAL_APPEND_RESPONSE_2=1,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=1,RAFT_RS_REAL_LEADER_READY=1,RAFT_RS_REAL_READ_CTX_READY=1": true
+        },
+        "notes": "exact_boundary_projection_interface"
+      },
+      "parent_cluster_symbol_ids": [
+        "RAFT_RS_REAL_ACCEPT_READ_INDEX",
+        "RAFT_RS_REAL_READ_PENDING"
+      ],
+      "markov_blanket_symbol_ids": [
+        "RAFT_RS_REAL_APPEND_RESPONSE_1",
+        "RAFT_RS_REAL_APPEND_RESPONSE_2",
+        "RAFT_RS_REAL_CURRENT_TERM_COMMITTED",
+        "RAFT_RS_REAL_LEADER_READY",
+        "RAFT_RS_REAL_READ_CTX_READY"
+      ],
+      "admission_status": "accepted",
+      "admission_metrics": {
+        "novel": true,
+        "novelty_conflicts": [],
+        "verifier_passed": true,
+        "reuse_passed": true,
+        "heldout_contradiction_gain": 5.2,
+        "complexity_penalty": 3.0,
+        "rent_paid": true,
+        "verifier_agreement": {
+          "verifier_count": 3,
+          "passed_count": 3,
+          "failed_count": 0,
+          "agreement_rate": 1.0,
+          "all_agree": true,
+          "disagreed": false
+        },
+        "semantic_accept_count": 0,
+        "pathway": "B"
+      },
+      "created_at": "2026-03-18T22:33:41.250667+00:00",
+      "updated_at": "2026-03-18T22:33:41.322593+00:00",
+      "provenance_ids": [],
+      "metadata": {
+        "cluster_id": "hotspot_1",
+        "tsl_pathway": "B",
+        "structural_roles": [
+          "accept_read_index",
+          "read_pending",
+          "append_response",
+          "append_response",
+          "current_term_committed",
+          "leader_ready",
+          "read_ctx_ready"
+        ],
+        "proposal_support_roles": [],
+        "proposal_hidden_variables": []
+      },
+      "node_type": "MetaSymbol"
+    },
+    {
+      "id": "verifier_70faf36d",
+      "verifier_name": "raft_rs_read_index_current_term_verifier",
+      "artifact_kind": "verification_result",
+      "status": "pass",
+      "cost": 0.06602070000371896,
+      "counterexample_ref": null,
+      "created_at": "2026-03-18T22:33:41.322370+00:00",
+      "metadata": {
+        "details": {
+          "manifest_path": "fixtures\\raft_rs_read_index_current_term\\train\\manifest.json",
+          "source_path": "fixtures\\raft_rs_read_index_current_term\\train\\source_excerpt.rs",
+          "valid_trace_count": 2,
+          "invalid_trace_count": 5,
+          "upstream_commit": "aafb07c7bab439c6139926a77dfafc5b10e9bc84",
+          "markers": {
+            "commit_to_current_term": true,
+            "MessageType::MsgReadIndex": true,
+            "test_read_only_for_new_leader": true,
+            "leader has not yet committed in its term; dropping read index msg": true
+          },
+          "command": [
+            "python",
+            "verifiers\\raft_rs_read_index_current_term_verifier.py"
+          ],
+          "returncode": 0
+        }
+      },
+      "node_type": "VerifierArtifact"
+    },
+    {
+      "id": "verifier_a6e4e410",
+      "verifier_name": "role_count_verifier",
+      "artifact_kind": "verification_result",
+      "status": "pass",
+      "cost": 3.779999678954482e-05,
+      "counterexample_ref": null,
+      "created_at": "2026-03-18T22:33:41.322415+00:00",
+      "metadata": {
+        "details": {
+          "parent_roles": {
+            "commit": 1,
+            "pending": 1
+          },
+          "blanket_roles": {
+            "ack": 2,
+            "stable": 1,
+            "prepare": 1,
+            "clear": 1
+          },
+          "expected_parent": {
+            "commit": 1,
+            "pending": 1
+          },
+          "expected_blanket": {
+            "ack": 2,
+            "stable": 1,
+            "prepare": 1,
+            "clear": 1
+          }
+        }
+      },
+      "node_type": "VerifierArtifact"
+    },
+    {
+      "id": "verifier_74798b52",
+      "verifier_name": "trace_contract_verifier",
+      "artifact_kind": "verification_result",
+      "status": "pass",
+      "cost": 0.00027949997456744313,
+      "counterexample_ref": null,
+      "created_at": "2026-03-18T22:33:41.322438+00:00",
+      "metadata": {
+        "details": {
+          "manifest_path": "fixtures\\raft_rs_read_index_current_term\\train\\manifest.json",
+          "trace_contract_type": "gated_commit"
+        }
+      },
+      "node_type": "VerifierArtifact"
+    },
+    {
+      "id": "verifier_65270385",
+      "verifier_name": "raft_rs_read_index_current_term_verifier",
+      "artifact_kind": "verification_result",
+      "status": "pass",
+      "cost": 0.06602070000371896,
+      "counterexample_ref": null,
+      "created_at": "2026-03-18T22:33:41.322487+00:00",
+      "metadata": {
+        "details": {
+          "manifest_path": "fixtures\\raft_rs_read_index_current_term\\train\\manifest.json",
+          "source_path": "fixtures\\raft_rs_read_index_current_term\\train\\source_excerpt.rs",
+          "valid_trace_count": 2,
+          "invalid_trace_count": 5,
+          "upstream_commit": "aafb07c7bab439c6139926a77dfafc5b10e9bc84",
+          "markers": {
+            "commit_to_current_term": true,
+            "MessageType::MsgReadIndex": true,
+            "test_read_only_for_new_leader": true,
+            "leader has not yet committed in its term; dropping read index msg": true
+          },
+          "command": [
+            "python",
+            "verifiers\\raft_rs_read_index_current_term_verifier.py"
+          ],
+          "returncode": 0
+        }
+      },
+      "node_type": "VerifierArtifact"
+    },
+    {
+      "id": "verifier_1614e511",
+      "verifier_name": "role_count_verifier",
+      "artifact_kind": "verification_result",
+      "status": "pass",
+      "cost": 3.779999678954482e-05,
+      "counterexample_ref": null,
+      "created_at": "2026-03-18T22:33:41.322515+00:00",
+      "metadata": {
+        "details": {
+          "parent_roles": {
+            "commit": 1,
+            "pending": 1
+          },
+          "blanket_roles": {
+            "ack": 2,
+            "stable": 1,
+            "prepare": 1,
+            "clear": 1
+          },
+          "expected_parent": {
+            "commit": 1,
+            "pending": 1
+          },
+          "expected_blanket": {
+            "ack": 2,
+            "stable": 1,
+            "prepare": 1,
+            "clear": 1
+          }
+        }
+      },
+      "node_type": "VerifierArtifact"
+    },
+    {
+      "id": "verifier_5f5d6fdf",
+      "verifier_name": "trace_contract_verifier",
+      "artifact_kind": "verification_result",
+      "status": "pass",
+      "cost": 0.00027949997456744313,
+      "counterexample_ref": null,
+      "created_at": "2026-03-18T22:33:41.322542+00:00",
+      "metadata": {
+        "details": {
+          "manifest_path": "fixtures\\raft_rs_read_index_current_term\\train\\manifest.json",
+          "trace_contract_type": "gated_commit"
+        }
+      },
+      "node_type": "VerifierArtifact"
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge_ca90321b",
+      "src_id": "evidence_5d28fad6",
+      "dst_id": "raft_rs_read_index_current_term_train",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243038+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_ea70211a",
+      "src_id": "evidence_6575913d",
+      "dst_id": "raft_rs_read_index_current_term_train",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243051+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_6e7aca79",
+      "src_id": "evidence_e332e9cb",
+      "dst_id": "raft_rs_read_index_current_term_train",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243062+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_cda45218",
+      "src_id": "evidence_9c476795",
+      "dst_id": "raft_rs_read_index_current_term_train",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243074+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_8a91bd89",
+      "src_id": "evidence_a7cc5925",
+      "dst_id": "raft_rs_read_index_current_term_train",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243084+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_c78b6229",
+      "src_id": "evidence_f9fe016e",
+      "dst_id": "raft_rs_read_index_current_term_train",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243094+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_9a4a1091",
+      "src_id": "evidence_89494962",
+      "dst_id": "raft_rs_read_index_current_term_train",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243224+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_85d63b63",
+      "src_id": "RAFT_RS_REAL_ACCEPT_READ_INDEX",
+      "dst_id": "RAFT_RS_REAL_C_COMMIT_PENDING_MUTEX",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T22:33:41.243342+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_5ebfe2bb",
+      "src_id": "RAFT_RS_REAL_READ_PENDING",
+      "dst_id": "RAFT_RS_REAL_C_COMMIT_PENDING_MUTEX",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T22:33:41.243347+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_4c4c6dc4",
+      "src_id": "RAFT_RS_REAL_READ_PENDING",
+      "dst_id": "RAFT_RS_REAL_C_PENDING_PREPARE",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T22:33:41.243354+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_bf988704",
+      "src_id": "RAFT_RS_REAL_LEADER_READY",
+      "dst_id": "RAFT_RS_REAL_C_PENDING_PREPARE",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T22:33:41.243359+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_8e999a13",
+      "src_id": "RAFT_RS_REAL_ACCEPT_READ_INDEX",
+      "dst_id": "RAFT_RS_REAL_C_COMMIT_CLEAR",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T22:33:41.243365+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_690f75d8",
+      "src_id": "RAFT_RS_REAL_READ_CTX_READY",
+      "dst_id": "RAFT_RS_REAL_C_COMMIT_CLEAR",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T22:33:41.243370+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_f3c697f2",
+      "src_id": "RAFT_RS_REAL_ACCEPT_READ_INDEX",
+      "dst_id": "RAFT_RS_REAL_C_COMMIT_ACK_1",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T22:33:41.243376+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_1b5619de",
+      "src_id": "RAFT_RS_REAL_APPEND_RESPONSE_1",
+      "dst_id": "RAFT_RS_REAL_C_COMMIT_ACK_1",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T22:33:41.243380+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_2f7a6820",
+      "src_id": "RAFT_RS_REAL_ACCEPT_READ_INDEX",
+      "dst_id": "RAFT_RS_REAL_C_COMMIT_ACK_2",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T22:33:41.243386+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_e9989626",
+      "src_id": "RAFT_RS_REAL_APPEND_RESPONSE_2",
+      "dst_id": "RAFT_RS_REAL_C_COMMIT_ACK_2",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T22:33:41.243391+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_a946c46f",
+      "src_id": "RAFT_RS_REAL_ACCEPT_READ_INDEX",
+      "dst_id": "RAFT_RS_REAL_C_COMMIT_STABLE",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T22:33:41.243398+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_6e0fab79",
+      "src_id": "RAFT_RS_REAL_CURRENT_TERM_COMMITTED",
+      "dst_id": "RAFT_RS_REAL_C_COMMIT_STABLE",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T22:33:41.243402+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_2a55c46d",
+      "src_id": "evidence_5d28fad6",
+      "dst_id": "RAFT_RS_REAL_LEADER_READY",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243410+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_40195301",
+      "src_id": "evidence_5d28fad6",
+      "dst_id": "RAFT_RS_REAL_ACCEPT_READ_INDEX",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243416+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_e2ec3e63",
+      "src_id": "evidence_5d28fad6",
+      "dst_id": "RAFT_RS_REAL_READ_PENDING",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243420+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_005757ac",
+      "src_id": "evidence_5d28fad6",
+      "dst_id": "RAFT_RS_REAL_READ_CTX_READY",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243426+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_0797ea2b",
+      "src_id": "evidence_5d28fad6",
+      "dst_id": "RAFT_RS_REAL_CURRENT_TERM_COMMITTED",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243431+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_77d2de9a",
+      "src_id": "evidence_5d28fad6",
+      "dst_id": "RAFT_RS_REAL_APPEND_RESPONSE_1",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243435+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_2083ffee",
+      "src_id": "evidence_5d28fad6",
+      "dst_id": "RAFT_RS_REAL_APPEND_RESPONSE_2",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243440+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_c6472cce",
+      "src_id": "evidence_5d28fad6",
+      "dst_id": "RAFT_RS_REAL_APPEND_RESPONSE_3",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243444+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_b7f7950d",
+      "src_id": "evidence_6575913d",
+      "dst_id": "RAFT_RS_REAL_LEADER_READY",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243449+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_2fc60fad",
+      "src_id": "evidence_6575913d",
+      "dst_id": "RAFT_RS_REAL_ACCEPT_READ_INDEX",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243453+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_d5b2070c",
+      "src_id": "evidence_6575913d",
+      "dst_id": "RAFT_RS_REAL_READ_PENDING",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243458+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_09df81ed",
+      "src_id": "evidence_6575913d",
+      "dst_id": "RAFT_RS_REAL_READ_CTX_READY",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243462+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_d40be4ed",
+      "src_id": "evidence_6575913d",
+      "dst_id": "RAFT_RS_REAL_CURRENT_TERM_COMMITTED",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243467+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_15b4f385",
+      "src_id": "evidence_6575913d",
+      "dst_id": "RAFT_RS_REAL_APPEND_RESPONSE_1",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243471+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_421c4f25",
+      "src_id": "evidence_6575913d",
+      "dst_id": "RAFT_RS_REAL_APPEND_RESPONSE_2",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243475+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_10799f63",
+      "src_id": "evidence_6575913d",
+      "dst_id": "RAFT_RS_REAL_APPEND_RESPONSE_3",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243480+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_1ebcbbe9",
+      "src_id": "evidence_89494962",
+      "dst_id": "RAFT_RS_REAL_LEADER_READY",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243484+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_98ab1229",
+      "src_id": "evidence_89494962",
+      "dst_id": "RAFT_RS_REAL_ACCEPT_READ_INDEX",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243489+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_0e949c42",
+      "src_id": "evidence_89494962",
+      "dst_id": "RAFT_RS_REAL_READ_PENDING",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243494+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_57e5faa5",
+      "src_id": "evidence_89494962",
+      "dst_id": "RAFT_RS_REAL_READ_CTX_READY",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243498+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_8db758e8",
+      "src_id": "evidence_89494962",
+      "dst_id": "RAFT_RS_REAL_CURRENT_TERM_COMMITTED",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243503+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_a11b9599",
+      "src_id": "evidence_89494962",
+      "dst_id": "RAFT_RS_REAL_APPEND_RESPONSE_1",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243507+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_f819eca1",
+      "src_id": "evidence_89494962",
+      "dst_id": "RAFT_RS_REAL_APPEND_RESPONSE_2",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243511+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_49981674",
+      "src_id": "evidence_89494962",
+      "dst_id": "RAFT_RS_REAL_APPEND_RESPONSE_3",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243515+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_54eac853",
+      "src_id": "evidence_a7cc5925",
+      "dst_id": "RAFT_RS_REAL_LEADER_READY",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243521+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_d0b17f62",
+      "src_id": "evidence_a7cc5925",
+      "dst_id": "RAFT_RS_REAL_ACCEPT_READ_INDEX",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243525+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_888734a0",
+      "src_id": "evidence_a7cc5925",
+      "dst_id": "RAFT_RS_REAL_READ_PENDING",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243530+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_244e1d78",
+      "src_id": "evidence_a7cc5925",
+      "dst_id": "RAFT_RS_REAL_READ_CTX_READY",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243534+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_c5a37738",
+      "src_id": "evidence_a7cc5925",
+      "dst_id": "RAFT_RS_REAL_CURRENT_TERM_COMMITTED",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243539+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_559f17b3",
+      "src_id": "evidence_a7cc5925",
+      "dst_id": "RAFT_RS_REAL_APPEND_RESPONSE_1",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243544+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_5960fe6f",
+      "src_id": "evidence_a7cc5925",
+      "dst_id": "RAFT_RS_REAL_APPEND_RESPONSE_2",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243548+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_e5d7139c",
+      "src_id": "evidence_a7cc5925",
+      "dst_id": "RAFT_RS_REAL_APPEND_RESPONSE_3",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243552+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_a2e0b6a1",
+      "src_id": "evidence_6575913d",
+      "dst_id": "RAFT_RS_REAL_C_COMMIT_PENDING_MUTEX",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243558+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_fc5484cb",
+      "src_id": "evidence_6575913d",
+      "dst_id": "RAFT_RS_REAL_C_PENDING_PREPARE",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243562+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_287fca00",
+      "src_id": "evidence_6575913d",
+      "dst_id": "RAFT_RS_REAL_C_COMMIT_CLEAR",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243567+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_d710d31e",
+      "src_id": "evidence_6575913d",
+      "dst_id": "RAFT_RS_REAL_C_COMMIT_ACK_1",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243572+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_3e6b1b58",
+      "src_id": "evidence_6575913d",
+      "dst_id": "RAFT_RS_REAL_C_COMMIT_ACK_2",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243577+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_604b890b",
+      "src_id": "evidence_6575913d",
+      "dst_id": "RAFT_RS_REAL_C_COMMIT_STABLE",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243581+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_8e13028d",
+      "src_id": "evidence_9c476795",
+      "dst_id": "RAFT_RS_REAL_C_COMMIT_PENDING_MUTEX",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243586+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_289aea21",
+      "src_id": "evidence_9c476795",
+      "dst_id": "RAFT_RS_REAL_C_PENDING_PREPARE",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243590+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_73f1da8b",
+      "src_id": "evidence_9c476795",
+      "dst_id": "RAFT_RS_REAL_C_COMMIT_CLEAR",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243595+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_1c7a2bb4",
+      "src_id": "evidence_9c476795",
+      "dst_id": "RAFT_RS_REAL_C_COMMIT_ACK_1",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243599+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_df30fa6d",
+      "src_id": "evidence_9c476795",
+      "dst_id": "RAFT_RS_REAL_C_COMMIT_ACK_2",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243604+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_4d251305",
+      "src_id": "evidence_9c476795",
+      "dst_id": "RAFT_RS_REAL_C_COMMIT_STABLE",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243608+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_747186db",
+      "src_id": "evidence_f9fe016e",
+      "dst_id": "RAFT_RS_REAL_C_COMMIT_PENDING_MUTEX",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243613+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_7219dad2",
+      "src_id": "evidence_f9fe016e",
+      "dst_id": "RAFT_RS_REAL_C_PENDING_PREPARE",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243617+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_f2e0c0ab",
+      "src_id": "evidence_f9fe016e",
+      "dst_id": "RAFT_RS_REAL_C_COMMIT_CLEAR",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243621+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_03975f4c",
+      "src_id": "evidence_f9fe016e",
+      "dst_id": "RAFT_RS_REAL_C_COMMIT_ACK_1",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243626+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_8f0ba881",
+      "src_id": "evidence_f9fe016e",
+      "dst_id": "RAFT_RS_REAL_C_COMMIT_ACK_2",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243630+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_2a4727a1",
+      "src_id": "evidence_f9fe016e",
+      "dst_id": "RAFT_RS_REAL_C_COMMIT_STABLE",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243635+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_b69d9711",
+      "src_id": "evidence_e332e9cb",
+      "dst_id": "RAFT_RS_REAL_C_COMMIT_PENDING_MUTEX",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243640+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_8a7df6c0",
+      "src_id": "evidence_e332e9cb",
+      "dst_id": "RAFT_RS_REAL_C_PENDING_PREPARE",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243645+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_bd973dab",
+      "src_id": "evidence_e332e9cb",
+      "dst_id": "RAFT_RS_REAL_C_COMMIT_CLEAR",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243649+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_799fb624",
+      "src_id": "evidence_e332e9cb",
+      "dst_id": "RAFT_RS_REAL_C_COMMIT_ACK_1",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243654+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_dba279ed",
+      "src_id": "evidence_e332e9cb",
+      "dst_id": "RAFT_RS_REAL_C_COMMIT_ACK_2",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243658+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_db24e228",
+      "src_id": "evidence_e332e9cb",
+      "dst_id": "RAFT_RS_REAL_C_COMMIT_STABLE",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:41.243662+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_b2389a98",
+      "src_id": "meta_0fbd1e16",
+      "dst_id": "RAFT_RS_REAL_ACCEPT_READ_INDEX",
+      "edge_kind": "abstracts",
+      "created_at": "2026-03-18T22:33:41.250919+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_f6c9b9f2",
+      "src_id": "meta_0fbd1e16",
+      "dst_id": "RAFT_RS_REAL_READ_PENDING",
+      "edge_kind": "abstracts",
+      "created_at": "2026-03-18T22:33:41.250934+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_3a13bd50",
+      "src_id": "verifier_70faf36d",
+      "dst_id": "meta_0fbd1e16",
+      "edge_kind": "supports",
+      "created_at": "2026-03-18T22:33:41.322400+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_569b1a8b",
+      "src_id": "verifier_a6e4e410",
+      "dst_id": "meta_0fbd1e16",
+      "edge_kind": "supports",
+      "created_at": "2026-03-18T22:33:41.322426+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_56f932d6",
+      "src_id": "verifier_74798b52",
+      "dst_id": "meta_0fbd1e16",
+      "edge_kind": "supports",
+      "created_at": "2026-03-18T22:33:41.322450+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_be09e4c1",
+      "src_id": "verifier_65270385",
+      "dst_id": "meta_0fbd1e16",
+      "edge_kind": "supports",
+      "created_at": "2026-03-18T22:33:41.322498+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_748e1308",
+      "src_id": "verifier_1614e511",
+      "dst_id": "meta_0fbd1e16",
+      "edge_kind": "supports",
+      "created_at": "2026-03-18T22:33:41.322526+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_6c2ef7ee",
+      "src_id": "verifier_5f5d6fdf",
+      "dst_id": "meta_0fbd1e16",
+      "edge_kind": "supports",
+      "created_at": "2026-03-18T22:33:41.322552+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    }
+  ]
+}

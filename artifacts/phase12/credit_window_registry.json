@@ -1,0 +1,175 @@
+{
+  "meta_259daf21": {
+    "meta_symbol_id": "meta_259daf21",
+    "structural_name": "META_259DAF21",
+    "status": "accepted",
+    "semantic_label": "BalanceChargeGrantRevoke",
+    "semantic_status": "grounded",
+    "interface_kind": "exact",
+    "interface_definition": {
+      "truth_table": {
+        "TRAIN_CREDIT_BALANCE=0,TRAIN_CREDIT_CHARGE_1=0,TRAIN_CREDIT_CHARGE_2=0": false,
+        "TRAIN_CREDIT_BALANCE=0,TRAIN_CREDIT_CHARGE_1=0,TRAIN_CREDIT_CHARGE_2=1": false,
+        "TRAIN_CREDIT_BALANCE=0,TRAIN_CREDIT_CHARGE_1=1,TRAIN_CREDIT_CHARGE_2=0": false,
+        "TRAIN_CREDIT_BALANCE=0,TRAIN_CREDIT_CHARGE_1=1,TRAIN_CREDIT_CHARGE_2=1": false,
+        "TRAIN_CREDIT_BALANCE=1,TRAIN_CREDIT_CHARGE_1=0,TRAIN_CREDIT_CHARGE_2=0": false,
+        "TRAIN_CREDIT_BALANCE=1,TRAIN_CREDIT_CHARGE_1=0,TRAIN_CREDIT_CHARGE_2=1": false,
+        "TRAIN_CREDIT_BALANCE=1,TRAIN_CREDIT_CHARGE_1=1,TRAIN_CREDIT_CHARGE_2=0": true,
+        "TRAIN_CREDIT_BALANCE=1,TRAIN_CREDIT_CHARGE_1=1,TRAIN_CREDIT_CHARGE_2=1": true
+      },
+      "notes": "exact_boundary_projection_interface"
+    },
+    "parent_cluster_symbol_ids": [
+      "TRAIN_CREDIT_GRANT",
+      "TRAIN_CREDIT_REVOKE"
+    ],
+    "markov_blanket_symbol_ids": [
+      "TRAIN_CREDIT_BALANCE",
+      "TRAIN_CREDIT_CHARGE_1",
+      "TRAIN_CREDIT_CHARGE_2"
+    ],
+    "admission_metrics": {
+      "novel": true,
+      "novelty_conflicts": [],
+      "verifier_passed": true,
+      "reuse_passed": true,
+      "heldout_contradiction_gain": 10.6,
+      "complexity_penalty": 5.0,
+      "rent_paid": true,
+      "heldout_results": [
+        {
+          "task_id": "credit_window_heldout_3",
+          "family": "credit_window",
+          "split": "heldout",
+          "baseline_final_psi": 10.6,
+          "reuse_final_psi": 0.0,
+          "contradiction_gain": 10.6,
+          "reuse_applied": true,
+          "verifier_passed": true
+        }
+      ],
+      "semantic_accept_count": 1,
+      "pathway": "B"
+    },
+    "audits": [
+      {
+        "label": "CreditLive",
+        "delta_psi": 0.2,
+        "accepted": false,
+        "reason": "bridge_reject"
+      },
+      {
+        "label": "BalanceChargeGrantRevoke",
+        "delta_psi": 0.05,
+        "accepted": true,
+        "reason": "bridge_pass"
+      }
+    ],
+    "verifications": [
+      {
+        "status": "pass",
+        "passed": true,
+        "failed": false,
+        "counterexample": null,
+        "cost": 0.05249809997621924,
+        "artifact_ids": [],
+        "verifier_name": "credit_window_verifier",
+        "details": {
+          "manifest_path": "fixtures\\credit_window\\train\\manifest.json",
+          "source_path": "fixtures\\credit_window\\train\\validator.py",
+          "valid_trace_count": 2,
+          "invalid_trace_count": 4,
+          "source_contains_explicit_credit_live": false,
+          "command": [
+            "python",
+            "verifiers\\credit_window_verifier.py"
+          ],
+          "returncode": 0
+        }
+      }
+    ],
+    "reuse": [
+      {
+        "task_id": "credit_window_heldout_3",
+        "reuse_passed": true,
+        "verifier_passed": true,
+        "reuse_applied": true,
+        "heldout_final_psi": 0.0,
+        "contradiction_gain": 10.6
+      }
+    ],
+    "rejection_history": [],
+    "retirement_history": [],
+    "lineage": {
+      "created_at": "2026-03-18T20:13:41.876815+00:00",
+      "parent_cluster_symbol_ids": [
+        "TRAIN_CREDIT_GRANT",
+        "TRAIN_CREDIT_REVOKE"
+      ],
+      "markov_blanket_symbol_ids": [
+        "TRAIN_CREDIT_BALANCE",
+        "TRAIN_CREDIT_CHARGE_1",
+        "TRAIN_CREDIT_CHARGE_2"
+      ]
+    },
+    "support_count": 2,
+    "failure_count": 0,
+    "verification_pass_count": 1,
+    "verification_fail_count": 0,
+    "reuse_pass_count": 1,
+    "reuse_fail_count": 0,
+    "times_reused": 1,
+    "metadata": {
+      "cluster_id": "hotspot_1",
+      "tsl_pathway": "B",
+      "structural_roles": [
+        "grant",
+        "revoke",
+        "balance",
+        "charge",
+        "charge"
+      ],
+      "proposal_support_roles": [],
+      "proposal_hidden_variables": []
+    },
+    "reuse_signature": {
+      "parent_roles": [
+        "grant",
+        "revoke"
+      ],
+      "blanket_roles": [
+        "balance",
+        "charge",
+        "charge"
+      ],
+      "retired_constraint_signatures": [
+        {
+          "kind": "xor",
+          "roles": [
+            "grant",
+            "revoke"
+          ]
+        }
+      ],
+      "canonical_parent_roles": [
+        "open",
+        "close"
+      ],
+      "canonical_blanket_roles": [
+        "epoch",
+        "write",
+        "write"
+      ],
+      "canonical_retired_constraint_signatures": [
+        {
+          "kind": "xor",
+          "roles": [
+            "open",
+            "close"
+          ]
+        }
+      ]
+    },
+    "admission_reason": "accepted:structural_relief"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "task_id": "lease_lock_target",
+  "family": "lease_lock",
+  "split": "transfer_target",
+  "description": "Lease-guarded mutation protocol with renamed surface roles and a buggy validator that lacks an explicit lease-live hidden state.",
+  "roles": {
+    "acquire": "ACQUIRE",
+    "release": "RELEASE",
+    "mutate": "MUTATE"
+  },
+  "canonical_roles": {
+    "acquire": "open",
+    "release": "close",
+    "mutate": "write"
+  },
+  "natural_language_spec": "ACQUIRE opens a lease window. MUTATE is legal only while the lease is live. RELEASE closes the lease. RELEASE may not appear before ACQUIRE, and a trace must finish with the lease closed.",
+  "formal_spec": {
+    "rules": [
+      "ACQUIRE -> lease_live",
+      "MUTATE -> lease_live",
+      "RELEASE -> previously lease_live",
+      "trace_end -> not lease_live"
+    ],
+    "safety_property": "No MUTATE occurs while the lease is inactive."
+  },
+  "execution_traces": [
+    [
+      "ACQUIRE",
+      "MUTATE",
+      "RELEASE"
+    ],
+    [
+      "ACQUIRE",
+      "MUTATE",
+      "MUTATE",
+      "RELEASE"
+    ]
+  ],
+  "failing_tests": [
+    {
+      "name": "mutate_after_release",
+      "trace": [
+        "ACQUIRE",
+        "RELEASE",
+        "MUTATE"
+      ],
+      "expected": "fail"
+    },
+    {
+      "name": "release_before_acquire",
+      "trace": [
+        "RELEASE",
+        "MUTATE"
+      ],
+      "expected": "fail"
+    }
+  ],
+  "logs": [
+    {
+      "level": "ERROR",
+      "message": "MUTATE observed while lease inactive",
+      "trace": [
+        "MUTATE",
+        "RELEASE"
+      ]
+    }
+  ],
+  "counterexamples": [
+    {
+      "name": "mutate_without_acquire",
+      "trace": [
+        "MUTATE"
+      ],
+      "reason": "action_outside_lease"
+    }
+  ],
+  "source_code_path": "validator.py",
+  "mutate_count": 3
+}

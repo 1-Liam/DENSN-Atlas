@@ -1,0 +1,84 @@
+{
+  "task_id": "protocol_guard_heldout_4",
+  "family": "protocol_guard",
+  "split": "heldout",
+  "description": "Hardest held-out guarded write protocol with four writes and richer counterexamples.",
+  "roles": {
+    "open": "BEGIN",
+    "close": "END",
+    "action": "WRITE"
+  },
+  "natural_language_spec": "BEGIN opens a guarded region. WRITE is allowed only inside the region. END closes it. Nested BEGIN and any WRITE after END are invalid.",
+  "formal_spec": {
+    "rules": [
+      "BEGIN -> guard_active",
+      "WRITE -> guard_active",
+      "END -> previously guard_active",
+      "BEGIN while guard_active -> fail",
+      "trace_end -> not guard_active"
+    ],
+    "safety_property": "No WRITE occurs while the guard is inactive."
+  },
+  "execution_traces": [
+    [
+      "BEGIN",
+      "WRITE",
+      "WRITE",
+      "WRITE",
+      "WRITE",
+      "END"
+    ],
+    [
+      "BEGIN",
+      "WRITE",
+      "WRITE",
+      "END"
+    ]
+  ],
+  "failing_tests": [
+    {
+      "name": "nested_begin",
+      "trace": [
+        "BEGIN",
+        "WRITE",
+        "BEGIN",
+        "WRITE",
+        "END"
+      ],
+      "expected": "fail"
+    },
+    {
+      "name": "write_after_end",
+      "trace": [
+        "BEGIN",
+        "WRITE",
+        "WRITE",
+        "END",
+        "WRITE"
+      ],
+      "expected": "fail"
+    }
+  ],
+  "logs": [
+    {
+      "level": "ERROR",
+      "message": "Nested BEGIN corrupted the guard protocol",
+      "trace": [
+        "BEGIN",
+        "BEGIN",
+        "WRITE"
+      ]
+    }
+  ],
+  "counterexamples": [
+    {
+      "name": "end_without_begin",
+      "trace": [
+        "END"
+      ],
+      "reason": "close_without_open"
+    }
+  ],
+  "source_code_path": "validator.py",
+  "write_count": 4
+}

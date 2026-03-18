@@ -1,0 +1,264 @@
+{
+  "artifact_version": {
+    "phase": "real_world",
+    "timestamp_utc": "20260318T214742603973Z",
+    "git_sha": "4b3ad2a"
+  },
+  "domain": "real_world_raft_transfer",
+  "rows": [
+    {
+      "source_family": "etcd_raft_current_term",
+      "source_meta_symbol_id": "meta_05c5a3fb",
+      "target_family": "raft_rs_read_index_current_term",
+      "target_task_id": "raft_rs_read_index_current_term_train",
+      "mapping_class": "role_remap",
+      "mapping_confidence": 0.85,
+      "baseline_final_psi": 10.6,
+      "transfer_final_psi": 0.0,
+      "contradiction_gain": 10.6,
+      "reuse_application_count": 1,
+      "instantiated_meta_symbol_id": "meta_75d4dcf0",
+      "verifier_results": [
+        {
+          "status": "pass",
+          "passed": true,
+          "failed": false,
+          "counterexample": null,
+          "cost": 0.05112119999830611,
+          "artifact_ids": [],
+          "verifier_name": "raft_rs_read_index_current_term_verifier",
+          "details": {
+            "manifest_path": "fixtures\\raft_rs_read_index_current_term\\train\\manifest.json",
+            "source_path": "fixtures\\raft_rs_read_index_current_term\\train\\source_excerpt.rs",
+            "valid_trace_count": 2,
+            "invalid_trace_count": 5,
+            "upstream_commit": "aafb07c7bab439c6139926a77dfafc5b10e9bc84",
+            "markers": {
+              "commit_to_current_term": true,
+              "MessageType::MsgReadIndex": true,
+              "test_read_only_for_new_leader": true,
+              "leader has not yet committed in its term; dropping read index msg": true
+            },
+            "command": [
+              "python",
+              "verifiers\\raft_rs_read_index_current_term_verifier.py"
+            ],
+            "returncode": 0
+          }
+        },
+        {
+          "status": "pass",
+          "passed": true,
+          "failed": false,
+          "counterexample": null,
+          "cost": 5.600001895800233e-05,
+          "artifact_ids": [],
+          "verifier_name": "role_count_verifier",
+          "details": {
+            "parent_roles": {
+              "commit": 1,
+              "pending": 1
+            },
+            "blanket_roles": {
+              "stable": 1,
+              "prepare": 1,
+              "clear": 1,
+              "ack": 3
+            },
+            "expected_parent": {
+              "commit": 1,
+              "pending": 1
+            },
+            "expected_blanket": {
+              "stable": 1,
+              "prepare": 1,
+              "clear": 1,
+              "ack": 2
+            }
+          }
+        },
+        {
+          "status": "pass",
+          "passed": true,
+          "failed": false,
+          "counterexample": null,
+          "cost": 0.00020870001753792167,
+          "artifact_ids": [],
+          "verifier_name": "trace_contract_verifier",
+          "details": {
+            "manifest_path": "fixtures\\raft_rs_read_index_current_term\\train\\manifest.json",
+            "trace_contract_type": "gated_commit"
+          }
+        }
+      ],
+      "verifier_agreement": {
+        "verifier_count": 3,
+        "passed_count": 3,
+        "failed_count": 0,
+        "agreement_rate": 1.0,
+        "all_agree": true,
+        "disagreed": false
+      },
+      "source_runtime_metrics": {
+        "cycles_to_first_accepted_symbol": 4,
+        "verifier_calls_to_acceptance": 3,
+        "contradiction_before_acceptance": 5.2,
+        "false_candidate_count_before_acceptance": 0,
+        "rollback_count_before_acceptance": 0,
+        "proposal_stage_cycles": 0,
+        "max_proposal_support": 0.0,
+        "accepted_proposal_count": 0
+      },
+      "target_baseline_runtime_metrics": {
+        "cycles_to_first_accepted_symbol": null,
+        "verifier_calls_to_acceptance": 0,
+        "contradiction_before_acceptance": null,
+        "false_candidate_count_before_acceptance": 0,
+        "rollback_count_before_acceptance": 0,
+        "proposal_stage_cycles": 0,
+        "max_proposal_support": 0.0,
+        "accepted_proposal_count": 0
+      },
+      "target_transfer_runtime_metrics": {
+        "cycles_to_first_accepted_symbol": null,
+        "verifier_calls_to_acceptance": 0,
+        "contradiction_before_acceptance": null,
+        "false_candidate_count_before_acceptance": 0,
+        "rollback_count_before_acceptance": 0,
+        "proposal_stage_cycles": 0,
+        "max_proposal_support": 0.0,
+        "accepted_proposal_count": 0
+      },
+      "positive_transfer": true
+    },
+    {
+      "source_family": "raft_rs_read_index_current_term",
+      "source_meta_symbol_id": "meta_d6101b4f",
+      "target_family": "etcd_raft_current_term",
+      "target_task_id": "etcd_raft_current_term_train",
+      "mapping_class": "role_remap",
+      "mapping_confidence": 0.85,
+      "baseline_final_psi": 10.6,
+      "transfer_final_psi": 0.0,
+      "contradiction_gain": 10.6,
+      "reuse_application_count": 1,
+      "instantiated_meta_symbol_id": "meta_7b87e50e",
+      "verifier_results": [
+        {
+          "status": "pass",
+          "passed": true,
+          "failed": false,
+          "counterexample": null,
+          "cost": 0.051514499995391816,
+          "artifact_ids": [],
+          "verifier_name": "etcd_raft_current_term_verifier",
+          "details": {
+            "manifest_path": "fixtures\\etcd_raft_current_term\\train\\manifest.json",
+            "source_path": "fixtures\\etcd_raft_current_term\\train\\source_excerpt.go",
+            "valid_trace_count": 2,
+            "invalid_trace_count": 4,
+            "upstream_commit": "bcec33429c39a8bade4c2472cc68cf6038a0664f",
+            "markers": {
+              "committedEntryInCurrentTerm": true,
+              "TestLeaderOnlyCommitsLogFromCurrentTerm": true,
+              "pending MsgReadIndex should be released only after first commit in current term": true
+            },
+            "command": [
+              "python",
+              "verifiers\\etcd_raft_current_term_verifier.py"
+            ],
+            "returncode": 0
+          }
+        },
+        {
+          "status": "pass",
+          "passed": true,
+          "failed": false,
+          "counterexample": null,
+          "cost": 2.5899993488565087e-05,
+          "artifact_ids": [],
+          "verifier_name": "role_count_verifier",
+          "details": {
+            "parent_roles": {
+              "commit": 1,
+              "pending": 1
+            },
+            "blanket_roles": {
+              "ack": 3,
+              "stable": 1,
+              "prepare": 1,
+              "clear": 1
+            },
+            "expected_parent": {
+              "commit": 1,
+              "pending": 1
+            },
+            "expected_blanket": {
+              "ack": 2,
+              "stable": 1,
+              "prepare": 1,
+              "clear": 1
+            }
+          }
+        },
+        {
+          "status": "pass",
+          "passed": true,
+          "failed": false,
+          "counterexample": null,
+          "cost": 0.00015750000602565706,
+          "artifact_ids": [],
+          "verifier_name": "trace_contract_verifier",
+          "details": {
+            "manifest_path": "fixtures\\etcd_raft_current_term\\train\\manifest.json",
+            "trace_contract_type": "gated_commit"
+          }
+        }
+      ],
+      "verifier_agreement": {
+        "verifier_count": 3,
+        "passed_count": 3,
+        "failed_count": 0,
+        "agreement_rate": 1.0,
+        "all_agree": true,
+        "disagreed": false
+      },
+      "source_runtime_metrics": {
+        "cycles_to_first_accepted_symbol": 4,
+        "verifier_calls_to_acceptance": 3,
+        "contradiction_before_acceptance": 5.2,
+        "false_candidate_count_before_acceptance": 0,
+        "rollback_count_before_acceptance": 0,
+        "proposal_stage_cycles": 0,
+        "max_proposal_support": 0.0,
+        "accepted_proposal_count": 0
+      },
+      "target_baseline_runtime_metrics": {
+        "cycles_to_first_accepted_symbol": null,
+        "verifier_calls_to_acceptance": 0,
+        "contradiction_before_acceptance": null,
+        "false_candidate_count_before_acceptance": 0,
+        "rollback_count_before_acceptance": 0,
+        "proposal_stage_cycles": 0,
+        "max_proposal_support": 0.0,
+        "accepted_proposal_count": 0
+      },
+      "target_transfer_runtime_metrics": {
+        "cycles_to_first_accepted_symbol": null,
+        "verifier_calls_to_acceptance": 0,
+        "contradiction_before_acceptance": null,
+        "false_candidate_count_before_acceptance": 0,
+        "rollback_count_before_acceptance": 0,
+        "proposal_stage_cycles": 0,
+        "max_proposal_support": 0.0,
+        "accepted_proposal_count": 0
+      },
+      "positive_transfer": true
+    }
+  ],
+  "checks": {
+    "all_positive_transfers": true,
+    "all_role_remap": true,
+    "all_zero_final_tension": true
+  }
+}

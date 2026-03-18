@@ -1,0 +1,120 @@
+{
+  "task_id": "etcd_raft_current_term_train",
+  "family": "etcd_raft_current_term",
+  "split": "train",
+  "description": "Real-world external artifact bundle derived from etcd-io/raft. The target invariant is the Raft current-term commit rule: a leader may only advance commit by replica counting after an entry from its current term is committed.",
+  "roles": {
+    "leader_ready": "BECOME_LEADER",
+    "advance_commit": "ADVANCE_COMMIT_INDEX",
+    "prior_term_log": "PRIOR_TERM_LOG",
+    "replica_match": "REPLICA_MATCH",
+    "quorum_ready": "QUORUM_MATCH",
+    "current_term_entry": "CURRENT_TERM_ENTRY"
+  },
+  "canonical_roles": {
+    "leader_ready": "prepare",
+    "advance_commit": "commit",
+    "prior_term_log": "pending",
+    "replica_match": "ack",
+    "quorum_ready": "clear",
+    "current_term_entry": "stable"
+  },
+  "natural_language_spec": "etcd Raft follows the paper rule that a leader only commits entries from its current term by counting replicas. A prior-term log tail may still be present after leadership changes, but advancing commit requires quorum evidence and the presence of a current-term entry.",
+  "formal_spec": {
+    "rules": [
+      "PRIOR_TERM_LOG -> BECOME_LEADER",
+      "ADVANCE_COMMIT_INDEX -> BECOME_LEADER",
+      "ADVANCE_COMMIT_INDEX -> QUORUM_MATCH",
+      "ADVANCE_COMMIT_INDEX -> CURRENT_TERM_ENTRY",
+      "ADVANCE_COMMIT_INDEX -> two REPLICA_MATCH signals"
+    ],
+    "safety_property": "A leader must not advance commit on quorum replicas alone when the highest committed entry is still from a previous term."
+  },
+  "execution_traces": [
+    [
+      "BECOME_LEADER",
+      "QUORUM_MATCH",
+      "CURRENT_TERM_ENTRY",
+      "REPLICA_MATCH_1",
+      "REPLICA_MATCH_2",
+      "ADVANCE_COMMIT_INDEX"
+    ],
+    [
+      "BECOME_LEADER",
+      "QUORUM_MATCH",
+      "CURRENT_TERM_ENTRY",
+      "REPLICA_MATCH_1",
+      "REPLICA_MATCH_2",
+      "REPLICA_MATCH_3",
+      "ADVANCE_COMMIT_INDEX"
+    ]
+  ],
+  "failing_tests": [
+    {
+      "name": "TestLeaderOnlyCommitsLogFromCurrentTerm_previous_term_case_1",
+      "trace": [
+        "BECOME_LEADER",
+        "QUORUM_MATCH",
+        "REPLICA_MATCH_1",
+        "ADVANCE_COMMIT_INDEX"
+      ],
+      "expected": "fail"
+    },
+    {
+      "name": "TestLeaderOnlyCommitsLogFromCurrentTerm_previous_term_case_2",
+      "trace": [
+        "BECOME_LEADER",
+        "QUORUM_MATCH",
+        "REPLICA_MATCH_1",
+        "REPLICA_MATCH_2",
+        "ADVANCE_COMMIT_INDEX"
+      ],
+      "expected": "fail"
+    }
+  ],
+  "logs": [
+    {
+      "level": "ERROR",
+      "message": "pending MsgReadIndex should be released only after first commit in current term",
+      "trace": [
+        "BECOME_LEADER",
+        "QUORUM_MATCH",
+        "REPLICA_MATCH_1",
+        "REPLICA_MATCH_2",
+        "RELEASE_READ_INDEX"
+      ]
+    }
+  ],
+  "counterexamples": [
+    {
+      "name": "quorum_without_current_term_entry",
+      "trace": [
+        "BECOME_LEADER",
+        "QUORUM_MATCH",
+        "REPLICA_MATCH_1",
+        "REPLICA_MATCH_2",
+        "ADVANCE_COMMIT_INDEX"
+      ],
+      "reason": "prior_term_quorum_is_not_sufficient"
+    }
+  ],
+  "source_code_path": "source_excerpt.go",
+  "ack_count": 3,
+  "required_ack_count": 2,
+  "required_stable": true,
+  "provenance": {
+    "repo": "https://github.com/etcd-io/raft",
+    "upstream_commit": "bcec33429c39a8bade4c2472cc68cf6038a0664f",
+    "upstream_commit_short": "bcec334",
+    "upstream_commit_date": "2026-03-17",
+    "source_files": [
+      "raft.go",
+      "raft_paper_test.go"
+    ],
+    "source_urls": [
+      "https://github.com/etcd-io/raft/blob/bcec33429c39a8bade4c2472cc68cf6038a0664f/raft.go",
+      "https://github.com/etcd-io/raft/blob/bcec33429c39a8bade4c2472cc68cf6038a0664f/raft_paper_test.go"
+    ],
+    "license": "Apache-2.0"
+  }
+}

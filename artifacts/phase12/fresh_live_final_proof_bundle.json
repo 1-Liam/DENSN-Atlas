@@ -1,0 +1,200 @@
+{
+  "artifact_version": {
+    "phase": "phase11",
+    "timestamp_utc": "20260318T201355503007Z",
+    "git_sha": "ad9f6a1"
+  },
+  "sources": {
+    "gauntlet": "artifacts\\phase7\\gauntlet_summary.json",
+    "pathway_a": "artifacts\\phase8\\pathway_a_summary.json",
+    "proposal_quality": "artifacts\\phase2\\proposal_quality_summary.json",
+    "proposal_precision": "artifacts\\phase13\\proposal_precision_summary.json",
+    "protocol_runtime": "artifacts\\phase2\\proposal_runtime_summary.json",
+    "quorum_runtime": "artifacts\\phase4\\quorum_proposal_runtime_summary.json",
+    "verifier_agreement": "artifacts\\phase9\\verifier_agreement_summary.json",
+    "proof_manifest": "artifacts\\phase10\\proof_manifest.json"
+  },
+  "pathway_b_proof": {
+    "positive_remap_targets": {
+      "ladder_a": 2,
+      "ladder_b": 2
+    },
+    "blocked_negative_transfer": {
+      "ladder_a": 1,
+      "ladder_b": 1
+    },
+    "blocked_cross_ladder_misuse": 2,
+    "baseline_superiority": {
+      "densn_positive_transfer_pass_rate": 1.0,
+      "model_baseline_transfer_pass_rate": 0.375,
+      "densn_mean_cycles_to_first_accepted_symbol": 3.0,
+      "model_baseline_mean_cycles_to_first_accepted_symbol": null,
+      "densn_mean_cycles_to_useful_outcome": 3.0,
+      "model_baseline_mean_cycles_to_useful_outcome": 8.0,
+      "densn_mean_verifier_calls_to_acceptance": 1.0,
+      "model_baseline_mean_verifier_calls_to_acceptance": 3.0,
+      "densn_mean_contradiction_gain": 10.6,
+      "model_baseline_mean_contradiction_gain": 0.0
+    }
+  },
+  "pathway_a_proof": {
+    "compression_gain": 3.0,
+    "mdl_or_symbolic_tax_reduction": 3.0,
+    "ontology_size_before_after": {
+      "node_count_before": 20,
+      "node_count_after": 21,
+      "active_constraints_before": 6,
+      "active_constraints_after": 3
+    },
+    "downstream_cycles_reduction": 1.0,
+    "downstream_verifier_calls_reduction": 1.0,
+    "reuse_of_compressed_structure_count": 2,
+    "pathway_a_vs_cache_only_ablation": {
+      "average_active_constraint_reduction": 3.0
+    },
+    "pathway_a_vs_no_pathway_a_ablation": {
+      "average_active_constraint_reduction": 3.0,
+      "average_cycle_reduction": 1.0
+    }
+  },
+  "proposal_precision_campaign": {
+    "family": "credit_window",
+    "recommended_policy": "atom_shadow_reject_plus_abstain",
+    "fixed_model_held_constant": true,
+    "fixed_pool_source": {
+      "mode": "loaded_fixed_pool",
+      "source_kind": "fixed_pool_artifact",
+      "source_path": "artifacts\\phase13\\credit_window_fixed_proposal_pool.json",
+      "source_artifact_version": {
+        "phase": "phase13",
+        "timestamp_utc": "20260318T201313263256Z",
+        "git_sha": "ad9f6a1"
+      }
+    },
+    "false_accept_rate": 0.0,
+    "useful_recall": 1.0,
+    "triage_precision": 1.0,
+    "useful_accepted_before_first_symbol": 4,
+    "cycles_to_useful_outcome": 4,
+    "verifier_calls_to_useful_outcome": 1,
+    "contradiction_before_acceptance": 5.2,
+    "zero_direct_ontology_mutation": true
+  },
+  "live_model_contribution": {
+    "median_cycle_reduction": 0.25,
+    "contradiction_reduction_before_acceptance": {
+      "protocol_cycle_delta": 1,
+      "quorum_cycle_delta": 1,
+      "protocol_contradiction_before_acceptance_delta": 1.2000000000000002,
+      "quorum_contradiction_before_acceptance_delta": 1.2000000000000002
+    },
+    "protocol_false_accept_rate": 0.0,
+    "precision_campaign_false_accept_rate": 0.0,
+    "zero_direct_ontology_mutation": true
+  },
+  "verifier_reliability": {
+    "agreement_rate": 0.5,
+    "disagreement_rate": 0.5,
+    "disagreement_resolved_rate": 1.0,
+    "effective_agreement_quality": 1.0,
+    "unresolved_disagreement_count": 0,
+    "contradiction_added_from_disagreement_count": 4,
+    "verifier_surface_pairs": {
+      "lease_lock_verifier__role_count_verifier": 2,
+      "lease_lock_verifier__trace_contract_verifier": 2,
+      "role_count_verifier__trace_contract_verifier": 8,
+      "role_count_verifier__session_epoch_verifier": 2,
+      "session_epoch_verifier__trace_contract_verifier": 2,
+      "role_count_verifier__vote_majority_commit_verifier": 3,
+      "trace_contract_verifier__vote_majority_commit_verifier": 3,
+      "replication_barrier_verifier__role_count_verifier": 1,
+      "replication_barrier_verifier__trace_contract_verifier": 1
+    },
+    "family_diagnostics": {
+      "protocol_guard": {
+        "agreement": 2,
+        "true_structural_contradiction": 1,
+        "benign_verifier_surface_mismatch": 1
+      },
+      "quorum_commit": {
+        "agreement": 2,
+        "benign_verifier_surface_mismatch": 2
+      }
+    }
+  },
+  "provenance": {
+    "git_sha": "ad9f6a1",
+    "git_dirty": false,
+    "git_dirty_source": false,
+    "git_dirty_full": true,
+    "git_dirty_source_excludes": [
+      "artifacts/**",
+      "reports/**",
+      "repro/environment_manifest.json",
+      "repro/expected_metrics.json"
+    ],
+    "artifact_versions": {
+      "gauntlet": {
+        "phase": "phase7",
+        "timestamp_utc": "20260318T201343225480Z",
+        "git_sha": "ad9f6a1"
+      },
+      "pathway_a": {
+        "phase": "phase8",
+        "timestamp_utc": "20260318T201354277782Z",
+        "git_sha": "ad9f6a1"
+      },
+      "verifier_agreement": {
+        "phase": "phase9",
+        "timestamp_utc": "20260318T201354856989Z",
+        "git_sha": "ad9f6a1"
+      },
+      "proposal_quality": {
+        "phase": "phase2",
+        "timestamp_utc": "20260318T201334785669Z",
+        "git_sha": "ad9f6a1"
+      },
+      "proposal_precision": {
+        "phase": "phase13",
+        "timestamp_utc": "20260318T201339256540Z",
+        "git_sha": "ad9f6a1"
+      },
+      "protocol_runtime": {
+        "phase": "phase2",
+        "timestamp_utc": "20260318T201343971205Z",
+        "git_sha": "ad9f6a1"
+      },
+      "quorum_runtime": {
+        "phase": "phase4",
+        "timestamp_utc": "20260318T201345338169Z",
+        "git_sha": "ad9f6a1"
+      }
+    },
+    "commands_used": [
+      "python scripts/run_proposal_quality.py",
+      "python scripts/run_proposal_runtime.py",
+      "python scripts/run_quorum_proposal_runtime.py",
+      "python scripts/run_proposal_precision_campaign.py",
+      "python scripts/run_gauntlet.py",
+      "python scripts/run_gauntlet_report.py",
+      "python scripts/run_pathway_a.py",
+      "python scripts/run_verifier_agreement.py",
+      "python scripts/run_proof_manifest.py",
+      "python scripts/run_final_proof_bundle.py"
+    ],
+    "model_backend_manifest": {
+      "backend": "Groq OpenAI-compatible API",
+      "model_name": "openai/gpt-oss-120b",
+      "adapter": "GroqChatTransformerAdapter"
+    },
+    "fixture_hash_count": 30,
+    "core_frozen": true
+  },
+  "checks": {
+    "pathway_b_non_regressed": true,
+    "pathway_a_real": true,
+    "verifier_reliability_operationalized": true,
+    "provenance_hardened": true,
+    "proposal_quarantine_intact": true
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "artifact_version": {
+    "phase": "phase13",
+    "timestamp_utc": "20260318T201317720454Z",
+    "git_sha": "ad9f6a1"
+  },
+  "family": "protocol_guard",
+  "campaign_type": "reviewer_policy_precision_fixed_pool",
+  "adapter": {
+    "adapter": "GroqChatTransformerAdapter",
+    "configured": true,
+    "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+    "base_url": "https://api.groq.com/openai/v1/chat/completions",
+    "api_key_env": "GROQ_API_KEY",
+    "candidate_models": [
+      "openai/gpt-oss-120b",
+      "meta-llama/llama-4-scout-17b-16e-instruct",
+      "llama-3.3-70b-versatile",
+      "llama-3.1-8b-instant",
+      "groq/compound-mini"
+    ],
+    "quota_ledger_path": "artifacts\\runtime\\groq_quota_ledger.json"
+  },
+  "proposal_count": 6,
+  "proposals": [
+    {
+      "proposal_id": "proposal_af39bf8e",
+      "proposal_type": "constraint",
+      "source": "groq_chat_adapter",
+      "payload": {
+        "constraint": "guard_active",
+        "artifact": "formal rules",
+        "rationale": "safety property"
+      },
+      "task_id": "proposal_precision_protocol_guard_pool",
+      "metadata": {
+        "support_roles": [
+          "guard",
+          "spec",
+          "validator"
+        ]
+      }
+    },
+    {
+      "proposal_id": "proposal_52d9617c",
+      "proposal_type": "hidden_variable",
+      "source": "groq_chat_adapter",
+      "payload": {
+        "hidden_variable": "guard_active",
+        "artifact": "formal spec",
+        "rationale": "latent state"
+      },
+      "task_id": "proposal_precision_protocol_guard_pool",
+      "metadata": {
+        "support_roles": [
+          "guard",
+          "spec"
+        ]
+      }
+    },
+    {
+      "proposal_id": "proposal_4e9c7d1e",
+      "proposal_type": "semantic_label",
+      "source": "groq_chat_adapter",
+      "payload": {
+        "label": "GuardState",
+        "artifact": "formal spec",
+        "rationale": "structural role"
+      },
+      "task_id": "proposal_precision_protocol_guard_pool",
+      "metadata": {
+        "support_roles": [
+          "guard",
+          "spec"
+        ]
+      }
+    },
+    {
+      "proposal_id": "proposal_5be35488",
+      "proposal_type": "test",
+      "source": "groq_chat_adapter",
+      "payload": {
+        "test": "write_after_end",
+        "artifact": "failing tests",
+        "rationale": "counterexample"
+      },
+      "task_id": "proposal_precision_protocol_guard_pool",
+      "metadata": {
+        "support_roles": [
+          "end",
+          "test",
+          "write"
+        ]
+      }
+    },
+    {
+      "proposal_id": "proposal_21566af6",
+      "proposal_type": "test",
+      "source": "groq_chat_adapter",
+      "payload": {
+        "test": "end_before_begin",
+        "artifact": "failing tests",
+        "rationale": "counterexample"
+      },
+      "task_id": "proposal_precision_protocol_guard_pool",
+      "metadata": {
+        "support_roles": [
+          "begin",
+          "end",
+          "test"
+        ]
+      }
+    },
+    {
+      "proposal_id": "proposal_c62f0b7e",
+      "proposal_type": "evidence_query",
+      "source": "groq_chat_adapter",
+      "payload": {
+        "query": "guard protocol invariant hidden state verifier-backed abstraction"
+      },
+      "task_id": "proposal_precision_protocol_guard_pool",
+      "metadata": {
+        "support_roles": []
+      }
+    }
+  ],
+  "pool_source": {
+    "mode": "fresh_live_generation"
+  }
+}

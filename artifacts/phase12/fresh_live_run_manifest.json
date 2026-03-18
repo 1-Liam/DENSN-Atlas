@@ -1,0 +1,226 @@
+{
+  "artifact_version": {
+    "phase": "phase12",
+    "timestamp_utc": "20260318T201334617938Z",
+    "git_sha": "ad9f6a1"
+  },
+  "completed": true,
+  "fresh_bundle_ready": true,
+  "stages": [
+    {
+      "stage": "proposal_quality_protocol",
+      "command": [
+        "python",
+        "scripts/run_proposal_quality.py"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 1.347,
+      "ok": true,
+      "timeout": false,
+      "timeout_seconds": 300.0,
+      "stage_trace_path": "artifacts\\phase12\\proposal_quality_protocol_stage_trace.json",
+      "stage_trace": {
+        "current_stage": null,
+        "completed_stages": [
+          "benchmark_runner",
+          "graph_setup",
+          "adapter_setup",
+          "proposal_generation",
+          "proposal_review",
+          "metrics"
+        ],
+        "stage_timings_seconds": {
+          "benchmark_runner": 0.355,
+          "graph_setup": 0.003,
+          "adapter_setup": 0.01,
+          "proposal_generation": 0.791,
+          "proposal_review": 0.003,
+          "metrics": 0.0
+        },
+        "elapsed_seconds": 1.164
+      },
+      "request_trace_path": "artifacts\\phase12\\proposal_quality_protocol_request_trace.jsonl",
+      "stdout_tail": "[omitted in public release bundle; regenerate locally for full subprocess output]",
+      "stderr_tail": "[omitted in public release bundle; regenerate locally for full subprocess output]"
+    },
+    {
+      "stage": "proposal_runtime_protocol",
+      "command": [
+        "python",
+        "scripts/run_proposal_runtime.py"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 1.457,
+      "ok": true,
+      "timeout": false,
+      "timeout_seconds": 300.0,
+      "stage_trace_path": "artifacts\\phase12\\proposal_runtime_protocol_stage_trace.json",
+      "stage_trace": null,
+      "request_trace_path": "artifacts\\phase12\\proposal_runtime_protocol_request_trace.jsonl",
+      "stdout_tail": "[omitted in public release bundle; regenerate locally for full subprocess output]",
+      "stderr_tail": "[omitted in public release bundle; regenerate locally for full subprocess output]"
+    },
+    {
+      "stage": "proposal_runtime_quorum",
+      "command": [
+        "python",
+        "scripts/run_quorum_proposal_runtime.py"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 1.628,
+      "ok": true,
+      "timeout": false,
+      "timeout_seconds": 300.0,
+      "stage_trace_path": "artifacts\\phase12\\proposal_runtime_quorum_stage_trace.json",
+      "stage_trace": null,
+      "request_trace_path": "artifacts\\phase12\\proposal_runtime_quorum_request_trace.jsonl",
+      "stdout_tail": "[omitted in public release bundle; regenerate locally for full subprocess output]",
+      "stderr_tail": "[omitted in public release bundle; regenerate locally for full subprocess output]"
+    },
+    {
+      "stage": "proposal_precision_campaign",
+      "command": [
+        "python",
+        "scripts/run_proposal_precision_campaign.py"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 3.955,
+      "ok": true,
+      "timeout": false,
+      "timeout_seconds": 300.0,
+      "stage_trace_path": "artifacts\\phase12\\proposal_precision_campaign_stage_trace.json",
+      "stage_trace": {
+        "current_stage": null,
+        "completed_stages": [
+          "benchmark_runner",
+          "graph_setup",
+          "adapter_setup",
+          "proposal_generation",
+          "proposal_review",
+          "metrics"
+        ],
+        "stage_timings_seconds": {
+          "benchmark_runner": 0.896,
+          "graph_setup": 0.001,
+          "adapter_setup": 0.0,
+          "proposal_generation": 0.0,
+          "proposal_review": 0.002,
+          "metrics": 0.0
+        },
+        "elapsed_seconds": 0.903
+      },
+      "request_trace_path": "artifacts\\phase12\\proposal_precision_campaign_request_trace.jsonl",
+      "stdout_tail": "[omitted in public release bundle; regenerate locally for full subprocess output]",
+      "stderr_tail": "[omitted in public release bundle; regenerate locally for full subprocess output]"
+    },
+    {
+      "stage": "gauntlet",
+      "command": [
+        "python",
+        "scripts/run_gauntlet.py"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 10.863,
+      "ok": true,
+      "timeout": false,
+      "timeout_seconds": 900.0,
+      "stage_trace_path": "artifacts\\phase12\\gauntlet_stage_trace.json",
+      "stage_trace": null,
+      "request_trace_path": "artifacts\\phase12\\gauntlet_request_trace.jsonl",
+      "stdout_tail": "[omitted in public release bundle; regenerate locally for full subprocess output]",
+      "stderr_tail": "[omitted in public release bundle; regenerate locally for full subprocess output]"
+    },
+    {
+      "stage": "gauntlet_report",
+      "command": [
+        "python",
+        "scripts/run_gauntlet_report.py"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 0.201,
+      "ok": true,
+      "timeout": false,
+      "timeout_seconds": 180.0,
+      "stage_trace_path": "artifacts\\phase12\\gauntlet_report_stage_trace.json",
+      "stage_trace": null,
+      "request_trace_path": "artifacts\\phase12\\gauntlet_report_request_trace.jsonl",
+      "stdout_tail": "[omitted in public release bundle; regenerate locally for full subprocess output]",
+      "stderr_tail": "[omitted in public release bundle; regenerate locally for full subprocess output]"
+    },
+    {
+      "stage": "pathway_a",
+      "command": [
+        "python",
+        "scripts/run_pathway_a.py"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 0.578,
+      "ok": true,
+      "timeout": false,
+      "timeout_seconds": 300.0,
+      "stage_trace_path": "artifacts\\phase12\\pathway_a_stage_trace.json",
+      "stage_trace": null,
+      "request_trace_path": "artifacts\\phase12\\pathway_a_request_trace.jsonl",
+      "stdout_tail": "[omitted in public release bundle; regenerate locally for full subprocess output]",
+      "stderr_tail": "[omitted in public release bundle; regenerate locally for full subprocess output]"
+    },
+    {
+      "stage": "verifier_agreement",
+      "command": [
+        "python",
+        "scripts/run_verifier_agreement.py"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 0.179,
+      "ok": true,
+      "timeout": false,
+      "timeout_seconds": 300.0,
+      "stage_trace_path": "artifacts\\phase12\\verifier_agreement_stage_trace.json",
+      "stage_trace": null,
+      "request_trace_path": "artifacts\\phase12\\verifier_agreement_request_trace.jsonl",
+      "stdout_tail": "[omitted in public release bundle; regenerate locally for full subprocess output]",
+      "stderr_tail": "[omitted in public release bundle; regenerate locally for full subprocess output]"
+    },
+    {
+      "stage": "proof_manifest",
+      "command": [
+        "python",
+        "scripts/run_proof_manifest.py"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 0.461,
+      "ok": true,
+      "timeout": false,
+      "timeout_seconds": 120.0,
+      "stage_trace_path": "artifacts\\phase12\\proof_manifest_stage_trace.json",
+      "stage_trace": null,
+      "request_trace_path": "artifacts\\phase12\\proof_manifest_request_trace.jsonl",
+      "stdout_tail": "[omitted in public release bundle; regenerate locally for full subprocess output]",
+      "stderr_tail": "[omitted in public release bundle; regenerate locally for full subprocess output]"
+    },
+    {
+      "stage": "final_proof_bundle",
+      "command": [
+        "python",
+        "scripts/run_final_proof_bundle.py"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 0.201,
+      "ok": true,
+      "timeout": false,
+      "timeout_seconds": 120.0,
+      "stage_trace_path": "artifacts\\phase12\\final_proof_bundle_stage_trace.json",
+      "stage_trace": null,
+      "request_trace_path": "artifacts\\phase12\\final_proof_bundle_request_trace.jsonl",
+      "stdout_tail": "[omitted in public release bundle; regenerate locally for full subprocess output]",
+      "stderr_tail": "[omitted in public release bundle; regenerate locally for full subprocess output]"
+    }
+  ],
+  "blocker": null,
+  "output_artifacts": {
+    "fresh_live_gauntlet_summary": "artifacts\\phase12\\fresh_live_gauntlet_summary.json",
+    "fresh_live_final_proof_bundle": "artifacts\\phase12\\fresh_live_final_proof_bundle.json",
+    "proposal_precision_summary": "artifacts\\phase13\\proposal_precision_summary.json"
+  },
+  "resumed": false
+}

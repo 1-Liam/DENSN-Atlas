@@ -1,0 +1,445 @@
+{
+  "domain": "pathway_a_session_macro",
+  "artifact_version": {
+    "phase": "phase8",
+    "timestamp_utc": "20260318T201354277782Z",
+    "git_sha": "ad9f6a1"
+  },
+  "proof_contract": {
+    "core_mode": "core_frozen",
+    "core_api_version": "phase5_frozen_v1",
+    "expected_core_api_version": "phase5_frozen_v1",
+    "migration_note": null,
+    "proposal_adapter": null,
+    "verifier_stack": [
+      {
+        "claim_kind": "session_macro_compression",
+        "verifier_type": "SubprocessVerifier",
+        "command": [
+          "python",
+          "verifiers\\session_macro_verifier.py"
+        ],
+        "cwd": ".",
+        "timeout_seconds": 30.0
+      }
+    ],
+    "runtime_metrics": {
+      "cycles_to_first_accepted_symbol": 2,
+      "verifier_calls_to_acceptance": 1,
+      "contradiction_before_acceptance": 0.0,
+      "false_candidate_count_before_acceptance": 0,
+      "rollback_count_before_acceptance": 0,
+      "proposal_stage_cycles": 0,
+      "max_proposal_support": 0.0,
+      "accepted_proposal_count": 0
+    },
+    "lifecycle_metrics": {
+      "total": 1,
+      "accepted": 1,
+      "rejected": 0,
+      "retired": 0,
+      "accepted_ids": [
+        "meta_3dcfd494"
+      ],
+      "rejected_ids": [],
+      "retired_ids": [],
+      "total_reuse_passes": 2,
+      "total_reuse_failures": 0,
+      "total_verification_passes": 1,
+      "total_verification_failures": 0
+    }
+  },
+  "train_manifest_path": "fixtures\\session_macro\\train\\manifest.json",
+  "train_summary": {
+    "cycles_run": 2,
+    "final_psi": 0.0,
+    "registry": {
+      "total": 1,
+      "accepted": 1,
+      "rejected": 0,
+      "retired": 0
+    },
+    "telemetry_summary": {
+      "event_count": 5,
+      "event_type_counts": {
+        "cycle": 2,
+        "verification_feedback": 1,
+        "candidate_evaluated": 1,
+        "tsl_event": 1
+      },
+      "latest_metrics": {},
+      "last_cycle": {
+        "cycle": 1,
+        "psi": 0.0,
+        "q": 0.0,
+        "collapse_method": "stalled",
+        "active_constraints": 3
+      }
+    },
+    "runtime_metrics": {
+      "cycles_to_first_accepted_symbol": 2,
+      "verifier_calls_to_acceptance": 1,
+      "contradiction_before_acceptance": 0.0,
+      "false_candidate_count_before_acceptance": 0,
+      "rollback_count_before_acceptance": 0,
+      "proposal_stage_cycles": 0,
+      "max_proposal_support": 0.0,
+      "accepted_proposal_count": 0
+    },
+    "active_constraint_count": 3,
+    "node_count": 22,
+    "pathway_a_event_count": 1
+  },
+  "accepted_meta_symbol_id": "meta_3dcfd494",
+  "accepted_record": {
+    "meta_symbol_id": "meta_3dcfd494",
+    "structural_name": "META_3DCFD494",
+    "status": "accepted",
+    "semantic_label": "FinishStartUpdate",
+    "semantic_status": "grounded",
+    "interface_kind": "exact",
+    "interface_definition": {
+      "truth_table": {
+        "()": true
+      },
+      "notes": "exact_boundary_projection_interface"
+    },
+    "parent_cluster_symbol_ids": [
+      "SESSION_MACRO_TRAIN_FINISH_1",
+      "SESSION_MACRO_TRAIN_START_1",
+      "SESSION_MACRO_TRAIN_UPDATE_1"
+    ],
+    "markov_blanket_symbol_ids": [],
+    "admission_metrics": {
+      "novel": true,
+      "novelty_conflicts": [],
+      "verifier_passed": true,
+      "reuse_passed": true,
+      "heldout_contradiction_gain": 1.0,
+      "complexity_penalty": 6.0,
+      "rent_paid": true,
+      "compression_gain": 3.0,
+      "mdl_or_symbolic_tax_reduction": 3.0,
+      "ontology_size_before_after": {
+        "node_count_before": 20,
+        "node_count_after": 21,
+        "active_constraints_before": 6,
+        "active_constraints_after": 3
+      },
+      "downstream_cycles_reduction": 1.0,
+      "downstream_verifier_calls_reduction": 1.0,
+      "reuse_of_compressed_structure_count": 2,
+      "pathway_a_vs_cache_only_ablation": {
+        "average_active_constraint_reduction": 3.0
+      },
+      "pathway_a_vs_no_pathway_a_ablation": {
+        "average_active_constraint_reduction": 3.0,
+        "average_cycle_reduction": 1.0
+      },
+      "heldout_results": [
+        {
+          "task_id": "session_macro_heldout_a",
+          "fresh_pathway_a_cycles": 2,
+          "reuse_cycles": 1,
+          "cycle_reduction": 1.0,
+          "fresh_verifier_calls": 1,
+          "reuse_verifier_calls": 0,
+          "verifier_call_reduction": 1.0,
+          "reuse_applied": true,
+          "reuse_verification_passed": true,
+          "fresh_verification_passed": true,
+          "cache_only_active_constraints": 3,
+          "reuse_active_constraints": 0,
+          "no_pathway_a_active_constraints": 3,
+          "cache_only_active_constraint_reduction": 3.0,
+          "no_pathway_a_active_constraint_reduction": 3.0
+        },
+        {
+          "task_id": "session_macro_heldout_b",
+          "fresh_pathway_a_cycles": 2,
+          "reuse_cycles": 1,
+          "cycle_reduction": 1.0,
+          "fresh_verifier_calls": 1,
+          "reuse_verifier_calls": 0,
+          "verifier_call_reduction": 1.0,
+          "reuse_applied": true,
+          "reuse_verification_passed": true,
+          "fresh_verification_passed": true,
+          "cache_only_active_constraints": 3,
+          "reuse_active_constraints": 0,
+          "no_pathway_a_active_constraints": 3,
+          "cache_only_active_constraint_reduction": 3.0,
+          "no_pathway_a_active_constraint_reduction": 3.0
+        }
+      ],
+      "semantic_accept_count": 1,
+      "pathway": "A"
+    },
+    "audits": [
+      {
+        "label": "FinishStartUpdate",
+        "delta_psi": 0.05,
+        "accepted": true,
+        "reason": "bridge_pass"
+      }
+    ],
+    "verifications": [
+      {
+        "status": "pass",
+        "passed": true,
+        "failed": false,
+        "counterexample": null,
+        "cost": 0.05502649999107234,
+        "artifact_ids": [],
+        "verifier_name": "session_macro_verifier",
+        "details": {
+          "manifest_path": "fixtures\\session_macro\\train\\manifest.json",
+          "source_path": "fixtures\\session_macro\\train\\validator.py",
+          "valid_trace_count": 1,
+          "invalid_trace_count": 3,
+          "source_contains_explicit_session_macro": false,
+          "command": [
+            "python",
+            "verifiers\\session_macro_verifier.py"
+          ],
+          "returncode": 0
+        }
+      }
+    ],
+    "reuse": [
+      {
+        "task_id": "session_macro_heldout_a",
+        "reuse_passed": true,
+        "verifier_passed": true,
+        "reuse_applied": true,
+        "cycle_reduction": 1.0,
+        "verifier_call_reduction": 1.0
+      },
+      {
+        "task_id": "session_macro_heldout_b",
+        "reuse_passed": true,
+        "verifier_passed": true,
+        "reuse_applied": true,
+        "cycle_reduction": 1.0,
+        "verifier_call_reduction": 1.0
+      }
+    ],
+    "rejection_history": [],
+    "retirement_history": [],
+    "lineage": {
+      "created_at": "2026-03-18T20:13:54.309271+00:00",
+      "parent_cluster_symbol_ids": [
+        "SESSION_MACRO_TRAIN_FINISH_1",
+        "SESSION_MACRO_TRAIN_START_1",
+        "SESSION_MACRO_TRAIN_UPDATE_1"
+      ],
+      "markov_blanket_symbol_ids": []
+    },
+    "support_count": 3,
+    "failure_count": 0,
+    "verification_pass_count": 1,
+    "verification_fail_count": 0,
+    "reuse_pass_count": 2,
+    "reuse_fail_count": 0,
+    "times_reused": 2,
+    "metadata": {
+      "cluster_id": "coherent_1",
+      "tsl_pathway": "A",
+      "structural_roles": [
+        "finish",
+        "start",
+        "update"
+      ],
+      "proposal_support_roles": [],
+      "proposal_hidden_variables": []
+    },
+    "reuse_signature": {
+      "parent_roles": [
+        "finish",
+        "start",
+        "update"
+      ],
+      "blanket_roles": [],
+      "retired_constraint_signatures": [
+        {
+          "kind": "implies",
+          "roles": [
+            "start",
+            "finish"
+          ]
+        },
+        {
+          "kind": "implies",
+          "roles": [
+            "start",
+            "update"
+          ]
+        },
+        {
+          "kind": "implies",
+          "roles": [
+            "update",
+            "finish"
+          ]
+        }
+      ],
+      "canonical_parent_roles": [
+        "close",
+        "open",
+        "write"
+      ],
+      "canonical_blanket_roles": [],
+      "canonical_retired_constraint_signatures": [
+        {
+          "kind": "implies",
+          "roles": [
+            "open",
+            "close"
+          ]
+        },
+        {
+          "kind": "implies",
+          "roles": [
+            "open",
+            "write"
+          ]
+        },
+        {
+          "kind": "implies",
+          "roles": [
+            "write",
+            "close"
+          ]
+        }
+      ]
+    },
+    "admission_reason": "accepted:structural_relief"
+  },
+  "accepted_admission_metrics": {
+    "novel": true,
+    "novelty_conflicts": [],
+    "verifier_passed": true,
+    "reuse_passed": true,
+    "heldout_contradiction_gain": 1.0,
+    "complexity_penalty": 6.0,
+    "rent_paid": true,
+    "compression_gain": 3.0,
+    "mdl_or_symbolic_tax_reduction": 3.0,
+    "ontology_size_before_after": {
+      "node_count_before": 20,
+      "node_count_after": 21,
+      "active_constraints_before": 6,
+      "active_constraints_after": 3
+    },
+    "downstream_cycles_reduction": 1.0,
+    "downstream_verifier_calls_reduction": 1.0,
+    "reuse_of_compressed_structure_count": 2,
+    "pathway_a_vs_cache_only_ablation": {
+      "average_active_constraint_reduction": 3.0
+    },
+    "pathway_a_vs_no_pathway_a_ablation": {
+      "average_active_constraint_reduction": 3.0,
+      "average_cycle_reduction": 1.0
+    },
+    "heldout_results": [
+      {
+        "task_id": "session_macro_heldout_a",
+        "fresh_pathway_a_cycles": 2,
+        "reuse_cycles": 1,
+        "cycle_reduction": 1.0,
+        "fresh_verifier_calls": 1,
+        "reuse_verifier_calls": 0,
+        "verifier_call_reduction": 1.0,
+        "reuse_applied": true,
+        "reuse_verification_passed": true,
+        "fresh_verification_passed": true,
+        "cache_only_active_constraints": 3,
+        "reuse_active_constraints": 0,
+        "no_pathway_a_active_constraints": 3,
+        "cache_only_active_constraint_reduction": 3.0,
+        "no_pathway_a_active_constraint_reduction": 3.0
+      },
+      {
+        "task_id": "session_macro_heldout_b",
+        "fresh_pathway_a_cycles": 2,
+        "reuse_cycles": 1,
+        "cycle_reduction": 1.0,
+        "fresh_verifier_calls": 1,
+        "reuse_verifier_calls": 0,
+        "verifier_call_reduction": 1.0,
+        "reuse_applied": true,
+        "reuse_verification_passed": true,
+        "fresh_verification_passed": true,
+        "cache_only_active_constraints": 3,
+        "reuse_active_constraints": 0,
+        "no_pathway_a_active_constraints": 3,
+        "cache_only_active_constraint_reduction": 3.0,
+        "no_pathway_a_active_constraint_reduction": 3.0
+      }
+    ],
+    "semantic_accept_count": 1,
+    "pathway": "A"
+  },
+  "compression_gain": 3.0,
+  "mdl_or_symbolic_tax_reduction": 3.0,
+  "ontology_size_before_after": {
+    "node_count_before": 20,
+    "node_count_after": 21,
+    "active_constraints_before": 6,
+    "active_constraints_after": 3
+  },
+  "downstream_cycles_reduction": 1.0,
+  "downstream_verifier_calls_reduction": 1.0,
+  "reuse_of_compressed_structure_count": 2,
+  "pathway_a_vs_cache_only_ablation": {
+    "average_active_constraint_reduction": 3.0
+  },
+  "pathway_a_vs_no_pathway_a_ablation": {
+    "average_active_constraint_reduction": 3.0,
+    "average_cycle_reduction": 1.0
+  },
+  "heldout_results": [
+    {
+      "task_id": "session_macro_heldout_a",
+      "fresh_pathway_a_cycles": 2,
+      "reuse_cycles": 1,
+      "cycle_reduction": 1.0,
+      "fresh_verifier_calls": 1,
+      "reuse_verifier_calls": 0,
+      "verifier_call_reduction": 1.0,
+      "reuse_applied": true,
+      "reuse_verification_passed": true,
+      "fresh_verification_passed": true,
+      "cache_only_active_constraints": 3,
+      "reuse_active_constraints": 0,
+      "no_pathway_a_active_constraints": 3,
+      "cache_only_active_constraint_reduction": 3.0,
+      "no_pathway_a_active_constraint_reduction": 3.0
+    },
+    {
+      "task_id": "session_macro_heldout_b",
+      "fresh_pathway_a_cycles": 2,
+      "reuse_cycles": 1,
+      "cycle_reduction": 1.0,
+      "fresh_verifier_calls": 1,
+      "reuse_verifier_calls": 0,
+      "verifier_call_reduction": 1.0,
+      "reuse_applied": true,
+      "reuse_verification_passed": true,
+      "fresh_verification_passed": true,
+      "cache_only_active_constraints": 3,
+      "reuse_active_constraints": 0,
+      "no_pathway_a_active_constraints": 3,
+      "cache_only_active_constraint_reduction": 3.0,
+      "no_pathway_a_active_constraint_reduction": 3.0
+    }
+  ],
+  "checks": {
+    "accepted_pathway_a_symbol": true,
+    "compression_gain_positive": true,
+    "downstream_cycles_reduction_positive": true,
+    "downstream_verifier_calls_reduction_positive": true,
+    "cache_only_ablation_positive": true,
+    "no_pathway_a_ablation_positive": true
+  }
+}

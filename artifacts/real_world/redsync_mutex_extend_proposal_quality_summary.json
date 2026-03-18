@@ -1,0 +1,369 @@
+{
+  "family": "redsync_mutex_extend",
+  "artifact_version": {
+    "phase": "real_world",
+    "timestamp_utc": "20260318T223342819424Z",
+    "git_sha": "4b3ad2a"
+  },
+  "proof_contract": {
+    "core_mode": "core_frozen",
+    "core_api_version": "phase5_frozen_v1",
+    "expected_core_api_version": "phase5_frozen_v1",
+    "migration_note": null,
+    "proposal_adapter": {
+      "adapter": "ReplayProposalAdapter"
+    },
+    "verifier_stack": [],
+    "runtime_metrics": {
+      "cycles_to_first_accepted_symbol": null,
+      "verifier_calls_to_acceptance": 0,
+      "contradiction_before_acceptance": null,
+      "false_candidate_count_before_acceptance": 0,
+      "rollback_count_before_acceptance": 0,
+      "proposal_stage_cycles": 0,
+      "max_proposal_support": 0.0,
+      "accepted_proposal_count": 5
+    },
+    "lifecycle_metrics": {
+      "total": 0,
+      "accepted": 0,
+      "rejected": 0,
+      "retired": 0,
+      "accepted_ids": [],
+      "rejected_ids": [],
+      "retired_ids": [],
+      "total_reuse_passes": 0,
+      "total_reuse_failures": 0,
+      "total_verification_passes": 0,
+      "total_verification_failures": 0
+    },
+    "transfer_metrics": {}
+  },
+  "accepted_meta_symbol_id": "meta_d00b93d6",
+  "proposal_ids": [
+    "proposal_73835416",
+    "proposal_97045dd1",
+    "proposal_852b4372",
+    "proposal_cfec3c78",
+    "proposal_6f5d16e8",
+    "proposal_6af22f09"
+  ],
+  "reviewed_proposals": [
+    {
+      "proposal_id": "proposal_73835416",
+      "proposal_type": "constraint",
+      "source": "groq_chat_adapter",
+      "status": "accepted_for_structural_eval",
+      "review_reason": "artifact_structural_support",
+      "useful": true,
+      "payload": {
+        "constraint": "mutex_live",
+        "artifact": "redsync.go",
+        "rationale": "The mutex must be live for EXTEND to succeed"
+      },
+      "metadata": {
+        "support_roles": [
+          "acquire",
+          "extend",
+          "release"
+        ],
+        "support_surfaces": [
+          "counterexamples",
+          "description",
+          "execution_traces",
+          "failing_tests",
+          "formal_spec",
+          "logs",
+          "natural_language_spec",
+          "source_code"
+        ],
+        "support_surface_count": 8,
+        "review_score": 1.0,
+        "matched_tokens": [
+          "extend",
+          "for",
+          "live",
+          "must",
+          "mutex",
+          "the",
+          "to"
+        ]
+      }
+    },
+    {
+      "proposal_id": "proposal_97045dd1",
+      "proposal_type": "hidden_variable",
+      "source": "groq_chat_adapter",
+      "status": "accepted_for_structural_eval",
+      "review_reason": "artifact_structural_support",
+      "useful": true,
+      "payload": {
+        "hidden_variable": "mutex_live",
+        "artifact": "formal_spec",
+        "rationale": "The mutex live status is not explicitly tracked in the source code"
+      },
+      "metadata": {
+        "support_roles": [
+          "acquire",
+          "extend",
+          "release"
+        ],
+        "support_surfaces": [
+          "counterexamples",
+          "description",
+          "failing_tests",
+          "formal_spec",
+          "natural_language_spec",
+          "source_code"
+        ],
+        "support_surface_count": 6,
+        "review_score": 2.25,
+        "matched_tokens": [
+          "is",
+          "live",
+          "mutex",
+          "not",
+          "status",
+          "the"
+        ]
+      }
+    },
+    {
+      "proposal_id": "proposal_852b4372",
+      "proposal_type": "semantic_label",
+      "source": "groq_chat_adapter",
+      "status": "abstain_needs_more_evidence",
+      "review_reason": "semantic_labels_deferred_by_policy",
+      "useful": false,
+      "payload": {
+        "label": "mutex_owner",
+        "artifact": "redsync.go",
+        "rationale": "The mutex owner role is crucial for understanding the lock's status"
+      },
+      "metadata": {
+        "support_roles": [
+          "acquire",
+          "extend",
+          "release"
+        ],
+        "support_surfaces": [
+          "counterexamples",
+          "description",
+          "execution_traces",
+          "failing_tests",
+          "formal_spec",
+          "logs",
+          "natural_language_spec",
+          "source_code"
+        ],
+        "support_surface_count": 8,
+        "review_score": -0.5,
+        "matched_tokens": [
+          "for",
+          "is",
+          "lock",
+          "mutex",
+          "owner",
+          "s",
+          "status",
+          "the"
+        ]
+      }
+    },
+    {
+      "proposal_id": "proposal_cfec3c78",
+      "proposal_type": "test",
+      "source": "groq_chat_adapter",
+      "status": "accepted_for_structural_eval",
+      "review_reason": "artifact_structural_support",
+      "useful": true,
+      "payload": {
+        "test": "TestMutexExtendExpired",
+        "artifact": "mutex_test.go",
+        "rationale": "This test checks that EXTEND fails after expiry"
+      },
+      "metadata": {
+        "support_roles": [
+          "acquire",
+          "extend",
+          "release"
+        ],
+        "support_surfaces": [
+          "counterexamples",
+          "description",
+          "execution_traces",
+          "failing_tests",
+          "formal_spec",
+          "logs",
+          "natural_language_spec",
+          "source_code"
+        ],
+        "support_surface_count": 8,
+        "review_score": 2.5,
+        "matched_tokens": [
+          "after",
+          "expired",
+          "expiry",
+          "extend",
+          "fails",
+          "mutex",
+          "test",
+          "that",
+          "this"
+        ]
+      }
+    },
+    {
+      "proposal_id": "proposal_6f5d16e8",
+      "proposal_type": "test",
+      "source": "groq_chat_adapter",
+      "status": "accepted_for_structural_eval",
+      "review_reason": "artifact_structural_support",
+      "useful": true,
+      "payload": {
+        "test": "TestSetNXOnExtendFailsToAcquireLockWhenKeyIsTaken",
+        "artifact": "mutex_test.go",
+        "rationale": "This test checks that EXTEND fails when the lock is taken by another process"
+      },
+      "metadata": {
+        "support_roles": [
+          "acquire",
+          "extend"
+        ],
+        "support_surfaces": [
+          "counterexamples",
+          "description",
+          "execution_traces",
+          "failing_tests",
+          "formal_spec",
+          "logs",
+          "natural_language_spec",
+          "source_code"
+        ],
+        "support_surface_count": 8,
+        "review_score": 2.5,
+        "matched_tokens": [
+          "acquire",
+          "another",
+          "extend",
+          "fails",
+          "is",
+          "key",
+          "lock",
+          "nxon",
+          "set",
+          "taken",
+          "test",
+          "that",
+          "the",
+          "this",
+          "to",
+          "when"
+        ]
+      }
+    },
+    {
+      "proposal_id": "proposal_6af22f09",
+      "proposal_type": "evidence_query",
+      "source": "groq_chat_adapter",
+      "status": "accepted_for_structural_eval",
+      "review_reason": "artifact_structural_support",
+      "useful": true,
+      "payload": {
+        "query": "redsync mutex extend invariant hidden state lock live extend window"
+      },
+      "metadata": {
+        "support_roles": [
+          "acquire",
+          "extend",
+          "release"
+        ],
+        "support_surfaces": [
+          "counterexamples",
+          "description",
+          "execution_traces",
+          "failing_tests",
+          "formal_spec",
+          "logs",
+          "natural_language_spec",
+          "source_code"
+        ],
+        "support_surface_count": 8,
+        "review_score": 2.0,
+        "matched_tokens": [
+          "extend",
+          "invariant",
+          "live",
+          "lock",
+          "mutex",
+          "redsync",
+          "window"
+        ]
+      }
+    }
+  ],
+  "proposal_summary": {
+    "total": 6,
+    "status_counts": {
+      "accepted_for_structural_eval": 5,
+      "abstain_needs_more_evidence": 1
+    },
+    "type_counts": {
+      "constraint": 1,
+      "hidden_variable": 1,
+      "semantic_label": 1,
+      "test": 2,
+      "evidence_query": 1
+    },
+    "pending_ids": []
+  },
+  "telemetry_summary": {
+    "event_count": 12,
+    "event_type_counts": {
+      "proposal_submitted": 6,
+      "proposal_reviewed": 6
+    },
+    "latest_metrics": {},
+    "last_cycle": null
+  },
+  "adapter": "ReplayProposalAdapter",
+  "graph_before": {
+    "nodes": 16,
+    "edges": 47
+  },
+  "graph_after": {
+    "nodes": 16,
+    "edges": 47
+  },
+  "ontology_mutated_directly": false,
+  "stage_trace": {
+    "current_stage": null,
+    "completed_stages": [
+      "benchmark_runner",
+      "graph_setup",
+      "adapter_setup",
+      "proposal_generation",
+      "proposal_review",
+      "metrics"
+    ],
+    "stage_timings_seconds": {
+      "benchmark_runner": 0.136,
+      "graph_setup": 0.002,
+      "adapter_setup": 0.0,
+      "proposal_generation": 0.0,
+      "proposal_review": 0.003,
+      "metrics": 0.0
+    },
+    "elapsed_seconds": 0.142
+  },
+  "metrics": {
+    "total_proposals": 6,
+    "useful_proposals_total": 5,
+    "accepted_for_structural_eval": 5,
+    "useful_accepted": 5,
+    "naive_accept_all_precision": 0.8333333333333334,
+    "triage_precision": 1.0,
+    "useful_recall": 1.0,
+    "false_accept_rate": 0.0
+  }
+}

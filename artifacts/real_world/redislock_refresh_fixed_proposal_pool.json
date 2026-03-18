@@ -1,0 +1,264 @@
+{
+  "artifact_version": {
+    "phase": "phase13",
+    "timestamp_utc": "20260318T223343207209Z",
+    "git_sha": "4b3ad2a"
+  },
+  "family": "redislock_refresh",
+  "campaign_type": "reviewer_policy_precision_fixed_pool",
+  "adapter": {
+    "adapter": "ReplayProposalAdapter"
+  },
+  "proposal_count": 7,
+  "proposals": [
+    {
+      "proposal_id": "proposal_bc8d5eb6",
+      "proposal_type": "atom",
+      "source": "groq_chat_adapter",
+      "payload": {
+        "atom": "lock_live",
+        "artifact": "redislock",
+        "rationale": "lock liveness status"
+      },
+      "task_id": null,
+      "metadata": {
+        "support_roles": [
+          "obtain",
+          "refresh",
+          "release"
+        ],
+        "support_surfaces": [
+          "counterexamples",
+          "description",
+          "failing_tests",
+          "formal_spec",
+          "logs",
+          "natural_language_spec",
+          "source_code"
+        ],
+        "support_surface_count": 7,
+        "review_score": 0.5,
+        "matched_tokens": [
+          "live",
+          "lock"
+        ]
+      }
+    },
+    {
+      "proposal_id": "proposal_3be80234",
+      "proposal_type": "constraint",
+      "source": "groq_chat_adapter",
+      "payload": {
+        "constraint": "OBTAIN -> lock_live",
+        "artifact": "formal rules",
+        "rationale": "acquire lock"
+      },
+      "task_id": null,
+      "metadata": {
+        "support_roles": [
+          "obtain",
+          "refresh",
+          "release"
+        ],
+        "support_surfaces": [
+          "counterexamples",
+          "description",
+          "execution_traces",
+          "failing_tests",
+          "formal_spec",
+          "natural_language_spec",
+          "source_code"
+        ],
+        "support_surface_count": 7,
+        "review_score": 1.0,
+        "matched_tokens": [
+          "live",
+          "lock",
+          "obtain"
+        ]
+      }
+    },
+    {
+      "proposal_id": "proposal_b709189f",
+      "proposal_type": "hidden_variable",
+      "source": "groq_chat_adapter",
+      "payload": {
+        "hidden_variable": "lock_expired",
+        "artifact": "formal spec",
+        "rationale": "lock expiration status"
+      },
+      "task_id": null,
+      "metadata": {
+        "support_roles": [
+          "obtain",
+          "refresh",
+          "release"
+        ],
+        "support_surfaces": [
+          "counterexamples",
+          "description",
+          "failing_tests",
+          "formal_spec",
+          "natural_language_spec",
+          "source_code"
+        ],
+        "support_surface_count": 6,
+        "review_score": 0.75,
+        "matched_tokens": [
+          "expired",
+          "lock"
+        ]
+      }
+    },
+    {
+      "proposal_id": "proposal_e7793ff8",
+      "proposal_type": "semantic_label",
+      "source": "groq_chat_adapter",
+      "payload": {
+        "label": "lock_owner",
+        "artifact": "redislock",
+        "rationale": "lock ownership"
+      },
+      "task_id": null,
+      "metadata": {
+        "support_roles": [
+          "obtain",
+          "refresh",
+          "release"
+        ],
+        "support_surfaces": [
+          "counterexamples",
+          "description",
+          "failing_tests",
+          "formal_spec",
+          "logs",
+          "natural_language_spec",
+          "source_code"
+        ],
+        "support_surface_count": 7,
+        "review_score": 0.25,
+        "matched_tokens": [
+          "lock",
+          "ownership"
+        ]
+      }
+    },
+    {
+      "proposal_id": "proposal_f34fd1c8",
+      "proposal_type": "test",
+      "source": "groq_chat_adapter",
+      "payload": {
+        "test": "TestLock_Refresh_expired",
+        "artifact": "failing tests",
+        "rationale": "refresh expired lock"
+      },
+      "task_id": null,
+      "metadata": {
+        "support_roles": [
+          "obtain",
+          "refresh",
+          "release"
+        ],
+        "support_surfaces": [
+          "counterexamples",
+          "description",
+          "execution_traces",
+          "failing_tests",
+          "formal_spec",
+          "logs",
+          "natural_language_spec",
+          "source_code"
+        ],
+        "support_surface_count": 8,
+        "review_score": 2.5,
+        "matched_tokens": [
+          "expired",
+          "lock",
+          "refresh",
+          "test"
+        ]
+      }
+    },
+    {
+      "proposal_id": "proposal_6f9a7922",
+      "proposal_type": "test",
+      "source": "groq_chat_adapter",
+      "payload": {
+        "test": "TestLock_Release_expired",
+        "artifact": "failing tests",
+        "rationale": "release expired lock"
+      },
+      "task_id": null,
+      "metadata": {
+        "support_roles": [
+          "obtain",
+          "refresh",
+          "release"
+        ],
+        "support_surfaces": [
+          "counterexamples",
+          "description",
+          "execution_traces",
+          "failing_tests",
+          "formal_spec",
+          "natural_language_spec",
+          "source_code"
+        ],
+        "support_surface_count": 7,
+        "review_score": 1.5,
+        "matched_tokens": [
+          "expired",
+          "lock",
+          "release",
+          "test"
+        ]
+      }
+    },
+    {
+      "proposal_id": "proposal_0f5dbd67",
+      "proposal_type": "evidence_query",
+      "source": "groq_chat_adapter",
+      "payload": {
+        "query": "redislock refresh invariant hidden state lock live refresh window"
+      },
+      "task_id": null,
+      "metadata": {
+        "support_roles": [
+          "obtain",
+          "refresh",
+          "release"
+        ],
+        "support_surfaces": [
+          "counterexamples",
+          "description",
+          "execution_traces",
+          "failing_tests",
+          "formal_spec",
+          "logs",
+          "natural_language_spec",
+          "source_code"
+        ],
+        "support_surface_count": 8,
+        "review_score": 2.0,
+        "matched_tokens": [
+          "invariant",
+          "live",
+          "lock",
+          "redislock",
+          "refresh",
+          "window"
+        ]
+      }
+    }
+  ],
+  "pool_source": {
+    "mode": "loaded_fixed_pool",
+    "source_kind": "proposal_quality_summary",
+    "source_path": "artifacts\\real_world\\redislock_refresh_proposal_quality_summary.json",
+    "source_artifact_version": {
+      "phase": "real_world",
+      "timestamp_utc": "20260318T222027354226Z",
+      "git_sha": "4b3ad2a"
+    }
+  }
+}

@@ -1,0 +1,1182 @@
+{
+  "graph_version": "0.1.0",
+  "created_at": "2026-03-18T20:13:41.873912+00:00",
+  "updated_at": "2026-03-18T20:13:41.998808+00:00",
+  "nodes": [
+    {
+      "id": "credit_window_train",
+      "family": "credit_window",
+      "split": "train",
+      "description": "Credit-window controller inferred from specs, traces, failing tests, logs, and a buggy validator implementation that lacks an explicit credit-live latent state.",
+      "created_at": "2026-03-18T20:13:41.874200+00:00",
+      "metadata": {
+        "manifest_path": "fixtures\\credit_window\\train\\manifest.json"
+      },
+      "node_type": "Task"
+    },
+    {
+      "id": "evidence_56c00917",
+      "kind": "natural_language_spec",
+      "content_ref": "fixtures\\credit_window\\train\\manifest.json#natural_language_spec",
+      "source": "artifact_manifest",
+      "created_at": "2026-03-18T20:13:41.874222+00:00",
+      "task_id": "credit_window_train",
+      "metadata": {
+        "inline": true
+      },
+      "node_type": "Evidence"
+    },
+    {
+      "id": "evidence_db98f941",
+      "kind": "formal_spec",
+      "content_ref": "fixtures\\credit_window\\train\\manifest.json#formal_spec",
+      "source": "artifact_manifest",
+      "created_at": "2026-03-18T20:13:41.874236+00:00",
+      "task_id": "credit_window_train",
+      "metadata": {
+        "inline": true
+      },
+      "node_type": "Evidence"
+    },
+    {
+      "id": "evidence_ab7a5e8b",
+      "kind": "execution_traces",
+      "content_ref": "fixtures\\credit_window\\train\\manifest.json#execution_traces",
+      "source": "artifact_manifest",
+      "created_at": "2026-03-18T20:13:41.874246+00:00",
+      "task_id": "credit_window_train",
+      "metadata": {
+        "inline": true
+      },
+      "node_type": "Evidence"
+    },
+    {
+      "id": "evidence_ef6ff0d9",
+      "kind": "failing_tests",
+      "content_ref": "fixtures\\credit_window\\train\\manifest.json#failing_tests",
+      "source": "artifact_manifest",
+      "created_at": "2026-03-18T20:13:41.874256+00:00",
+      "task_id": "credit_window_train",
+      "metadata": {
+        "inline": true
+      },
+      "node_type": "Evidence"
+    },
+    {
+      "id": "evidence_ce990390",
+      "kind": "logs",
+      "content_ref": "fixtures\\credit_window\\train\\manifest.json#logs",
+      "source": "artifact_manifest",
+      "created_at": "2026-03-18T20:13:41.874266+00:00",
+      "task_id": "credit_window_train",
+      "metadata": {
+        "inline": true
+      },
+      "node_type": "Evidence"
+    },
+    {
+      "id": "evidence_98c270b7",
+      "kind": "counterexamples",
+      "content_ref": "fixtures\\credit_window\\train\\manifest.json#counterexamples",
+      "source": "artifact_manifest",
+      "created_at": "2026-03-18T20:13:41.874276+00:00",
+      "task_id": "credit_window_train",
+      "metadata": {
+        "inline": true
+      },
+      "node_type": "Evidence"
+    },
+    {
+      "id": "evidence_45b518e0",
+      "kind": "source_code_path",
+      "content_ref": "fixtures\\credit_window\\train\\validator.py",
+      "source": "artifact_manifest",
+      "created_at": "2026-03-18T20:13:41.874377+00:00",
+      "task_id": "credit_window_train",
+      "metadata": {
+        "path": "fixtures\\credit_window\\train\\validator.py"
+      },
+      "node_type": "Evidence"
+    },
+    {
+      "id": "TRAIN_CREDIT_GRANT",
+      "name": "GRANT",
+      "truth_value": true,
+      "locked": true,
+      "created_at": "2026-03-18T20:13:41.874394+00:00",
+      "updated_at": "2026-03-18T20:13:41.874395+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "provenance_ids": [
+        "evidence_56c00917",
+        "evidence_db98f941",
+        "evidence_ab7a5e8b",
+        "evidence_ef6ff0d9",
+        "evidence_ce990390",
+        "evidence_98c270b7",
+        "evidence_45b518e0"
+      ],
+      "task_ids": [],
+      "metadata": {
+        "role": "grant",
+        "canonical_role": "open",
+        "task_id": "credit_window_train"
+      },
+      "node_type": "AtomicSymbol"
+    },
+    {
+      "id": "TRAIN_CREDIT_REVOKE",
+      "name": "REVOKE",
+      "truth_value": true,
+      "locked": true,
+      "created_at": "2026-03-18T20:13:41.874398+00:00",
+      "updated_at": "2026-03-18T20:13:41.874399+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "provenance_ids": [
+        "evidence_56c00917",
+        "evidence_db98f941",
+        "evidence_ab7a5e8b",
+        "evidence_ef6ff0d9",
+        "evidence_ce990390",
+        "evidence_98c270b7",
+        "evidence_45b518e0"
+      ],
+      "task_ids": [],
+      "metadata": {
+        "role": "revoke",
+        "canonical_role": "close",
+        "task_id": "credit_window_train"
+      },
+      "node_type": "AtomicSymbol"
+    },
+    {
+      "id": "TRAIN_CREDIT_BALANCE",
+      "name": "BALANCE",
+      "truth_value": true,
+      "locked": true,
+      "created_at": "2026-03-18T20:13:41.874405+00:00",
+      "updated_at": "2026-03-18T20:13:41.874406+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "provenance_ids": [
+        "evidence_56c00917",
+        "evidence_db98f941",
+        "evidence_ab7a5e8b",
+        "evidence_ef6ff0d9",
+        "evidence_ce990390",
+        "evidence_98c270b7",
+        "evidence_45b518e0"
+      ],
+      "task_ids": [],
+      "metadata": {
+        "role": "balance",
+        "canonical_role": "epoch",
+        "task_id": "credit_window_train"
+      },
+      "node_type": "AtomicSymbol"
+    },
+    {
+      "id": "TRAIN_CREDIT_CHARGE_1",
+      "name": "CHARGE_1",
+      "truth_value": true,
+      "locked": true,
+      "created_at": "2026-03-18T20:13:41.874413+00:00",
+      "updated_at": "2026-03-18T20:13:41.874414+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "provenance_ids": [
+        "evidence_56c00917",
+        "evidence_db98f941",
+        "evidence_ab7a5e8b",
+        "evidence_ef6ff0d9",
+        "evidence_ce990390",
+        "evidence_98c270b7",
+        "evidence_45b518e0"
+      ],
+      "task_ids": [],
+      "metadata": {
+        "role": "charge",
+        "canonical_role": "write",
+        "position": 1,
+        "task_id": "credit_window_train"
+      },
+      "node_type": "AtomicSymbol"
+    },
+    {
+      "id": "TRAIN_CREDIT_CHARGE_2",
+      "name": "CHARGE_2",
+      "truth_value": true,
+      "locked": true,
+      "created_at": "2026-03-18T20:13:41.874419+00:00",
+      "updated_at": "2026-03-18T20:13:41.874420+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "provenance_ids": [
+        "evidence_56c00917",
+        "evidence_db98f941",
+        "evidence_ab7a5e8b",
+        "evidence_ef6ff0d9",
+        "evidence_ce990390",
+        "evidence_98c270b7",
+        "evidence_45b518e0"
+      ],
+      "task_ids": [],
+      "metadata": {
+        "role": "charge",
+        "canonical_role": "write",
+        "position": 2,
+        "task_id": "credit_window_train"
+      },
+      "node_type": "AtomicSymbol"
+    },
+    {
+      "id": "TRAIN_CREDIT_C_GRANT_REVOKE_XOR",
+      "constraint_kind": "xor",
+      "symbol_ids": [
+        "TRAIN_CREDIT_GRANT",
+        "TRAIN_CREDIT_REVOKE"
+      ],
+      "weight": 1.0,
+      "base_weight": 1.0,
+      "max_weight": 16.0,
+      "locked": false,
+      "active": false,
+      "created_at": "2026-03-18T20:13:41.874427+00:00",
+      "updated_at": "2026-03-18T20:13:41.874428+00:00",
+      "support_count": 0,
+      "failure_count": 8,
+      "persistence": 0,
+      "provenance_ids": [
+        "evidence_db98f941",
+        "evidence_ef6ff0d9"
+      ],
+      "evaluator_key": "",
+      "metadata": {
+        "rule": "grant_revoke_mutex",
+        "manifest_path": "fixtures\\credit_window\\train\\manifest.json",
+        "abstracted_by": "meta_259daf21"
+      },
+      "node_type": "Constraint"
+    },
+    {
+      "id": "TRAIN_CREDIT_C_GRANT_CHARGE",
+      "constraint_kind": "implies",
+      "symbol_ids": [
+        "TRAIN_CREDIT_GRANT",
+        "TRAIN_CREDIT_CHARGE_1"
+      ],
+      "weight": 1.0,
+      "base_weight": 1.0,
+      "max_weight": 16.0,
+      "locked": false,
+      "active": true,
+      "created_at": "2026-03-18T20:13:41.874431+00:00",
+      "updated_at": "2026-03-18T20:13:41.874432+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "persistence": 0,
+      "provenance_ids": [
+        "evidence_db98f941",
+        "evidence_56c00917"
+      ],
+      "evaluator_key": "",
+      "metadata": {
+        "rule": "grant_implies_charge",
+        "manifest_path": "fixtures\\credit_window\\train\\manifest.json"
+      },
+      "node_type": "Constraint"
+    },
+    {
+      "id": "TRAIN_CREDIT_C_GRANT_BALANCE",
+      "constraint_kind": "implies",
+      "symbol_ids": [
+        "TRAIN_CREDIT_GRANT",
+        "TRAIN_CREDIT_BALANCE"
+      ],
+      "weight": 1.0,
+      "base_weight": 1.0,
+      "max_weight": 16.0,
+      "locked": false,
+      "active": true,
+      "created_at": "2026-03-18T20:13:41.874435+00:00",
+      "updated_at": "2026-03-18T20:13:41.874436+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "persistence": 0,
+      "provenance_ids": [
+        "evidence_db98f941",
+        "evidence_ab7a5e8b"
+      ],
+      "evaluator_key": "",
+      "metadata": {
+        "rule": "grant_implies_balance",
+        "manifest_path": "fixtures\\credit_window\\train\\manifest.json"
+      },
+      "node_type": "Constraint"
+    },
+    {
+      "id": "TRAIN_CREDIT_C_CHARGE_BALANCE_1",
+      "constraint_kind": "implies",
+      "symbol_ids": [
+        "TRAIN_CREDIT_CHARGE_1",
+        "TRAIN_CREDIT_BALANCE"
+      ],
+      "weight": 1.0,
+      "base_weight": 1.0,
+      "max_weight": 16.0,
+      "locked": false,
+      "active": true,
+      "created_at": "2026-03-18T20:13:41.874440+00:00",
+      "updated_at": "2026-03-18T20:13:41.874441+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "persistence": 0,
+      "provenance_ids": [
+        "evidence_db98f941",
+        "evidence_ce990390"
+      ],
+      "evaluator_key": "",
+      "metadata": {
+        "rule": "charge_requires_balance",
+        "manifest_path": "fixtures\\credit_window\\train\\manifest.json"
+      },
+      "node_type": "Constraint"
+    },
+    {
+      "id": "TRAIN_CREDIT_C_CHARGE_CHAIN_1",
+      "constraint_kind": "implies",
+      "symbol_ids": [
+        "TRAIN_CREDIT_CHARGE_1",
+        "TRAIN_CREDIT_CHARGE_2"
+      ],
+      "weight": 1.0,
+      "base_weight": 1.0,
+      "max_weight": 16.0,
+      "locked": false,
+      "active": true,
+      "created_at": "2026-03-18T20:13:41.874444+00:00",
+      "updated_at": "2026-03-18T20:13:41.874445+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "persistence": 0,
+      "provenance_ids": [
+        "evidence_ab7a5e8b",
+        "evidence_98c270b7"
+      ],
+      "evaluator_key": "",
+      "metadata": {
+        "rule": "charge_progression",
+        "manifest_path": "fixtures\\credit_window\\train\\manifest.json"
+      },
+      "node_type": "Constraint"
+    },
+    {
+      "id": "TRAIN_CREDIT_C_CHARGE_BALANCE_2",
+      "constraint_kind": "implies",
+      "symbol_ids": [
+        "TRAIN_CREDIT_CHARGE_2",
+        "TRAIN_CREDIT_BALANCE"
+      ],
+      "weight": 1.0,
+      "base_weight": 1.0,
+      "max_weight": 16.0,
+      "locked": false,
+      "active": true,
+      "created_at": "2026-03-18T20:13:41.874448+00:00",
+      "updated_at": "2026-03-18T20:13:41.874449+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "persistence": 0,
+      "provenance_ids": [
+        "evidence_db98f941",
+        "evidence_ce990390"
+      ],
+      "evaluator_key": "",
+      "metadata": {
+        "rule": "charge_requires_balance",
+        "manifest_path": "fixtures\\credit_window\\train\\manifest.json"
+      },
+      "node_type": "Constraint"
+    },
+    {
+      "id": "TRAIN_CREDIT_C_CHARGE_CHAIN_2",
+      "constraint_kind": "implies",
+      "symbol_ids": [
+        "TRAIN_CREDIT_CHARGE_2",
+        "TRAIN_CREDIT_REVOKE"
+      ],
+      "weight": 1.0,
+      "base_weight": 1.0,
+      "max_weight": 16.0,
+      "locked": false,
+      "active": true,
+      "created_at": "2026-03-18T20:13:41.874452+00:00",
+      "updated_at": "2026-03-18T20:13:41.874453+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "persistence": 0,
+      "provenance_ids": [
+        "evidence_ab7a5e8b",
+        "evidence_98c270b7"
+      ],
+      "evaluator_key": "",
+      "metadata": {
+        "rule": "charge_progression",
+        "manifest_path": "fixtures\\credit_window\\train\\manifest.json"
+      },
+      "node_type": "Constraint"
+    },
+    {
+      "id": "meta_259daf21",
+      "structural_name": "META_259DAF21",
+      "truth_value": true,
+      "locked": false,
+      "semantic_label": "BalanceChargeGrantRevoke",
+      "semantic_status": "grounded",
+      "interface_kind": "exact",
+      "interface_inputs": [
+        "TRAIN_CREDIT_BALANCE",
+        "TRAIN_CREDIT_CHARGE_1",
+        "TRAIN_CREDIT_CHARGE_2"
+      ],
+      "interface_definition": {
+        "truth_table": {
+          "TRAIN_CREDIT_BALANCE=0,TRAIN_CREDIT_CHARGE_1=0,TRAIN_CREDIT_CHARGE_2=0": false,
+          "TRAIN_CREDIT_BALANCE=0,TRAIN_CREDIT_CHARGE_1=0,TRAIN_CREDIT_CHARGE_2=1": false,
+          "TRAIN_CREDIT_BALANCE=0,TRAIN_CREDIT_CHARGE_1=1,TRAIN_CREDIT_CHARGE_2=0": false,
+          "TRAIN_CREDIT_BALANCE=0,TRAIN_CREDIT_CHARGE_1=1,TRAIN_CREDIT_CHARGE_2=1": false,
+          "TRAIN_CREDIT_BALANCE=1,TRAIN_CREDIT_CHARGE_1=0,TRAIN_CREDIT_CHARGE_2=0": false,
+          "TRAIN_CREDIT_BALANCE=1,TRAIN_CREDIT_CHARGE_1=0,TRAIN_CREDIT_CHARGE_2=1": false,
+          "TRAIN_CREDIT_BALANCE=1,TRAIN_CREDIT_CHARGE_1=1,TRAIN_CREDIT_CHARGE_2=0": true,
+          "TRAIN_CREDIT_BALANCE=1,TRAIN_CREDIT_CHARGE_1=1,TRAIN_CREDIT_CHARGE_2=1": true
+        },
+        "notes": "exact_boundary_projection_interface"
+      },
+      "parent_cluster_symbol_ids": [
+        "TRAIN_CREDIT_GRANT",
+        "TRAIN_CREDIT_REVOKE"
+      ],
+      "markov_blanket_symbol_ids": [
+        "TRAIN_CREDIT_BALANCE",
+        "TRAIN_CREDIT_CHARGE_1",
+        "TRAIN_CREDIT_CHARGE_2"
+      ],
+      "admission_status": "accepted",
+      "admission_metrics": {
+        "novel": true,
+        "novelty_conflicts": [],
+        "verifier_passed": true,
+        "reuse_passed": true,
+        "heldout_contradiction_gain": 10.6,
+        "complexity_penalty": 5.0,
+        "rent_paid": true,
+        "heldout_results": [
+          {
+            "task_id": "credit_window_heldout_3",
+            "family": "credit_window",
+            "split": "heldout",
+            "baseline_final_psi": 10.6,
+            "reuse_final_psi": 0.0,
+            "contradiction_gain": 10.6,
+            "reuse_applied": true,
+            "verifier_passed": true
+          }
+        ],
+        "semantic_accept_count": 1,
+        "pathway": "B"
+      },
+      "created_at": "2026-03-18T20:13:41.876815+00:00",
+      "updated_at": "2026-03-18T20:13:41.998832+00:00",
+      "provenance_ids": [],
+      "metadata": {
+        "cluster_id": "hotspot_1",
+        "tsl_pathway": "B",
+        "structural_roles": [
+          "grant",
+          "revoke",
+          "balance",
+          "charge",
+          "charge"
+        ],
+        "proposal_support_roles": [],
+        "proposal_hidden_variables": []
+      },
+      "node_type": "MetaSymbol"
+    },
+    {
+      "id": "verifier_2200d275",
+      "verifier_name": "credit_window_verifier",
+      "artifact_kind": "verification_result",
+      "status": "pass",
+      "cost": 0.05249809997621924,
+      "counterexample_ref": null,
+      "created_at": "2026-03-18T20:13:41.998797+00:00",
+      "metadata": {
+        "details": {
+          "manifest_path": "fixtures\\credit_window\\train\\manifest.json",
+          "source_path": "fixtures\\credit_window\\train\\validator.py",
+          "valid_trace_count": 2,
+          "invalid_trace_count": 4,
+          "source_contains_explicit_credit_live": false,
+          "command": [
+            "python",
+            "verifiers\\credit_window_verifier.py"
+          ],
+          "returncode": 0
+        }
+      },
+      "node_type": "VerifierArtifact"
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge_7ce73902",
+      "src_id": "evidence_56c00917",
+      "dst_id": "credit_window_train",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:41.874230+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_f0ba2cc8",
+      "src_id": "evidence_db98f941",
+      "dst_id": "credit_window_train",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:41.874241+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_2d39b474",
+      "src_id": "evidence_ab7a5e8b",
+      "dst_id": "credit_window_train",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:41.874251+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_a7ee622f",
+      "src_id": "evidence_ef6ff0d9",
+      "dst_id": "credit_window_train",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:41.874260+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_defe63b1",
+      "src_id": "evidence_ce990390",
+      "dst_id": "credit_window_train",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:41.874270+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_3e8e6764",
+      "src_id": "evidence_98c270b7",
+      "dst_id": "credit_window_train",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:41.874282+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_842b3549",
+      "src_id": "evidence_45b518e0",
+      "dst_id": "credit_window_train",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:41.874383+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_b9f2b3cf",
+      "src_id": "TRAIN_CREDIT_GRANT",
+      "dst_id": "TRAIN_CREDIT_C_GRANT_REVOKE_XOR",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T20:13:41.874459+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_dfb6272a",
+      "src_id": "TRAIN_CREDIT_REVOKE",
+      "dst_id": "TRAIN_CREDIT_C_GRANT_REVOKE_XOR",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T20:13:41.874463+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_1814bb72",
+      "src_id": "TRAIN_CREDIT_GRANT",
+      "dst_id": "TRAIN_CREDIT_C_GRANT_CHARGE",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T20:13:41.874469+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_232968d3",
+      "src_id": "TRAIN_CREDIT_CHARGE_1",
+      "dst_id": "TRAIN_CREDIT_C_GRANT_CHARGE",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T20:13:41.874473+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_b7bda195",
+      "src_id": "TRAIN_CREDIT_GRANT",
+      "dst_id": "TRAIN_CREDIT_C_GRANT_BALANCE",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T20:13:41.874478+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_8b401987",
+      "src_id": "TRAIN_CREDIT_BALANCE",
+      "dst_id": "TRAIN_CREDIT_C_GRANT_BALANCE",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T20:13:41.874482+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_118e78d1",
+      "src_id": "TRAIN_CREDIT_CHARGE_1",
+      "dst_id": "TRAIN_CREDIT_C_CHARGE_BALANCE_1",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T20:13:41.874487+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_c9305a87",
+      "src_id": "TRAIN_CREDIT_BALANCE",
+      "dst_id": "TRAIN_CREDIT_C_CHARGE_BALANCE_1",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T20:13:41.874491+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_0ce7b839",
+      "src_id": "TRAIN_CREDIT_CHARGE_1",
+      "dst_id": "TRAIN_CREDIT_C_CHARGE_CHAIN_1",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T20:13:41.874496+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_a3150cb9",
+      "src_id": "TRAIN_CREDIT_CHARGE_2",
+      "dst_id": "TRAIN_CREDIT_C_CHARGE_CHAIN_1",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T20:13:41.874500+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_ec4d62c5",
+      "src_id": "TRAIN_CREDIT_CHARGE_2",
+      "dst_id": "TRAIN_CREDIT_C_CHARGE_BALANCE_2",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T20:13:41.874506+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_2608bf05",
+      "src_id": "TRAIN_CREDIT_BALANCE",
+      "dst_id": "TRAIN_CREDIT_C_CHARGE_BALANCE_2",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T20:13:41.874510+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_2d866a5d",
+      "src_id": "TRAIN_CREDIT_CHARGE_2",
+      "dst_id": "TRAIN_CREDIT_C_CHARGE_CHAIN_2",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T20:13:41.874515+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_70d7660a",
+      "src_id": "TRAIN_CREDIT_REVOKE",
+      "dst_id": "TRAIN_CREDIT_C_CHARGE_CHAIN_2",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T20:13:41.874519+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_f5f0bb1d",
+      "src_id": "evidence_56c00917",
+      "dst_id": "TRAIN_CREDIT_GRANT",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:41.874525+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_c86d25ac",
+      "src_id": "evidence_56c00917",
+      "dst_id": "TRAIN_CREDIT_REVOKE",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:41.874530+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_045b3116",
+      "src_id": "evidence_56c00917",
+      "dst_id": "TRAIN_CREDIT_BALANCE",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:41.874534+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_1ba72c9b",
+      "src_id": "evidence_56c00917",
+      "dst_id": "TRAIN_CREDIT_CHARGE_1",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:41.874538+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_784b6a2b",
+      "src_id": "evidence_56c00917",
+      "dst_id": "TRAIN_CREDIT_CHARGE_2",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:41.874542+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_5929d2f4",
+      "src_id": "evidence_db98f941",
+      "dst_id": "TRAIN_CREDIT_GRANT",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:41.874545+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_ba590e3e",
+      "src_id": "evidence_db98f941",
+      "dst_id": "TRAIN_CREDIT_REVOKE",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:41.874549+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_506becd7",
+      "src_id": "evidence_db98f941",
+      "dst_id": "TRAIN_CREDIT_BALANCE",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:41.874553+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_ae72a8ad",
+      "src_id": "evidence_db98f941",
+      "dst_id": "TRAIN_CREDIT_CHARGE_1",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:41.874557+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_a811ff25",
+      "src_id": "evidence_db98f941",
+      "dst_id": "TRAIN_CREDIT_CHARGE_2",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:41.874561+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_740127d6",
+      "src_id": "evidence_45b518e0",
+      "dst_id": "TRAIN_CREDIT_GRANT",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:41.874564+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_12a312b6",
+      "src_id": "evidence_45b518e0",
+      "dst_id": "TRAIN_CREDIT_REVOKE",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:41.874568+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_5759f7d3",
+      "src_id": "evidence_45b518e0",
+      "dst_id": "TRAIN_CREDIT_BALANCE",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:41.874572+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_f0857120",
+      "src_id": "evidence_45b518e0",
+      "dst_id": "TRAIN_CREDIT_CHARGE_1",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:41.874576+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_061d831a",
+      "src_id": "evidence_45b518e0",
+      "dst_id": "TRAIN_CREDIT_CHARGE_2",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:41.874580+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_a61888d4",
+      "src_id": "evidence_ce990390",
+      "dst_id": "TRAIN_CREDIT_GRANT",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:41.874583+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_83b86426",
+      "src_id": "evidence_ce990390",
+      "dst_id": "TRAIN_CREDIT_REVOKE",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:41.874587+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_ca76954f",
+      "src_id": "evidence_ce990390",
+      "dst_id": "TRAIN_CREDIT_BALANCE",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:41.874591+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_2dfb02ca",
+      "src_id": "evidence_ce990390",
+      "dst_id": "TRAIN_CREDIT_CHARGE_1",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:41.874595+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_09e05f2c",
+      "src_id": "evidence_ce990390",
+      "dst_id": "TRAIN_CREDIT_CHARGE_2",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:41.874599+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_1521e071",
+      "src_id": "evidence_db98f941",
+      "dst_id": "TRAIN_CREDIT_C_GRANT_REVOKE_XOR",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:41.874603+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_e4ec12bd",
+      "src_id": "evidence_db98f941",
+      "dst_id": "TRAIN_CREDIT_C_GRANT_CHARGE",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:41.874607+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_a6375f8b",
+      "src_id": "evidence_db98f941",
+      "dst_id": "TRAIN_CREDIT_C_GRANT_BALANCE",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:41.874612+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_6d6adbf9",
+      "src_id": "evidence_db98f941",
+      "dst_id": "TRAIN_CREDIT_C_CHARGE_BALANCE_1",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:41.874616+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_e14cb5d2",
+      "src_id": "evidence_db98f941",
+      "dst_id": "TRAIN_CREDIT_C_CHARGE_CHAIN_1",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:41.874619+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_e99b84c7",
+      "src_id": "evidence_db98f941",
+      "dst_id": "TRAIN_CREDIT_C_CHARGE_BALANCE_2",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:41.874623+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_1cbba3fc",
+      "src_id": "evidence_db98f941",
+      "dst_id": "TRAIN_CREDIT_C_CHARGE_CHAIN_2",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:41.874635+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_7fdb1161",
+      "src_id": "evidence_ef6ff0d9",
+      "dst_id": "TRAIN_CREDIT_C_GRANT_REVOKE_XOR",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:41.874639+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_8a749008",
+      "src_id": "evidence_ef6ff0d9",
+      "dst_id": "TRAIN_CREDIT_C_GRANT_CHARGE",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:41.874642+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_8867c022",
+      "src_id": "evidence_ef6ff0d9",
+      "dst_id": "TRAIN_CREDIT_C_GRANT_BALANCE",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:41.874646+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_4ee639e2",
+      "src_id": "evidence_ef6ff0d9",
+      "dst_id": "TRAIN_CREDIT_C_CHARGE_BALANCE_1",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:41.874650+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_0db80e9e",
+      "src_id": "evidence_ef6ff0d9",
+      "dst_id": "TRAIN_CREDIT_C_CHARGE_CHAIN_1",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:41.874655+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_5a618c1a",
+      "src_id": "evidence_ef6ff0d9",
+      "dst_id": "TRAIN_CREDIT_C_CHARGE_BALANCE_2",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:41.874660+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_3c534db7",
+      "src_id": "evidence_ef6ff0d9",
+      "dst_id": "TRAIN_CREDIT_C_CHARGE_CHAIN_2",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:41.874664+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_b7d60c75",
+      "src_id": "evidence_98c270b7",
+      "dst_id": "TRAIN_CREDIT_C_GRANT_REVOKE_XOR",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:41.874668+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_f8a67ddf",
+      "src_id": "evidence_98c270b7",
+      "dst_id": "TRAIN_CREDIT_C_GRANT_CHARGE",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:41.874672+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_7ef9d444",
+      "src_id": "evidence_98c270b7",
+      "dst_id": "TRAIN_CREDIT_C_GRANT_BALANCE",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:41.874676+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_863521ef",
+      "src_id": "evidence_98c270b7",
+      "dst_id": "TRAIN_CREDIT_C_CHARGE_BALANCE_1",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:41.874680+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_c709d566",
+      "src_id": "evidence_98c270b7",
+      "dst_id": "TRAIN_CREDIT_C_CHARGE_CHAIN_1",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:41.874684+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_b87d2b81",
+      "src_id": "evidence_98c270b7",
+      "dst_id": "TRAIN_CREDIT_C_CHARGE_BALANCE_2",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:41.874689+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_11977ac4",
+      "src_id": "evidence_98c270b7",
+      "dst_id": "TRAIN_CREDIT_C_CHARGE_CHAIN_2",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:41.874693+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_5bd3dbe2",
+      "src_id": "evidence_ab7a5e8b",
+      "dst_id": "TRAIN_CREDIT_C_GRANT_REVOKE_XOR",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:41.874697+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_d4869f7b",
+      "src_id": "evidence_ab7a5e8b",
+      "dst_id": "TRAIN_CREDIT_C_GRANT_CHARGE",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:41.874701+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_7e23f704",
+      "src_id": "evidence_ab7a5e8b",
+      "dst_id": "TRAIN_CREDIT_C_GRANT_BALANCE",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:41.874705+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_b30cb528",
+      "src_id": "evidence_ab7a5e8b",
+      "dst_id": "TRAIN_CREDIT_C_CHARGE_BALANCE_1",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:41.874710+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_12688a28",
+      "src_id": "evidence_ab7a5e8b",
+      "dst_id": "TRAIN_CREDIT_C_CHARGE_CHAIN_1",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:41.874714+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_4863b31b",
+      "src_id": "evidence_ab7a5e8b",
+      "dst_id": "TRAIN_CREDIT_C_CHARGE_BALANCE_2",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:41.874718+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_ad7813fa",
+      "src_id": "evidence_ab7a5e8b",
+      "dst_id": "TRAIN_CREDIT_C_CHARGE_CHAIN_2",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:41.874722+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_a2fa2279",
+      "src_id": "meta_259daf21",
+      "dst_id": "TRAIN_CREDIT_GRANT",
+      "edge_kind": "abstracts",
+      "created_at": "2026-03-18T20:13:41.876877+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_50a95c90",
+      "src_id": "meta_259daf21",
+      "dst_id": "TRAIN_CREDIT_REVOKE",
+      "edge_kind": "abstracts",
+      "created_at": "2026-03-18T20:13:41.876882+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_f3632b34",
+      "src_id": "verifier_2200d275",
+      "dst_id": "meta_259daf21",
+      "edge_kind": "supports",
+      "created_at": "2026-03-18T20:13:41.998806+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    }
+  ]
+}

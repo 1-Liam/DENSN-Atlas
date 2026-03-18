@@ -1,0 +1,251 @@
+{
+  "meta_cb3ff1de": {
+    "meta_symbol_id": "meta_cb3ff1de",
+    "structural_name": "META_CB3FF1DE",
+    "status": "accepted",
+    "semantic_label": null,
+    "semantic_status": "deferred",
+    "interface_kind": "exact",
+    "interface_definition": {
+      "truth_table": {
+        "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=0,ETCD_RAFT_REAL_LEADER_READY=0,ETCD_RAFT_REAL_QUORUM_READY=0,ETCD_RAFT_REAL_REPLICA_MATCH_1=0,ETCD_RAFT_REAL_REPLICA_MATCH_2=0": false,
+        "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=0,ETCD_RAFT_REAL_LEADER_READY=0,ETCD_RAFT_REAL_QUORUM_READY=0,ETCD_RAFT_REAL_REPLICA_MATCH_1=0,ETCD_RAFT_REAL_REPLICA_MATCH_2=1": false,
+        "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=0,ETCD_RAFT_REAL_LEADER_READY=0,ETCD_RAFT_REAL_QUORUM_READY=0,ETCD_RAFT_REAL_REPLICA_MATCH_1=1,ETCD_RAFT_REAL_REPLICA_MATCH_2=0": false,
+        "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=0,ETCD_RAFT_REAL_LEADER_READY=0,ETCD_RAFT_REAL_QUORUM_READY=0,ETCD_RAFT_REAL_REPLICA_MATCH_1=1,ETCD_RAFT_REAL_REPLICA_MATCH_2=1": false,
+        "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=0,ETCD_RAFT_REAL_LEADER_READY=0,ETCD_RAFT_REAL_QUORUM_READY=1,ETCD_RAFT_REAL_REPLICA_MATCH_1=0,ETCD_RAFT_REAL_REPLICA_MATCH_2=0": false,
+        "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=0,ETCD_RAFT_REAL_LEADER_READY=0,ETCD_RAFT_REAL_QUORUM_READY=1,ETCD_RAFT_REAL_REPLICA_MATCH_1=0,ETCD_RAFT_REAL_REPLICA_MATCH_2=1": false,
+        "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=0,ETCD_RAFT_REAL_LEADER_READY=0,ETCD_RAFT_REAL_QUORUM_READY=1,ETCD_RAFT_REAL_REPLICA_MATCH_1=1,ETCD_RAFT_REAL_REPLICA_MATCH_2=0": false,
+        "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=0,ETCD_RAFT_REAL_LEADER_READY=0,ETCD_RAFT_REAL_QUORUM_READY=1,ETCD_RAFT_REAL_REPLICA_MATCH_1=1,ETCD_RAFT_REAL_REPLICA_MATCH_2=1": false,
+        "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=0,ETCD_RAFT_REAL_LEADER_READY=1,ETCD_RAFT_REAL_QUORUM_READY=0,ETCD_RAFT_REAL_REPLICA_MATCH_1=0,ETCD_RAFT_REAL_REPLICA_MATCH_2=0": false,
+        "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=0,ETCD_RAFT_REAL_LEADER_READY=1,ETCD_RAFT_REAL_QUORUM_READY=0,ETCD_RAFT_REAL_REPLICA_MATCH_1=0,ETCD_RAFT_REAL_REPLICA_MATCH_2=1": false,
+        "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=0,ETCD_RAFT_REAL_LEADER_READY=1,ETCD_RAFT_REAL_QUORUM_READY=0,ETCD_RAFT_REAL_REPLICA_MATCH_1=1,ETCD_RAFT_REAL_REPLICA_MATCH_2=0": false,
+        "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=0,ETCD_RAFT_REAL_LEADER_READY=1,ETCD_RAFT_REAL_QUORUM_READY=0,ETCD_RAFT_REAL_REPLICA_MATCH_1=1,ETCD_RAFT_REAL_REPLICA_MATCH_2=1": false,
+        "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=0,ETCD_RAFT_REAL_LEADER_READY=1,ETCD_RAFT_REAL_QUORUM_READY=1,ETCD_RAFT_REAL_REPLICA_MATCH_1=0,ETCD_RAFT_REAL_REPLICA_MATCH_2=0": false,
+        "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=0,ETCD_RAFT_REAL_LEADER_READY=1,ETCD_RAFT_REAL_QUORUM_READY=1,ETCD_RAFT_REAL_REPLICA_MATCH_1=0,ETCD_RAFT_REAL_REPLICA_MATCH_2=1": false,
+        "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=0,ETCD_RAFT_REAL_LEADER_READY=1,ETCD_RAFT_REAL_QUORUM_READY=1,ETCD_RAFT_REAL_REPLICA_MATCH_1=1,ETCD_RAFT_REAL_REPLICA_MATCH_2=0": false,
+        "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=0,ETCD_RAFT_REAL_LEADER_READY=1,ETCD_RAFT_REAL_QUORUM_READY=1,ETCD_RAFT_REAL_REPLICA_MATCH_1=1,ETCD_RAFT_REAL_REPLICA_MATCH_2=1": false,
+        "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=1,ETCD_RAFT_REAL_LEADER_READY=0,ETCD_RAFT_REAL_QUORUM_READY=0,ETCD_RAFT_REAL_REPLICA_MATCH_1=0,ETCD_RAFT_REAL_REPLICA_MATCH_2=0": false,
+        "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=1,ETCD_RAFT_REAL_LEADER_READY=0,ETCD_RAFT_REAL_QUORUM_READY=0,ETCD_RAFT_REAL_REPLICA_MATCH_1=0,ETCD_RAFT_REAL_REPLICA_MATCH_2=1": false,
+        "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=1,ETCD_RAFT_REAL_LEADER_READY=0,ETCD_RAFT_REAL_QUORUM_READY=0,ETCD_RAFT_REAL_REPLICA_MATCH_1=1,ETCD_RAFT_REAL_REPLICA_MATCH_2=0": false,
+        "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=1,ETCD_RAFT_REAL_LEADER_READY=0,ETCD_RAFT_REAL_QUORUM_READY=0,ETCD_RAFT_REAL_REPLICA_MATCH_1=1,ETCD_RAFT_REAL_REPLICA_MATCH_2=1": false,
+        "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=1,ETCD_RAFT_REAL_LEADER_READY=0,ETCD_RAFT_REAL_QUORUM_READY=1,ETCD_RAFT_REAL_REPLICA_MATCH_1=0,ETCD_RAFT_REAL_REPLICA_MATCH_2=0": false,
+        "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=1,ETCD_RAFT_REAL_LEADER_READY=0,ETCD_RAFT_REAL_QUORUM_READY=1,ETCD_RAFT_REAL_REPLICA_MATCH_1=0,ETCD_RAFT_REAL_REPLICA_MATCH_2=1": false,
+        "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=1,ETCD_RAFT_REAL_LEADER_READY=0,ETCD_RAFT_REAL_QUORUM_READY=1,ETCD_RAFT_REAL_REPLICA_MATCH_1=1,ETCD_RAFT_REAL_REPLICA_MATCH_2=0": false,
+        "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=1,ETCD_RAFT_REAL_LEADER_READY=0,ETCD_RAFT_REAL_QUORUM_READY=1,ETCD_RAFT_REAL_REPLICA_MATCH_1=1,ETCD_RAFT_REAL_REPLICA_MATCH_2=1": false,
+        "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=1,ETCD_RAFT_REAL_LEADER_READY=1,ETCD_RAFT_REAL_QUORUM_READY=0,ETCD_RAFT_REAL_REPLICA_MATCH_1=0,ETCD_RAFT_REAL_REPLICA_MATCH_2=0": false,
+        "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=1,ETCD_RAFT_REAL_LEADER_READY=1,ETCD_RAFT_REAL_QUORUM_READY=0,ETCD_RAFT_REAL_REPLICA_MATCH_1=0,ETCD_RAFT_REAL_REPLICA_MATCH_2=1": false,
+        "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=1,ETCD_RAFT_REAL_LEADER_READY=1,ETCD_RAFT_REAL_QUORUM_READY=0,ETCD_RAFT_REAL_REPLICA_MATCH_1=1,ETCD_RAFT_REAL_REPLICA_MATCH_2=0": false,
+        "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=1,ETCD_RAFT_REAL_LEADER_READY=1,ETCD_RAFT_REAL_QUORUM_READY=0,ETCD_RAFT_REAL_REPLICA_MATCH_1=1,ETCD_RAFT_REAL_REPLICA_MATCH_2=1": false,
+        "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=1,ETCD_RAFT_REAL_LEADER_READY=1,ETCD_RAFT_REAL_QUORUM_READY=1,ETCD_RAFT_REAL_REPLICA_MATCH_1=0,ETCD_RAFT_REAL_REPLICA_MATCH_2=0": false,
+        "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=1,ETCD_RAFT_REAL_LEADER_READY=1,ETCD_RAFT_REAL_QUORUM_READY=1,ETCD_RAFT_REAL_REPLICA_MATCH_1=0,ETCD_RAFT_REAL_REPLICA_MATCH_2=1": false,
+        "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=1,ETCD_RAFT_REAL_LEADER_READY=1,ETCD_RAFT_REAL_QUORUM_READY=1,ETCD_RAFT_REAL_REPLICA_MATCH_1=1,ETCD_RAFT_REAL_REPLICA_MATCH_2=0": false,
+        "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=1,ETCD_RAFT_REAL_LEADER_READY=1,ETCD_RAFT_REAL_QUORUM_READY=1,ETCD_RAFT_REAL_REPLICA_MATCH_1=1,ETCD_RAFT_REAL_REPLICA_MATCH_2=1": true
+      },
+      "notes": "exact_boundary_projection_interface"
+    },
+    "parent_cluster_symbol_ids": [
+      "ETCD_RAFT_REAL_ADVANCE_COMMIT",
+      "ETCD_RAFT_REAL_PRIOR_TERM_LOG"
+    ],
+    "markov_blanket_symbol_ids": [
+      "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY",
+      "ETCD_RAFT_REAL_LEADER_READY",
+      "ETCD_RAFT_REAL_QUORUM_READY",
+      "ETCD_RAFT_REAL_REPLICA_MATCH_1",
+      "ETCD_RAFT_REAL_REPLICA_MATCH_2"
+    ],
+    "admission_metrics": {
+      "novel": true,
+      "novelty_conflicts": [],
+      "verifier_passed": true,
+      "reuse_passed": true,
+      "heldout_contradiction_gain": 5.2,
+      "complexity_penalty": 3.0,
+      "rent_paid": true,
+      "verifier_agreement": {
+        "verifier_count": 3,
+        "passed_count": 3,
+        "failed_count": 0,
+        "agreement_rate": 1.0,
+        "all_agree": true,
+        "disagreed": false
+      },
+      "semantic_accept_count": 0,
+      "pathway": "B"
+    },
+    "audits": [
+      {
+        "label": "CurrentTermCommitReady",
+        "delta_psi": 0.2,
+        "accepted": false,
+        "reason": "bridge_reject"
+      },
+      {
+        "label": "RaftCurrentTermCommitReady",
+        "delta_psi": 0.2,
+        "accepted": false,
+        "reason": "bridge_reject"
+      },
+      {
+        "label": "AdvanceCommitCurrentTermEntryLeaderReadyPriorTermLogQuorumReadyReplicaMatch",
+        "delta_psi": 0.2,
+        "accepted": false,
+        "reason": "bridge_reject"
+      }
+    ],
+    "verifications": [
+      {
+        "status": "pass",
+        "passed": true,
+        "failed": false,
+        "counterexample": null,
+        "cost": 0.08720629999879748,
+        "artifact_ids": [],
+        "verifier_name": "etcd_raft_current_term_verifier",
+        "details": {
+          "manifest_path": "fixtures\\etcd_raft_current_term\\train\\manifest.json",
+          "source_path": "fixtures\\etcd_raft_current_term\\train\\source_excerpt.go",
+          "valid_trace_count": 2,
+          "invalid_trace_count": 4,
+          "upstream_commit": "bcec33429c39a8bade4c2472cc68cf6038a0664f",
+          "markers": {
+            "committedEntryInCurrentTerm": true,
+            "TestLeaderOnlyCommitsLogFromCurrentTerm": true,
+            "pending MsgReadIndex should be released only after first commit in current term": true
+          },
+          "command": [
+            "python",
+            "verifiers\\etcd_raft_current_term_verifier.py"
+          ],
+          "returncode": 0
+        }
+      },
+      {
+        "status": "pass",
+        "passed": true,
+        "failed": false,
+        "counterexample": null,
+        "cost": 6.25999819021672e-05,
+        "artifact_ids": [],
+        "verifier_name": "role_count_verifier",
+        "details": {
+          "parent_roles": {
+            "commit": 1,
+            "pending": 1
+          },
+          "blanket_roles": {
+            "stable": 1,
+            "prepare": 1,
+            "clear": 1,
+            "ack": 2
+          },
+          "expected_parent": {
+            "commit": 1,
+            "pending": 1
+          },
+          "expected_blanket": {
+            "stable": 1,
+            "prepare": 1,
+            "clear": 1,
+            "ack": 2
+          }
+        }
+      },
+      {
+        "status": "pass",
+        "passed": true,
+        "failed": false,
+        "counterexample": null,
+        "cost": 0.0004835000145249069,
+        "artifact_ids": [],
+        "verifier_name": "trace_contract_verifier",
+        "details": {
+          "manifest_path": "fixtures\\etcd_raft_current_term\\train\\manifest.json",
+          "trace_contract_type": "gated_commit"
+        }
+      }
+    ],
+    "reuse": [],
+    "rejection_history": [],
+    "retirement_history": [],
+    "lineage": {
+      "created_at": "2026-03-18T22:33:39.452054+00:00",
+      "parent_cluster_symbol_ids": [
+        "ETCD_RAFT_REAL_ADVANCE_COMMIT",
+        "ETCD_RAFT_REAL_PRIOR_TERM_LOG"
+      ],
+      "markov_blanket_symbol_ids": [
+        "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY",
+        "ETCD_RAFT_REAL_LEADER_READY",
+        "ETCD_RAFT_REAL_QUORUM_READY",
+        "ETCD_RAFT_REAL_REPLICA_MATCH_1",
+        "ETCD_RAFT_REAL_REPLICA_MATCH_2"
+      ]
+    },
+    "support_count": 3,
+    "failure_count": 0,
+    "verification_pass_count": 3,
+    "verification_fail_count": 0,
+    "reuse_pass_count": 0,
+    "reuse_fail_count": 0,
+    "times_reused": 0,
+    "metadata": {
+      "cluster_id": "hotspot_1",
+      "tsl_pathway": "B",
+      "structural_roles": [
+        "advance_commit",
+        "prior_term_log",
+        "current_term_entry",
+        "leader_ready",
+        "quorum_ready",
+        "replica_match",
+        "replica_match"
+      ],
+      "proposal_support_roles": [],
+      "proposal_hidden_variables": []
+    },
+    "reuse_signature": {
+      "parent_roles": [
+        "advance_commit",
+        "prior_term_log"
+      ],
+      "blanket_roles": [
+        "current_term_entry",
+        "leader_ready",
+        "quorum_ready",
+        "replica_match",
+        "replica_match"
+      ],
+      "retired_constraint_signatures": [
+        {
+          "kind": "mutex",
+          "roles": [
+            "advance_commit",
+            "prior_term_log"
+          ]
+        }
+      ],
+      "canonical_parent_roles": [
+        "commit",
+        "pending"
+      ],
+      "canonical_blanket_roles": [
+        "stable",
+        "prepare",
+        "clear",
+        "ack",
+        "ack"
+      ],
+      "canonical_retired_constraint_signatures": [
+        {
+          "kind": "mutex",
+          "roles": [
+            "commit",
+            "pending"
+          ]
+        }
+      ]
+    },
+    "admission_reason": "accepted:structural_relief"
+  }
+}

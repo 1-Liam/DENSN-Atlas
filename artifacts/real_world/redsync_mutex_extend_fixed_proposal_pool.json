@@ -1,0 +1,265 @@
+{
+  "artifact_version": {
+    "phase": "phase13",
+    "timestamp_utc": "20260318T223341606183Z",
+    "git_sha": "4b3ad2a"
+  },
+  "family": "redsync_mutex_extend",
+  "campaign_type": "reviewer_policy_precision_fixed_pool",
+  "adapter": {
+    "adapter": "ReplayProposalAdapter"
+  },
+  "proposal_count": 6,
+  "proposals": [
+    {
+      "proposal_id": "proposal_73835416",
+      "proposal_type": "constraint",
+      "source": "groq_chat_adapter",
+      "payload": {
+        "constraint": "mutex_live",
+        "artifact": "redsync.go",
+        "rationale": "The mutex must be live for EXTEND to succeed"
+      },
+      "task_id": null,
+      "metadata": {
+        "support_roles": [
+          "acquire",
+          "extend",
+          "release"
+        ],
+        "support_surfaces": [
+          "counterexamples",
+          "description",
+          "execution_traces",
+          "failing_tests",
+          "formal_spec",
+          "logs",
+          "natural_language_spec",
+          "source_code"
+        ],
+        "support_surface_count": 8,
+        "review_score": 1.0,
+        "matched_tokens": [
+          "extend",
+          "for",
+          "live",
+          "must",
+          "mutex",
+          "the",
+          "to"
+        ]
+      }
+    },
+    {
+      "proposal_id": "proposal_97045dd1",
+      "proposal_type": "hidden_variable",
+      "source": "groq_chat_adapter",
+      "payload": {
+        "hidden_variable": "mutex_live",
+        "artifact": "formal_spec",
+        "rationale": "The mutex live status is not explicitly tracked in the source code"
+      },
+      "task_id": null,
+      "metadata": {
+        "support_roles": [
+          "acquire",
+          "extend",
+          "release"
+        ],
+        "support_surfaces": [
+          "counterexamples",
+          "description",
+          "failing_tests",
+          "formal_spec",
+          "natural_language_spec",
+          "source_code"
+        ],
+        "support_surface_count": 6,
+        "review_score": 2.25,
+        "matched_tokens": [
+          "is",
+          "live",
+          "mutex",
+          "not",
+          "status",
+          "the"
+        ]
+      }
+    },
+    {
+      "proposal_id": "proposal_852b4372",
+      "proposal_type": "semantic_label",
+      "source": "groq_chat_adapter",
+      "payload": {
+        "label": "mutex_owner",
+        "artifact": "redsync.go",
+        "rationale": "The mutex owner role is crucial for understanding the lock's status"
+      },
+      "task_id": null,
+      "metadata": {
+        "support_roles": [
+          "acquire",
+          "extend",
+          "release"
+        ],
+        "support_surfaces": [
+          "counterexamples",
+          "description",
+          "execution_traces",
+          "failing_tests",
+          "formal_spec",
+          "logs",
+          "natural_language_spec",
+          "source_code"
+        ],
+        "support_surface_count": 8,
+        "review_score": -0.5,
+        "matched_tokens": [
+          "for",
+          "is",
+          "lock",
+          "mutex",
+          "owner",
+          "s",
+          "status",
+          "the"
+        ]
+      }
+    },
+    {
+      "proposal_id": "proposal_cfec3c78",
+      "proposal_type": "test",
+      "source": "groq_chat_adapter",
+      "payload": {
+        "test": "TestMutexExtendExpired",
+        "artifact": "mutex_test.go",
+        "rationale": "This test checks that EXTEND fails after expiry"
+      },
+      "task_id": null,
+      "metadata": {
+        "support_roles": [
+          "acquire",
+          "extend",
+          "release"
+        ],
+        "support_surfaces": [
+          "counterexamples",
+          "description",
+          "execution_traces",
+          "failing_tests",
+          "formal_spec",
+          "logs",
+          "natural_language_spec",
+          "source_code"
+        ],
+        "support_surface_count": 8,
+        "review_score": 2.5,
+        "matched_tokens": [
+          "after",
+          "expired",
+          "expiry",
+          "extend",
+          "fails",
+          "mutex",
+          "test",
+          "that",
+          "this"
+        ]
+      }
+    },
+    {
+      "proposal_id": "proposal_6f5d16e8",
+      "proposal_type": "test",
+      "source": "groq_chat_adapter",
+      "payload": {
+        "test": "TestSetNXOnExtendFailsToAcquireLockWhenKeyIsTaken",
+        "artifact": "mutex_test.go",
+        "rationale": "This test checks that EXTEND fails when the lock is taken by another process"
+      },
+      "task_id": null,
+      "metadata": {
+        "support_roles": [
+          "acquire",
+          "extend"
+        ],
+        "support_surfaces": [
+          "counterexamples",
+          "description",
+          "execution_traces",
+          "failing_tests",
+          "formal_spec",
+          "logs",
+          "natural_language_spec",
+          "source_code"
+        ],
+        "support_surface_count": 8,
+        "review_score": 2.5,
+        "matched_tokens": [
+          "acquire",
+          "another",
+          "extend",
+          "fails",
+          "is",
+          "key",
+          "lock",
+          "nxon",
+          "set",
+          "taken",
+          "test",
+          "that",
+          "the",
+          "this",
+          "to",
+          "when"
+        ]
+      }
+    },
+    {
+      "proposal_id": "proposal_6af22f09",
+      "proposal_type": "evidence_query",
+      "source": "groq_chat_adapter",
+      "payload": {
+        "query": "redsync mutex extend invariant hidden state lock live extend window"
+      },
+      "task_id": null,
+      "metadata": {
+        "support_roles": [
+          "acquire",
+          "extend",
+          "release"
+        ],
+        "support_surfaces": [
+          "counterexamples",
+          "description",
+          "execution_traces",
+          "failing_tests",
+          "formal_spec",
+          "logs",
+          "natural_language_spec",
+          "source_code"
+        ],
+        "support_surface_count": 8,
+        "review_score": 2.0,
+        "matched_tokens": [
+          "extend",
+          "invariant",
+          "live",
+          "lock",
+          "mutex",
+          "redsync",
+          "window"
+        ]
+      }
+    }
+  ],
+  "pool_source": {
+    "mode": "loaded_fixed_pool",
+    "source_kind": "proposal_quality_summary",
+    "source_path": "artifacts\\real_world\\redsync_mutex_extend_proposal_quality_summary.json",
+    "source_artifact_version": {
+      "phase": "real_world",
+      "timestamp_utc": "20260318T222026131212Z",
+      "git_sha": "4b3ad2a"
+    }
+  }
+}

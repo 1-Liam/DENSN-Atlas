@@ -1,0 +1,322 @@
+{
+  "family": "quorum_commit",
+  "artifact_version": {
+    "phase": "phase4",
+    "timestamp_utc": "20260318T144130162572Z",
+    "git_sha": "nogit"
+  },
+  "proof_contract": {
+    "core_mode": "core_frozen",
+    "core_api_version": "phase5_frozen_v1",
+    "expected_core_api_version": "phase5_frozen_v1",
+    "migration_note": null,
+    "proposal_adapter": {
+      "adapter": "GroqChatTransformerAdapter",
+      "configured": true,
+      "model": "openai/gpt-oss-120b",
+      "base_url": "https://api.groq.com/openai/v1/chat/completions",
+      "api_key_env": "GROQ_API_KEY"
+    },
+    "verifier_stack": [],
+    "runtime_metrics": {
+      "cycles_to_first_accepted_symbol": null,
+      "verifier_calls_to_acceptance": 0,
+      "contradiction_before_acceptance": null,
+      "false_candidate_count_before_acceptance": 0,
+      "rollback_count_before_acceptance": 0,
+      "proposal_stage_cycles": 0,
+      "max_proposal_support": 0.0,
+      "accepted_proposal_count": 6
+    },
+    "lifecycle_metrics": {
+      "total": 0,
+      "accepted": 0,
+      "rejected": 0,
+      "retired": 0,
+      "accepted_ids": [],
+      "rejected_ids": [],
+      "retired_ids": [],
+      "total_reuse_passes": 0,
+      "total_reuse_failures": 0,
+      "total_verification_passes": 0,
+      "total_verification_failures": 0
+    },
+    "transfer_metrics": {}
+  },
+  "accepted_meta_symbol_id": "meta_a54a2bfe",
+  "proposal_ids": [
+    "proposal_59574139",
+    "proposal_5730e8f5",
+    "proposal_ae8a33d4",
+    "proposal_54ac5291",
+    "proposal_c5af436f",
+    "proposal_4a01d702",
+    "proposal_9241fdcb"
+  ],
+  "reviewed_proposals": [
+    {
+      "proposal_id": "proposal_59574139",
+      "proposal_type": "atom",
+      "source": "groq_chat_adapter",
+      "status": "rejected",
+      "review_reason": "redundant_atom_shadow_of_hidden_variable",
+      "useful": true,
+      "payload": {
+        "atom": "COMMIT_READY",
+        "artifact": "formal_spec",
+        "rationale": "Latent state indicating that ACK_1, ACK_2 and CLEAR have all been observed after PREPARE, required for a safe COMMIT"
+      },
+      "metadata": {
+        "support_roles": [
+          "ack",
+          "clear",
+          "commit",
+          "pending",
+          "prepare"
+        ],
+        "review_score": -0.5,
+        "matched_tokens": [
+          "1",
+          "2",
+          "a",
+          "ack",
+          "and",
+          "clear",
+          "commit",
+          "for",
+          "have",
+          "latent",
+          "observed",
+          "prepare",
+          "ready",
+          "state",
+          "that"
+        ]
+      }
+    },
+    {
+      "proposal_id": "proposal_5730e8f5",
+      "proposal_type": "constraint",
+      "source": "groq_chat_adapter",
+      "status": "accepted_for_structural_eval",
+      "review_reason": "artifact_structural_support",
+      "useful": true,
+      "payload": {
+        "constraint": "COMMIT -> ACK_1 \u2227 ACK_2 \u2227 CLEAR",
+        "artifact": "formal_spec",
+        "rationale": "Ensures COMMIT only when quorum acknowledgements and clear condition hold"
+      },
+      "metadata": {
+        "support_roles": [
+          "ack",
+          "clear",
+          "commit",
+          "pending"
+        ],
+        "review_score": 1.5,
+        "matched_tokens": [
+          "1",
+          "2",
+          "ack",
+          "acknowledgements",
+          "and",
+          "clear",
+          "commit",
+          "only",
+          "quorum",
+          "when"
+        ]
+      }
+    },
+    {
+      "proposal_id": "proposal_ae8a33d4",
+      "proposal_type": "hidden_variable",
+      "source": "groq_chat_adapter",
+      "status": "accepted_for_structural_eval",
+      "review_reason": "artifact_structural_support",
+      "useful": true,
+      "payload": {
+        "hidden_variable": "commit_ready",
+        "artifact": "formal_spec",
+        "rationale": "Derived latent variable representing the conjunction of ACK_1, ACK_2, and CLEAR after PREPARE"
+      },
+      "metadata": {
+        "support_roles": [
+          "ack",
+          "clear",
+          "commit",
+          "pending",
+          "prepare"
+        ],
+        "review_score": 1.75,
+        "matched_tokens": [
+          "1",
+          "2",
+          "ack",
+          "and",
+          "clear",
+          "commit",
+          "latent",
+          "prepare",
+          "ready",
+          "the"
+        ]
+      }
+    },
+    {
+      "proposal_id": "proposal_54ac5291",
+      "proposal_type": "semantic_label",
+      "source": "groq_chat_adapter",
+      "status": "accepted_for_structural_eval",
+      "review_reason": "artifact_structural_support",
+      "useful": true,
+      "payload": {
+        "label": "commit_ready",
+        "artifact": "formal_spec",
+        "rationale": "Short reusable label for the latent commit\u2011ready state"
+      },
+      "metadata": {
+        "support_roles": [
+          "ack",
+          "clear",
+          "commit",
+          "pending"
+        ],
+        "review_score": 2.0,
+        "matched_tokens": [
+          "commit",
+          "for",
+          "latent",
+          "ready",
+          "state",
+          "the"
+        ]
+      }
+    },
+    {
+      "proposal_id": "proposal_c5af436f",
+      "proposal_type": "test",
+      "source": "groq_chat_adapter",
+      "status": "accepted_for_structural_eval",
+      "review_reason": "artifact_structural_support",
+      "useful": true,
+      "payload": {
+        "test": "commit_without_quorum",
+        "artifact": "tests",
+        "rationale": "Fails because COMMIT occurs without both ACKs"
+      },
+      "metadata": {
+        "support_roles": [
+          "ack",
+          "clear",
+          "commit",
+          "pending"
+        ],
+        "review_score": 2.0,
+        "matched_tokens": [
+          "both",
+          "commit",
+          "quorum",
+          "without"
+        ]
+      }
+    },
+    {
+      "proposal_id": "proposal_4a01d702",
+      "proposal_type": "test",
+      "source": "groq_chat_adapter",
+      "status": "accepted_for_structural_eval",
+      "review_reason": "artifact_structural_support",
+      "useful": true,
+      "payload": {
+        "test": "commit_without_clear",
+        "artifact": "tests",
+        "rationale": "Fails because COMMIT occurs without CLEAR condition"
+      },
+      "metadata": {
+        "support_roles": [
+          "ack",
+          "clear",
+          "commit",
+          "pending"
+        ],
+        "review_score": 2.0,
+        "matched_tokens": [
+          "clear",
+          "commit",
+          "without"
+        ]
+      }
+    },
+    {
+      "proposal_id": "proposal_9241fdcb",
+      "proposal_type": "evidence_query",
+      "source": "groq_chat_adapter",
+      "status": "accepted_for_structural_eval",
+      "review_reason": "artifact_structural_support",
+      "useful": true,
+      "payload": {
+        "query": "quorum commit invariant hidden state verifier-backed abstraction"
+      },
+      "metadata": {
+        "support_roles": [
+          "ack",
+          "clear",
+          "commit",
+          "pending"
+        ],
+        "review_score": 1.5,
+        "matched_tokens": [
+          "commit",
+          "quorum",
+          "state"
+        ]
+      }
+    }
+  ],
+  "proposal_summary": {
+    "total": 7,
+    "status_counts": {
+      "rejected": 1,
+      "accepted_for_structural_eval": 6
+    },
+    "type_counts": {
+      "atom": 1,
+      "constraint": 1,
+      "hidden_variable": 1,
+      "semantic_label": 1,
+      "test": 2,
+      "evidence_query": 1
+    },
+    "pending_ids": []
+  },
+  "telemetry_summary": {
+    "event_count": 14,
+    "event_type_counts": {
+      "proposal_submitted": 7,
+      "proposal_reviewed": 7
+    },
+    "latest_metrics": {},
+    "last_cycle": null
+  },
+  "adapter": "GroqChatTransformerAdapter",
+  "graph_before": {
+    "nodes": 19,
+    "edges": 61
+  },
+  "graph_after": {
+    "nodes": 19,
+    "edges": 61
+  },
+  "ontology_mutated_directly": false,
+  "metrics": {
+    "total_proposals": 7,
+    "useful_proposals_total": 7,
+    "accepted_for_structural_eval": 6,
+    "useful_accepted": 6,
+    "naive_accept_all_precision": 1.0,
+    "triage_precision": 1.0,
+    "useful_recall": 0.8571428571428571,
+    "false_accept_rate": 0.0
+  }
+}

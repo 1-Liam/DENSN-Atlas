@@ -1,0 +1,63 @@
+{
+  "task_id": "session_macro_heldout_b",
+  "family": "session_macro",
+  "split": "heldout",
+  "description": "Held-out single-module surface variant of the session macro family with renamed tokens but the same coherent structure.",
+  "roles": {
+    "start": "OPEN_BATCH",
+    "update": "STEP",
+    "finish": "CLOSE_BATCH"
+  },
+  "canonical_roles": {
+    "start": "open",
+    "update": "write",
+    "finish": "close"
+  },
+  "natural_language_spec": "OPEN_BATCH_1 begins the macro, STEP_1 performs the coherent middle action, and CLOSE_BATCH_1 ends it. The reusable macro is still absent from source code.",
+  "formal_spec": {
+    "rules": [
+      "OPEN_BATCH_1 -> STEP_1",
+      "OPEN_BATCH_1 -> CLOSE_BATCH_1",
+      "STEP_1 -> CLOSE_BATCH_1"
+    ],
+    "safety_property": "The renamed held-out module must preserve the same coherent ordering."
+  },
+  "execution_traces": [
+    [
+      "OPEN_BATCH_1",
+      "STEP_1",
+      "CLOSE_BATCH_1"
+    ]
+  ],
+  "failing_tests": [
+    {
+      "name": "close_without_step",
+      "trace": [
+        "OPEN_BATCH_1",
+        "CLOSE_BATCH_1"
+      ],
+      "expected": "fail"
+    }
+  ],
+  "logs": [
+    {
+      "level": "ERROR",
+      "message": "Held-out renamed macro closed before the middle action completed",
+      "trace": [
+        "OPEN_BATCH_1",
+        "CLOSE_BATCH_1"
+      ]
+    }
+  ],
+  "counterexamples": [
+    {
+      "name": "orphan_close",
+      "trace": [
+        "CLOSE_BATCH_1"
+      ],
+      "reason": "module_closed_without_open"
+    }
+  ],
+  "source_code_path": "validator.py",
+  "module_count": 1
+}

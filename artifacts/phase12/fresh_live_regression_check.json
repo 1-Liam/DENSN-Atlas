@@ -1,0 +1,21 @@
+{
+  "artifact_version": {
+    "phase": "phase12",
+    "timestamp_utc": "20260318T201454462561Z",
+    "git_sha": "4cf12ad"
+  },
+  "baseline_path": "artifacts\\phase11\\final_proof_bundle.json",
+  "candidate_path": "artifacts\\phase12\\fresh_live_final_proof_bundle.json",
+  "candidate_available": true,
+  "regression_passed": true,
+  "checks": {
+    "all_candidate_checks_true": true,
+    "transfer_pass_rate_non_regressed": true,
+    "verifier_calls_non_regressed": true,
+    "contradiction_gain_non_regressed": true,
+    "cycles_to_useful_outcome_non_regressed": true,
+    "live_proposal_gain_non_regressed": true,
+    "false_accept_rate_non_regressed": true
+  },
+  "blocker": null
+}

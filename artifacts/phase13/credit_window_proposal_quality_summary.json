@@ -1,0 +1,328 @@
+{
+  "family": "credit_window",
+  "artifact_version": {
+    "phase": "phase13",
+    "timestamp_utc": "20260318T201341818484Z",
+    "git_sha": "ad9f6a1"
+  },
+  "proof_contract": {
+    "core_mode": "core_frozen",
+    "core_api_version": "phase5_frozen_v1",
+    "expected_core_api_version": "phase5_frozen_v1",
+    "migration_note": null,
+    "proposal_adapter": {
+      "adapter": "ReplayProposalAdapter"
+    },
+    "verifier_stack": [],
+    "runtime_metrics": {
+      "cycles_to_first_accepted_symbol": null,
+      "verifier_calls_to_acceptance": 0,
+      "contradiction_before_acceptance": null,
+      "false_candidate_count_before_acceptance": 0,
+      "rollback_count_before_acceptance": 0,
+      "proposal_stage_cycles": 0,
+      "max_proposal_support": 0.0,
+      "accepted_proposal_count": 4
+    },
+    "lifecycle_metrics": {
+      "total": 0,
+      "accepted": 0,
+      "rejected": 0,
+      "retired": 0,
+      "accepted_ids": [],
+      "rejected_ids": [],
+      "retired_ids": [],
+      "total_reuse_passes": 0,
+      "total_reuse_failures": 0,
+      "total_verification_passes": 0,
+      "total_verification_failures": 0
+    },
+    "transfer_metrics": {}
+  },
+  "accepted_meta_symbol_id": "meta_259daf21",
+  "proposal_ids": [
+    "proposal_0cf3a5fb",
+    "proposal_2e232dd1",
+    "proposal_3c3d00e3",
+    "proposal_05eda306",
+    "proposal_b6aa74c0",
+    "proposal_3bbfa495"
+  ],
+  "reviewed_proposals": [
+    {
+      "proposal_id": "proposal_0cf3a5fb",
+      "proposal_type": "constraint",
+      "source": "groq_chat_adapter",
+      "status": "rejected",
+      "review_reason": "redundant_low_structure_shadow_of_hidden_variable",
+      "useful": false,
+      "payload": {
+        "constraint": "credit_live",
+        "artifact": "formal rules",
+        "rationale": "safety property"
+      },
+      "metadata": {
+        "support_roles": [
+          "charge",
+          "grant",
+          "revoke"
+        ],
+        "support_surfaces": [
+          "counterexamples",
+          "description",
+          "formal_spec",
+          "natural_language_spec",
+          "source_code"
+        ],
+        "support_surface_count": 5,
+        "review_score": 0.0,
+        "matched_tokens": [
+          "credit",
+          "live"
+        ]
+      }
+    },
+    {
+      "proposal_id": "proposal_2e232dd1",
+      "proposal_type": "hidden_variable",
+      "source": "groq_chat_adapter",
+      "status": "accepted_for_structural_eval",
+      "review_reason": "artifact_structural_support",
+      "useful": true,
+      "payload": {
+        "hidden_variable": "credit_live",
+        "artifact": "formal rules",
+        "rationale": "latent state"
+      },
+      "metadata": {
+        "support_roles": [
+          "charge",
+          "grant",
+          "revoke"
+        ],
+        "support_surfaces": [
+          "counterexamples",
+          "description",
+          "formal_spec",
+          "natural_language_spec",
+          "source_code"
+        ],
+        "support_surface_count": 5,
+        "review_score": 2.25,
+        "matched_tokens": [
+          "credit",
+          "hidden",
+          "latent",
+          "live",
+          "state"
+        ]
+      }
+    },
+    {
+      "proposal_id": "proposal_3c3d00e3",
+      "proposal_type": "semantic_label",
+      "source": "groq_chat_adapter",
+      "status": "abstain_needs_more_evidence",
+      "review_reason": "semantic_label_needs_structural_anchor",
+      "useful": false,
+      "payload": {
+        "label": "credit_window",
+        "artifact": "natural language spec",
+        "rationale": "structural role"
+      },
+      "metadata": {
+        "support_roles": [
+          "charge",
+          "grant",
+          "revoke"
+        ],
+        "support_surfaces": [
+          "counterexamples",
+          "description",
+          "formal_spec",
+          "natural_language_spec",
+          "source_code"
+        ],
+        "support_surface_count": 5,
+        "review_score": 0.25,
+        "matched_tokens": [
+          "credit",
+          "window"
+        ]
+      }
+    },
+    {
+      "proposal_id": "proposal_05eda306",
+      "proposal_type": "test",
+      "source": "groq_chat_adapter",
+      "status": "accepted_for_structural_eval",
+      "review_reason": "artifact_structural_support",
+      "useful": true,
+      "payload": {
+        "test": "charge_without_balance",
+        "artifact": "failing tests",
+        "rationale": "failing test"
+      },
+      "metadata": {
+        "support_roles": [
+          "balance",
+          "charge"
+        ],
+        "support_surfaces": [
+          "counterexamples",
+          "description",
+          "execution_traces",
+          "failing_tests",
+          "formal_spec",
+          "logs",
+          "natural_language_spec",
+          "source_code"
+        ],
+        "support_surface_count": 8,
+        "review_score": 2.5,
+        "matched_tokens": [
+          "balance",
+          "charge",
+          "failing",
+          "without"
+        ]
+      }
+    },
+    {
+      "proposal_id": "proposal_b6aa74c0",
+      "proposal_type": "test",
+      "source": "groq_chat_adapter",
+      "status": "accepted_for_structural_eval",
+      "review_reason": "artifact_structural_support",
+      "useful": true,
+      "payload": {
+        "test": "charge_after_revoke",
+        "artifact": "failing tests",
+        "rationale": "failing test"
+      },
+      "metadata": {
+        "support_roles": [
+          "balance",
+          "charge",
+          "revoke"
+        ],
+        "support_surfaces": [
+          "counterexamples",
+          "description",
+          "execution_traces",
+          "failing_tests",
+          "formal_spec",
+          "logs",
+          "natural_language_spec",
+          "source_code"
+        ],
+        "support_surface_count": 8,
+        "review_score": 2.5,
+        "matched_tokens": [
+          "after",
+          "charge",
+          "failing",
+          "revoke"
+        ]
+      }
+    },
+    {
+      "proposal_id": "proposal_3bbfa495",
+      "proposal_type": "evidence_query",
+      "source": "groq_chat_adapter",
+      "status": "accepted_for_structural_eval",
+      "review_reason": "artifact_structural_support",
+      "useful": true,
+      "payload": {
+        "query": "credit window invariant hidden state verifier-backed abstraction"
+      },
+      "metadata": {
+        "support_roles": [
+          "charge",
+          "grant",
+          "revoke"
+        ],
+        "support_surfaces": [
+          "counterexamples",
+          "description",
+          "formal_spec",
+          "natural_language_spec",
+          "source_code"
+        ],
+        "support_surface_count": 5,
+        "review_score": 2.0,
+        "matched_tokens": [
+          "credit",
+          "hidden",
+          "state",
+          "window"
+        ]
+      }
+    }
+  ],
+  "proposal_summary": {
+    "total": 6,
+    "status_counts": {
+      "rejected": 1,
+      "accepted_for_structural_eval": 4,
+      "abstain_needs_more_evidence": 1
+    },
+    "type_counts": {
+      "constraint": 1,
+      "hidden_variable": 1,
+      "semantic_label": 1,
+      "test": 2,
+      "evidence_query": 1
+    },
+    "pending_ids": []
+  },
+  "telemetry_summary": {
+    "event_count": 12,
+    "event_type_counts": {
+      "proposal_submitted": 6,
+      "proposal_reviewed": 6
+    },
+    "latest_metrics": {},
+    "last_cycle": null
+  },
+  "adapter": "ReplayProposalAdapter",
+  "graph_before": {
+    "nodes": 20,
+    "edges": 69
+  },
+  "graph_after": {
+    "nodes": 20,
+    "edges": 69
+  },
+  "ontology_mutated_directly": false,
+  "stage_trace": {
+    "current_stage": null,
+    "completed_stages": [
+      "benchmark_runner",
+      "graph_setup",
+      "adapter_setup",
+      "proposal_generation",
+      "proposal_review",
+      "metrics"
+    ],
+    "stage_timings_seconds": {
+      "benchmark_runner": 0.896,
+      "graph_setup": 0.001,
+      "adapter_setup": 0.0,
+      "proposal_generation": 0.0,
+      "proposal_review": 0.002,
+      "metrics": 0.0
+    },
+    "elapsed_seconds": 0.904
+  },
+  "metrics": {
+    "total_proposals": 6,
+    "useful_proposals_total": 4,
+    "accepted_for_structural_eval": 4,
+    "useful_accepted": 4,
+    "naive_accept_all_precision": 0.6666666666666666,
+    "triage_precision": 1.0,
+    "useful_recall": 1.0,
+    "false_accept_rate": 0.0
+  }
+}

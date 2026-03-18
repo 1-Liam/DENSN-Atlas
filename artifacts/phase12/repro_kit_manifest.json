@@ -1,0 +1,27 @@
+{
+  "artifact_version": {
+    "phase": "phase12",
+    "timestamp_utc": "20260318T225242771105Z",
+    "git_sha": "4b3ad2a"
+  },
+  "canonical_bundle": "artifacts/phase11/final_proof_bundle.json",
+  "proof_manifest": "artifacts/phase10/proof_manifest.json",
+  "gauntlet": "artifacts/phase7/gauntlet_summary.json",
+  "pathway_a": "artifacts/phase8/pathway_a_summary.json",
+  "verifier_agreement": "artifacts/phase9/verifier_agreement_summary.json",
+  "repro_files": {
+    "readme": "repro/README.md",
+    "run_script": "repro/run_repro.ps1",
+    "expected_metrics": "repro/expected_metrics.json",
+    "environment_manifest": "repro/environment_manifest.json"
+  },
+  "expected_checks": {
+    "pathway_b_non_regressed": true,
+    "pathway_a_real": true,
+    "verifier_reliability_operationalized": true,
+    "provenance_hardened": true,
+    "proposal_quarantine_intact": true
+  },
+  "fixture_hash_count": 30,
+  "verifier_hash_count": 7
+}

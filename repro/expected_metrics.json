@@ -1,0 +1,58 @@
+{
+  "canonical_bundle_path": "artifacts/phase11/final_proof_bundle.json",
+  "headline_checks": {
+    "pathway_b_non_regressed": true,
+    "pathway_a_real": true,
+    "verifier_reliability_operationalized": true,
+    "provenance_hardened": true,
+    "proposal_quarantine_intact": true
+  },
+  "pathway_b": {
+    "positive_remap_targets": {
+      "ladder_a": 2,
+      "ladder_b": 2
+    },
+    "blocked_negative_transfer": {
+      "ladder_a": 1,
+      "ladder_b": 1
+    },
+    "blocked_cross_ladder_misuse": 2,
+    "baseline_superiority": {
+      "densn_positive_transfer_pass_rate": 1.0,
+      "model_baseline_transfer_pass_rate": 0.375,
+      "densn_mean_cycles_to_first_accepted_symbol": 3.0,
+      "model_baseline_mean_cycles_to_first_accepted_symbol": null,
+      "densn_mean_cycles_to_useful_outcome": 3.0,
+      "model_baseline_mean_cycles_to_useful_outcome": 8.0,
+      "densn_mean_verifier_calls_to_acceptance": 1.0,
+      "model_baseline_mean_verifier_calls_to_acceptance": 3.0,
+      "densn_mean_contradiction_gain": 10.6,
+      "model_baseline_mean_contradiction_gain": 0.0
+    }
+  },
+  "gauntlet": {
+    "positive_transfer_count": null,
+    "cross_mechanism_block_count": null
+  },
+  "pathway_a": {
+    "compression_gain": 3.0,
+    "downstream_cycles_reduction": 1.0,
+    "downstream_verifier_calls_reduction": 1.0
+  },
+  "live_model": {
+    "median_cycle_reduction": 0.25,
+    "contradiction_reduction_before_acceptance": {
+      "protocol_cycle_delta": 1,
+      "quorum_cycle_delta": 1,
+      "protocol_contradiction_before_acceptance_delta": 1.2000000000000002,
+      "quorum_contradiction_before_acceptance_delta": 1.2000000000000002
+    },
+    "protocol_false_accept_rate": 0.0,
+    "precision_campaign_false_accept_rate": 0.0,
+    "zero_direct_ontology_mutation": true
+  },
+  "verifier_reliability": {
+    "effective_agreement_quality": 1.0,
+    "unresolved_disagreement_count": 0
+  }
+}

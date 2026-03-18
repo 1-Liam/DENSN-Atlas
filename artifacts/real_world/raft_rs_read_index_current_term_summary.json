@@ -1,0 +1,547 @@
+{
+  "artifact_version": {
+    "phase": "real_world",
+    "timestamp_utc": "20260318T223341206391Z",
+    "git_sha": "4b3ad2a"
+  },
+  "domain": "raft_rs_read_index_current_term_real_world",
+  "source_manifest_path": "fixtures\\raft_rs_read_index_current_term\\train\\manifest.json",
+  "source_provenance": {
+    "repo": "https://github.com/tikv/raft-rs",
+    "upstream_commit": "aafb07c7bab439c6139926a77dfafc5b10e9bc84",
+    "upstream_commit_short": "aafb07c",
+    "upstream_commit_date": "2026-03-18",
+    "source_files": [
+      "src/raft.rs",
+      "harness/tests/integration_cases/test_raft.rs"
+    ],
+    "source_urls": [
+      "https://github.com/tikv/raft-rs/blob/aafb07c7bab439c6139926a77dfafc5b10e9bc84/src/raft.rs",
+      "https://github.com/tikv/raft-rs/blob/aafb07c7bab439c6139926a77dfafc5b10e9bc84/harness/tests/integration_cases/test_raft.rs"
+    ],
+    "license": "Apache-2.0"
+  },
+  "proof_contract": {
+    "core_mode": "core_frozen",
+    "core_api_version": "phase5_frozen_v1",
+    "expected_core_api_version": "phase5_frozen_v1",
+    "migration_note": null,
+    "proposal_adapter": null,
+    "verifier_stack": [
+      {
+        "claim_kind": "raft_rs_read_index_current_term_invariant",
+        "verifier_type": "SubprocessVerifier",
+        "command": [
+          "python",
+          "verifiers\\raft_rs_read_index_current_term_verifier.py"
+        ],
+        "cwd": ".",
+        "timeout_seconds": 30.0
+      },
+      {
+        "claim_kind": "raft_rs_read_index_current_term_invariant",
+        "verifier_type": "RoleCountVerifier"
+      },
+      {
+        "claim_kind": "raft_rs_read_index_current_term_invariant",
+        "verifier_type": "TraceContractVerifier"
+      }
+    ],
+    "runtime_metrics": {
+      "cycles_to_first_accepted_symbol": 4,
+      "verifier_calls_to_acceptance": 3,
+      "contradiction_before_acceptance": 5.2,
+      "false_candidate_count_before_acceptance": 0,
+      "rollback_count_before_acceptance": 0,
+      "proposal_stage_cycles": 0,
+      "max_proposal_support": 0.0,
+      "accepted_proposal_count": 0
+    },
+    "lifecycle_metrics": {
+      "total": 1,
+      "accepted": 1,
+      "rejected": 0,
+      "retired": 0,
+      "accepted_ids": [
+        "meta_0fbd1e16"
+      ],
+      "rejected_ids": [],
+      "retired_ids": [],
+      "total_reuse_passes": 0,
+      "total_reuse_failures": 0,
+      "total_verification_passes": 3,
+      "total_verification_failures": 0
+    }
+  },
+  "train_summary": {
+    "cycles_run": 4,
+    "final_psi": 0.0,
+    "registry": {
+      "total": 1,
+      "accepted": 1,
+      "rejected": 0,
+      "retired": 0
+    },
+    "telemetry_summary": {
+      "event_count": 9,
+      "event_type_counts": {
+        "cycle": 4,
+        "verification_feedback": 3,
+        "candidate_evaluated": 1,
+        "tsl_event": 1
+      },
+      "latest_metrics": {},
+      "last_cycle": {
+        "cycle": 3,
+        "psi": 0.0,
+        "q": 0.0,
+        "collapse_method": "stalled",
+        "active_constraints": 5
+      }
+    },
+    "runtime_metrics": {
+      "cycles_to_first_accepted_symbol": 4,
+      "verifier_calls_to_acceptance": 3,
+      "contradiction_before_acceptance": 5.2,
+      "false_candidate_count_before_acceptance": 0,
+      "rollback_count_before_acceptance": 0,
+      "proposal_stage_cycles": 0,
+      "max_proposal_support": 0.0,
+      "accepted_proposal_count": 0
+    }
+  },
+  "accepted_meta_symbol_id": "meta_0fbd1e16",
+  "accepted_record": {
+    "meta_symbol_id": "meta_0fbd1e16",
+    "structural_name": "META_0FBD1E16",
+    "status": "accepted",
+    "semantic_label": null,
+    "semantic_status": "deferred",
+    "interface_kind": "exact",
+    "interface_definition": {
+      "truth_table": {
+        "RAFT_RS_REAL_APPEND_RESPONSE_1=0,RAFT_RS_REAL_APPEND_RESPONSE_2=0,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=0,RAFT_RS_REAL_LEADER_READY=0,RAFT_RS_REAL_READ_CTX_READY=0": false,
+        "RAFT_RS_REAL_APPEND_RESPONSE_1=0,RAFT_RS_REAL_APPEND_RESPONSE_2=0,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=0,RAFT_RS_REAL_LEADER_READY=0,RAFT_RS_REAL_READ_CTX_READY=1": false,
+        "RAFT_RS_REAL_APPEND_RESPONSE_1=0,RAFT_RS_REAL_APPEND_RESPONSE_2=0,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=0,RAFT_RS_REAL_LEADER_READY=1,RAFT_RS_REAL_READ_CTX_READY=0": false,
+        "RAFT_RS_REAL_APPEND_RESPONSE_1=0,RAFT_RS_REAL_APPEND_RESPONSE_2=0,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=0,RAFT_RS_REAL_LEADER_READY=1,RAFT_RS_REAL_READ_CTX_READY=1": false,
+        "RAFT_RS_REAL_APPEND_RESPONSE_1=0,RAFT_RS_REAL_APPEND_RESPONSE_2=0,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=1,RAFT_RS_REAL_LEADER_READY=0,RAFT_RS_REAL_READ_CTX_READY=0": false,
+        "RAFT_RS_REAL_APPEND_RESPONSE_1=0,RAFT_RS_REAL_APPEND_RESPONSE_2=0,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=1,RAFT_RS_REAL_LEADER_READY=0,RAFT_RS_REAL_READ_CTX_READY=1": false,
+        "RAFT_RS_REAL_APPEND_RESPONSE_1=0,RAFT_RS_REAL_APPEND_RESPONSE_2=0,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=1,RAFT_RS_REAL_LEADER_READY=1,RAFT_RS_REAL_READ_CTX_READY=0": false,
+        "RAFT_RS_REAL_APPEND_RESPONSE_1=0,RAFT_RS_REAL_APPEND_RESPONSE_2=0,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=1,RAFT_RS_REAL_LEADER_READY=1,RAFT_RS_REAL_READ_CTX_READY=1": false,
+        "RAFT_RS_REAL_APPEND_RESPONSE_1=0,RAFT_RS_REAL_APPEND_RESPONSE_2=1,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=0,RAFT_RS_REAL_LEADER_READY=0,RAFT_RS_REAL_READ_CTX_READY=0": false,
+        "RAFT_RS_REAL_APPEND_RESPONSE_1=0,RAFT_RS_REAL_APPEND_RESPONSE_2=1,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=0,RAFT_RS_REAL_LEADER_READY=0,RAFT_RS_REAL_READ_CTX_READY=1": false,
+        "RAFT_RS_REAL_APPEND_RESPONSE_1=0,RAFT_RS_REAL_APPEND_RESPONSE_2=1,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=0,RAFT_RS_REAL_LEADER_READY=1,RAFT_RS_REAL_READ_CTX_READY=0": false,
+        "RAFT_RS_REAL_APPEND_RESPONSE_1=0,RAFT_RS_REAL_APPEND_RESPONSE_2=1,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=0,RAFT_RS_REAL_LEADER_READY=1,RAFT_RS_REAL_READ_CTX_READY=1": false,
+        "RAFT_RS_REAL_APPEND_RESPONSE_1=0,RAFT_RS_REAL_APPEND_RESPONSE_2=1,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=1,RAFT_RS_REAL_LEADER_READY=0,RAFT_RS_REAL_READ_CTX_READY=0": false,
+        "RAFT_RS_REAL_APPEND_RESPONSE_1=0,RAFT_RS_REAL_APPEND_RESPONSE_2=1,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=1,RAFT_RS_REAL_LEADER_READY=0,RAFT_RS_REAL_READ_CTX_READY=1": false,
+        "RAFT_RS_REAL_APPEND_RESPONSE_1=0,RAFT_RS_REAL_APPEND_RESPONSE_2=1,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=1,RAFT_RS_REAL_LEADER_READY=1,RAFT_RS_REAL_READ_CTX_READY=0": false,
+        "RAFT_RS_REAL_APPEND_RESPONSE_1=0,RAFT_RS_REAL_APPEND_RESPONSE_2=1,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=1,RAFT_RS_REAL_LEADER_READY=1,RAFT_RS_REAL_READ_CTX_READY=1": false,
+        "RAFT_RS_REAL_APPEND_RESPONSE_1=1,RAFT_RS_REAL_APPEND_RESPONSE_2=0,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=0,RAFT_RS_REAL_LEADER_READY=0,RAFT_RS_REAL_READ_CTX_READY=0": false,
+        "RAFT_RS_REAL_APPEND_RESPONSE_1=1,RAFT_RS_REAL_APPEND_RESPONSE_2=0,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=0,RAFT_RS_REAL_LEADER_READY=0,RAFT_RS_REAL_READ_CTX_READY=1": false,
+        "RAFT_RS_REAL_APPEND_RESPONSE_1=1,RAFT_RS_REAL_APPEND_RESPONSE_2=0,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=0,RAFT_RS_REAL_LEADER_READY=1,RAFT_RS_REAL_READ_CTX_READY=0": false,
+        "RAFT_RS_REAL_APPEND_RESPONSE_1=1,RAFT_RS_REAL_APPEND_RESPONSE_2=0,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=0,RAFT_RS_REAL_LEADER_READY=1,RAFT_RS_REAL_READ_CTX_READY=1": false,
+        "RAFT_RS_REAL_APPEND_RESPONSE_1=1,RAFT_RS_REAL_APPEND_RESPONSE_2=0,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=1,RAFT_RS_REAL_LEADER_READY=0,RAFT_RS_REAL_READ_CTX_READY=0": false,
+        "RAFT_RS_REAL_APPEND_RESPONSE_1=1,RAFT_RS_REAL_APPEND_RESPONSE_2=0,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=1,RAFT_RS_REAL_LEADER_READY=0,RAFT_RS_REAL_READ_CTX_READY=1": false,
+        "RAFT_RS_REAL_APPEND_RESPONSE_1=1,RAFT_RS_REAL_APPEND_RESPONSE_2=0,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=1,RAFT_RS_REAL_LEADER_READY=1,RAFT_RS_REAL_READ_CTX_READY=0": false,
+        "RAFT_RS_REAL_APPEND_RESPONSE_1=1,RAFT_RS_REAL_APPEND_RESPONSE_2=0,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=1,RAFT_RS_REAL_LEADER_READY=1,RAFT_RS_REAL_READ_CTX_READY=1": false,
+        "RAFT_RS_REAL_APPEND_RESPONSE_1=1,RAFT_RS_REAL_APPEND_RESPONSE_2=1,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=0,RAFT_RS_REAL_LEADER_READY=0,RAFT_RS_REAL_READ_CTX_READY=0": false,
+        "RAFT_RS_REAL_APPEND_RESPONSE_1=1,RAFT_RS_REAL_APPEND_RESPONSE_2=1,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=0,RAFT_RS_REAL_LEADER_READY=0,RAFT_RS_REAL_READ_CTX_READY=1": false,
+        "RAFT_RS_REAL_APPEND_RESPONSE_1=1,RAFT_RS_REAL_APPEND_RESPONSE_2=1,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=0,RAFT_RS_REAL_LEADER_READY=1,RAFT_RS_REAL_READ_CTX_READY=0": false,
+        "RAFT_RS_REAL_APPEND_RESPONSE_1=1,RAFT_RS_REAL_APPEND_RESPONSE_2=1,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=0,RAFT_RS_REAL_LEADER_READY=1,RAFT_RS_REAL_READ_CTX_READY=1": false,
+        "RAFT_RS_REAL_APPEND_RESPONSE_1=1,RAFT_RS_REAL_APPEND_RESPONSE_2=1,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=1,RAFT_RS_REAL_LEADER_READY=0,RAFT_RS_REAL_READ_CTX_READY=0": false,
+        "RAFT_RS_REAL_APPEND_RESPONSE_1=1,RAFT_RS_REAL_APPEND_RESPONSE_2=1,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=1,RAFT_RS_REAL_LEADER_READY=0,RAFT_RS_REAL_READ_CTX_READY=1": false,
+        "RAFT_RS_REAL_APPEND_RESPONSE_1=1,RAFT_RS_REAL_APPEND_RESPONSE_2=1,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=1,RAFT_RS_REAL_LEADER_READY=1,RAFT_RS_REAL_READ_CTX_READY=0": false,
+        "RAFT_RS_REAL_APPEND_RESPONSE_1=1,RAFT_RS_REAL_APPEND_RESPONSE_2=1,RAFT_RS_REAL_CURRENT_TERM_COMMITTED=1,RAFT_RS_REAL_LEADER_READY=1,RAFT_RS_REAL_READ_CTX_READY=1": true
+      },
+      "notes": "exact_boundary_projection_interface"
+    },
+    "parent_cluster_symbol_ids": [
+      "RAFT_RS_REAL_ACCEPT_READ_INDEX",
+      "RAFT_RS_REAL_READ_PENDING"
+    ],
+    "markov_blanket_symbol_ids": [
+      "RAFT_RS_REAL_APPEND_RESPONSE_1",
+      "RAFT_RS_REAL_APPEND_RESPONSE_2",
+      "RAFT_RS_REAL_CURRENT_TERM_COMMITTED",
+      "RAFT_RS_REAL_LEADER_READY",
+      "RAFT_RS_REAL_READ_CTX_READY"
+    ],
+    "admission_metrics": {
+      "novel": true,
+      "novelty_conflicts": [],
+      "verifier_passed": true,
+      "reuse_passed": true,
+      "heldout_contradiction_gain": 5.2,
+      "complexity_penalty": 3.0,
+      "rent_paid": true,
+      "verifier_agreement": {
+        "verifier_count": 3,
+        "passed_count": 3,
+        "failed_count": 0,
+        "agreement_rate": 1.0,
+        "all_agree": true,
+        "disagreed": false
+      },
+      "semantic_accept_count": 0,
+      "pathway": "B"
+    },
+    "audits": [
+      {
+        "label": "CurrentTermReadIndexReady",
+        "delta_psi": 0.2,
+        "accepted": false,
+        "reason": "bridge_reject"
+      },
+      {
+        "label": "RaftRsReadIndexReady",
+        "delta_psi": 0.2,
+        "accepted": false,
+        "reason": "bridge_reject"
+      },
+      {
+        "label": "AcceptReadIndexAppendResponseCurrentTermCommittedLeaderReadyReadCtxReadyReadPending",
+        "delta_psi": 0.2,
+        "accepted": false,
+        "reason": "bridge_reject"
+      }
+    ],
+    "verifications": [
+      {
+        "status": "pass",
+        "passed": true,
+        "failed": false,
+        "counterexample": null,
+        "cost": 0.06602070000371896,
+        "artifact_ids": [],
+        "verifier_name": "raft_rs_read_index_current_term_verifier",
+        "details": {
+          "manifest_path": "fixtures\\raft_rs_read_index_current_term\\train\\manifest.json",
+          "source_path": "fixtures\\raft_rs_read_index_current_term\\train\\source_excerpt.rs",
+          "valid_trace_count": 2,
+          "invalid_trace_count": 5,
+          "upstream_commit": "aafb07c7bab439c6139926a77dfafc5b10e9bc84",
+          "markers": {
+            "commit_to_current_term": true,
+            "MessageType::MsgReadIndex": true,
+            "test_read_only_for_new_leader": true,
+            "leader has not yet committed in its term; dropping read index msg": true
+          },
+          "command": [
+            "python",
+            "verifiers\\raft_rs_read_index_current_term_verifier.py"
+          ],
+          "returncode": 0
+        }
+      },
+      {
+        "status": "pass",
+        "passed": true,
+        "failed": false,
+        "counterexample": null,
+        "cost": 3.779999678954482e-05,
+        "artifact_ids": [],
+        "verifier_name": "role_count_verifier",
+        "details": {
+          "parent_roles": {
+            "commit": 1,
+            "pending": 1
+          },
+          "blanket_roles": {
+            "ack": 2,
+            "stable": 1,
+            "prepare": 1,
+            "clear": 1
+          },
+          "expected_parent": {
+            "commit": 1,
+            "pending": 1
+          },
+          "expected_blanket": {
+            "ack": 2,
+            "stable": 1,
+            "prepare": 1,
+            "clear": 1
+          }
+        }
+      },
+      {
+        "status": "pass",
+        "passed": true,
+        "failed": false,
+        "counterexample": null,
+        "cost": 0.00027949997456744313,
+        "artifact_ids": [],
+        "verifier_name": "trace_contract_verifier",
+        "details": {
+          "manifest_path": "fixtures\\raft_rs_read_index_current_term\\train\\manifest.json",
+          "trace_contract_type": "gated_commit"
+        }
+      }
+    ],
+    "reuse": [],
+    "rejection_history": [],
+    "retirement_history": [],
+    "lineage": {
+      "created_at": "2026-03-18T22:33:41.250667+00:00",
+      "parent_cluster_symbol_ids": [
+        "RAFT_RS_REAL_ACCEPT_READ_INDEX",
+        "RAFT_RS_REAL_READ_PENDING"
+      ],
+      "markov_blanket_symbol_ids": [
+        "RAFT_RS_REAL_APPEND_RESPONSE_1",
+        "RAFT_RS_REAL_APPEND_RESPONSE_2",
+        "RAFT_RS_REAL_CURRENT_TERM_COMMITTED",
+        "RAFT_RS_REAL_LEADER_READY",
+        "RAFT_RS_REAL_READ_CTX_READY"
+      ]
+    },
+    "support_count": 3,
+    "failure_count": 0,
+    "verification_pass_count": 3,
+    "verification_fail_count": 0,
+    "reuse_pass_count": 0,
+    "reuse_fail_count": 0,
+    "times_reused": 0,
+    "metadata": {
+      "cluster_id": "hotspot_1",
+      "tsl_pathway": "B",
+      "structural_roles": [
+        "accept_read_index",
+        "read_pending",
+        "append_response",
+        "append_response",
+        "current_term_committed",
+        "leader_ready",
+        "read_ctx_ready"
+      ],
+      "proposal_support_roles": [],
+      "proposal_hidden_variables": []
+    },
+    "reuse_signature": {
+      "parent_roles": [
+        "accept_read_index",
+        "read_pending"
+      ],
+      "blanket_roles": [
+        "append_response",
+        "append_response",
+        "current_term_committed",
+        "leader_ready",
+        "read_ctx_ready"
+      ],
+      "retired_constraint_signatures": [
+        {
+          "kind": "mutex",
+          "roles": [
+            "accept_read_index",
+            "read_pending"
+          ]
+        }
+      ],
+      "canonical_parent_roles": [
+        "commit",
+        "pending"
+      ],
+      "canonical_blanket_roles": [
+        "ack",
+        "ack",
+        "stable",
+        "prepare",
+        "clear"
+      ],
+      "canonical_retired_constraint_signatures": [
+        {
+          "kind": "mutex",
+          "roles": [
+            "commit",
+            "pending"
+          ]
+        }
+      ]
+    },
+    "admission_reason": "accepted:structural_relief"
+  },
+  "accepted_interface_is_constant": false,
+  "verification_results": [
+    {
+      "status": "pass",
+      "passed": true,
+      "failed": false,
+      "counterexample": null,
+      "cost": 0.06602070000371896,
+      "artifact_ids": [],
+      "verifier_name": "raft_rs_read_index_current_term_verifier",
+      "details": {
+        "manifest_path": "fixtures\\raft_rs_read_index_current_term\\train\\manifest.json",
+        "source_path": "fixtures\\raft_rs_read_index_current_term\\train\\source_excerpt.rs",
+        "valid_trace_count": 2,
+        "invalid_trace_count": 5,
+        "upstream_commit": "aafb07c7bab439c6139926a77dfafc5b10e9bc84",
+        "markers": {
+          "commit_to_current_term": true,
+          "MessageType::MsgReadIndex": true,
+          "test_read_only_for_new_leader": true,
+          "leader has not yet committed in its term; dropping read index msg": true
+        },
+        "command": [
+          "python",
+          "verifiers\\raft_rs_read_index_current_term_verifier.py"
+        ],
+        "returncode": 0
+      }
+    },
+    {
+      "status": "pass",
+      "passed": true,
+      "failed": false,
+      "counterexample": null,
+      "cost": 3.779999678954482e-05,
+      "artifact_ids": [],
+      "verifier_name": "role_count_verifier",
+      "details": {
+        "parent_roles": {
+          "commit": 1,
+          "pending": 1
+        },
+        "blanket_roles": {
+          "ack": 2,
+          "stable": 1,
+          "prepare": 1,
+          "clear": 1
+        },
+        "expected_parent": {
+          "commit": 1,
+          "pending": 1
+        },
+        "expected_blanket": {
+          "ack": 2,
+          "stable": 1,
+          "prepare": 1,
+          "clear": 1
+        }
+      }
+    },
+    {
+      "status": "pass",
+      "passed": true,
+      "failed": false,
+      "counterexample": null,
+      "cost": 0.00027949997456744313,
+      "artifact_ids": [],
+      "verifier_name": "trace_contract_verifier",
+      "details": {
+        "manifest_path": "fixtures\\raft_rs_read_index_current_term\\train\\manifest.json",
+        "trace_contract_type": "gated_commit"
+      }
+    }
+  ],
+  "verifier_agreement": {
+    "verifier_count": 3,
+    "passed_count": 3,
+    "failed_count": 0,
+    "agreement_rate": 1.0,
+    "all_agree": true,
+    "disagreed": false
+  },
+  "baseline_no_tsl": {
+    "cycles_run": 8,
+    "final_psi": 10.6,
+    "registry": {
+      "total": 0,
+      "accepted": 0,
+      "rejected": 0,
+      "retired": 0
+    },
+    "telemetry_summary": {
+      "event_count": 8,
+      "event_type_counts": {
+        "cycle": 8
+      },
+      "latest_metrics": {},
+      "last_cycle": {
+        "cycle": 7,
+        "psi": 10.6,
+        "q": 5056.2,
+        "collapse_method": "stalled",
+        "active_constraints": 6
+      }
+    },
+    "runtime_metrics": {
+      "cycles_to_first_accepted_symbol": null,
+      "verifier_calls_to_acceptance": 0,
+      "contradiction_before_acceptance": null,
+      "false_candidate_count_before_acceptance": 0,
+      "rollback_count_before_acceptance": 0,
+      "proposal_stage_cycles": 0,
+      "max_proposal_support": 0.0,
+      "accepted_proposal_count": 0
+    }
+  },
+  "baseline_no_conflict_memory": {
+    "cycles_run": 8,
+    "final_psi": 1.0,
+    "registry": {
+      "total": 0,
+      "accepted": 0,
+      "rejected": 0,
+      "retired": 0
+    },
+    "telemetry_summary": {
+      "event_count": 8,
+      "event_type_counts": {
+        "cycle": 8
+      },
+      "latest_metrics": {},
+      "last_cycle": {
+        "cycle": 7,
+        "psi": 1.0,
+        "q": 9.0,
+        "collapse_method": "stalled",
+        "active_constraints": 6
+      }
+    },
+    "runtime_metrics": {
+      "cycles_to_first_accepted_symbol": null,
+      "verifier_calls_to_acceptance": 0,
+      "contradiction_before_acceptance": null,
+      "false_candidate_count_before_acceptance": 0,
+      "rollback_count_before_acceptance": 0,
+      "proposal_stage_cycles": 0,
+      "max_proposal_support": 0.0,
+      "accepted_proposal_count": 0
+    }
+  },
+  "baseline_gap": 10.6,
+  "artifact_files": {
+    "graph": "artifacts\\real_world\\raft_rs_read_index_current_term_graph.json",
+    "telemetry": "artifacts\\real_world\\raft_rs_read_index_current_term_telemetry.jsonl",
+    "registry": "artifacts\\real_world\\raft_rs_read_index_current_term_registry.json"
+  },
+  "comparison": {
+    "baseline_runtime": {
+      "cycles_to_first_accepted_symbol": null,
+      "verifier_calls_to_acceptance": 0,
+      "rollback_count": 0,
+      "retirement_count": 0,
+      "false_candidate_count": 0,
+      "contradiction_before_acceptance": null
+    },
+    "densn_runtime": {
+      "cycles_to_first_accepted_symbol": 4,
+      "verifier_calls_to_acceptance": 3,
+      "rollback_count": 0,
+      "retirement_count": 0,
+      "false_candidate_count": 0,
+      "contradiction_before_acceptance": 5.2
+    }
+  },
+  "checks": {
+    "accepted_symbol": true,
+    "accepted_interface_non_constant": true,
+    "final_psi_zero": true,
+    "baseline_gap_positive": true,
+    "all_verifiers_passed": true,
+    "verifier_surfaces_agree": true,
+    "real_world_provenance_present": true
+  }
+}

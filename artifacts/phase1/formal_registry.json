@@ -1,0 +1,178 @@
+{
+  "meta_a54406b5": {
+    "meta_symbol_id": "meta_a54406b5",
+    "structural_name": "META_A54406B5",
+    "status": "accepted",
+    "semantic_label": "WriteGuard",
+    "semantic_status": "grounded",
+    "interface_kind": "exact",
+    "interface_definition": {
+      "truth_table": {
+        "TRAIN_PROTOCOL_WRITE_1=0,TRAIN_PROTOCOL_WRITE_2=0": false,
+        "TRAIN_PROTOCOL_WRITE_1=0,TRAIN_PROTOCOL_WRITE_2=1": false,
+        "TRAIN_PROTOCOL_WRITE_1=1,TRAIN_PROTOCOL_WRITE_2=0": true,
+        "TRAIN_PROTOCOL_WRITE_1=1,TRAIN_PROTOCOL_WRITE_2=1": true
+      },
+      "notes": "exact_boundary_projection_interface"
+    },
+    "parent_cluster_symbol_ids": [
+      "TRAIN_PROTOCOL_BEGIN",
+      "TRAIN_PROTOCOL_END"
+    ],
+    "markov_blanket_symbol_ids": [
+      "TRAIN_PROTOCOL_WRITE_1",
+      "TRAIN_PROTOCOL_WRITE_2"
+    ],
+    "admission_metrics": {
+      "novel": true,
+      "novelty_conflicts": [],
+      "verifier_passed": true,
+      "reuse_passed": true,
+      "heldout_contradiction_gain": 10.6,
+      "complexity_penalty": 4.0,
+      "rent_paid": true,
+      "heldout_results": [
+        {
+          "task_id": "protocol_guard_heldout_3",
+          "family": "protocol_guard",
+          "split": "heldout",
+          "baseline_final_psi": 10.6,
+          "reuse_final_psi": 0.0,
+          "contradiction_gain": 10.6,
+          "reuse_applied": true,
+          "verifier_passed": true
+        },
+        {
+          "task_id": "protocol_guard_heldout_4",
+          "family": "protocol_guard",
+          "split": "heldout",
+          "baseline_final_psi": 10.6,
+          "reuse_final_psi": 0.0,
+          "contradiction_gain": 10.6,
+          "reuse_applied": true,
+          "verifier_passed": true
+        }
+      ],
+      "semantic_accept_count": 1,
+      "pathway": "B"
+    },
+    "audits": [
+      {
+        "label": "WriteGuard",
+        "delta_psi": 0.05,
+        "accepted": true,
+        "reason": "bridge_pass"
+      }
+    ],
+    "verifications": [
+      {
+        "status": "pass",
+        "passed": true,
+        "failed": false,
+        "counterexample": null,
+        "cost": 0.06224710002425127,
+        "artifact_ids": [],
+        "verifier_name": "protocol_guard_verifier",
+        "details": {
+          "manifest_path": "fixtures\\protocol_guard\\train\\manifest.json",
+          "source_path": "fixtures\\protocol_guard\\train\\validator.py",
+          "valid_trace_count": 2,
+          "invalid_trace_count": 3,
+          "source_contains_explicit_guard_state": false,
+          "command": [
+            "python",
+            "verifiers\\protocol_guard_verifier.py"
+          ],
+          "returncode": 0
+        }
+      }
+    ],
+    "reuse": [
+      {
+        "task_id": "protocol_guard_heldout_3",
+        "reuse_passed": true,
+        "verifier_passed": true,
+        "reuse_applied": true,
+        "heldout_final_psi": 0.0,
+        "contradiction_gain": 10.6
+      },
+      {
+        "task_id": "protocol_guard_heldout_4",
+        "reuse_passed": true,
+        "verifier_passed": true,
+        "reuse_applied": true,
+        "heldout_final_psi": 0.0,
+        "contradiction_gain": 10.6
+      }
+    ],
+    "rejection_history": [],
+    "retirement_history": [],
+    "lineage": {
+      "created_at": "2026-03-18T20:13:46.962559+00:00",
+      "parent_cluster_symbol_ids": [
+        "TRAIN_PROTOCOL_BEGIN",
+        "TRAIN_PROTOCOL_END"
+      ],
+      "markov_blanket_symbol_ids": [
+        "TRAIN_PROTOCOL_WRITE_1",
+        "TRAIN_PROTOCOL_WRITE_2"
+      ]
+    },
+    "support_count": 3,
+    "failure_count": 0,
+    "verification_pass_count": 1,
+    "verification_fail_count": 0,
+    "reuse_pass_count": 2,
+    "reuse_fail_count": 0,
+    "times_reused": 2,
+    "metadata": {
+      "cluster_id": "hotspot_1",
+      "tsl_pathway": "B",
+      "structural_roles": [
+        "open",
+        "close",
+        "write",
+        "write"
+      ],
+      "proposal_support_roles": [],
+      "proposal_hidden_variables": []
+    },
+    "reuse_signature": {
+      "parent_roles": [
+        "open",
+        "close"
+      ],
+      "blanket_roles": [
+        "write",
+        "write"
+      ],
+      "retired_constraint_signatures": [
+        {
+          "kind": "xor",
+          "roles": [
+            "open",
+            "close"
+          ]
+        }
+      ],
+      "canonical_parent_roles": [
+        "open",
+        "close"
+      ],
+      "canonical_blanket_roles": [
+        "write",
+        "write"
+      ],
+      "canonical_retired_constraint_signatures": [
+        {
+          "kind": "xor",
+          "roles": [
+            "open",
+            "close"
+          ]
+        }
+      ]
+    },
+    "admission_reason": "accepted:structural_relief"
+  }
+}

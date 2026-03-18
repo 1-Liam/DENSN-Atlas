@@ -1,0 +1,291 @@
+{
+  "artifact_version": {
+    "phase": "phase4",
+    "timestamp_utc": "20260318T201346905364Z",
+    "git_sha": "ad9f6a1"
+  },
+  "proof_contract": {
+    "core_mode": "core_frozen",
+    "core_api_version": "phase5_frozen_v1",
+    "expected_core_api_version": "phase5_frozen_v1",
+    "migration_note": null,
+    "proposal_adapter": null,
+    "verifier_stack": [
+      {
+        "claim_kind": "quorum_commit_invariant",
+        "verifier_type": "SubprocessVerifier",
+        "command": [
+          "python",
+          "verifiers\\quorum_commit_verifier.py"
+        ],
+        "cwd": ".",
+        "timeout_seconds": 30.0
+      }
+    ],
+    "runtime_metrics": {
+      "cycles_to_first_accepted_symbol": null,
+      "verifier_calls_to_acceptance": 0,
+      "contradiction_before_acceptance": null,
+      "false_candidate_count_before_acceptance": 0,
+      "rollback_count_before_acceptance": 0,
+      "proposal_stage_cycles": 0,
+      "max_proposal_support": 0.0,
+      "accepted_proposal_count": 0
+    },
+    "lifecycle_metrics": {
+      "total": 1,
+      "accepted": 1,
+      "rejected": 0,
+      "retired": 0,
+      "accepted_ids": [
+        "meta_a2dd0f76"
+      ],
+      "rejected_ids": [],
+      "retired_ids": [],
+      "total_reuse_passes": 2,
+      "total_reuse_failures": 0,
+      "total_verification_passes": 1,
+      "total_verification_failures": 0
+    },
+    "transfer_metrics": {
+      "cross_family_case_count": 2,
+      "cross_family_block_count": 2,
+      "negative_transfer_blocked": true
+    }
+  },
+  "protocol_registry_reloaded_from_disk": true,
+  "quorum_registry_reloaded_from_disk": true,
+  "protocol_registry_path": "artifacts\\phase1\\formal_registry.json",
+  "quorum_registry_path": "artifacts\\phase3\\quorum_registry.json",
+  "protocol_accepted_meta_symbol_id": "meta_a54406b5",
+  "quorum_accepted_meta_symbol_id": "meta_a2dd0f76",
+  "cross_family_cases": [
+    {
+      "case_id": "protocol_to_quorum",
+      "task_id": "quorum_commit_heldout_3",
+      "reuse_applied": false,
+      "reuse_application_count": 0,
+      "reuse_applications": [],
+      "summary": {
+        "cycles_run": 8,
+        "final_psi": 10.6,
+        "registry": {
+          "total": 1,
+          "accepted": 1,
+          "rejected": 0,
+          "retired": 0
+        },
+        "telemetry_summary": {
+          "event_count": 8,
+          "event_type_counts": {
+            "cycle": 8
+          },
+          "latest_metrics": {},
+          "last_cycle": {
+            "cycle": 7,
+            "psi": 10.6,
+            "q": 4943.84,
+            "collapse_method": "stalled",
+            "active_constraints": 5
+          }
+        },
+        "runtime_metrics": {
+          "cycles_to_first_accepted_symbol": null,
+          "verifier_calls_to_acceptance": 0,
+          "contradiction_before_acceptance": null,
+          "false_candidate_count_before_acceptance": 0,
+          "rollback_count_before_acceptance": 0,
+          "proposal_stage_cycles": 0,
+          "max_proposal_support": 0.0,
+          "accepted_proposal_count": 0
+        }
+      },
+      "negative_transfer_blocked": true
+    },
+    {
+      "case_id": "quorum_to_protocol",
+      "task_id": "protocol_guard_heldout_3",
+      "reuse_applied": false,
+      "reuse_application_count": 0,
+      "reuse_applications": [],
+      "summary": {
+        "cycles_run": 8,
+        "final_psi": 10.6,
+        "registry": {
+          "total": 1,
+          "accepted": 1,
+          "rejected": 0,
+          "retired": 0
+        },
+        "telemetry_summary": {
+          "event_count": 8,
+          "event_type_counts": {
+            "cycle": 8
+          },
+          "latest_metrics": {},
+          "last_cycle": {
+            "cycle": 7,
+            "psi": 10.6,
+            "q": 4719.12,
+            "collapse_method": "stalled",
+            "active_constraints": 5
+          }
+        },
+        "runtime_metrics": {
+          "cycles_to_first_accepted_symbol": null,
+          "verifier_calls_to_acceptance": 0,
+          "contradiction_before_acceptance": null,
+          "false_candidate_count_before_acceptance": 0,
+          "rollback_count_before_acceptance": 0,
+          "proposal_stage_cycles": 0,
+          "max_proposal_support": 0.0,
+          "accepted_proposal_count": 0
+        }
+      },
+      "negative_transfer_blocked": true
+    }
+  ],
+  "negative_transfer_case": {
+    "task_id": "quorum_commit_negative_strict_3",
+    "proof_contract": {
+      "core_mode": "core_frozen",
+      "core_api_version": "phase5_frozen_v1",
+      "expected_core_api_version": "phase5_frozen_v1",
+      "migration_note": null,
+      "proposal_adapter": null,
+      "verifier_stack": [
+        {
+          "claim_kind": "quorum_commit_invariant",
+          "verifier_type": "SubprocessVerifier",
+          "command": [
+            "python",
+            "verifiers\\quorum_commit_verifier.py"
+          ],
+          "cwd": ".",
+          "timeout_seconds": 30.0
+        }
+      ],
+      "runtime_metrics": {
+        "cycles_to_first_accepted_symbol": null,
+        "verifier_calls_to_acceptance": 0,
+        "contradiction_before_acceptance": null,
+        "false_candidate_count_before_acceptance": 0,
+        "rollback_count_before_acceptance": 0,
+        "proposal_stage_cycles": 0,
+        "max_proposal_support": 0.0,
+        "accepted_proposal_count": 0
+      },
+      "lifecycle_metrics": {
+        "total": 1,
+        "accepted": 1,
+        "rejected": 0,
+        "retired": 0,
+        "accepted_ids": [
+          "meta_a2dd0f76"
+        ],
+        "rejected_ids": [],
+        "retired_ids": [],
+        "total_reuse_passes": 2,
+        "total_reuse_failures": 0,
+        "total_verification_passes": 1,
+        "total_verification_failures": 0
+      },
+      "transfer_metrics": {}
+    },
+    "reuse_applied": true,
+    "reuse_application_count": 1,
+    "reuse_applications": [
+      {
+        "applied": true,
+        "instantiated_meta_symbol_id": "meta_244c0318",
+        "matched_constraint_ids": [
+          "QUORUM_COMMIT_NEGATIVE_STRICT_3_NEGATIVE_TRANSFER_C_COMMIT_PENDING_MUTEX"
+        ],
+        "parent_symbol_ids": [
+          "QUORUM_COMMIT_NEGATIVE_STRICT_3_NEGATIVE_TRANSFER_COMMIT",
+          "QUORUM_COMMIT_NEGATIVE_STRICT_3_NEGATIVE_TRANSFER_PENDING"
+        ],
+        "blanket_symbol_ids": [
+          "QUORUM_COMMIT_NEGATIVE_STRICT_3_NEGATIVE_TRANSFER_ACK_1",
+          "QUORUM_COMMIT_NEGATIVE_STRICT_3_NEGATIVE_TRANSFER_ACK_2",
+          "QUORUM_COMMIT_NEGATIVE_STRICT_3_NEGATIVE_TRANSFER_CLEAR",
+          "QUORUM_COMMIT_NEGATIVE_STRICT_3_NEGATIVE_TRANSFER_PREPARE"
+        ],
+        "blanket_input_symbol_ids": [
+          "QUORUM_COMMIT_NEGATIVE_STRICT_3_NEGATIVE_TRANSFER_ACK_1",
+          "QUORUM_COMMIT_NEGATIVE_STRICT_3_NEGATIVE_TRANSFER_ACK_2",
+          "QUORUM_COMMIT_NEGATIVE_STRICT_3_NEGATIVE_TRANSFER_CLEAR",
+          "QUORUM_COMMIT_NEGATIVE_STRICT_3_NEGATIVE_TRANSFER_PREPARE"
+        ],
+        "source_meta_symbol_id": "meta_a2dd0f76",
+        "mapping_class": "exact_blanket_expansion",
+        "mapping_confidence": 1.0
+      }
+    ],
+    "summary": {
+      "cycles_run": 1,
+      "final_psi": 0.0,
+      "registry": {
+        "total": 1,
+        "accepted": 1,
+        "rejected": 0,
+        "retired": 0
+      },
+      "telemetry_summary": {
+        "event_count": 2,
+        "event_type_counts": {
+          "reuse_application": 1,
+          "cycle": 1
+        },
+        "latest_metrics": {},
+        "last_cycle": {
+          "cycle": 0,
+          "psi": 0.0,
+          "q": 0.0,
+          "collapse_method": "stalled",
+          "active_constraints": 5
+        }
+      },
+      "runtime_metrics": {
+        "cycles_to_first_accepted_symbol": null,
+        "verifier_calls_to_acceptance": 0,
+        "contradiction_before_acceptance": null,
+        "false_candidate_count_before_acceptance": 0,
+        "rollback_count_before_acceptance": 0,
+        "proposal_stage_cycles": 0,
+        "max_proposal_support": 0.0,
+        "accepted_proposal_count": 0
+      }
+    },
+    "verification": {
+      "status": "fail",
+      "passed": false,
+      "failed": true,
+      "counterexample": {
+        "reason": "missing_stable_blanket_role",
+        "blanket_roles": {
+          "ack": 2,
+          "clear": 1,
+          "prepare": 1
+        }
+      },
+      "cost": 0.05541810000431724,
+      "artifact_ids": [],
+      "verifier_name": "quorum_commit_verifier",
+      "details": {
+        "manifest_path": "fixtures\\quorum_commit\\negative_commit_strict_3\\manifest.json",
+        "command": [
+          "python",
+          "verifiers\\quorum_commit_verifier.py"
+        ],
+        "returncode": 0
+      }
+    },
+    "verifier_failed": true,
+    "negative_transfer_blocked": true
+  },
+  "checks": {
+    "cross_family_reuse_blocked": true,
+    "negative_transfer_verifier_blocked": true
+  }
+}

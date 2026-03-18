@@ -1,0 +1,92 @@
+{
+  "task_id": "vote_majority_commit_target",
+  "family": "vote_majority_commit",
+  "split": "transfer_target",
+  "description": "Vote-majority decision controller with renamed surface roles and a buggy validator that lacks an explicit majority-ready hidden state.",
+  "roles": {
+    "propose": "PROPOSE",
+    "decide": "DECIDE",
+    "waiting": "WAITING",
+    "vote": "VOTE",
+    "barrier": "BARRIER"
+  },
+  "canonical_roles": {
+    "propose": "prepare",
+    "decide": "commit",
+    "waiting": "pending",
+    "vote": "ack",
+    "barrier": "clear"
+  },
+  "natural_language_spec": "PROPOSE starts a waiting decision round. DECIDE is legal only when the barrier is clear and enough votes have arrived. WAITING tracks an unfinished round. A finished trace may not remain both waiting and decided.",
+  "formal_spec": {
+    "rules": [
+      "WAITING -> PROPOSE",
+      "DECIDE -> BARRIER",
+      "DECIDE -> VOTE_1",
+      "DECIDE -> VOTE_2",
+      "DECIDE xor WAITING"
+    ],
+    "safety_property": "No DECIDE occurs before the required votes and barrier condition are satisfied."
+  },
+  "execution_traces": [
+    [
+      "PROPOSE",
+      "BARRIER",
+      "VOTE_1",
+      "VOTE_2",
+      "DECIDE"
+    ],
+    [
+      "PROPOSE",
+      "BARRIER",
+      "VOTE_2",
+      "VOTE_1",
+      "DECIDE"
+    ]
+  ],
+  "failing_tests": [
+    {
+      "name": "decide_without_majority",
+      "trace": [
+        "PROPOSE",
+        "BARRIER",
+        "VOTE_1",
+        "DECIDE"
+      ],
+      "expected": "fail"
+    },
+    {
+      "name": "decide_without_barrier",
+      "trace": [
+        "PROPOSE",
+        "VOTE_1",
+        "VOTE_2",
+        "DECIDE"
+      ],
+      "expected": "fail"
+    }
+  ],
+  "logs": [
+    {
+      "level": "ERROR",
+      "message": "DECIDE observed before majority-ready conditions held",
+      "trace": [
+        "PROPOSE",
+        "VOTE_1",
+        "DECIDE"
+      ]
+    }
+  ],
+  "counterexamples": [
+    {
+      "name": "stale_decide_attempt",
+      "trace": [
+        "DECIDE"
+      ],
+      "reason": "decide_without_waiting_round"
+    }
+  ],
+  "source_code_path": "validator.py",
+  "vote_count": 3,
+  "required_vote_count": 2
+}

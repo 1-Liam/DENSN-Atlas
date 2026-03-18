@@ -1,0 +1,504 @@
+{
+  "artifact_version": {
+    "phase": "real_world",
+    "timestamp_utc": "20260318T223344551681Z",
+    "git_sha": "4b3ad2a"
+  },
+  "domain": "redislock_refresh_real_world",
+  "source_manifest_path": "fixtures\\redislock_refresh\\train\\manifest.json",
+  "source_provenance": {
+    "repo": "https://github.com/bsm/redislock",
+    "upstream_commit": "6ba61a38e6e67c455ea775ad521ebbd0868cf97b",
+    "upstream_commit_short": "6ba61a3",
+    "upstream_commit_date": "2025-06-09",
+    "source_files": [
+      "redislock.go",
+      "redislock_test.go",
+      "example_test.go"
+    ],
+    "source_urls": [
+      "https://github.com/bsm/redislock/blob/6ba61a38e6e67c455ea775ad521ebbd0868cf97b/redislock.go",
+      "https://github.com/bsm/redislock/blob/6ba61a38e6e67c455ea775ad521ebbd0868cf97b/redislock_test.go",
+      "https://github.com/bsm/redislock/blob/6ba61a38e6e67c455ea775ad521ebbd0868cf97b/example_test.go"
+    ],
+    "license": "BSD-2-Clause"
+  },
+  "proof_contract": {
+    "core_mode": "core_frozen",
+    "core_api_version": "phase5_frozen_v1",
+    "expected_core_api_version": "phase5_frozen_v1",
+    "migration_note": null,
+    "proposal_adapter": null,
+    "verifier_stack": [
+      {
+        "claim_kind": "redislock_refresh_invariant",
+        "verifier_type": "SubprocessVerifier",
+        "command": [
+          "python",
+          "verifiers\\redislock_refresh_verifier.py"
+        ],
+        "cwd": ".",
+        "timeout_seconds": 30.0
+      },
+      {
+        "claim_kind": "redislock_refresh_invariant",
+        "verifier_type": "RoleCountVerifier"
+      },
+      {
+        "claim_kind": "redislock_refresh_invariant",
+        "verifier_type": "TraceContractVerifier"
+      }
+    ],
+    "runtime_metrics": {
+      "cycles_to_first_accepted_symbol": 4,
+      "verifier_calls_to_acceptance": 3,
+      "contradiction_before_acceptance": 5.2,
+      "false_candidate_count_before_acceptance": 0,
+      "rollback_count_before_acceptance": 0,
+      "proposal_stage_cycles": 0,
+      "max_proposal_support": 0.0,
+      "accepted_proposal_count": 0
+    },
+    "lifecycle_metrics": {
+      "total": 1,
+      "accepted": 1,
+      "rejected": 0,
+      "retired": 0,
+      "accepted_ids": [
+        "meta_890bab2d"
+      ],
+      "rejected_ids": [],
+      "retired_ids": [],
+      "total_reuse_passes": 0,
+      "total_reuse_failures": 0,
+      "total_verification_passes": 3,
+      "total_verification_failures": 0
+    }
+  },
+  "train_summary": {
+    "cycles_run": 4,
+    "final_psi": 0.0,
+    "registry": {
+      "total": 1,
+      "accepted": 1,
+      "rejected": 0,
+      "retired": 0
+    },
+    "telemetry_summary": {
+      "event_count": 9,
+      "event_type_counts": {
+        "cycle": 4,
+        "verification_feedback": 3,
+        "candidate_evaluated": 1,
+        "tsl_event": 1
+      },
+      "latest_metrics": {},
+      "last_cycle": {
+        "cycle": 3,
+        "psi": 0.0,
+        "q": 0.0,
+        "collapse_method": "stalled",
+        "active_constraints": 3
+      }
+    },
+    "runtime_metrics": {
+      "cycles_to_first_accepted_symbol": 4,
+      "verifier_calls_to_acceptance": 3,
+      "contradiction_before_acceptance": 5.2,
+      "false_candidate_count_before_acceptance": 0,
+      "rollback_count_before_acceptance": 0,
+      "proposal_stage_cycles": 0,
+      "max_proposal_support": 0.0,
+      "accepted_proposal_count": 0
+    }
+  },
+  "accepted_meta_symbol_id": "meta_890bab2d",
+  "accepted_record": {
+    "meta_symbol_id": "meta_890bab2d",
+    "structural_name": "META_890BAB2D",
+    "status": "accepted",
+    "semantic_label": "RefreshWindowReady",
+    "semantic_status": "grounded",
+    "interface_kind": "exact",
+    "interface_definition": {
+      "truth_table": {
+        "REDISLOCK_REAL_REFRESH_1=0,REDISLOCK_REAL_REFRESH_2=0": false,
+        "REDISLOCK_REAL_REFRESH_1=0,REDISLOCK_REAL_REFRESH_2=1": false,
+        "REDISLOCK_REAL_REFRESH_1=1,REDISLOCK_REAL_REFRESH_2=0": true,
+        "REDISLOCK_REAL_REFRESH_1=1,REDISLOCK_REAL_REFRESH_2=1": true
+      },
+      "notes": "exact_boundary_projection_interface"
+    },
+    "parent_cluster_symbol_ids": [
+      "REDISLOCK_REAL_OBTAIN",
+      "REDISLOCK_REAL_RELEASE"
+    ],
+    "markov_blanket_symbol_ids": [
+      "REDISLOCK_REAL_REFRESH_1",
+      "REDISLOCK_REAL_REFRESH_2"
+    ],
+    "admission_metrics": {
+      "novel": true,
+      "novelty_conflicts": [],
+      "verifier_passed": true,
+      "reuse_passed": true,
+      "heldout_contradiction_gain": 5.2,
+      "complexity_penalty": 3.0,
+      "rent_paid": true,
+      "verifier_agreement": {
+        "verifier_count": 3,
+        "passed_count": 3,
+        "failed_count": 0,
+        "agreement_rate": 1.0,
+        "all_agree": true,
+        "disagreed": false
+      },
+      "semantic_accept_count": 3,
+      "pathway": "B"
+    },
+    "audits": [
+      {
+        "label": "RefreshWindowReady",
+        "delta_psi": 0.06666666666666668,
+        "accepted": true,
+        "reason": "bridge_pass"
+      },
+      {
+        "label": "RedislockRefreshWindow",
+        "delta_psi": 0.06666666666666668,
+        "accepted": true,
+        "reason": "bridge_pass"
+      },
+      {
+        "label": "ObtainRefreshRelease",
+        "delta_psi": 0.05,
+        "accepted": true,
+        "reason": "bridge_pass"
+      }
+    ],
+    "verifications": [
+      {
+        "status": "pass",
+        "passed": true,
+        "failed": false,
+        "counterexample": null,
+        "cost": 0.06103480001911521,
+        "artifact_ids": [],
+        "verifier_name": "redislock_refresh_verifier",
+        "details": {
+          "manifest_path": "fixtures\\redislock_refresh\\train\\manifest.json",
+          "source_path": "fixtures\\redislock_refresh\\train\\source_excerpt.go",
+          "valid_trace_count": 2,
+          "invalid_trace_count": 4,
+          "upstream_commit": "6ba61a38e6e67c455ea775ad521ebbd0868cf97b",
+          "markers": {
+            "Obtain(": true,
+            "Refresh(": true,
+            "Release(": true,
+            "ErrNotObtained": true,
+            "ErrLockNotHeld": true,
+            "TestLock_Refresh": true,
+            "TestLock_Refresh_expired": true,
+            "TestLock_Release_expired": true,
+            "Yay, I still have my lock!": true
+          },
+          "command": [
+            "python",
+            "verifiers\\redislock_refresh_verifier.py"
+          ],
+          "returncode": 0
+        }
+      },
+      {
+        "status": "pass",
+        "passed": true,
+        "failed": false,
+        "counterexample": null,
+        "cost": 5.139998393133283e-05,
+        "artifact_ids": [],
+        "verifier_name": "role_count_verifier",
+        "details": {
+          "parent_roles": {
+            "open": 1,
+            "close": 1
+          },
+          "blanket_roles": {
+            "write": 2
+          },
+          "expected_parent": {
+            "open": 1,
+            "close": 1
+          },
+          "expected_blanket": {
+            "write": 2
+          }
+        }
+      },
+      {
+        "status": "pass",
+        "passed": true,
+        "failed": false,
+        "counterexample": null,
+        "cost": 0.00038520002271980047,
+        "artifact_ids": [],
+        "verifier_name": "trace_contract_verifier",
+        "details": {
+          "manifest_path": "fixtures\\redislock_refresh\\train\\manifest.json",
+          "trace_contract_type": "window_guard"
+        }
+      }
+    ],
+    "reuse": [],
+    "rejection_history": [],
+    "retirement_history": [],
+    "lineage": {
+      "created_at": "2026-03-18T22:33:44.593040+00:00",
+      "parent_cluster_symbol_ids": [
+        "REDISLOCK_REAL_OBTAIN",
+        "REDISLOCK_REAL_RELEASE"
+      ],
+      "markov_blanket_symbol_ids": [
+        "REDISLOCK_REAL_REFRESH_1",
+        "REDISLOCK_REAL_REFRESH_2"
+      ]
+    },
+    "support_count": 3,
+    "failure_count": 0,
+    "verification_pass_count": 3,
+    "verification_fail_count": 0,
+    "reuse_pass_count": 0,
+    "reuse_fail_count": 0,
+    "times_reused": 0,
+    "metadata": {
+      "cluster_id": "hotspot_1",
+      "tsl_pathway": "B",
+      "structural_roles": [
+        "obtain",
+        "release",
+        "refresh",
+        "refresh"
+      ],
+      "proposal_support_roles": [],
+      "proposal_hidden_variables": []
+    },
+    "reuse_signature": {
+      "parent_roles": [
+        "obtain",
+        "release"
+      ],
+      "blanket_roles": [
+        "refresh",
+        "refresh"
+      ],
+      "retired_constraint_signatures": [
+        {
+          "kind": "xor",
+          "roles": [
+            "obtain",
+            "release"
+          ]
+        }
+      ],
+      "canonical_parent_roles": [
+        "open",
+        "close"
+      ],
+      "canonical_blanket_roles": [
+        "write",
+        "write"
+      ],
+      "canonical_retired_constraint_signatures": [
+        {
+          "kind": "xor",
+          "roles": [
+            "open",
+            "close"
+          ]
+        }
+      ]
+    },
+    "admission_reason": "accepted:structural_relief"
+  },
+  "accepted_interface_is_constant": false,
+  "verification_results": [
+    {
+      "status": "pass",
+      "passed": true,
+      "failed": false,
+      "counterexample": null,
+      "cost": 0.06103480001911521,
+      "artifact_ids": [],
+      "verifier_name": "redislock_refresh_verifier",
+      "details": {
+        "manifest_path": "fixtures\\redislock_refresh\\train\\manifest.json",
+        "source_path": "fixtures\\redislock_refresh\\train\\source_excerpt.go",
+        "valid_trace_count": 2,
+        "invalid_trace_count": 4,
+        "upstream_commit": "6ba61a38e6e67c455ea775ad521ebbd0868cf97b",
+        "markers": {
+          "Obtain(": true,
+          "Refresh(": true,
+          "Release(": true,
+          "ErrNotObtained": true,
+          "ErrLockNotHeld": true,
+          "TestLock_Refresh": true,
+          "TestLock_Refresh_expired": true,
+          "TestLock_Release_expired": true,
+          "Yay, I still have my lock!": true
+        },
+        "command": [
+          "python",
+          "verifiers\\redislock_refresh_verifier.py"
+        ],
+        "returncode": 0
+      }
+    },
+    {
+      "status": "pass",
+      "passed": true,
+      "failed": false,
+      "counterexample": null,
+      "cost": 5.139998393133283e-05,
+      "artifact_ids": [],
+      "verifier_name": "role_count_verifier",
+      "details": {
+        "parent_roles": {
+          "open": 1,
+          "close": 1
+        },
+        "blanket_roles": {
+          "write": 2
+        },
+        "expected_parent": {
+          "open": 1,
+          "close": 1
+        },
+        "expected_blanket": {
+          "write": 2
+        }
+      }
+    },
+    {
+      "status": "pass",
+      "passed": true,
+      "failed": false,
+      "counterexample": null,
+      "cost": 0.00038520002271980047,
+      "artifact_ids": [],
+      "verifier_name": "trace_contract_verifier",
+      "details": {
+        "manifest_path": "fixtures\\redislock_refresh\\train\\manifest.json",
+        "trace_contract_type": "window_guard"
+      }
+    }
+  ],
+  "verifier_agreement": {
+    "verifier_count": 3,
+    "passed_count": 3,
+    "failed_count": 0,
+    "agreement_rate": 1.0,
+    "all_agree": true,
+    "disagreed": false
+  },
+  "baseline_no_tsl": {
+    "cycles_run": 8,
+    "final_psi": 10.6,
+    "registry": {
+      "total": 0,
+      "accepted": 0,
+      "rejected": 0,
+      "retired": 0
+    },
+    "telemetry_summary": {
+      "event_count": 8,
+      "event_type_counts": {
+        "cycle": 8
+      },
+      "latest_metrics": {},
+      "last_cycle": {
+        "cycle": 7,
+        "psi": 10.6,
+        "q": 4719.12,
+        "collapse_method": "stalled",
+        "active_constraints": 4
+      }
+    },
+    "runtime_metrics": {
+      "cycles_to_first_accepted_symbol": null,
+      "verifier_calls_to_acceptance": 0,
+      "contradiction_before_acceptance": null,
+      "false_candidate_count_before_acceptance": 0,
+      "rollback_count_before_acceptance": 0,
+      "proposal_stage_cycles": 0,
+      "max_proposal_support": 0.0,
+      "accepted_proposal_count": 0
+    }
+  },
+  "baseline_no_conflict_memory": {
+    "cycles_run": 8,
+    "final_psi": 1.0,
+    "registry": {
+      "total": 0,
+      "accepted": 0,
+      "rejected": 0,
+      "retired": 0
+    },
+    "telemetry_summary": {
+      "event_count": 8,
+      "event_type_counts": {
+        "cycle": 8
+      },
+      "latest_metrics": {},
+      "last_cycle": {
+        "cycle": 7,
+        "psi": 1.0,
+        "q": 6.0,
+        "collapse_method": "stalled",
+        "active_constraints": 4
+      }
+    },
+    "runtime_metrics": {
+      "cycles_to_first_accepted_symbol": null,
+      "verifier_calls_to_acceptance": 0,
+      "contradiction_before_acceptance": null,
+      "false_candidate_count_before_acceptance": 0,
+      "rollback_count_before_acceptance": 0,
+      "proposal_stage_cycles": 0,
+      "max_proposal_support": 0.0,
+      "accepted_proposal_count": 0
+    }
+  },
+  "baseline_gap": 10.6,
+  "artifact_files": {
+    "graph": "artifacts\\real_world\\redislock_refresh_graph.json",
+    "telemetry": "artifacts\\real_world\\redislock_refresh_telemetry.jsonl",
+    "registry": "artifacts\\real_world\\redislock_refresh_registry.json"
+  },
+  "comparison": {
+    "baseline_runtime": {
+      "cycles_to_first_accepted_symbol": null,
+      "verifier_calls_to_acceptance": 0,
+      "rollback_count": 0,
+      "retirement_count": 0,
+      "false_candidate_count": 0,
+      "contradiction_before_acceptance": null
+    },
+    "densn_runtime": {
+      "cycles_to_first_accepted_symbol": 4,
+      "verifier_calls_to_acceptance": 3,
+      "rollback_count": 0,
+      "retirement_count": 0,
+      "false_candidate_count": 0,
+      "contradiction_before_acceptance": 5.2
+    }
+  },
+  "checks": {
+    "accepted_symbol": true,
+    "accepted_interface_non_constant": true,
+    "final_psi_zero": true,
+    "baseline_gap_positive": true,
+    "all_verifiers_passed": true,
+    "verifier_surfaces_agree": true,
+    "real_world_provenance_present": true
+  }
+}

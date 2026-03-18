@@ -1,0 +1,174 @@
+{
+  "family": "redsync_mutex_extend",
+  "artifact_version": {
+    "phase": "real_world",
+    "timestamp_utc": "20260318T223342995683Z",
+    "git_sha": "4b3ad2a"
+  },
+  "proof_contract": {
+    "core_mode": "core_frozen",
+    "core_api_version": "phase5_frozen_v1",
+    "expected_core_api_version": "phase5_frozen_v1",
+    "migration_note": null,
+    "proposal_adapter": {
+      "adapter": "ReplayProposalAdapter"
+    },
+    "verifier_stack": [
+      {
+        "claim_kind": "redsync_mutex_extend_invariant",
+        "verifier_type": "SubprocessVerifier",
+        "command": [
+          "python",
+          "verifiers\\redsync_mutex_extend_verifier.py"
+        ],
+        "cwd": ".",
+        "timeout_seconds": 30.0
+      },
+      {
+        "claim_kind": "redsync_mutex_extend_invariant",
+        "verifier_type": "RoleCountVerifier"
+      },
+      {
+        "claim_kind": "redsync_mutex_extend_invariant",
+        "verifier_type": "TraceContractVerifier"
+      }
+    ],
+    "runtime_metrics": {
+      "cycles_to_first_accepted_symbol": 3,
+      "verifier_calls_to_acceptance": 3,
+      "contradiction_before_acceptance": 4.0,
+      "false_candidate_count_before_acceptance": 0,
+      "rollback_count_before_acceptance": 0,
+      "proposal_stage_cycles": 3,
+      "max_proposal_support": 3.625,
+      "accepted_proposal_count": 5
+    },
+    "lifecycle_metrics": {
+      "total": 1,
+      "accepted": 1,
+      "rejected": 0,
+      "retired": 0,
+      "accepted_ids": [
+        "meta_61d847aa"
+      ],
+      "rejected_ids": [],
+      "retired_ids": [],
+      "total_reuse_passes": 0,
+      "total_reuse_failures": 0,
+      "total_verification_passes": 3,
+      "total_verification_failures": 0
+    },
+    "transfer_metrics": {}
+  },
+  "baseline": {
+    "adapter": "none",
+    "summary": {
+      "cycles_run": 4,
+      "final_psi": 0.0,
+      "registry": {
+        "total": 1,
+        "accepted": 1,
+        "rejected": 0,
+        "retired": 0
+      },
+      "telemetry_summary": {
+        "event_count": 9,
+        "event_type_counts": {
+          "cycle": 4,
+          "verification_feedback": 3,
+          "candidate_evaluated": 1,
+          "tsl_event": 1
+        },
+        "latest_metrics": {},
+        "last_cycle": {
+          "cycle": 3,
+          "psi": 0.0,
+          "q": 0.0,
+          "collapse_method": "stalled",
+          "active_constraints": 3
+        }
+      },
+      "runtime_metrics": {
+        "cycles_to_first_accepted_symbol": 4,
+        "verifier_calls_to_acceptance": 3,
+        "contradiction_before_acceptance": 5.2,
+        "false_candidate_count_before_acceptance": 0,
+        "rollback_count_before_acceptance": 0,
+        "proposal_stage_cycles": 0,
+        "max_proposal_support": 0.0,
+        "accepted_proposal_count": 0
+      }
+    },
+    "proposal_summary": {
+      "total": 0,
+      "status_counts": {},
+      "type_counts": {},
+      "pending_ids": []
+    }
+  },
+  "proposal_assisted": {
+    "adapter": "ReplayProposalAdapter",
+    "summary": {
+      "cycles_run": 3,
+      "final_psi": 0.0,
+      "registry": {
+        "total": 1,
+        "accepted": 1,
+        "rejected": 0,
+        "retired": 0
+      },
+      "telemetry_summary": {
+        "event_count": 23,
+        "event_type_counts": {
+          "proposal_submitted": 6,
+          "proposal_reviewed": 6,
+          "proposal_stage": 3,
+          "cycle": 3,
+          "verification_feedback": 3,
+          "candidate_evaluated": 1,
+          "tsl_event": 1
+        },
+        "latest_metrics": {},
+        "last_cycle": {
+          "cycle": 2,
+          "psi": 0.0,
+          "q": 0.0,
+          "collapse_method": "stalled",
+          "active_constraints": 3
+        }
+      },
+      "runtime_metrics": {
+        "cycles_to_first_accepted_symbol": 3,
+        "verifier_calls_to_acceptance": 3,
+        "contradiction_before_acceptance": 4.0,
+        "false_candidate_count_before_acceptance": 0,
+        "rollback_count_before_acceptance": 0,
+        "proposal_stage_cycles": 3,
+        "max_proposal_support": 3.625,
+        "accepted_proposal_count": 5
+      }
+    },
+    "proposal_summary": {
+      "total": 6,
+      "status_counts": {
+        "accepted_for_structural_eval": 5,
+        "abstain_needs_more_evidence": 1
+      },
+      "type_counts": {
+        "constraint": 1,
+        "hidden_variable": 1,
+        "semantic_label": 1,
+        "test": 2,
+        "evidence_query": 1
+      },
+      "pending_ids": []
+    }
+  },
+  "comparison": {
+    "cycles_to_first_accepted_symbol_delta": 1,
+    "verifier_calls_to_acceptance_delta": 0,
+    "false_candidate_delta": 0,
+    "rollback_delta": 0,
+    "max_proposal_support": 3.625
+  }
+}

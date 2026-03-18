@@ -1,0 +1,97 @@
+{
+  "task_id": "replication_barrier_target",
+  "family": "replication_barrier",
+  "split": "transfer_target",
+  "description": "Replication barrier controller with renamed surface roles and a buggy validator that lacks an explicit barrier-ready hidden state.",
+  "roles": {
+    "stage": "STAGE",
+    "publish": "PUBLISH",
+    "queued": "QUEUED",
+    "replica": "REPLICA",
+    "barrier": "BARRIER"
+  },
+  "canonical_roles": {
+    "stage": "prepare",
+    "publish": "commit",
+    "queued": "pending",
+    "replica": "ack",
+    "barrier": "clear"
+  },
+  "natural_language_spec": "STAGE starts a queued publish round. PUBLISH is legal only when the barrier is open and enough replica confirmations have arrived. QUEUED tracks an unfinished publish round. A finished trace may not remain both queued and published.",
+  "formal_spec": {
+    "rules": [
+      "QUEUED -> STAGE",
+      "PUBLISH -> BARRIER",
+      "PUBLISH -> REPLICA_1",
+      "PUBLISH -> REPLICA_2",
+      "PUBLISH -> REPLICA_3",
+      "PUBLISH xor QUEUED"
+    ],
+    "safety_property": "No PUBLISH occurs before the required replica confirmations and barrier condition are satisfied."
+  },
+  "execution_traces": [
+    [
+      "STAGE",
+      "BARRIER",
+      "REPLICA_1",
+      "REPLICA_2",
+      "REPLICA_3",
+      "PUBLISH"
+    ],
+    [
+      "STAGE",
+      "BARRIER",
+      "REPLICA_3",
+      "REPLICA_2",
+      "REPLICA_1",
+      "PUBLISH"
+    ]
+  ],
+  "failing_tests": [
+    {
+      "name": "publish_without_replica_quorum",
+      "trace": [
+        "STAGE",
+        "BARRIER",
+        "REPLICA_1",
+        "REPLICA_2",
+        "PUBLISH"
+      ],
+      "expected": "fail"
+    },
+    {
+      "name": "publish_without_barrier",
+      "trace": [
+        "STAGE",
+        "REPLICA_1",
+        "REPLICA_2",
+        "REPLICA_3",
+        "PUBLISH"
+      ],
+      "expected": "fail"
+    }
+  ],
+  "logs": [
+    {
+      "level": "ERROR",
+      "message": "PUBLISH observed before barrier-ready conditions held",
+      "trace": [
+        "STAGE",
+        "REPLICA_1",
+        "PUBLISH"
+      ]
+    }
+  ],
+  "counterexamples": [
+    {
+      "name": "stale_publish_attempt",
+      "trace": [
+        "PUBLISH"
+      ],
+      "reason": "publish_without_queued_round"
+    }
+  ],
+  "source_code_path": "validator.py",
+  "replica_count": 4,
+  "required_replica_count": 3
+}

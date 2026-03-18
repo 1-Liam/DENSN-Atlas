@@ -1,0 +1,55 @@
+{
+  "artifact_version": {
+    "phase": "phase12",
+    "timestamp_utc": "20260318T201454244503Z",
+    "git_sha": "4cf12ad"
+  },
+  "family": "credit_window",
+  "cycle_trace": [
+    {
+      "cycle": 0,
+      "psi": 2.2,
+      "q": 45.49600000000001,
+      "event_type": "cycle"
+    },
+    {
+      "cycle": 1,
+      "psi": 3.4,
+      "q": 164.152,
+      "event_type": "cycle"
+    },
+    {
+      "cycle": 2,
+      "psi": 4.6,
+      "q": 402.03999999999996,
+      "event_type": "cycle"
+    },
+    {
+      "cycle": 3,
+      "psi": 0.0,
+      "q": 0.0,
+      "event_type": "cycle"
+    }
+  ],
+  "accepted_interface_truth_table_preview": {
+    "TRAIN_CREDIT_BALANCE=0,TRAIN_CREDIT_CHARGE_1=0,TRAIN_CREDIT_CHARGE_2=0": false,
+    "TRAIN_CREDIT_BALANCE=0,TRAIN_CREDIT_CHARGE_1=0,TRAIN_CREDIT_CHARGE_2=1": false,
+    "TRAIN_CREDIT_BALANCE=0,TRAIN_CREDIT_CHARGE_1=1,TRAIN_CREDIT_CHARGE_2=0": false,
+    "TRAIN_CREDIT_BALANCE=0,TRAIN_CREDIT_CHARGE_1=1,TRAIN_CREDIT_CHARGE_2=1": false
+  },
+  "transfer_bars": {
+    "heldout_baseline_final_psi": 10.6,
+    "heldout_transfer_final_psi": 0.0,
+    "heldout_contradiction_gain": 10.6
+  },
+  "blocked_transfer_bar": {
+    "negative_transfer_baseline_final_psi": 10.6,
+    "negative_transfer_final_psi": 10.6,
+    "blocker_reason": "valid_trace_rejected"
+  },
+  "baseline_contrast_bar": {
+    "densn_final_psi": 0.0,
+    "model_baseline_final_psi": 10.6,
+    "model_baseline_failure_reason": "missing_balance_blanket_role"
+  }
+}

@@ -1,0 +1,694 @@
+{
+  "domain": "credit_window",
+  "artifact_version": {
+    "phase": "phase12",
+    "timestamp_utc": "20260318T201341846953Z",
+    "git_sha": "ad9f6a1"
+  },
+  "proof_contract": {
+    "core_mode": "core_frozen",
+    "core_api_version": "phase5_frozen_v1",
+    "expected_core_api_version": "phase5_frozen_v1",
+    "migration_note": null,
+    "proposal_adapter": null,
+    "verifier_stack": [
+      {
+        "claim_kind": "credit_window_invariant",
+        "verifier_type": "SubprocessVerifier",
+        "command": [
+          "python",
+          "verifiers\\credit_window_verifier.py"
+        ],
+        "cwd": ".",
+        "timeout_seconds": 30.0
+      }
+    ],
+    "runtime_metrics": {
+      "cycles_to_first_accepted_symbol": 4,
+      "verifier_calls_to_acceptance": 1,
+      "contradiction_before_acceptance": 5.2,
+      "false_candidate_count_before_acceptance": 0,
+      "rollback_count_before_acceptance": 0,
+      "proposal_stage_cycles": 0,
+      "max_proposal_support": 0.0,
+      "accepted_proposal_count": 0
+    },
+    "lifecycle_metrics": {
+      "total": 1,
+      "accepted": 1,
+      "rejected": 0,
+      "retired": 0,
+      "accepted_ids": [
+        "meta_259daf21"
+      ],
+      "rejected_ids": [],
+      "retired_ids": [],
+      "total_reuse_passes": 1,
+      "total_reuse_failures": 0,
+      "total_verification_passes": 1,
+      "total_verification_failures": 0
+    },
+    "transfer_metrics": {
+      "transfer_case_count": 1,
+      "positive_transfer_count": 1,
+      "transfer_verifier_pass_count": 1,
+      "transfer_contradiction_gain_sum": 10.6
+    }
+  },
+  "train_manifest_path": "fixtures\\credit_window\\train\\manifest.json",
+  "train_summary": {
+    "cycles_run": 4,
+    "final_psi": 0.0,
+    "registry": {
+      "total": 1,
+      "accepted": 1,
+      "rejected": 0,
+      "retired": 0
+    },
+    "telemetry_summary": {
+      "event_count": 7,
+      "event_type_counts": {
+        "cycle": 4,
+        "verification_feedback": 1,
+        "candidate_evaluated": 1,
+        "tsl_event": 1
+      },
+      "latest_metrics": {},
+      "last_cycle": {
+        "cycle": 3,
+        "psi": 0.0,
+        "q": 0.0,
+        "collapse_method": "stalled",
+        "active_constraints": 6
+      }
+    },
+    "runtime_metrics": {
+      "cycles_to_first_accepted_symbol": 4,
+      "verifier_calls_to_acceptance": 1,
+      "contradiction_before_acceptance": 5.2,
+      "false_candidate_count_before_acceptance": 0,
+      "rollback_count_before_acceptance": 0,
+      "proposal_stage_cycles": 0,
+      "max_proposal_support": 0.0,
+      "accepted_proposal_count": 0
+    }
+  },
+  "accepted_meta_symbol_id": "meta_259daf21",
+  "accepted_record": {
+    "meta_symbol_id": "meta_259daf21",
+    "structural_name": "META_259DAF21",
+    "status": "accepted",
+    "semantic_label": "BalanceChargeGrantRevoke",
+    "semantic_status": "grounded",
+    "interface_kind": "exact",
+    "interface_definition": {
+      "truth_table": {
+        "TRAIN_CREDIT_BALANCE=0,TRAIN_CREDIT_CHARGE_1=0,TRAIN_CREDIT_CHARGE_2=0": false,
+        "TRAIN_CREDIT_BALANCE=0,TRAIN_CREDIT_CHARGE_1=0,TRAIN_CREDIT_CHARGE_2=1": false,
+        "TRAIN_CREDIT_BALANCE=0,TRAIN_CREDIT_CHARGE_1=1,TRAIN_CREDIT_CHARGE_2=0": false,
+        "TRAIN_CREDIT_BALANCE=0,TRAIN_CREDIT_CHARGE_1=1,TRAIN_CREDIT_CHARGE_2=1": false,
+        "TRAIN_CREDIT_BALANCE=1,TRAIN_CREDIT_CHARGE_1=0,TRAIN_CREDIT_CHARGE_2=0": false,
+        "TRAIN_CREDIT_BALANCE=1,TRAIN_CREDIT_CHARGE_1=0,TRAIN_CREDIT_CHARGE_2=1": false,
+        "TRAIN_CREDIT_BALANCE=1,TRAIN_CREDIT_CHARGE_1=1,TRAIN_CREDIT_CHARGE_2=0": true,
+        "TRAIN_CREDIT_BALANCE=1,TRAIN_CREDIT_CHARGE_1=1,TRAIN_CREDIT_CHARGE_2=1": true
+      },
+      "notes": "exact_boundary_projection_interface"
+    },
+    "parent_cluster_symbol_ids": [
+      "TRAIN_CREDIT_GRANT",
+      "TRAIN_CREDIT_REVOKE"
+    ],
+    "markov_blanket_symbol_ids": [
+      "TRAIN_CREDIT_BALANCE",
+      "TRAIN_CREDIT_CHARGE_1",
+      "TRAIN_CREDIT_CHARGE_2"
+    ],
+    "admission_metrics": {
+      "novel": true,
+      "novelty_conflicts": [],
+      "verifier_passed": true,
+      "reuse_passed": true,
+      "heldout_contradiction_gain": 10.6,
+      "complexity_penalty": 5.0,
+      "rent_paid": true,
+      "heldout_results": [
+        {
+          "task_id": "credit_window_heldout_3",
+          "family": "credit_window",
+          "split": "heldout",
+          "baseline_final_psi": 10.6,
+          "reuse_final_psi": 0.0,
+          "contradiction_gain": 10.6,
+          "reuse_applied": true,
+          "verifier_passed": true
+        }
+      ],
+      "semantic_accept_count": 1,
+      "pathway": "B"
+    },
+    "audits": [
+      {
+        "label": "CreditLive",
+        "delta_psi": 0.2,
+        "accepted": false,
+        "reason": "bridge_reject"
+      },
+      {
+        "label": "BalanceChargeGrantRevoke",
+        "delta_psi": 0.05,
+        "accepted": true,
+        "reason": "bridge_pass"
+      }
+    ],
+    "verifications": [
+      {
+        "status": "pass",
+        "passed": true,
+        "failed": false,
+        "counterexample": null,
+        "cost": 0.05249809997621924,
+        "artifact_ids": [],
+        "verifier_name": "credit_window_verifier",
+        "details": {
+          "manifest_path": "fixtures\\credit_window\\train\\manifest.json",
+          "source_path": "fixtures\\credit_window\\train\\validator.py",
+          "valid_trace_count": 2,
+          "invalid_trace_count": 4,
+          "source_contains_explicit_credit_live": false,
+          "command": [
+            "python",
+            "verifiers\\credit_window_verifier.py"
+          ],
+          "returncode": 0
+        }
+      }
+    ],
+    "reuse": [
+      {
+        "task_id": "credit_window_heldout_3",
+        "reuse_passed": true,
+        "verifier_passed": true,
+        "reuse_applied": true,
+        "heldout_final_psi": 0.0,
+        "contradiction_gain": 10.6
+      }
+    ],
+    "rejection_history": [],
+    "retirement_history": [],
+    "lineage": {
+      "created_at": "2026-03-18T20:13:41.876815+00:00",
+      "parent_cluster_symbol_ids": [
+        "TRAIN_CREDIT_GRANT",
+        "TRAIN_CREDIT_REVOKE"
+      ],
+      "markov_blanket_symbol_ids": [
+        "TRAIN_CREDIT_BALANCE",
+        "TRAIN_CREDIT_CHARGE_1",
+        "TRAIN_CREDIT_CHARGE_2"
+      ]
+    },
+    "support_count": 2,
+    "failure_count": 0,
+    "verification_pass_count": 1,
+    "verification_fail_count": 0,
+    "reuse_pass_count": 1,
+    "reuse_fail_count": 0,
+    "times_reused": 1,
+    "metadata": {
+      "cluster_id": "hotspot_1",
+      "tsl_pathway": "B",
+      "structural_roles": [
+        "grant",
+        "revoke",
+        "balance",
+        "charge",
+        "charge"
+      ],
+      "proposal_support_roles": [],
+      "proposal_hidden_variables": []
+    },
+    "reuse_signature": {
+      "parent_roles": [
+        "grant",
+        "revoke"
+      ],
+      "blanket_roles": [
+        "balance",
+        "charge",
+        "charge"
+      ],
+      "retired_constraint_signatures": [
+        {
+          "kind": "xor",
+          "roles": [
+            "grant",
+            "revoke"
+          ]
+        }
+      ],
+      "canonical_parent_roles": [
+        "open",
+        "close"
+      ],
+      "canonical_blanket_roles": [
+        "epoch",
+        "write",
+        "write"
+      ],
+      "canonical_retired_constraint_signatures": [
+        {
+          "kind": "xor",
+          "roles": [
+            "open",
+            "close"
+          ]
+        }
+      ]
+    },
+    "admission_reason": "accepted:structural_relief"
+  },
+  "accepted_admission_metrics": {
+    "novel": true,
+    "novelty_conflicts": [],
+    "verifier_passed": true,
+    "reuse_passed": true,
+    "heldout_contradiction_gain": 10.6,
+    "complexity_penalty": 5.0,
+    "rent_paid": true,
+    "heldout_results": [
+      {
+        "task_id": "credit_window_heldout_3",
+        "family": "credit_window",
+        "split": "heldout",
+        "baseline_final_psi": 10.6,
+        "reuse_final_psi": 0.0,
+        "contradiction_gain": 10.6,
+        "reuse_applied": true,
+        "verifier_passed": true
+      }
+    ],
+    "semantic_accept_count": 1,
+    "pathway": "B"
+  },
+  "accepted_interface_is_constant": false,
+  "transfer_results": [
+    {
+      "task_id": "credit_window_heldout_3",
+      "baseline_summary": {
+        "cycles_run": 8,
+        "final_psi": 10.6,
+        "registry": {
+          "total": 0,
+          "accepted": 0,
+          "rejected": 0,
+          "retired": 0
+        },
+        "telemetry_summary": {
+          "event_count": 8,
+          "event_type_counts": {
+            "cycle": 8
+          },
+          "latest_metrics": {},
+          "last_cycle": {
+            "cycle": 7,
+            "psi": 10.6,
+            "q": 4831.48,
+            "collapse_method": "stalled",
+            "active_constraints": 9
+          }
+        },
+        "runtime_metrics": {
+          "cycles_to_first_accepted_symbol": null,
+          "verifier_calls_to_acceptance": 0,
+          "contradiction_before_acceptance": null,
+          "false_candidate_count_before_acceptance": 0,
+          "rollback_count_before_acceptance": 0,
+          "proposal_stage_cycles": 0,
+          "max_proposal_support": 0.0,
+          "accepted_proposal_count": 0
+        }
+      },
+      "reuse_applications": [
+        {
+          "applied": true,
+          "instantiated_meta_symbol_id": "meta_7cf5ff93",
+          "matched_constraint_ids": [
+            "CREDIT_WINDOW_HELDOUT_3_TRANSFER_C_GRANT_REVOKE_XOR"
+          ],
+          "parent_symbol_ids": [
+            "CREDIT_WINDOW_HELDOUT_3_TRANSFER_GRANT",
+            "CREDIT_WINDOW_HELDOUT_3_TRANSFER_REVOKE"
+          ],
+          "blanket_symbol_ids": [
+            "CREDIT_WINDOW_HELDOUT_3_TRANSFER_BALANCE",
+            "CREDIT_WINDOW_HELDOUT_3_TRANSFER_CHARGE_1",
+            "CREDIT_WINDOW_HELDOUT_3_TRANSFER_CHARGE_2",
+            "CREDIT_WINDOW_HELDOUT_3_TRANSFER_CHARGE_3"
+          ],
+          "blanket_input_symbol_ids": [
+            "CREDIT_WINDOW_HELDOUT_3_TRANSFER_BALANCE",
+            "CREDIT_WINDOW_HELDOUT_3_TRANSFER_CHARGE_1",
+            "CREDIT_WINDOW_HELDOUT_3_TRANSFER_CHARGE_2"
+          ],
+          "source_meta_symbol_id": "meta_259daf21",
+          "mapping_class": "exact_blanket_expansion",
+          "mapping_confidence": 1.0
+        }
+      ],
+      "summary": {
+        "cycles_run": 1,
+        "final_psi": 0.0,
+        "registry": {
+          "total": 1,
+          "accepted": 1,
+          "rejected": 0,
+          "retired": 0
+        },
+        "telemetry_summary": {
+          "event_count": 2,
+          "event_type_counts": {
+            "reuse_application": 1,
+            "cycle": 1
+          },
+          "latest_metrics": {},
+          "last_cycle": {
+            "cycle": 0,
+            "psi": 0.0,
+            "q": 0.0,
+            "collapse_method": "stalled",
+            "active_constraints": 8
+          }
+        },
+        "runtime_metrics": {
+          "cycles_to_first_accepted_symbol": null,
+          "verifier_calls_to_acceptance": 0,
+          "contradiction_before_acceptance": null,
+          "false_candidate_count_before_acceptance": 0,
+          "rollback_count_before_acceptance": 0,
+          "proposal_stage_cycles": 0,
+          "max_proposal_support": 0.0,
+          "accepted_proposal_count": 0
+        }
+      },
+      "verification": {
+        "status": "pass",
+        "passed": true,
+        "failed": false,
+        "counterexample": null,
+        "cost": 0.053940000012516975,
+        "artifact_ids": [],
+        "verifier_name": "credit_window_verifier",
+        "details": {
+          "manifest_path": "fixtures\\credit_window\\heldout_credit_3\\manifest.json",
+          "source_path": "fixtures\\credit_window\\heldout_credit_3\\validator.py",
+          "valid_trace_count": 2,
+          "invalid_trace_count": 4,
+          "source_contains_explicit_credit_live": false,
+          "command": [
+            "python",
+            "verifiers\\credit_window_verifier.py"
+          ],
+          "returncode": 0
+        }
+      },
+      "contradiction_gain": 10.6
+    }
+  ],
+  "negative_transfer": {
+    "task_id": "credit_window_negative_wrap",
+    "baseline_summary": {
+      "cycles_run": 8,
+      "final_psi": 10.6,
+      "registry": {
+        "total": 0,
+        "accepted": 0,
+        "rejected": 0,
+        "retired": 0
+      },
+      "telemetry_summary": {
+        "event_count": 8,
+        "event_type_counts": {
+          "cycle": 8
+        },
+        "latest_metrics": {},
+        "last_cycle": {
+          "cycle": 7,
+          "psi": 10.6,
+          "q": 4719.12,
+          "collapse_method": "stalled",
+          "active_constraints": 4
+        }
+      },
+      "runtime_metrics": {
+        "cycles_to_first_accepted_symbol": null,
+        "verifier_calls_to_acceptance": 0,
+        "contradiction_before_acceptance": null,
+        "false_candidate_count_before_acceptance": 0,
+        "rollback_count_before_acceptance": 0,
+        "proposal_stage_cycles": 0,
+        "max_proposal_support": 0.0,
+        "accepted_proposal_count": 0
+      }
+    },
+    "reuse_applications": [],
+    "summary": {
+      "cycles_run": 8,
+      "final_psi": 10.6,
+      "registry": {
+        "total": 1,
+        "accepted": 1,
+        "rejected": 0,
+        "retired": 0
+      },
+      "telemetry_summary": {
+        "event_count": 8,
+        "event_type_counts": {
+          "cycle": 8
+        },
+        "latest_metrics": {},
+        "last_cycle": {
+          "cycle": 7,
+          "psi": 10.6,
+          "q": 4719.12,
+          "collapse_method": "stalled",
+          "active_constraints": 4
+        }
+      },
+      "runtime_metrics": {
+        "cycles_to_first_accepted_symbol": null,
+        "verifier_calls_to_acceptance": 0,
+        "contradiction_before_acceptance": null,
+        "false_candidate_count_before_acceptance": 0,
+        "rollback_count_before_acceptance": 0,
+        "proposal_stage_cycles": 0,
+        "max_proposal_support": 0.0,
+        "accepted_proposal_count": 0
+      }
+    },
+    "verification": {
+      "status": "fail",
+      "passed": false,
+      "failed": true,
+      "counterexample": {
+        "reason": "valid_trace_rejected",
+        "trace": [
+          "GRANT",
+          "CHARGE",
+          "REVOKE"
+        ]
+      },
+      "cost": 0.05786810000427067,
+      "artifact_ids": [],
+      "verifier_name": "credit_window_verifier",
+      "details": {
+        "manifest_path": "fixtures\\credit_window\\negative_credit_wrap\\manifest.json",
+        "command": [
+          "python",
+          "verifiers\\credit_window_verifier.py"
+        ],
+        "returncode": 0
+      }
+    },
+    "contradiction_gain": 0.0
+  },
+  "live_model_baseline": {
+    "status": "completed",
+    "hypothesis": {
+      "abstain": false,
+      "label": "CreditWindow",
+      "canonical_parent_roles": [
+        "open",
+        "close"
+      ],
+      "canonical_blanket_roles": [
+        "write",
+        "commit"
+      ],
+      "rationale": "The source and target tasks both involve a credit window that can be opened and closed, with spending actions allowed only while the window is active. The 'write' role corresponds to the CHARGE action, which requires the credit window to be open and balance to be present. The 'commit' role corresponds to the REVOKE action, which closes the credit window."
+    },
+    "summary": {
+      "cycles_run": 8,
+      "final_psi": 10.6,
+      "registry": {
+        "total": 0,
+        "accepted": 0,
+        "rejected": 0,
+        "retired": 0
+      },
+      "telemetry_summary": {
+        "event_count": 8,
+        "event_type_counts": {
+          "cycle": 8
+        },
+        "latest_metrics": {},
+        "last_cycle": {
+          "cycle": 7,
+          "psi": 10.6,
+          "q": 4831.48,
+          "collapse_method": "stalled",
+          "active_constraints": 9
+        }
+      },
+      "runtime_metrics": {
+        "cycles_to_first_accepted_symbol": null,
+        "verifier_calls_to_acceptance": 0,
+        "contradiction_before_acceptance": null,
+        "false_candidate_count_before_acceptance": 0,
+        "rollback_count_before_acceptance": 0,
+        "proposal_stage_cycles": 0,
+        "max_proposal_support": 0.0,
+        "accepted_proposal_count": 0
+      }
+    },
+    "verification": {
+      "status": "fail",
+      "passed": false,
+      "failed": true,
+      "counterexample": {
+        "reason": "missing_balance_blanket_role",
+        "blanket_roles": {
+          "write": 1,
+          "commit": 1
+        }
+      },
+      "cost": 0.05663410000852309,
+      "artifact_ids": [],
+      "verifier_name": "credit_window_verifier",
+      "details": {
+        "manifest_path": "fixtures\\credit_window\\heldout_credit_3\\manifest.json",
+        "command": [
+          "python",
+          "verifiers\\credit_window_verifier.py"
+        ],
+        "returncode": 0
+      }
+    },
+    "contradiction_gain": 0.0
+  },
+  "baseline_no_tsl": {
+    "cycles_run": 8,
+    "final_psi": 10.6,
+    "registry": {
+      "total": 0,
+      "accepted": 0,
+      "rejected": 0,
+      "retired": 0
+    },
+    "telemetry_summary": {
+      "event_count": 8,
+      "event_type_counts": {
+        "cycle": 8
+      },
+      "latest_metrics": {},
+      "last_cycle": {
+        "cycle": 7,
+        "psi": 10.6,
+        "q": 4831.48,
+        "collapse_method": "stalled",
+        "active_constraints": 9
+      }
+    },
+    "runtime_metrics": {
+      "cycles_to_first_accepted_symbol": null,
+      "verifier_calls_to_acceptance": 0,
+      "contradiction_before_acceptance": null,
+      "false_candidate_count_before_acceptance": 0,
+      "rollback_count_before_acceptance": 0,
+      "proposal_stage_cycles": 0,
+      "max_proposal_support": 0.0,
+      "accepted_proposal_count": 0
+    },
+    "registry_lifecycle_summary": {
+      "total": 0,
+      "accepted": 0,
+      "rejected": 0,
+      "retired": 0,
+      "accepted_ids": [],
+      "rejected_ids": [],
+      "retired_ids": [],
+      "total_reuse_passes": 0,
+      "total_reuse_failures": 0,
+      "total_verification_passes": 0,
+      "total_verification_failures": 0
+    }
+  },
+  "baseline_no_conflict_memory": {
+    "cycles_run": 8,
+    "final_psi": 1.0,
+    "registry": {
+      "total": 0,
+      "accepted": 0,
+      "rejected": 0,
+      "retired": 0
+    },
+    "telemetry_summary": {
+      "event_count": 8,
+      "event_type_counts": {
+        "cycle": 8
+      },
+      "latest_metrics": {},
+      "last_cycle": {
+        "cycle": 7,
+        "psi": 1.0,
+        "q": 7.0,
+        "collapse_method": "stalled",
+        "active_constraints": 9
+      }
+    },
+    "runtime_metrics": {
+      "cycles_to_first_accepted_symbol": null,
+      "verifier_calls_to_acceptance": 0,
+      "contradiction_before_acceptance": null,
+      "false_candidate_count_before_acceptance": 0,
+      "rollback_count_before_acceptance": 0,
+      "proposal_stage_cycles": 0,
+      "max_proposal_support": 0.0,
+      "accepted_proposal_count": 0
+    },
+    "registry_lifecycle_summary": {
+      "total": 0,
+      "accepted": 0,
+      "rejected": 0,
+      "retired": 0,
+      "accepted_ids": [],
+      "rejected_ids": [],
+      "retired_ids": [],
+      "total_reuse_passes": 0,
+      "total_reuse_failures": 0,
+      "total_verification_passes": 0,
+      "total_verification_failures": 0
+    }
+  },
+  "artifact_files": {
+    "credit_window_train_graph": "artifacts\\phase12\\credit_window_train_graph.json",
+    "credit_window_train_telemetry": "artifacts\\phase12\\credit_window_train_telemetry.jsonl",
+    "credit_window_registry": "artifacts\\phase12\\credit_window_registry.json"
+  },
+  "checks": {
+    "accepted_symbol": true,
+    "accepted_interface_non_constant": true,
+    "heldout_reuse_success": true,
+    "negative_transfer_blocked": true,
+    "live_model_baseline_beaten": true
+  }
+}

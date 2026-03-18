@@ -1,0 +1,272 @@
+{
+  "artifact_version": {
+    "phase": "phase10",
+    "timestamp_utc": "20260318T225232269202Z",
+    "git_sha": "4b3ad2a"
+  },
+  "git_sha": "4b3ad2a",
+  "git_dirty": true,
+  "git_dirty_source": true,
+  "git_dirty_full": true,
+  "git_dirty_source_excludes": [
+    "artifacts/**",
+    "reports/**",
+    "repro/environment_manifest.json",
+    "repro/expected_metrics.json"
+  ],
+  "timestamp_utc": "20260318T225232269202Z",
+  "commands_used": [
+    "python scripts/run_proposal_quality.py protocol_guard",
+    "python scripts/run_proposal_runtime.py protocol_guard",
+    "python scripts/run_quorum_proposal_runtime.py",
+    "python scripts/run_proposal_precision_campaign.py --family protocol_guard --fixed-pool-source artifacts/phase2/proposal_quality_summary.json",
+    "python scripts/run_proposal_precision_campaign.py --refresh-pool",
+    "python scripts/run_gauntlet.py",
+    "python scripts/run_gauntlet_report.py",
+    "python scripts/run_pathway_a.py",
+    "python scripts/run_verifier_agreement.py",
+    "python scripts/run_proof_manifest.py",
+    "python scripts/run_final_proof_bundle.py"
+  ],
+  "python_version": "3.15.0a6",
+  "python_implementation": "CPython",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "environment_manifest": {
+    "cwd": ".",
+    "groq_model": null,
+    "groq_api_key_present": true,
+    "openai_api_key_present": false
+  },
+  "model_backend_manifest": {
+    "backend": "Groq OpenAI-compatible API",
+    "model_name": "openai/gpt-oss-120b",
+    "adapter": "GroqChatTransformerAdapter"
+  },
+  "artifact_versions": {
+    "gauntlet": {
+      "phase": "phase7",
+      "timestamp_utc": "20260318T201343225480Z",
+      "git_sha": "ad9f6a1"
+    },
+    "pathway_a": {
+      "phase": "phase8",
+      "timestamp_utc": "20260318T201354277782Z",
+      "git_sha": "ad9f6a1"
+    },
+    "verifier_agreement": {
+      "phase": "phase9",
+      "timestamp_utc": "20260318T201354856989Z",
+      "git_sha": "ad9f6a1"
+    },
+    "proposal_quality": {
+      "phase": "phase2",
+      "timestamp_utc": "20260318T201334785669Z",
+      "git_sha": "ad9f6a1"
+    },
+    "proposal_precision": {
+      "phase": "phase13",
+      "timestamp_utc": "20260318T201339256540Z",
+      "git_sha": "ad9f6a1"
+    },
+    "protocol_runtime": {
+      "phase": "phase2",
+      "timestamp_utc": "20260318T201343971205Z",
+      "git_sha": "ad9f6a1"
+    },
+    "quorum_runtime": {
+      "phase": "phase4",
+      "timestamp_utc": "20260318T201345338169Z",
+      "git_sha": "ad9f6a1"
+    }
+  },
+  "verifier_manifest": [
+    {
+      "path": "verifiers/protocol_guard_verifier.py",
+      "sha256": "bca134761a0b5773c912e6038265fa27525336100bc9c83142b6a4ddcb27bde8",
+      "size_bytes": 6194
+    },
+    {
+      "path": "verifiers/lease_lock_verifier.py",
+      "sha256": "f9bb562f0780e9624c1b32e55e881e8f8e1b5023233b0ae40f9e59e5fc4dbe9b",
+      "size_bytes": 7249
+    },
+    {
+      "path": "verifiers/session_epoch_verifier.py",
+      "sha256": "df64440ef02816ddf6703ef1756e5fc9ba57cfe9778631701eaa6a5f7edf0b11",
+      "size_bytes": 5825
+    },
+    {
+      "path": "verifiers/quorum_commit_verifier.py",
+      "sha256": "6f7f51213bf22e5f670fed2523ef6a4af2d36b9db714c8df134248292369d3d6",
+      "size_bytes": 8815
+    },
+    {
+      "path": "verifiers/vote_majority_commit_verifier.py",
+      "sha256": "5fdeeee44f67cfb4e61a836b2998fd47d30603c09cdf5769ce530bddbc2568df",
+      "size_bytes": 7313
+    },
+    {
+      "path": "verifiers/replication_barrier_verifier.py",
+      "sha256": "3a30f2d8cae7d3f05ff2de5e415fa7f4ff5f79f8d9ae6a25c7257c167749526e",
+      "size_bytes": 7352
+    },
+    {
+      "path": "verifiers/session_macro_verifier.py",
+      "sha256": "57011422307b89ea06bb6ad82e9d6a2f92cdaa3c663afcd0b1445141cad604d4",
+      "size_bytes": 5002
+    }
+  ],
+  "fixture_hashes": [
+    {
+      "path": "fixtures/protocol_guard/heldout_guard_3/manifest.json",
+      "sha256": "3f6959a2c11f04283ea62fc579173c68643440a4cbedd3567a292b6ff3500dcf",
+      "size_bytes": 1452
+    },
+    {
+      "path": "fixtures/protocol_guard/heldout_guard_3/validator.py",
+      "sha256": "bbe0f2624ccc622a1b02ad930faf5ecdf2819841cda3cd849178daeae82732d9",
+      "size_bytes": 435
+    },
+    {
+      "path": "fixtures/protocol_guard/heldout_guard_4/manifest.json",
+      "sha256": "ef1a535796705ecccae658d3968392a4e182888d45e8ce2cd443e8ed85073272",
+      "size_bytes": 1508
+    },
+    {
+      "path": "fixtures/protocol_guard/heldout_guard_4/validator.py",
+      "sha256": "2be2cdda43dcf9b91860b552d276b21047cd8f04f84848eb728b9066ec211bcb",
+      "size_bytes": 440
+    },
+    {
+      "path": "fixtures/protocol_guard/train/manifest.json",
+      "sha256": "7c8888f03ef2cf7c77ec95d6abff92cf07ab1b96cc049a3b973a1d683dffdfd2",
+      "size_bytes": 1462
+    },
+    {
+      "path": "fixtures/protocol_guard/train/validator.py",
+      "sha256": "0d4f6ecb33088f39f6280ae38894128bb17fbf3cb6dbb4036d93bdbd24b0dfe6",
+      "size_bytes": 519
+    },
+    {
+      "path": "fixtures/lease_lock/negative_epoch/manifest.json",
+      "sha256": "8a06bd586f8520c7c4eeca74ec8558951482e9193df5c78e914f278df3b55dc8",
+      "size_bytes": 1835
+    },
+    {
+      "path": "fixtures/lease_lock/negative_epoch/validator.py",
+      "sha256": "d354c9e76c39242357ab1df7ada9c3b52b75c424fafe75ad7c18ae8ef487bc2a",
+      "size_bytes": 738
+    },
+    {
+      "path": "fixtures/lease_lock/target/manifest.json",
+      "sha256": "a75bc7710aee4fc4c904b419686f78a43c9654968010abc9155631217e9b5f0c",
+      "size_bytes": 1638
+    },
+    {
+      "path": "fixtures/lease_lock/target/validator.py",
+      "sha256": "df266320007e1f295e225659bee01c10f88a993ffc93e495eb6e374d980bd547",
+      "size_bytes": 538
+    },
+    {
+      "path": "fixtures/session_epoch/target/manifest.json",
+      "sha256": "6fe626ab874178d02b471800217ce1c4d1c3e9dffd3a90d0dcba871b54d9c8a4",
+      "size_bytes": 1739
+    },
+    {
+      "path": "fixtures/session_epoch/target/validator.py",
+      "sha256": "40d4d3fcb2b160163af71a5e8ef9729523ee3e490c4fcbca1317e2ead18c2d0e",
+      "size_bytes": 556
+    },
+    {
+      "path": "fixtures/quorum_commit/heldout_commit_3/manifest.json",
+      "sha256": "63b6bd45c85075b9d06145efa8f220c7fb5edf1da2927fc93778b6fc0ea028ea",
+      "size_bytes": 1740
+    },
+    {
+      "path": "fixtures/quorum_commit/heldout_commit_3/validator.py",
+      "sha256": "81481420747f2ea04df4fe90464a7a7ba150953e288d87d60cfbb44757772859",
+      "size_bytes": 581
+    },
+    {
+      "path": "fixtures/quorum_commit/heldout_commit_4/manifest.json",
+      "sha256": "952deed576ad795a60099922b850d164ef1ad9183ed148d07ba61f9ce395c69d",
+      "size_bytes": 1735
+    },
+    {
+      "path": "fixtures/quorum_commit/heldout_commit_4/validator.py",
+      "sha256": "81481420747f2ea04df4fe90464a7a7ba150953e288d87d60cfbb44757772859",
+      "size_bytes": 581
+    },
+    {
+      "path": "fixtures/quorum_commit/negative_commit_strict_3/manifest.json",
+      "sha256": "4deba0c74eb1bd5571df07b37861779b6a37cc8ea4178a5b66cde5ff85c66341",
+      "size_bytes": 2004
+    },
+    {
+      "path": "fixtures/quorum_commit/negative_commit_strict_3/validator.py",
+      "sha256": "dc5cafd06111f350e3d5762e941b052577520f02403225b8aa9a020126868418",
+      "size_bytes": 789
+    },
+    {
+      "path": "fixtures/quorum_commit/train/manifest.json",
+      "sha256": "172ca02739cfe5fb5368a5a07db0dc18f3d583b03f987d2b211fb3af580882b6",
+      "size_bytes": 1797
+    },
+    {
+      "path": "fixtures/quorum_commit/train/validator.py",
+      "sha256": "dc5cafd06111f350e3d5762e941b052577520f02403225b8aa9a020126868418",
+      "size_bytes": 789
+    },
+    {
+      "path": "fixtures/vote_majority_commit/target/manifest.json",
+      "sha256": "90b64f108b9c6e81776b0832daf5b236e4da591349a9afd2784cd066c8addbb1",
+      "size_bytes": 1935
+    },
+    {
+      "path": "fixtures/vote_majority_commit/target/validator.py",
+      "sha256": "4ac2b7d485069fc3365ced2e35eb64e538c3bccf150fcc0865c03500f3b50b6d",
+      "size_bytes": 795
+    },
+    {
+      "path": "fixtures/replication_barrier/target/manifest.json",
+      "sha256": "1cea862aacbe7d74d6a081f5638f93b8293347dec0bddfef9ecfdfd604303459",
+      "size_bytes": 2092
+    },
+    {
+      "path": "fixtures/replication_barrier/target/validator.py",
+      "sha256": "7b27ca98c0083eb69830d67d62d5399349624c1ad888683840c612497f61a825",
+      "size_bytes": 800
+    },
+    {
+      "path": "fixtures/session_macro/heldout_macro_a/manifest.json",
+      "sha256": "9740d0e99b5804a52b9aa0c3fba8ef41667c4eccc722f287666841440eb8f136",
+      "size_bytes": 1365
+    },
+    {
+      "path": "fixtures/session_macro/heldout_macro_a/validator.py",
+      "sha256": "d1c6cc478d93acd0ef857f724ab2f8547325ffc593f96fe3ea31737256925053",
+      "size_bytes": 391
+    },
+    {
+      "path": "fixtures/session_macro/heldout_macro_b/manifest.json",
+      "sha256": "9dd917cf2c5c73e4881e188643a8623c9cdb03ff618a533c771cd698c87a9cab",
+      "size_bytes": 1473
+    },
+    {
+      "path": "fixtures/session_macro/heldout_macro_b/validator.py",
+      "sha256": "89537ca23d9aa887e3af69a169a79663b7827a2da5f2342e353f2dd77540e73a",
+      "size_bytes": 422
+    },
+    {
+      "path": "fixtures/session_macro/train/manifest.json",
+      "sha256": "f55fa8b7a2b9383521e91041e0779a680c01ef30a1f0383a8fc475ed268c50a8",
+      "size_bytes": 1562
+    },
+    {
+      "path": "fixtures/session_macro/train/validator.py",
+      "sha256": "d1c6cc478d93acd0ef857f724ab2f8547325ffc593f96fe3ea31737256925053",
+      "size_bytes": 391
+    }
+  ],
+  "core_frozen": true
+}

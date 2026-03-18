@@ -1,0 +1,69 @@
+{
+  "task_id": "session_macro_train",
+  "family": "session_macro",
+  "split": "train",
+  "description": "Low-conflict session macro family with repeated coherent start-update-finish modules and no explicit reusable macro structure in code.",
+  "roles": {
+    "start": "START",
+    "update": "UPDATE",
+    "finish": "FINISH"
+  },
+  "canonical_roles": {
+    "start": "open",
+    "update": "write",
+    "finish": "close"
+  },
+  "natural_language_spec": "Each session macro opens with START_i, performs UPDATE_i, and closes with FINISH_i. The same coherent block repeats across modules, but the implementation does not contain an explicit reusable session macro abstraction.",
+  "formal_spec": {
+    "rules": [
+      "START_i -> UPDATE_i",
+      "START_i -> FINISH_i",
+      "UPDATE_i -> FINISH_i"
+    ],
+    "safety_property": "Every module must follow the coherent START, UPDATE, FINISH pattern."
+  },
+  "execution_traces": [
+    [
+      "START_1",
+      "UPDATE_1",
+      "FINISH_1",
+      "START_2",
+      "UPDATE_2",
+      "FINISH_2"
+    ]
+  ],
+  "failing_tests": [
+    {
+      "name": "missing_update_in_second_module",
+      "trace": [
+        "START_1",
+        "UPDATE_1",
+        "FINISH_1",
+        "START_2",
+        "FINISH_2"
+      ],
+      "expected": "fail"
+    }
+  ],
+  "logs": [
+    {
+      "level": "ERROR",
+      "message": "FINISH observed before UPDATE completed in one module",
+      "trace": [
+        "START_1",
+        "FINISH_1"
+      ]
+    }
+  ],
+  "counterexamples": [
+    {
+      "name": "orphan_finish",
+      "trace": [
+        "FINISH_1"
+      ],
+      "reason": "module_closed_without_open"
+    }
+  ],
+  "source_code_path": "validator.py",
+  "module_count": 2
+}

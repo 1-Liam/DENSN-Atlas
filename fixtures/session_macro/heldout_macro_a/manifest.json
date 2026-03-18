@@ -1,0 +1,63 @@
+{
+  "task_id": "session_macro_heldout_a",
+  "family": "session_macro",
+  "split": "heldout",
+  "description": "Held-out single-module session macro task used to measure reuse speedup from a compressed coherent structure.",
+  "roles": {
+    "start": "START",
+    "update": "UPDATE",
+    "finish": "FINISH"
+  },
+  "canonical_roles": {
+    "start": "open",
+    "update": "write",
+    "finish": "close"
+  },
+  "natural_language_spec": "A single session macro should still follow START_1, UPDATE_1, FINISH_1 without an explicit reusable macro state in code.",
+  "formal_spec": {
+    "rules": [
+      "START_1 -> UPDATE_1",
+      "START_1 -> FINISH_1",
+      "UPDATE_1 -> FINISH_1"
+    ],
+    "safety_property": "The single held-out module must preserve the coherent session macro ordering."
+  },
+  "execution_traces": [
+    [
+      "START_1",
+      "UPDATE_1",
+      "FINISH_1"
+    ]
+  ],
+  "failing_tests": [
+    {
+      "name": "finish_without_update",
+      "trace": [
+        "START_1",
+        "FINISH_1"
+      ],
+      "expected": "fail"
+    }
+  ],
+  "logs": [
+    {
+      "level": "ERROR",
+      "message": "Held-out macro closed before update completed",
+      "trace": [
+        "START_1",
+        "FINISH_1"
+      ]
+    }
+  ],
+  "counterexamples": [
+    {
+      "name": "orphan_finish",
+      "trace": [
+        "FINISH_1"
+      ],
+      "reason": "module_closed_without_open"
+    }
+  ],
+  "source_code_path": "validator.py",
+  "module_count": 1
+}

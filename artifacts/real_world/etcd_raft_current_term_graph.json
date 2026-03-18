@@ -1,0 +1,1497 @@
+{
+  "graph_version": "0.1.0",
+  "created_at": "2026-03-18T22:33:39.444736+00:00",
+  "updated_at": "2026-03-18T22:33:39.545067+00:00",
+  "nodes": [
+    {
+      "id": "etcd_raft_current_term_train",
+      "family": "etcd_raft_current_term",
+      "split": "train",
+      "description": "Real-world external artifact bundle derived from etcd-io/raft. The target invariant is the Raft current-term commit rule: a leader may only advance commit by replica counting after an entry from its current term is committed.",
+      "created_at": "2026-03-18T22:33:39.445083+00:00",
+      "metadata": {
+        "manifest_path": "fixtures\\etcd_raft_current_term\\train\\manifest.json"
+      },
+      "node_type": "Task"
+    },
+    {
+      "id": "evidence_15292928",
+      "kind": "natural_language_spec",
+      "content_ref": "fixtures\\etcd_raft_current_term\\train\\manifest.json#natural_language_spec",
+      "source": "artifact_manifest",
+      "created_at": "2026-03-18T22:33:39.445116+00:00",
+      "task_id": "etcd_raft_current_term_train",
+      "metadata": {
+        "inline": true
+      },
+      "node_type": "Evidence"
+    },
+    {
+      "id": "evidence_77b491b6",
+      "kind": "formal_spec",
+      "content_ref": "fixtures\\etcd_raft_current_term\\train\\manifest.json#formal_spec",
+      "source": "artifact_manifest",
+      "created_at": "2026-03-18T22:33:39.445138+00:00",
+      "task_id": "etcd_raft_current_term_train",
+      "metadata": {
+        "inline": true
+      },
+      "node_type": "Evidence"
+    },
+    {
+      "id": "evidence_7e4461b2",
+      "kind": "execution_traces",
+      "content_ref": "fixtures\\etcd_raft_current_term\\train\\manifest.json#execution_traces",
+      "source": "artifact_manifest",
+      "created_at": "2026-03-18T22:33:39.445153+00:00",
+      "task_id": "etcd_raft_current_term_train",
+      "metadata": {
+        "inline": true
+      },
+      "node_type": "Evidence"
+    },
+    {
+      "id": "evidence_04dcb531",
+      "kind": "failing_tests",
+      "content_ref": "fixtures\\etcd_raft_current_term\\train\\manifest.json#failing_tests",
+      "source": "artifact_manifest",
+      "created_at": "2026-03-18T22:33:39.445166+00:00",
+      "task_id": "etcd_raft_current_term_train",
+      "metadata": {
+        "inline": true
+      },
+      "node_type": "Evidence"
+    },
+    {
+      "id": "evidence_49445fcc",
+      "kind": "logs",
+      "content_ref": "fixtures\\etcd_raft_current_term\\train\\manifest.json#logs",
+      "source": "artifact_manifest",
+      "created_at": "2026-03-18T22:33:39.445180+00:00",
+      "task_id": "etcd_raft_current_term_train",
+      "metadata": {
+        "inline": true
+      },
+      "node_type": "Evidence"
+    },
+    {
+      "id": "evidence_9b4aef01",
+      "kind": "counterexamples",
+      "content_ref": "fixtures\\etcd_raft_current_term\\train\\manifest.json#counterexamples",
+      "source": "artifact_manifest",
+      "created_at": "2026-03-18T22:33:39.445194+00:00",
+      "task_id": "etcd_raft_current_term_train",
+      "metadata": {
+        "inline": true
+      },
+      "node_type": "Evidence"
+    },
+    {
+      "id": "evidence_5b255eef",
+      "kind": "source_code_path",
+      "content_ref": "fixtures\\etcd_raft_current_term\\train\\source_excerpt.go",
+      "source": "artifact_manifest",
+      "created_at": "2026-03-18T22:33:39.445355+00:00",
+      "task_id": "etcd_raft_current_term_train",
+      "metadata": {
+        "path": "fixtures\\etcd_raft_current_term\\train\\source_excerpt.go"
+      },
+      "node_type": "Evidence"
+    },
+    {
+      "id": "ETCD_RAFT_REAL_LEADER_READY",
+      "name": "BECOME_LEADER",
+      "truth_value": true,
+      "locked": true,
+      "created_at": "2026-03-18T22:33:39.445394+00:00",
+      "updated_at": "2026-03-18T22:33:39.445396+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "provenance_ids": [
+        "evidence_15292928",
+        "evidence_77b491b6",
+        "evidence_7e4461b2",
+        "evidence_04dcb531",
+        "evidence_49445fcc",
+        "evidence_9b4aef01",
+        "evidence_5b255eef"
+      ],
+      "task_ids": [],
+      "metadata": {
+        "role": "leader_ready",
+        "canonical_role": "prepare",
+        "token": "BECOME_LEADER",
+        "task_id": "etcd_raft_current_term_train"
+      },
+      "node_type": "AtomicSymbol"
+    },
+    {
+      "id": "ETCD_RAFT_REAL_ADVANCE_COMMIT",
+      "name": "ADVANCE_COMMIT_INDEX",
+      "truth_value": true,
+      "locked": true,
+      "created_at": "2026-03-18T22:33:39.445402+00:00",
+      "updated_at": "2026-03-18T22:33:39.445404+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "provenance_ids": [
+        "evidence_15292928",
+        "evidence_77b491b6",
+        "evidence_7e4461b2",
+        "evidence_04dcb531",
+        "evidence_49445fcc",
+        "evidence_9b4aef01",
+        "evidence_5b255eef"
+      ],
+      "task_ids": [],
+      "metadata": {
+        "role": "advance_commit",
+        "canonical_role": "commit",
+        "token": "ADVANCE_COMMIT_INDEX",
+        "task_id": "etcd_raft_current_term_train"
+      },
+      "node_type": "AtomicSymbol"
+    },
+    {
+      "id": "ETCD_RAFT_REAL_PRIOR_TERM_LOG",
+      "name": "PRIOR_TERM_LOG",
+      "truth_value": true,
+      "locked": true,
+      "created_at": "2026-03-18T22:33:39.445408+00:00",
+      "updated_at": "2026-03-18T22:33:39.445410+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "provenance_ids": [
+        "evidence_15292928",
+        "evidence_77b491b6",
+        "evidence_7e4461b2",
+        "evidence_04dcb531",
+        "evidence_49445fcc",
+        "evidence_9b4aef01",
+        "evidence_5b255eef"
+      ],
+      "task_ids": [],
+      "metadata": {
+        "role": "prior_term_log",
+        "canonical_role": "pending",
+        "token": "PRIOR_TERM_LOG",
+        "task_id": "etcd_raft_current_term_train"
+      },
+      "node_type": "AtomicSymbol"
+    },
+    {
+      "id": "ETCD_RAFT_REAL_QUORUM_READY",
+      "name": "QUORUM_MATCH",
+      "truth_value": true,
+      "locked": true,
+      "created_at": "2026-03-18T22:33:39.445414+00:00",
+      "updated_at": "2026-03-18T22:33:39.445416+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "provenance_ids": [
+        "evidence_15292928",
+        "evidence_77b491b6",
+        "evidence_7e4461b2",
+        "evidence_04dcb531",
+        "evidence_49445fcc",
+        "evidence_9b4aef01",
+        "evidence_5b255eef"
+      ],
+      "task_ids": [],
+      "metadata": {
+        "role": "quorum_ready",
+        "canonical_role": "clear",
+        "token": "QUORUM_MATCH",
+        "task_id": "etcd_raft_current_term_train"
+      },
+      "node_type": "AtomicSymbol"
+    },
+    {
+      "id": "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY",
+      "name": "CURRENT_TERM_ENTRY",
+      "truth_value": true,
+      "locked": true,
+      "created_at": "2026-03-18T22:33:39.445428+00:00",
+      "updated_at": "2026-03-18T22:33:39.445430+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "provenance_ids": [
+        "evidence_15292928",
+        "evidence_77b491b6",
+        "evidence_7e4461b2",
+        "evidence_04dcb531",
+        "evidence_49445fcc",
+        "evidence_9b4aef01",
+        "evidence_5b255eef"
+      ],
+      "task_ids": [],
+      "metadata": {
+        "role": "current_term_entry",
+        "canonical_role": "stable",
+        "token": "CURRENT_TERM_ENTRY",
+        "task_id": "etcd_raft_current_term_train"
+      },
+      "node_type": "AtomicSymbol"
+    },
+    {
+      "id": "ETCD_RAFT_REAL_REPLICA_MATCH_1",
+      "name": "REPLICA_MATCH_1",
+      "truth_value": true,
+      "locked": true,
+      "created_at": "2026-03-18T22:33:39.445439+00:00",
+      "updated_at": "2026-03-18T22:33:39.445440+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "provenance_ids": [
+        "evidence_15292928",
+        "evidence_77b491b6",
+        "evidence_7e4461b2",
+        "evidence_04dcb531",
+        "evidence_49445fcc",
+        "evidence_9b4aef01",
+        "evidence_5b255eef"
+      ],
+      "task_ids": [],
+      "metadata": {
+        "role": "replica_match",
+        "canonical_role": "ack",
+        "position": 1,
+        "task_id": "etcd_raft_current_term_train"
+      },
+      "node_type": "AtomicSymbol"
+    },
+    {
+      "id": "ETCD_RAFT_REAL_REPLICA_MATCH_2",
+      "name": "REPLICA_MATCH_2",
+      "truth_value": true,
+      "locked": true,
+      "created_at": "2026-03-18T22:33:39.445447+00:00",
+      "updated_at": "2026-03-18T22:33:39.445448+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "provenance_ids": [
+        "evidence_15292928",
+        "evidence_77b491b6",
+        "evidence_7e4461b2",
+        "evidence_04dcb531",
+        "evidence_49445fcc",
+        "evidence_9b4aef01",
+        "evidence_5b255eef"
+      ],
+      "task_ids": [],
+      "metadata": {
+        "role": "replica_match",
+        "canonical_role": "ack",
+        "position": 2,
+        "task_id": "etcd_raft_current_term_train"
+      },
+      "node_type": "AtomicSymbol"
+    },
+    {
+      "id": "ETCD_RAFT_REAL_REPLICA_MATCH_3",
+      "name": "REPLICA_MATCH_3",
+      "truth_value": true,
+      "locked": true,
+      "created_at": "2026-03-18T22:33:39.445454+00:00",
+      "updated_at": "2026-03-18T22:33:39.445456+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "provenance_ids": [
+        "evidence_15292928",
+        "evidence_77b491b6",
+        "evidence_7e4461b2",
+        "evidence_04dcb531",
+        "evidence_49445fcc",
+        "evidence_9b4aef01",
+        "evidence_5b255eef"
+      ],
+      "task_ids": [],
+      "metadata": {
+        "role": "replica_match",
+        "canonical_role": "ack",
+        "position": 3,
+        "task_id": "etcd_raft_current_term_train"
+      },
+      "node_type": "AtomicSymbol"
+    },
+    {
+      "id": "ETCD_RAFT_REAL_C_COMMIT_PENDING_MUTEX",
+      "constraint_kind": "mutex",
+      "symbol_ids": [
+        "ETCD_RAFT_REAL_ADVANCE_COMMIT",
+        "ETCD_RAFT_REAL_PRIOR_TERM_LOG"
+      ],
+      "weight": 1.0,
+      "base_weight": 1.0,
+      "max_weight": 16.0,
+      "locked": false,
+      "active": false,
+      "created_at": "2026-03-18T22:33:39.445464+00:00",
+      "updated_at": "2026-03-18T22:33:39.445465+00:00",
+      "support_count": 0,
+      "failure_count": 8,
+      "persistence": 0,
+      "provenance_ids": [
+        "evidence_77b491b6",
+        "evidence_04dcb531"
+      ],
+      "evaluator_key": "",
+      "metadata": {
+        "rule": "commit_pending_mutex",
+        "manifest_path": "fixtures\\etcd_raft_current_term\\train\\manifest.json",
+        "abstracted_by": "meta_cb3ff1de"
+      },
+      "node_type": "Constraint"
+    },
+    {
+      "id": "ETCD_RAFT_REAL_C_PENDING_PREPARE",
+      "constraint_kind": "implies",
+      "symbol_ids": [
+        "ETCD_RAFT_REAL_PRIOR_TERM_LOG",
+        "ETCD_RAFT_REAL_LEADER_READY"
+      ],
+      "weight": 1.0,
+      "base_weight": 1.0,
+      "max_weight": 16.0,
+      "locked": false,
+      "active": true,
+      "created_at": "2026-03-18T22:33:39.445471+00:00",
+      "updated_at": "2026-03-18T22:33:39.445472+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "persistence": 0,
+      "provenance_ids": [
+        "evidence_77b491b6",
+        "evidence_15292928"
+      ],
+      "evaluator_key": "",
+      "metadata": {
+        "rule": "pending_requires_prepare",
+        "manifest_path": "fixtures\\etcd_raft_current_term\\train\\manifest.json"
+      },
+      "node_type": "Constraint"
+    },
+    {
+      "id": "ETCD_RAFT_REAL_C_COMMIT_CLEAR",
+      "constraint_kind": "implies",
+      "symbol_ids": [
+        "ETCD_RAFT_REAL_ADVANCE_COMMIT",
+        "ETCD_RAFT_REAL_QUORUM_READY"
+      ],
+      "weight": 1.0,
+      "base_weight": 1.0,
+      "max_weight": 16.0,
+      "locked": false,
+      "active": true,
+      "created_at": "2026-03-18T22:33:39.445476+00:00",
+      "updated_at": "2026-03-18T22:33:39.445478+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "persistence": 0,
+      "provenance_ids": [
+        "evidence_77b491b6",
+        "evidence_49445fcc"
+      ],
+      "evaluator_key": "",
+      "metadata": {
+        "rule": "commit_requires_clear",
+        "manifest_path": "fixtures\\etcd_raft_current_term\\train\\manifest.json"
+      },
+      "node_type": "Constraint"
+    },
+    {
+      "id": "ETCD_RAFT_REAL_C_COMMIT_ACK_1",
+      "constraint_kind": "implies",
+      "symbol_ids": [
+        "ETCD_RAFT_REAL_ADVANCE_COMMIT",
+        "ETCD_RAFT_REAL_REPLICA_MATCH_1"
+      ],
+      "weight": 1.0,
+      "base_weight": 1.0,
+      "max_weight": 16.0,
+      "locked": false,
+      "active": true,
+      "created_at": "2026-03-18T22:33:39.445483+00:00",
+      "updated_at": "2026-03-18T22:33:39.445485+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "persistence": 0,
+      "provenance_ids": [
+        "evidence_7e4461b2",
+        "evidence_9b4aef01"
+      ],
+      "evaluator_key": "",
+      "metadata": {
+        "rule": "commit_requires_ack",
+        "manifest_path": "fixtures\\etcd_raft_current_term\\train\\manifest.json"
+      },
+      "node_type": "Constraint"
+    },
+    {
+      "id": "ETCD_RAFT_REAL_C_COMMIT_ACK_2",
+      "constraint_kind": "implies",
+      "symbol_ids": [
+        "ETCD_RAFT_REAL_ADVANCE_COMMIT",
+        "ETCD_RAFT_REAL_REPLICA_MATCH_2"
+      ],
+      "weight": 1.0,
+      "base_weight": 1.0,
+      "max_weight": 16.0,
+      "locked": false,
+      "active": true,
+      "created_at": "2026-03-18T22:33:39.445488+00:00",
+      "updated_at": "2026-03-18T22:33:39.445490+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "persistence": 0,
+      "provenance_ids": [
+        "evidence_7e4461b2",
+        "evidence_9b4aef01"
+      ],
+      "evaluator_key": "",
+      "metadata": {
+        "rule": "commit_requires_ack",
+        "manifest_path": "fixtures\\etcd_raft_current_term\\train\\manifest.json"
+      },
+      "node_type": "Constraint"
+    },
+    {
+      "id": "ETCD_RAFT_REAL_C_COMMIT_STABLE",
+      "constraint_kind": "implies",
+      "symbol_ids": [
+        "ETCD_RAFT_REAL_ADVANCE_COMMIT",
+        "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY"
+      ],
+      "weight": 1.0,
+      "base_weight": 1.0,
+      "max_weight": 16.0,
+      "locked": false,
+      "active": true,
+      "created_at": "2026-03-18T22:33:39.445495+00:00",
+      "updated_at": "2026-03-18T22:33:39.445497+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "persistence": 0,
+      "provenance_ids": [
+        "evidence_77b491b6",
+        "evidence_7e4461b2"
+      ],
+      "evaluator_key": "",
+      "metadata": {
+        "rule": "commit_requires_stable",
+        "manifest_path": "fixtures\\etcd_raft_current_term\\train\\manifest.json"
+      },
+      "node_type": "Constraint"
+    },
+    {
+      "id": "meta_cb3ff1de",
+      "structural_name": "META_CB3FF1DE",
+      "truth_value": true,
+      "locked": false,
+      "semantic_label": null,
+      "semantic_status": "deferred",
+      "interface_kind": "exact",
+      "interface_inputs": [
+        "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY",
+        "ETCD_RAFT_REAL_LEADER_READY",
+        "ETCD_RAFT_REAL_QUORUM_READY",
+        "ETCD_RAFT_REAL_REPLICA_MATCH_1",
+        "ETCD_RAFT_REAL_REPLICA_MATCH_2"
+      ],
+      "interface_definition": {
+        "truth_table": {
+          "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=0,ETCD_RAFT_REAL_LEADER_READY=0,ETCD_RAFT_REAL_QUORUM_READY=0,ETCD_RAFT_REAL_REPLICA_MATCH_1=0,ETCD_RAFT_REAL_REPLICA_MATCH_2=0": false,
+          "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=0,ETCD_RAFT_REAL_LEADER_READY=0,ETCD_RAFT_REAL_QUORUM_READY=0,ETCD_RAFT_REAL_REPLICA_MATCH_1=0,ETCD_RAFT_REAL_REPLICA_MATCH_2=1": false,
+          "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=0,ETCD_RAFT_REAL_LEADER_READY=0,ETCD_RAFT_REAL_QUORUM_READY=0,ETCD_RAFT_REAL_REPLICA_MATCH_1=1,ETCD_RAFT_REAL_REPLICA_MATCH_2=0": false,
+          "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=0,ETCD_RAFT_REAL_LEADER_READY=0,ETCD_RAFT_REAL_QUORUM_READY=0,ETCD_RAFT_REAL_REPLICA_MATCH_1=1,ETCD_RAFT_REAL_REPLICA_MATCH_2=1": false,
+          "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=0,ETCD_RAFT_REAL_LEADER_READY=0,ETCD_RAFT_REAL_QUORUM_READY=1,ETCD_RAFT_REAL_REPLICA_MATCH_1=0,ETCD_RAFT_REAL_REPLICA_MATCH_2=0": false,
+          "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=0,ETCD_RAFT_REAL_LEADER_READY=0,ETCD_RAFT_REAL_QUORUM_READY=1,ETCD_RAFT_REAL_REPLICA_MATCH_1=0,ETCD_RAFT_REAL_REPLICA_MATCH_2=1": false,
+          "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=0,ETCD_RAFT_REAL_LEADER_READY=0,ETCD_RAFT_REAL_QUORUM_READY=1,ETCD_RAFT_REAL_REPLICA_MATCH_1=1,ETCD_RAFT_REAL_REPLICA_MATCH_2=0": false,
+          "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=0,ETCD_RAFT_REAL_LEADER_READY=0,ETCD_RAFT_REAL_QUORUM_READY=1,ETCD_RAFT_REAL_REPLICA_MATCH_1=1,ETCD_RAFT_REAL_REPLICA_MATCH_2=1": false,
+          "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=0,ETCD_RAFT_REAL_LEADER_READY=1,ETCD_RAFT_REAL_QUORUM_READY=0,ETCD_RAFT_REAL_REPLICA_MATCH_1=0,ETCD_RAFT_REAL_REPLICA_MATCH_2=0": false,
+          "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=0,ETCD_RAFT_REAL_LEADER_READY=1,ETCD_RAFT_REAL_QUORUM_READY=0,ETCD_RAFT_REAL_REPLICA_MATCH_1=0,ETCD_RAFT_REAL_REPLICA_MATCH_2=1": false,
+          "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=0,ETCD_RAFT_REAL_LEADER_READY=1,ETCD_RAFT_REAL_QUORUM_READY=0,ETCD_RAFT_REAL_REPLICA_MATCH_1=1,ETCD_RAFT_REAL_REPLICA_MATCH_2=0": false,
+          "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=0,ETCD_RAFT_REAL_LEADER_READY=1,ETCD_RAFT_REAL_QUORUM_READY=0,ETCD_RAFT_REAL_REPLICA_MATCH_1=1,ETCD_RAFT_REAL_REPLICA_MATCH_2=1": false,
+          "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=0,ETCD_RAFT_REAL_LEADER_READY=1,ETCD_RAFT_REAL_QUORUM_READY=1,ETCD_RAFT_REAL_REPLICA_MATCH_1=0,ETCD_RAFT_REAL_REPLICA_MATCH_2=0": false,
+          "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=0,ETCD_RAFT_REAL_LEADER_READY=1,ETCD_RAFT_REAL_QUORUM_READY=1,ETCD_RAFT_REAL_REPLICA_MATCH_1=0,ETCD_RAFT_REAL_REPLICA_MATCH_2=1": false,
+          "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=0,ETCD_RAFT_REAL_LEADER_READY=1,ETCD_RAFT_REAL_QUORUM_READY=1,ETCD_RAFT_REAL_REPLICA_MATCH_1=1,ETCD_RAFT_REAL_REPLICA_MATCH_2=0": false,
+          "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=0,ETCD_RAFT_REAL_LEADER_READY=1,ETCD_RAFT_REAL_QUORUM_READY=1,ETCD_RAFT_REAL_REPLICA_MATCH_1=1,ETCD_RAFT_REAL_REPLICA_MATCH_2=1": false,
+          "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=1,ETCD_RAFT_REAL_LEADER_READY=0,ETCD_RAFT_REAL_QUORUM_READY=0,ETCD_RAFT_REAL_REPLICA_MATCH_1=0,ETCD_RAFT_REAL_REPLICA_MATCH_2=0": false,
+          "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=1,ETCD_RAFT_REAL_LEADER_READY=0,ETCD_RAFT_REAL_QUORUM_READY=0,ETCD_RAFT_REAL_REPLICA_MATCH_1=0,ETCD_RAFT_REAL_REPLICA_MATCH_2=1": false,
+          "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=1,ETCD_RAFT_REAL_LEADER_READY=0,ETCD_RAFT_REAL_QUORUM_READY=0,ETCD_RAFT_REAL_REPLICA_MATCH_1=1,ETCD_RAFT_REAL_REPLICA_MATCH_2=0": false,
+          "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=1,ETCD_RAFT_REAL_LEADER_READY=0,ETCD_RAFT_REAL_QUORUM_READY=0,ETCD_RAFT_REAL_REPLICA_MATCH_1=1,ETCD_RAFT_REAL_REPLICA_MATCH_2=1": false,
+          "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=1,ETCD_RAFT_REAL_LEADER_READY=0,ETCD_RAFT_REAL_QUORUM_READY=1,ETCD_RAFT_REAL_REPLICA_MATCH_1=0,ETCD_RAFT_REAL_REPLICA_MATCH_2=0": false,
+          "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=1,ETCD_RAFT_REAL_LEADER_READY=0,ETCD_RAFT_REAL_QUORUM_READY=1,ETCD_RAFT_REAL_REPLICA_MATCH_1=0,ETCD_RAFT_REAL_REPLICA_MATCH_2=1": false,
+          "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=1,ETCD_RAFT_REAL_LEADER_READY=0,ETCD_RAFT_REAL_QUORUM_READY=1,ETCD_RAFT_REAL_REPLICA_MATCH_1=1,ETCD_RAFT_REAL_REPLICA_MATCH_2=0": false,
+          "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=1,ETCD_RAFT_REAL_LEADER_READY=0,ETCD_RAFT_REAL_QUORUM_READY=1,ETCD_RAFT_REAL_REPLICA_MATCH_1=1,ETCD_RAFT_REAL_REPLICA_MATCH_2=1": false,
+          "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=1,ETCD_RAFT_REAL_LEADER_READY=1,ETCD_RAFT_REAL_QUORUM_READY=0,ETCD_RAFT_REAL_REPLICA_MATCH_1=0,ETCD_RAFT_REAL_REPLICA_MATCH_2=0": false,
+          "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=1,ETCD_RAFT_REAL_LEADER_READY=1,ETCD_RAFT_REAL_QUORUM_READY=0,ETCD_RAFT_REAL_REPLICA_MATCH_1=0,ETCD_RAFT_REAL_REPLICA_MATCH_2=1": false,
+          "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=1,ETCD_RAFT_REAL_LEADER_READY=1,ETCD_RAFT_REAL_QUORUM_READY=0,ETCD_RAFT_REAL_REPLICA_MATCH_1=1,ETCD_RAFT_REAL_REPLICA_MATCH_2=0": false,
+          "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=1,ETCD_RAFT_REAL_LEADER_READY=1,ETCD_RAFT_REAL_QUORUM_READY=0,ETCD_RAFT_REAL_REPLICA_MATCH_1=1,ETCD_RAFT_REAL_REPLICA_MATCH_2=1": false,
+          "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=1,ETCD_RAFT_REAL_LEADER_READY=1,ETCD_RAFT_REAL_QUORUM_READY=1,ETCD_RAFT_REAL_REPLICA_MATCH_1=0,ETCD_RAFT_REAL_REPLICA_MATCH_2=0": false,
+          "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=1,ETCD_RAFT_REAL_LEADER_READY=1,ETCD_RAFT_REAL_QUORUM_READY=1,ETCD_RAFT_REAL_REPLICA_MATCH_1=0,ETCD_RAFT_REAL_REPLICA_MATCH_2=1": false,
+          "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=1,ETCD_RAFT_REAL_LEADER_READY=1,ETCD_RAFT_REAL_QUORUM_READY=1,ETCD_RAFT_REAL_REPLICA_MATCH_1=1,ETCD_RAFT_REAL_REPLICA_MATCH_2=0": false,
+          "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY=1,ETCD_RAFT_REAL_LEADER_READY=1,ETCD_RAFT_REAL_QUORUM_READY=1,ETCD_RAFT_REAL_REPLICA_MATCH_1=1,ETCD_RAFT_REAL_REPLICA_MATCH_2=1": true
+        },
+        "notes": "exact_boundary_projection_interface"
+      },
+      "parent_cluster_symbol_ids": [
+        "ETCD_RAFT_REAL_ADVANCE_COMMIT",
+        "ETCD_RAFT_REAL_PRIOR_TERM_LOG"
+      ],
+      "markov_blanket_symbol_ids": [
+        "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY",
+        "ETCD_RAFT_REAL_LEADER_READY",
+        "ETCD_RAFT_REAL_QUORUM_READY",
+        "ETCD_RAFT_REAL_REPLICA_MATCH_1",
+        "ETCD_RAFT_REAL_REPLICA_MATCH_2"
+      ],
+      "admission_status": "accepted",
+      "admission_metrics": {
+        "novel": true,
+        "novelty_conflicts": [],
+        "verifier_passed": true,
+        "reuse_passed": true,
+        "heldout_contradiction_gain": 5.2,
+        "complexity_penalty": 3.0,
+        "rent_paid": true,
+        "verifier_agreement": {
+          "verifier_count": 3,
+          "passed_count": 3,
+          "failed_count": 0,
+          "agreement_rate": 1.0,
+          "all_agree": true,
+          "disagreed": false
+        },
+        "semantic_accept_count": 0,
+        "pathway": "B"
+      },
+      "created_at": "2026-03-18T22:33:39.452054+00:00",
+      "updated_at": "2026-03-18T22:33:39.545128+00:00",
+      "provenance_ids": [],
+      "metadata": {
+        "cluster_id": "hotspot_1",
+        "tsl_pathway": "B",
+        "structural_roles": [
+          "advance_commit",
+          "prior_term_log",
+          "current_term_entry",
+          "leader_ready",
+          "quorum_ready",
+          "replica_match",
+          "replica_match"
+        ],
+        "proposal_support_roles": [],
+        "proposal_hidden_variables": []
+      },
+      "node_type": "MetaSymbol"
+    },
+    {
+      "id": "verifier_177c3834",
+      "verifier_name": "etcd_raft_current_term_verifier",
+      "artifact_kind": "verification_result",
+      "status": "pass",
+      "cost": 0.08720629999879748,
+      "counterexample_ref": null,
+      "created_at": "2026-03-18T22:33:39.544761+00:00",
+      "metadata": {
+        "details": {
+          "manifest_path": "fixtures\\etcd_raft_current_term\\train\\manifest.json",
+          "source_path": "fixtures\\etcd_raft_current_term\\train\\source_excerpt.go",
+          "valid_trace_count": 2,
+          "invalid_trace_count": 4,
+          "upstream_commit": "bcec33429c39a8bade4c2472cc68cf6038a0664f",
+          "markers": {
+            "committedEntryInCurrentTerm": true,
+            "TestLeaderOnlyCommitsLogFromCurrentTerm": true,
+            "pending MsgReadIndex should be released only after first commit in current term": true
+          },
+          "command": [
+            "python",
+            "verifiers\\etcd_raft_current_term_verifier.py"
+          ],
+          "returncode": 0
+        }
+      },
+      "node_type": "VerifierArtifact"
+    },
+    {
+      "id": "verifier_d4348b5d",
+      "verifier_name": "role_count_verifier",
+      "artifact_kind": "verification_result",
+      "status": "pass",
+      "cost": 6.25999819021672e-05,
+      "counterexample_ref": null,
+      "created_at": "2026-03-18T22:33:39.544827+00:00",
+      "metadata": {
+        "details": {
+          "parent_roles": {
+            "commit": 1,
+            "pending": 1
+          },
+          "blanket_roles": {
+            "stable": 1,
+            "prepare": 1,
+            "clear": 1,
+            "ack": 2
+          },
+          "expected_parent": {
+            "commit": 1,
+            "pending": 1
+          },
+          "expected_blanket": {
+            "stable": 1,
+            "prepare": 1,
+            "clear": 1,
+            "ack": 2
+          }
+        }
+      },
+      "node_type": "VerifierArtifact"
+    },
+    {
+      "id": "verifier_7a190f7f",
+      "verifier_name": "trace_contract_verifier",
+      "artifact_kind": "verification_result",
+      "status": "pass",
+      "cost": 0.0004835000145249069,
+      "counterexample_ref": null,
+      "created_at": "2026-03-18T22:33:39.544867+00:00",
+      "metadata": {
+        "details": {
+          "manifest_path": "fixtures\\etcd_raft_current_term\\train\\manifest.json",
+          "trace_contract_type": "gated_commit"
+        }
+      },
+      "node_type": "VerifierArtifact"
+    },
+    {
+      "id": "verifier_15f1d22d",
+      "verifier_name": "etcd_raft_current_term_verifier",
+      "artifact_kind": "verification_result",
+      "status": "pass",
+      "cost": 0.08720629999879748,
+      "counterexample_ref": null,
+      "created_at": "2026-03-18T22:33:39.544948+00:00",
+      "metadata": {
+        "details": {
+          "manifest_path": "fixtures\\etcd_raft_current_term\\train\\manifest.json",
+          "source_path": "fixtures\\etcd_raft_current_term\\train\\source_excerpt.go",
+          "valid_trace_count": 2,
+          "invalid_trace_count": 4,
+          "upstream_commit": "bcec33429c39a8bade4c2472cc68cf6038a0664f",
+          "markers": {
+            "committedEntryInCurrentTerm": true,
+            "TestLeaderOnlyCommitsLogFromCurrentTerm": true,
+            "pending MsgReadIndex should be released only after first commit in current term": true
+          },
+          "command": [
+            "python",
+            "verifiers\\etcd_raft_current_term_verifier.py"
+          ],
+          "returncode": 0
+        }
+      },
+      "node_type": "VerifierArtifact"
+    },
+    {
+      "id": "verifier_23f0be81",
+      "verifier_name": "role_count_verifier",
+      "artifact_kind": "verification_result",
+      "status": "pass",
+      "cost": 6.25999819021672e-05,
+      "counterexample_ref": null,
+      "created_at": "2026-03-18T22:33:39.544997+00:00",
+      "metadata": {
+        "details": {
+          "parent_roles": {
+            "commit": 1,
+            "pending": 1
+          },
+          "blanket_roles": {
+            "stable": 1,
+            "prepare": 1,
+            "clear": 1,
+            "ack": 2
+          },
+          "expected_parent": {
+            "commit": 1,
+            "pending": 1
+          },
+          "expected_blanket": {
+            "stable": 1,
+            "prepare": 1,
+            "clear": 1,
+            "ack": 2
+          }
+        }
+      },
+      "node_type": "VerifierArtifact"
+    },
+    {
+      "id": "verifier_04f23d8b",
+      "verifier_name": "trace_contract_verifier",
+      "artifact_kind": "verification_result",
+      "status": "pass",
+      "cost": 0.0004835000145249069,
+      "counterexample_ref": null,
+      "created_at": "2026-03-18T22:33:39.545043+00:00",
+      "metadata": {
+        "details": {
+          "manifest_path": "fixtures\\etcd_raft_current_term\\train\\manifest.json",
+          "trace_contract_type": "gated_commit"
+        }
+      },
+      "node_type": "VerifierArtifact"
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge_1d613e84",
+      "src_id": "evidence_15292928",
+      "dst_id": "etcd_raft_current_term_train",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445127+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_21f70493",
+      "src_id": "evidence_77b491b6",
+      "dst_id": "etcd_raft_current_term_train",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445146+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_ed02fd34",
+      "src_id": "evidence_7e4461b2",
+      "dst_id": "etcd_raft_current_term_train",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445159+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_a9cb5faf",
+      "src_id": "evidence_04dcb531",
+      "dst_id": "etcd_raft_current_term_train",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445173+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_9e52aa6d",
+      "src_id": "evidence_49445fcc",
+      "dst_id": "etcd_raft_current_term_train",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445187+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_772acfb0",
+      "src_id": "evidence_9b4aef01",
+      "dst_id": "etcd_raft_current_term_train",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445199+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_94b08018",
+      "src_id": "evidence_5b255eef",
+      "dst_id": "etcd_raft_current_term_train",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445363+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_9c9158e6",
+      "src_id": "ETCD_RAFT_REAL_ADVANCE_COMMIT",
+      "dst_id": "ETCD_RAFT_REAL_C_COMMIT_PENDING_MUTEX",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T22:33:39.445505+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_f61c15a3",
+      "src_id": "ETCD_RAFT_REAL_PRIOR_TERM_LOG",
+      "dst_id": "ETCD_RAFT_REAL_C_COMMIT_PENDING_MUTEX",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T22:33:39.445512+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_a7f3cae5",
+      "src_id": "ETCD_RAFT_REAL_PRIOR_TERM_LOG",
+      "dst_id": "ETCD_RAFT_REAL_C_PENDING_PREPARE",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T22:33:39.445520+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_80d6ccf7",
+      "src_id": "ETCD_RAFT_REAL_LEADER_READY",
+      "dst_id": "ETCD_RAFT_REAL_C_PENDING_PREPARE",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T22:33:39.445526+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_83ac98e3",
+      "src_id": "ETCD_RAFT_REAL_ADVANCE_COMMIT",
+      "dst_id": "ETCD_RAFT_REAL_C_COMMIT_CLEAR",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T22:33:39.445534+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_ed89e9ca",
+      "src_id": "ETCD_RAFT_REAL_QUORUM_READY",
+      "dst_id": "ETCD_RAFT_REAL_C_COMMIT_CLEAR",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T22:33:39.445540+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_8f4cbf96",
+      "src_id": "ETCD_RAFT_REAL_ADVANCE_COMMIT",
+      "dst_id": "ETCD_RAFT_REAL_C_COMMIT_ACK_1",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T22:33:39.445547+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_0f01639d",
+      "src_id": "ETCD_RAFT_REAL_REPLICA_MATCH_1",
+      "dst_id": "ETCD_RAFT_REAL_C_COMMIT_ACK_1",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T22:33:39.445553+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_b54eaed0",
+      "src_id": "ETCD_RAFT_REAL_ADVANCE_COMMIT",
+      "dst_id": "ETCD_RAFT_REAL_C_COMMIT_ACK_2",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T22:33:39.445560+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_c2ad74f6",
+      "src_id": "ETCD_RAFT_REAL_REPLICA_MATCH_2",
+      "dst_id": "ETCD_RAFT_REAL_C_COMMIT_ACK_2",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T22:33:39.445566+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_9d8865cb",
+      "src_id": "ETCD_RAFT_REAL_ADVANCE_COMMIT",
+      "dst_id": "ETCD_RAFT_REAL_C_COMMIT_STABLE",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T22:33:39.445575+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_aa483081",
+      "src_id": "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY",
+      "dst_id": "ETCD_RAFT_REAL_C_COMMIT_STABLE",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T22:33:39.445581+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_e8763fc4",
+      "src_id": "evidence_15292928",
+      "dst_id": "ETCD_RAFT_REAL_LEADER_READY",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445590+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_1c476a87",
+      "src_id": "evidence_15292928",
+      "dst_id": "ETCD_RAFT_REAL_ADVANCE_COMMIT",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445596+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_9425a0f4",
+      "src_id": "evidence_15292928",
+      "dst_id": "ETCD_RAFT_REAL_PRIOR_TERM_LOG",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445602+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_5c53266b",
+      "src_id": "evidence_15292928",
+      "dst_id": "ETCD_RAFT_REAL_QUORUM_READY",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445608+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_418e3bb0",
+      "src_id": "evidence_15292928",
+      "dst_id": "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445614+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_70d23c03",
+      "src_id": "evidence_15292928",
+      "dst_id": "ETCD_RAFT_REAL_REPLICA_MATCH_1",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445621+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_51764240",
+      "src_id": "evidence_15292928",
+      "dst_id": "ETCD_RAFT_REAL_REPLICA_MATCH_2",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445626+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_d97ad850",
+      "src_id": "evidence_15292928",
+      "dst_id": "ETCD_RAFT_REAL_REPLICA_MATCH_3",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445632+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_1dc2080e",
+      "src_id": "evidence_77b491b6",
+      "dst_id": "ETCD_RAFT_REAL_LEADER_READY",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445638+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_d82eed1f",
+      "src_id": "evidence_77b491b6",
+      "dst_id": "ETCD_RAFT_REAL_ADVANCE_COMMIT",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445644+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_cf3b8e9f",
+      "src_id": "evidence_77b491b6",
+      "dst_id": "ETCD_RAFT_REAL_PRIOR_TERM_LOG",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445650+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_92a316b2",
+      "src_id": "evidence_77b491b6",
+      "dst_id": "ETCD_RAFT_REAL_QUORUM_READY",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445655+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_e6a4117a",
+      "src_id": "evidence_77b491b6",
+      "dst_id": "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445661+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_d1e12294",
+      "src_id": "evidence_77b491b6",
+      "dst_id": "ETCD_RAFT_REAL_REPLICA_MATCH_1",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445666+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_6242098f",
+      "src_id": "evidence_77b491b6",
+      "dst_id": "ETCD_RAFT_REAL_REPLICA_MATCH_2",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445672+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_747aa734",
+      "src_id": "evidence_77b491b6",
+      "dst_id": "ETCD_RAFT_REAL_REPLICA_MATCH_3",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445677+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_1c56cee8",
+      "src_id": "evidence_5b255eef",
+      "dst_id": "ETCD_RAFT_REAL_LEADER_READY",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445683+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_86a101b7",
+      "src_id": "evidence_5b255eef",
+      "dst_id": "ETCD_RAFT_REAL_ADVANCE_COMMIT",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445688+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_948060aa",
+      "src_id": "evidence_5b255eef",
+      "dst_id": "ETCD_RAFT_REAL_PRIOR_TERM_LOG",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445694+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_495d036f",
+      "src_id": "evidence_5b255eef",
+      "dst_id": "ETCD_RAFT_REAL_QUORUM_READY",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445700+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_fd87ea05",
+      "src_id": "evidence_5b255eef",
+      "dst_id": "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445706+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_88dff5d5",
+      "src_id": "evidence_5b255eef",
+      "dst_id": "ETCD_RAFT_REAL_REPLICA_MATCH_1",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445711+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_8e1c566e",
+      "src_id": "evidence_5b255eef",
+      "dst_id": "ETCD_RAFT_REAL_REPLICA_MATCH_2",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445717+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_eba282a3",
+      "src_id": "evidence_5b255eef",
+      "dst_id": "ETCD_RAFT_REAL_REPLICA_MATCH_3",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445722+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_7e9b7172",
+      "src_id": "evidence_49445fcc",
+      "dst_id": "ETCD_RAFT_REAL_LEADER_READY",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445730+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_cefe387a",
+      "src_id": "evidence_49445fcc",
+      "dst_id": "ETCD_RAFT_REAL_ADVANCE_COMMIT",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445735+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_aef1c7b1",
+      "src_id": "evidence_49445fcc",
+      "dst_id": "ETCD_RAFT_REAL_PRIOR_TERM_LOG",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445741+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_4b9e267c",
+      "src_id": "evidence_49445fcc",
+      "dst_id": "ETCD_RAFT_REAL_QUORUM_READY",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445746+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_3bb0aaea",
+      "src_id": "evidence_49445fcc",
+      "dst_id": "ETCD_RAFT_REAL_CURRENT_TERM_ENTRY",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445752+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_675b695f",
+      "src_id": "evidence_49445fcc",
+      "dst_id": "ETCD_RAFT_REAL_REPLICA_MATCH_1",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445758+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_0d2a6562",
+      "src_id": "evidence_49445fcc",
+      "dst_id": "ETCD_RAFT_REAL_REPLICA_MATCH_2",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445764+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_18fa2e83",
+      "src_id": "evidence_49445fcc",
+      "dst_id": "ETCD_RAFT_REAL_REPLICA_MATCH_3",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445769+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_a833b7ea",
+      "src_id": "evidence_77b491b6",
+      "dst_id": "ETCD_RAFT_REAL_C_COMMIT_PENDING_MUTEX",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445776+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_cf048d3e",
+      "src_id": "evidence_77b491b6",
+      "dst_id": "ETCD_RAFT_REAL_C_PENDING_PREPARE",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445782+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_99538f70",
+      "src_id": "evidence_77b491b6",
+      "dst_id": "ETCD_RAFT_REAL_C_COMMIT_CLEAR",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445788+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_1b52c7fe",
+      "src_id": "evidence_77b491b6",
+      "dst_id": "ETCD_RAFT_REAL_C_COMMIT_ACK_1",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445794+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_9e039866",
+      "src_id": "evidence_77b491b6",
+      "dst_id": "ETCD_RAFT_REAL_C_COMMIT_ACK_2",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445800+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_e8d7c589",
+      "src_id": "evidence_77b491b6",
+      "dst_id": "ETCD_RAFT_REAL_C_COMMIT_STABLE",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445805+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_1d1e46e8",
+      "src_id": "evidence_04dcb531",
+      "dst_id": "ETCD_RAFT_REAL_C_COMMIT_PENDING_MUTEX",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445811+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_73e7fc87",
+      "src_id": "evidence_04dcb531",
+      "dst_id": "ETCD_RAFT_REAL_C_PENDING_PREPARE",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445816+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_262da407",
+      "src_id": "evidence_04dcb531",
+      "dst_id": "ETCD_RAFT_REAL_C_COMMIT_CLEAR",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445822+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_6806cdce",
+      "src_id": "evidence_04dcb531",
+      "dst_id": "ETCD_RAFT_REAL_C_COMMIT_ACK_1",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445828+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_620ec3b0",
+      "src_id": "evidence_04dcb531",
+      "dst_id": "ETCD_RAFT_REAL_C_COMMIT_ACK_2",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445834+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_bc71c88c",
+      "src_id": "evidence_04dcb531",
+      "dst_id": "ETCD_RAFT_REAL_C_COMMIT_STABLE",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445839+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_4956062c",
+      "src_id": "evidence_9b4aef01",
+      "dst_id": "ETCD_RAFT_REAL_C_COMMIT_PENDING_MUTEX",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445845+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_fac94d2a",
+      "src_id": "evidence_9b4aef01",
+      "dst_id": "ETCD_RAFT_REAL_C_PENDING_PREPARE",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445850+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_e99e2e6d",
+      "src_id": "evidence_9b4aef01",
+      "dst_id": "ETCD_RAFT_REAL_C_COMMIT_CLEAR",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445856+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_815c588a",
+      "src_id": "evidence_9b4aef01",
+      "dst_id": "ETCD_RAFT_REAL_C_COMMIT_ACK_1",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445862+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_297c5654",
+      "src_id": "evidence_9b4aef01",
+      "dst_id": "ETCD_RAFT_REAL_C_COMMIT_ACK_2",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445868+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_177972b4",
+      "src_id": "evidence_9b4aef01",
+      "dst_id": "ETCD_RAFT_REAL_C_COMMIT_STABLE",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445873+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_82a2324e",
+      "src_id": "evidence_7e4461b2",
+      "dst_id": "ETCD_RAFT_REAL_C_COMMIT_PENDING_MUTEX",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445879+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_75fe31c0",
+      "src_id": "evidence_7e4461b2",
+      "dst_id": "ETCD_RAFT_REAL_C_PENDING_PREPARE",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445884+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_40e9bc82",
+      "src_id": "evidence_7e4461b2",
+      "dst_id": "ETCD_RAFT_REAL_C_COMMIT_CLEAR",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445890+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_30decdd3",
+      "src_id": "evidence_7e4461b2",
+      "dst_id": "ETCD_RAFT_REAL_C_COMMIT_ACK_1",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445896+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_1bdae635",
+      "src_id": "evidence_7e4461b2",
+      "dst_id": "ETCD_RAFT_REAL_C_COMMIT_ACK_2",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445901+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_4d1cd550",
+      "src_id": "evidence_7e4461b2",
+      "dst_id": "ETCD_RAFT_REAL_C_COMMIT_STABLE",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:39.445907+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_24c6b9a2",
+      "src_id": "meta_cb3ff1de",
+      "dst_id": "ETCD_RAFT_REAL_ADVANCE_COMMIT",
+      "edge_kind": "abstracts",
+      "created_at": "2026-03-18T22:33:39.452189+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_4896fff6",
+      "src_id": "meta_cb3ff1de",
+      "dst_id": "ETCD_RAFT_REAL_PRIOR_TERM_LOG",
+      "edge_kind": "abstracts",
+      "created_at": "2026-03-18T22:33:39.452198+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_20f92399",
+      "src_id": "verifier_177c3834",
+      "dst_id": "meta_cb3ff1de",
+      "edge_kind": "supports",
+      "created_at": "2026-03-18T22:33:39.544803+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_2a4754d3",
+      "src_id": "verifier_d4348b5d",
+      "dst_id": "meta_cb3ff1de",
+      "edge_kind": "supports",
+      "created_at": "2026-03-18T22:33:39.544847+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_ffb95090",
+      "src_id": "verifier_7a190f7f",
+      "dst_id": "meta_cb3ff1de",
+      "edge_kind": "supports",
+      "created_at": "2026-03-18T22:33:39.544886+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_d6b47a09",
+      "src_id": "verifier_15f1d22d",
+      "dst_id": "meta_cb3ff1de",
+      "edge_kind": "supports",
+      "created_at": "2026-03-18T22:33:39.544967+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_3a971dfd",
+      "src_id": "verifier_23f0be81",
+      "dst_id": "meta_cb3ff1de",
+      "edge_kind": "supports",
+      "created_at": "2026-03-18T22:33:39.545015+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_3d301a37",
+      "src_id": "verifier_04f23d8b",
+      "dst_id": "meta_cb3ff1de",
+      "edge_kind": "supports",
+      "created_at": "2026-03-18T22:33:39.545060+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    }
+  ]
+}

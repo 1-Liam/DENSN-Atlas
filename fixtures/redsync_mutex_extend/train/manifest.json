@@ -1,0 +1,101 @@
+{
+  "task_id": "redsync_mutex_extend_train",
+  "family": "redsync_mutex_extend",
+  "split": "train",
+  "description": "Real-world external artifact bundle derived from go-redsync/redsync. The target invariant is the mutex-extend window rule: Extend is legal only while the lock window is still active; expired or closed locks must not extend successfully.",
+  "roles": {
+    "acquire": "LOCK",
+    "release": "UNLOCK",
+    "extend": "EXTEND"
+  },
+  "canonical_roles": {
+    "acquire": "open",
+    "release": "close",
+    "extend": "write"
+  },
+  "natural_language_spec": "LOCK opens a mutex ownership window. EXTEND is legal only while that window is still active. UNLOCK closes the window. After expiry or release, EXTEND must fail.",
+  "formal_spec": {
+    "rules": [
+      "LOCK -> mutex_live",
+      "EXTEND -> mutex_live",
+      "UNLOCK -> previously mutex_live",
+      "trace_end -> not mutex_live"
+    ],
+    "safety_property": "No EXTEND occurs after the lock has expired or after the lock window has been closed."
+  },
+  "execution_traces": [
+    [
+      "LOCK",
+      "EXTEND",
+      "UNLOCK"
+    ],
+    [
+      "LOCK",
+      "EXTEND",
+      "EXTEND",
+      "UNLOCK"
+    ]
+  ],
+  "failing_tests": [
+    {
+      "name": "TestMutexExtendExpired",
+      "trace": [
+        "LOCK",
+        "UNLOCK",
+        "EXTEND"
+      ],
+      "expected": "fail"
+    },
+    {
+      "name": "TestSetNXOnExtendFailsToAcquireLockWhenKeyIsTaken",
+      "trace": [
+        "LOCK",
+        "EXTEND",
+        "UNLOCK",
+        "LOCK",
+        "UNLOCK",
+        "EXTEND"
+      ],
+      "expected": "fail"
+    }
+  ],
+  "logs": [
+    {
+      "level": "ERROR",
+      "message": "redsync: failed to extend lock",
+      "trace": [
+        "LOCK",
+        "UNLOCK",
+        "EXTEND"
+      ]
+    }
+  ],
+  "counterexamples": [
+    {
+      "name": "extend_without_lock",
+      "trace": [
+        "EXTEND"
+      ],
+      "reason": "extend_requires_live_lock"
+    }
+  ],
+  "source_code_path": "source_excerpt.go",
+  "write_count": 2,
+  "provenance": {
+    "repo": "https://github.com/go-redsync/redsync",
+    "upstream_commit": "7a6f793e6fdad02673681d67bac13a1f04c9c7de",
+    "upstream_commit_short": "7a6f793",
+    "upstream_commit_date": "2026-02-26",
+    "source_files": [
+      "mutex.go",
+      "mutex_test.go",
+      "error.go"
+    ],
+    "source_urls": [
+      "https://github.com/go-redsync/redsync/blob/7a6f793e6fdad02673681d67bac13a1f04c9c7de/mutex.go",
+      "https://github.com/go-redsync/redsync/blob/7a6f793e6fdad02673681d67bac13a1f04c9c7de/mutex_test.go",
+      "https://github.com/go-redsync/redsync/blob/7a6f793e6fdad02673681d67bac13a1f04c9c7de/error.go"
+    ],
+    "license": "BSD-3-Clause"
+  }
+}

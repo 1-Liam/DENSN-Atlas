@@ -1,0 +1,39 @@
+{
+  "artifact_version": {
+    "phase": "phase7",
+    "timestamp_utc": "20260318T201354075352Z",
+    "git_sha": "ad9f6a1"
+  },
+  "source_artifact": "artifacts\\phase7\\gauntlet_summary.json",
+  "headline_metrics": {
+    "positive_targets_ladder_a": 2,
+    "positive_targets_ladder_b": 2,
+    "negative_blocks_total": 2,
+    "cross_ladder_blocks": 2,
+    "live_proposal_cycle_reduction_median": 0.25,
+    "verifier_agreement_rate": 0.5,
+    "densn_positive_transfer_pass_rate": 1.0,
+    "model_baseline_transfer_pass_rate": 0.375,
+    "densn_mean_verifier_calls_to_acceptance": 1.0,
+    "model_baseline_mean_verifier_calls_to_acceptance": 3.0,
+    "densn_mean_contradiction_gain": 10.6,
+    "model_baseline_mean_contradiction_gain": 0.0,
+    "accepted_interface_non_constant_rate": 1.0
+  },
+  "wins": [
+    "Ladder A now has two verifier-passing positive remap targets.",
+    "Ladder B now has two verifier-passing positive remap targets.",
+    "Both ladders block at least one negative-transfer case.",
+    "Cross-ladder misuse is blocked in two explicit verifier-visible cases.",
+    "The live proposal layer preserves a median 25 percent cycle reduction.",
+    "DENSN beats the strongest live model baselines on verifier-backed positive transfer rate.",
+    "DENSN is non-inferior on verifier calls to acceptance against the live model baselines.",
+    "DENSN wins on contradiction reduction during transfer.",
+    "Accepted abstractions remain predominantly non-constant at the interface level."
+  ],
+  "failures": [],
+  "unproven": [
+    "Secondary-verifier agreement is reported but not yet clean; disagreement remains a live contradiction source.",
+    "Pathway A compression is still not part of the headline proof bundle."
+  ]
+}

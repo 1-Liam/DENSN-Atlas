@@ -1,0 +1,2593 @@
+{
+  "artifact_version": {
+    "phase": "phase13",
+    "timestamp_utc": "20260318T223343207209Z",
+    "git_sha": "4b3ad2a"
+  },
+  "family": "redislock_refresh",
+  "campaign_type": "reviewer_policy_precision",
+  "fixed_proposal_pool": {
+    "adapter": {
+      "adapter": "ReplayProposalAdapter"
+    },
+    "proposal_count": 7,
+    "proposals": [
+      {
+        "proposal_id": "proposal_bc8d5eb6",
+        "proposal_type": "atom",
+        "source": "groq_chat_adapter",
+        "payload": {
+          "atom": "lock_live",
+          "artifact": "redislock",
+          "rationale": "lock liveness status"
+        },
+        "task_id": null,
+        "metadata": {
+          "support_roles": [
+            "obtain",
+            "refresh",
+            "release"
+          ],
+          "support_surfaces": [
+            "counterexamples",
+            "description",
+            "failing_tests",
+            "formal_spec",
+            "logs",
+            "natural_language_spec",
+            "source_code"
+          ],
+          "support_surface_count": 7,
+          "review_score": 0.5,
+          "matched_tokens": [
+            "live",
+            "lock"
+          ]
+        }
+      },
+      {
+        "proposal_id": "proposal_3be80234",
+        "proposal_type": "constraint",
+        "source": "groq_chat_adapter",
+        "payload": {
+          "constraint": "OBTAIN -> lock_live",
+          "artifact": "formal rules",
+          "rationale": "acquire lock"
+        },
+        "task_id": null,
+        "metadata": {
+          "support_roles": [
+            "obtain",
+            "refresh",
+            "release"
+          ],
+          "support_surfaces": [
+            "counterexamples",
+            "description",
+            "execution_traces",
+            "failing_tests",
+            "formal_spec",
+            "natural_language_spec",
+            "source_code"
+          ],
+          "support_surface_count": 7,
+          "review_score": 1.0,
+          "matched_tokens": [
+            "live",
+            "lock",
+            "obtain"
+          ]
+        }
+      },
+      {
+        "proposal_id": "proposal_b709189f",
+        "proposal_type": "hidden_variable",
+        "source": "groq_chat_adapter",
+        "payload": {
+          "hidden_variable": "lock_expired",
+          "artifact": "formal spec",
+          "rationale": "lock expiration status"
+        },
+        "task_id": null,
+        "metadata": {
+          "support_roles": [
+            "obtain",
+            "refresh",
+            "release"
+          ],
+          "support_surfaces": [
+            "counterexamples",
+            "description",
+            "failing_tests",
+            "formal_spec",
+            "natural_language_spec",
+            "source_code"
+          ],
+          "support_surface_count": 6,
+          "review_score": 0.75,
+          "matched_tokens": [
+            "expired",
+            "lock"
+          ]
+        }
+      },
+      {
+        "proposal_id": "proposal_e7793ff8",
+        "proposal_type": "semantic_label",
+        "source": "groq_chat_adapter",
+        "payload": {
+          "label": "lock_owner",
+          "artifact": "redislock",
+          "rationale": "lock ownership"
+        },
+        "task_id": null,
+        "metadata": {
+          "support_roles": [
+            "obtain",
+            "refresh",
+            "release"
+          ],
+          "support_surfaces": [
+            "counterexamples",
+            "description",
+            "failing_tests",
+            "formal_spec",
+            "logs",
+            "natural_language_spec",
+            "source_code"
+          ],
+          "support_surface_count": 7,
+          "review_score": 0.25,
+          "matched_tokens": [
+            "lock",
+            "ownership"
+          ]
+        }
+      },
+      {
+        "proposal_id": "proposal_f34fd1c8",
+        "proposal_type": "test",
+        "source": "groq_chat_adapter",
+        "payload": {
+          "test": "TestLock_Refresh_expired",
+          "artifact": "failing tests",
+          "rationale": "refresh expired lock"
+        },
+        "task_id": null,
+        "metadata": {
+          "support_roles": [
+            "obtain",
+            "refresh",
+            "release"
+          ],
+          "support_surfaces": [
+            "counterexamples",
+            "description",
+            "execution_traces",
+            "failing_tests",
+            "formal_spec",
+            "logs",
+            "natural_language_spec",
+            "source_code"
+          ],
+          "support_surface_count": 8,
+          "review_score": 2.5,
+          "matched_tokens": [
+            "expired",
+            "lock",
+            "refresh",
+            "test"
+          ]
+        }
+      },
+      {
+        "proposal_id": "proposal_6f9a7922",
+        "proposal_type": "test",
+        "source": "groq_chat_adapter",
+        "payload": {
+          "test": "TestLock_Release_expired",
+          "artifact": "failing tests",
+          "rationale": "release expired lock"
+        },
+        "task_id": null,
+        "metadata": {
+          "support_roles": [
+            "obtain",
+            "refresh",
+            "release"
+          ],
+          "support_surfaces": [
+            "counterexamples",
+            "description",
+            "execution_traces",
+            "failing_tests",
+            "formal_spec",
+            "natural_language_spec",
+            "source_code"
+          ],
+          "support_surface_count": 7,
+          "review_score": 1.5,
+          "matched_tokens": [
+            "expired",
+            "lock",
+            "release",
+            "test"
+          ]
+        }
+      },
+      {
+        "proposal_id": "proposal_0f5dbd67",
+        "proposal_type": "evidence_query",
+        "source": "groq_chat_adapter",
+        "payload": {
+          "query": "redislock refresh invariant hidden state lock live refresh window"
+        },
+        "task_id": null,
+        "metadata": {
+          "support_roles": [
+            "obtain",
+            "refresh",
+            "release"
+          ],
+          "support_surfaces": [
+            "counterexamples",
+            "description",
+            "execution_traces",
+            "failing_tests",
+            "formal_spec",
+            "logs",
+            "natural_language_spec",
+            "source_code"
+          ],
+          "support_surface_count": 8,
+          "review_score": 2.0,
+          "matched_tokens": [
+            "invariant",
+            "live",
+            "lock",
+            "redislock",
+            "refresh",
+            "window"
+          ]
+        }
+      }
+    ],
+    "pool_source": {
+      "mode": "loaded_fixed_pool",
+      "source_kind": "proposal_quality_summary",
+      "source_path": "artifacts\\real_world\\redislock_refresh_proposal_quality_summary.json",
+      "source_artifact_version": {
+        "phase": "real_world",
+        "timestamp_utc": "20260318T222027354226Z",
+        "git_sha": "4b3ad2a"
+      }
+    },
+    "stable_pool_artifact": "artifacts\\real_world\\redislock_refresh_fixed_proposal_pool.json"
+  },
+  "variants": [
+    {
+      "policy": "current",
+      "policy_strictness_rank": 0,
+      "quality_metrics": {
+        "total_proposals": 7,
+        "useful_proposals_total": 4,
+        "accepted_for_structural_eval": 4,
+        "useful_accepted": 3,
+        "useful_accepted_before_first_symbol": 3,
+        "false_accepts_before_first_symbol": 1,
+        "triage_precision": 0.75,
+        "useful_recall": 0.75,
+        "false_accept_rate": 0.25,
+        "abstain_count": 0
+      },
+      "runtime_metrics": {
+        "cycles_to_useful_outcome": 3,
+        "verifier_calls_to_useful_outcome": 3,
+        "contradiction_before_acceptance": 4.0,
+        "proposal_stage_cycles": 3,
+        "cycle_delta_from_no_proposals": 1,
+        "verifier_call_delta_from_no_proposals": 0,
+        "false_candidate_delta_from_no_proposals": 0,
+        "rollback_delta_from_no_proposals": 0
+      },
+      "quality_artifact": "redislock_refresh_proposal_quality_summary.json",
+      "runtime_artifact": "redislock_refresh_proposal_runtime_summary.json",
+      "quality_summary": {
+        "family": "redislock_refresh",
+        "artifact_version": {
+          "phase": "real_world",
+          "timestamp_utc": "20260318T223343250050Z",
+          "git_sha": "4b3ad2a"
+        },
+        "proof_contract": {
+          "core_mode": "core_frozen",
+          "core_api_version": "phase5_frozen_v1",
+          "expected_core_api_version": "phase5_frozen_v1",
+          "migration_note": null,
+          "proposal_adapter": {
+            "adapter": "ReplayProposalAdapter"
+          },
+          "verifier_stack": [],
+          "runtime_metrics": {
+            "cycles_to_first_accepted_symbol": null,
+            "verifier_calls_to_acceptance": 0,
+            "contradiction_before_acceptance": null,
+            "false_candidate_count_before_acceptance": 0,
+            "rollback_count_before_acceptance": 0,
+            "proposal_stage_cycles": 0,
+            "max_proposal_support": 0.0,
+            "accepted_proposal_count": 4
+          },
+          "lifecycle_metrics": {
+            "total": 0,
+            "accepted": 0,
+            "rejected": 0,
+            "retired": 0,
+            "accepted_ids": [],
+            "rejected_ids": [],
+            "retired_ids": [],
+            "total_reuse_passes": 0,
+            "total_reuse_failures": 0,
+            "total_verification_passes": 0,
+            "total_verification_failures": 0
+          },
+          "transfer_metrics": {}
+        },
+        "accepted_meta_symbol_id": "meta_c9d37192",
+        "proposal_ids": [
+          "proposal_bc8d5eb6",
+          "proposal_3be80234",
+          "proposal_b709189f",
+          "proposal_e7793ff8",
+          "proposal_f34fd1c8",
+          "proposal_6f9a7922",
+          "proposal_0f5dbd67"
+        ],
+        "reviewed_proposals": [
+          {
+            "proposal_id": "proposal_bc8d5eb6",
+            "proposal_type": "atom",
+            "source": "groq_chat_adapter",
+            "status": "rejected",
+            "review_reason": "insufficient_artifact_support",
+            "useful": true,
+            "payload": {
+              "atom": "lock_live",
+              "artifact": "redislock",
+              "rationale": "lock liveness status"
+            },
+            "metadata": {
+              "support_roles": [
+                "obtain",
+                "refresh",
+                "release"
+              ],
+              "support_surfaces": [
+                "counterexamples",
+                "description",
+                "failing_tests",
+                "formal_spec",
+                "logs",
+                "natural_language_spec",
+                "source_code"
+              ],
+              "support_surface_count": 7,
+              "review_score": 0.5,
+              "matched_tokens": [
+                "live",
+                "lock"
+              ]
+            }
+          },
+          {
+            "proposal_id": "proposal_3be80234",
+            "proposal_type": "constraint",
+            "source": "groq_chat_adapter",
+            "status": "accepted_for_structural_eval",
+            "review_reason": "artifact_structural_support",
+            "useful": true,
+            "payload": {
+              "constraint": "OBTAIN -> lock_live",
+              "artifact": "formal rules",
+              "rationale": "acquire lock"
+            },
+            "metadata": {
+              "support_roles": [
+                "obtain",
+                "refresh",
+                "release"
+              ],
+              "support_surfaces": [
+                "counterexamples",
+                "description",
+                "execution_traces",
+                "failing_tests",
+                "formal_spec",
+                "natural_language_spec",
+                "source_code"
+              ],
+              "support_surface_count": 7,
+              "review_score": 1.0,
+              "matched_tokens": [
+                "live",
+                "lock",
+                "obtain"
+              ]
+            }
+          },
+          {
+            "proposal_id": "proposal_b709189f",
+            "proposal_type": "hidden_variable",
+            "source": "groq_chat_adapter",
+            "status": "rejected",
+            "review_reason": "insufficient_artifact_support",
+            "useful": false,
+            "payload": {
+              "hidden_variable": "lock_expired",
+              "artifact": "formal spec",
+              "rationale": "lock expiration status"
+            },
+            "metadata": {
+              "support_roles": [
+                "obtain",
+                "refresh",
+                "release"
+              ],
+              "support_surfaces": [
+                "counterexamples",
+                "description",
+                "failing_tests",
+                "formal_spec",
+                "natural_language_spec",
+                "source_code"
+              ],
+              "support_surface_count": 6,
+              "review_score": 0.75,
+              "matched_tokens": [
+                "expired",
+                "lock"
+              ]
+            }
+          },
+          {
+            "proposal_id": "proposal_e7793ff8",
+            "proposal_type": "semantic_label",
+            "source": "groq_chat_adapter",
+            "status": "rejected",
+            "review_reason": "insufficient_artifact_support",
+            "useful": false,
+            "payload": {
+              "label": "lock_owner",
+              "artifact": "redislock",
+              "rationale": "lock ownership"
+            },
+            "metadata": {
+              "support_roles": [
+                "obtain",
+                "refresh",
+                "release"
+              ],
+              "support_surfaces": [
+                "counterexamples",
+                "description",
+                "failing_tests",
+                "formal_spec",
+                "logs",
+                "natural_language_spec",
+                "source_code"
+              ],
+              "support_surface_count": 7,
+              "review_score": 0.25,
+              "matched_tokens": [
+                "lock",
+                "ownership"
+              ]
+            }
+          },
+          {
+            "proposal_id": "proposal_f34fd1c8",
+            "proposal_type": "test",
+            "source": "groq_chat_adapter",
+            "status": "accepted_for_structural_eval",
+            "review_reason": "artifact_structural_support",
+            "useful": true,
+            "payload": {
+              "test": "TestLock_Refresh_expired",
+              "artifact": "failing tests",
+              "rationale": "refresh expired lock"
+            },
+            "metadata": {
+              "support_roles": [
+                "obtain",
+                "refresh",
+                "release"
+              ],
+              "support_surfaces": [
+                "counterexamples",
+                "description",
+                "execution_traces",
+                "failing_tests",
+                "formal_spec",
+                "logs",
+                "natural_language_spec",
+                "source_code"
+              ],
+              "support_surface_count": 8,
+              "review_score": 2.5,
+              "matched_tokens": [
+                "expired",
+                "lock",
+                "refresh",
+                "test"
+              ]
+            }
+          },
+          {
+            "proposal_id": "proposal_6f9a7922",
+            "proposal_type": "test",
+            "source": "groq_chat_adapter",
+            "status": "accepted_for_structural_eval",
+            "review_reason": "artifact_structural_support",
+            "useful": false,
+            "payload": {
+              "test": "TestLock_Release_expired",
+              "artifact": "failing tests",
+              "rationale": "release expired lock"
+            },
+            "metadata": {
+              "support_roles": [
+                "obtain",
+                "refresh",
+                "release"
+              ],
+              "support_surfaces": [
+                "counterexamples",
+                "description",
+                "execution_traces",
+                "failing_tests",
+                "formal_spec",
+                "natural_language_spec",
+                "source_code"
+              ],
+              "support_surface_count": 7,
+              "review_score": 1.5,
+              "matched_tokens": [
+                "expired",
+                "lock",
+                "release",
+                "test"
+              ]
+            }
+          },
+          {
+            "proposal_id": "proposal_0f5dbd67",
+            "proposal_type": "evidence_query",
+            "source": "groq_chat_adapter",
+            "status": "accepted_for_structural_eval",
+            "review_reason": "artifact_structural_support",
+            "useful": true,
+            "payload": {
+              "query": "redislock refresh invariant hidden state lock live refresh window"
+            },
+            "metadata": {
+              "support_roles": [
+                "obtain",
+                "refresh",
+                "release"
+              ],
+              "support_surfaces": [
+                "counterexamples",
+                "description",
+                "execution_traces",
+                "failing_tests",
+                "formal_spec",
+                "logs",
+                "natural_language_spec",
+                "source_code"
+              ],
+              "support_surface_count": 8,
+              "review_score": 2.0,
+              "matched_tokens": [
+                "invariant",
+                "live",
+                "lock",
+                "redislock",
+                "refresh",
+                "window"
+              ]
+            }
+          }
+        ],
+        "proposal_summary": {
+          "total": 7,
+          "status_counts": {
+            "rejected": 3,
+            "accepted_for_structural_eval": 4
+          },
+          "type_counts": {
+            "atom": 1,
+            "constraint": 1,
+            "hidden_variable": 1,
+            "semantic_label": 1,
+            "test": 2,
+            "evidence_query": 1
+          },
+          "pending_ids": []
+        },
+        "telemetry_summary": {
+          "event_count": 14,
+          "event_type_counts": {
+            "proposal_submitted": 7,
+            "proposal_reviewed": 7
+          },
+          "latest_metrics": {},
+          "last_cycle": null
+        },
+        "adapter": "ReplayProposalAdapter",
+        "graph_before": {
+          "nodes": 16,
+          "edges": 47
+        },
+        "graph_after": {
+          "nodes": 16,
+          "edges": 47
+        },
+        "ontology_mutated_directly": false,
+        "stage_trace": {
+          "current_stage": null,
+          "completed_stages": [
+            "benchmark_runner",
+            "graph_setup",
+            "adapter_setup",
+            "proposal_generation",
+            "proposal_review",
+            "metrics"
+          ],
+          "stage_timings_seconds": {
+            "benchmark_runner": 0.166,
+            "graph_setup": 0.002,
+            "adapter_setup": 0.0,
+            "proposal_generation": 0.0,
+            "proposal_review": 0.012,
+            "metrics": 0.0
+          },
+          "elapsed_seconds": 0.18
+        },
+        "metrics": {
+          "total_proposals": 7,
+          "useful_proposals_total": 4,
+          "accepted_for_structural_eval": 4,
+          "useful_accepted": 3,
+          "naive_accept_all_precision": 0.5714285714285714,
+          "triage_precision": 0.75,
+          "useful_recall": 0.75,
+          "false_accept_rate": 0.25
+        }
+      },
+      "runtime_summary": {
+        "family": "redislock_refresh",
+        "artifact_version": {
+          "phase": "real_world",
+          "timestamp_utc": "20260318T223343473169Z",
+          "git_sha": "4b3ad2a"
+        },
+        "proof_contract": {
+          "core_mode": "core_frozen",
+          "core_api_version": "phase5_frozen_v1",
+          "expected_core_api_version": "phase5_frozen_v1",
+          "migration_note": null,
+          "proposal_adapter": {
+            "adapter": "ReplayProposalAdapter"
+          },
+          "verifier_stack": [
+            {
+              "claim_kind": "redislock_refresh_invariant",
+              "verifier_type": "SubprocessVerifier",
+              "command": [
+                "python",
+                "verifiers\\redislock_refresh_verifier.py"
+              ],
+              "cwd": ".",
+              "timeout_seconds": 30.0
+            },
+            {
+              "claim_kind": "redislock_refresh_invariant",
+              "verifier_type": "RoleCountVerifier"
+            },
+            {
+              "claim_kind": "redislock_refresh_invariant",
+              "verifier_type": "TraceContractVerifier"
+            }
+          ],
+          "runtime_metrics": {
+            "cycles_to_first_accepted_symbol": 3,
+            "verifier_calls_to_acceptance": 3,
+            "contradiction_before_acceptance": 4.0,
+            "false_candidate_count_before_acceptance": 0,
+            "rollback_count_before_acceptance": 0,
+            "proposal_stage_cycles": 3,
+            "max_proposal_support": 3.0,
+            "accepted_proposal_count": 4
+          },
+          "lifecycle_metrics": {
+            "total": 1,
+            "accepted": 1,
+            "rejected": 0,
+            "retired": 0,
+            "accepted_ids": [
+              "meta_2937086f"
+            ],
+            "rejected_ids": [],
+            "retired_ids": [],
+            "total_reuse_passes": 0,
+            "total_reuse_failures": 0,
+            "total_verification_passes": 3,
+            "total_verification_failures": 0
+          },
+          "transfer_metrics": {}
+        },
+        "baseline": {
+          "adapter": "none",
+          "summary": {
+            "cycles_run": 4,
+            "final_psi": 0.0,
+            "registry": {
+              "total": 1,
+              "accepted": 1,
+              "rejected": 0,
+              "retired": 0
+            },
+            "telemetry_summary": {
+              "event_count": 9,
+              "event_type_counts": {
+                "cycle": 4,
+                "verification_feedback": 3,
+                "candidate_evaluated": 1,
+                "tsl_event": 1
+              },
+              "latest_metrics": {},
+              "last_cycle": {
+                "cycle": 3,
+                "psi": 0.0,
+                "q": 0.0,
+                "collapse_method": "stalled",
+                "active_constraints": 3
+              }
+            },
+            "runtime_metrics": {
+              "cycles_to_first_accepted_symbol": 4,
+              "verifier_calls_to_acceptance": 3,
+              "contradiction_before_acceptance": 5.2,
+              "false_candidate_count_before_acceptance": 0,
+              "rollback_count_before_acceptance": 0,
+              "proposal_stage_cycles": 0,
+              "max_proposal_support": 0.0,
+              "accepted_proposal_count": 0
+            }
+          },
+          "proposal_summary": {
+            "total": 0,
+            "status_counts": {},
+            "type_counts": {},
+            "pending_ids": []
+          }
+        },
+        "proposal_assisted": {
+          "adapter": "ReplayProposalAdapter",
+          "summary": {
+            "cycles_run": 3,
+            "final_psi": 0.0,
+            "registry": {
+              "total": 1,
+              "accepted": 1,
+              "rejected": 0,
+              "retired": 0
+            },
+            "telemetry_summary": {
+              "event_count": 25,
+              "event_type_counts": {
+                "proposal_submitted": 7,
+                "proposal_reviewed": 7,
+                "proposal_stage": 3,
+                "cycle": 3,
+                "verification_feedback": 3,
+                "candidate_evaluated": 1,
+                "tsl_event": 1
+              },
+              "latest_metrics": {},
+              "last_cycle": {
+                "cycle": 2,
+                "psi": 0.0,
+                "q": 0.0,
+                "collapse_method": "stalled",
+                "active_constraints": 3
+              }
+            },
+            "runtime_metrics": {
+              "cycles_to_first_accepted_symbol": 3,
+              "verifier_calls_to_acceptance": 3,
+              "contradiction_before_acceptance": 4.0,
+              "false_candidate_count_before_acceptance": 0,
+              "rollback_count_before_acceptance": 0,
+              "proposal_stage_cycles": 3,
+              "max_proposal_support": 3.0,
+              "accepted_proposal_count": 4
+            }
+          },
+          "proposal_summary": {
+            "total": 7,
+            "status_counts": {
+              "rejected": 3,
+              "accepted_for_structural_eval": 4
+            },
+            "type_counts": {
+              "atom": 1,
+              "constraint": 1,
+              "hidden_variable": 1,
+              "semantic_label": 1,
+              "test": 2,
+              "evidence_query": 1
+            },
+            "pending_ids": []
+          }
+        },
+        "comparison": {
+          "cycles_to_first_accepted_symbol_delta": 1,
+          "verifier_calls_to_acceptance_delta": 0,
+          "false_candidate_delta": 0,
+          "rollback_delta": 0,
+          "max_proposal_support": 3.0
+        }
+      }
+    },
+    {
+      "policy": "atom_shadow_reject",
+      "policy_strictness_rank": 1,
+      "quality_metrics": {
+        "total_proposals": 7,
+        "useful_proposals_total": 4,
+        "accepted_for_structural_eval": 4,
+        "useful_accepted": 3,
+        "useful_accepted_before_first_symbol": 3,
+        "false_accepts_before_first_symbol": 1,
+        "triage_precision": 0.75,
+        "useful_recall": 0.75,
+        "false_accept_rate": 0.25,
+        "abstain_count": 0
+      },
+      "runtime_metrics": {
+        "cycles_to_useful_outcome": 3,
+        "verifier_calls_to_useful_outcome": 3,
+        "contradiction_before_acceptance": 4.0,
+        "proposal_stage_cycles": 3,
+        "cycle_delta_from_no_proposals": 1,
+        "verifier_call_delta_from_no_proposals": 0,
+        "false_candidate_delta_from_no_proposals": 0,
+        "rollback_delta_from_no_proposals": 0
+      },
+      "quality_artifact": "redislock_refresh_proposal_quality_summary.json",
+      "runtime_artifact": "redislock_refresh_proposal_runtime_summary.json",
+      "quality_summary": {
+        "family": "redislock_refresh",
+        "artifact_version": {
+          "phase": "real_world",
+          "timestamp_utc": "20260318T223343675963Z",
+          "git_sha": "4b3ad2a"
+        },
+        "proof_contract": {
+          "core_mode": "core_frozen",
+          "core_api_version": "phase5_frozen_v1",
+          "expected_core_api_version": "phase5_frozen_v1",
+          "migration_note": null,
+          "proposal_adapter": {
+            "adapter": "ReplayProposalAdapter"
+          },
+          "verifier_stack": [],
+          "runtime_metrics": {
+            "cycles_to_first_accepted_symbol": null,
+            "verifier_calls_to_acceptance": 0,
+            "contradiction_before_acceptance": null,
+            "false_candidate_count_before_acceptance": 0,
+            "rollback_count_before_acceptance": 0,
+            "proposal_stage_cycles": 0,
+            "max_proposal_support": 0.0,
+            "accepted_proposal_count": 4
+          },
+          "lifecycle_metrics": {
+            "total": 0,
+            "accepted": 0,
+            "rejected": 0,
+            "retired": 0,
+            "accepted_ids": [],
+            "rejected_ids": [],
+            "retired_ids": [],
+            "total_reuse_passes": 0,
+            "total_reuse_failures": 0,
+            "total_verification_passes": 0,
+            "total_verification_failures": 0
+          },
+          "transfer_metrics": {}
+        },
+        "accepted_meta_symbol_id": "meta_e30be523",
+        "proposal_ids": [
+          "proposal_bc8d5eb6",
+          "proposal_3be80234",
+          "proposal_b709189f",
+          "proposal_e7793ff8",
+          "proposal_f34fd1c8",
+          "proposal_6f9a7922",
+          "proposal_0f5dbd67"
+        ],
+        "reviewed_proposals": [
+          {
+            "proposal_id": "proposal_bc8d5eb6",
+            "proposal_type": "atom",
+            "source": "groq_chat_adapter",
+            "status": "rejected",
+            "review_reason": "redundant_low_structure_shadow_of_hidden_variable",
+            "useful": true,
+            "payload": {
+              "atom": "lock_live",
+              "artifact": "redislock",
+              "rationale": "lock liveness status"
+            },
+            "metadata": {
+              "support_roles": [
+                "obtain",
+                "refresh",
+                "release"
+              ],
+              "support_surfaces": [
+                "counterexamples",
+                "description",
+                "failing_tests",
+                "formal_spec",
+                "logs",
+                "natural_language_spec",
+                "source_code"
+              ],
+              "support_surface_count": 7,
+              "review_score": 0.5,
+              "matched_tokens": [
+                "live",
+                "lock"
+              ]
+            }
+          },
+          {
+            "proposal_id": "proposal_3be80234",
+            "proposal_type": "constraint",
+            "source": "groq_chat_adapter",
+            "status": "accepted_for_structural_eval",
+            "review_reason": "artifact_structural_support",
+            "useful": true,
+            "payload": {
+              "constraint": "OBTAIN -> lock_live",
+              "artifact": "formal rules",
+              "rationale": "acquire lock"
+            },
+            "metadata": {
+              "support_roles": [
+                "obtain",
+                "refresh",
+                "release"
+              ],
+              "support_surfaces": [
+                "counterexamples",
+                "description",
+                "execution_traces",
+                "failing_tests",
+                "formal_spec",
+                "natural_language_spec",
+                "source_code"
+              ],
+              "support_surface_count": 7,
+              "review_score": 1.0,
+              "matched_tokens": [
+                "live",
+                "lock",
+                "obtain"
+              ]
+            }
+          },
+          {
+            "proposal_id": "proposal_b709189f",
+            "proposal_type": "hidden_variable",
+            "source": "groq_chat_adapter",
+            "status": "rejected",
+            "review_reason": "insufficient_artifact_support",
+            "useful": false,
+            "payload": {
+              "hidden_variable": "lock_expired",
+              "artifact": "formal spec",
+              "rationale": "lock expiration status"
+            },
+            "metadata": {
+              "support_roles": [
+                "obtain",
+                "refresh",
+                "release"
+              ],
+              "support_surfaces": [
+                "counterexamples",
+                "description",
+                "failing_tests",
+                "formal_spec",
+                "natural_language_spec",
+                "source_code"
+              ],
+              "support_surface_count": 6,
+              "review_score": 0.75,
+              "matched_tokens": [
+                "expired",
+                "lock"
+              ]
+            }
+          },
+          {
+            "proposal_id": "proposal_e7793ff8",
+            "proposal_type": "semantic_label",
+            "source": "groq_chat_adapter",
+            "status": "rejected",
+            "review_reason": "insufficient_artifact_support",
+            "useful": false,
+            "payload": {
+              "label": "lock_owner",
+              "artifact": "redislock",
+              "rationale": "lock ownership"
+            },
+            "metadata": {
+              "support_roles": [
+                "obtain",
+                "refresh",
+                "release"
+              ],
+              "support_surfaces": [
+                "counterexamples",
+                "description",
+                "failing_tests",
+                "formal_spec",
+                "logs",
+                "natural_language_spec",
+                "source_code"
+              ],
+              "support_surface_count": 7,
+              "review_score": 0.25,
+              "matched_tokens": [
+                "lock",
+                "ownership"
+              ]
+            }
+          },
+          {
+            "proposal_id": "proposal_f34fd1c8",
+            "proposal_type": "test",
+            "source": "groq_chat_adapter",
+            "status": "accepted_for_structural_eval",
+            "review_reason": "artifact_structural_support",
+            "useful": true,
+            "payload": {
+              "test": "TestLock_Refresh_expired",
+              "artifact": "failing tests",
+              "rationale": "refresh expired lock"
+            },
+            "metadata": {
+              "support_roles": [
+                "obtain",
+                "refresh",
+                "release"
+              ],
+              "support_surfaces": [
+                "counterexamples",
+                "description",
+                "execution_traces",
+                "failing_tests",
+                "formal_spec",
+                "logs",
+                "natural_language_spec",
+                "source_code"
+              ],
+              "support_surface_count": 8,
+              "review_score": 2.5,
+              "matched_tokens": [
+                "expired",
+                "lock",
+                "refresh",
+                "test"
+              ]
+            }
+          },
+          {
+            "proposal_id": "proposal_6f9a7922",
+            "proposal_type": "test",
+            "source": "groq_chat_adapter",
+            "status": "accepted_for_structural_eval",
+            "review_reason": "artifact_structural_support",
+            "useful": false,
+            "payload": {
+              "test": "TestLock_Release_expired",
+              "artifact": "failing tests",
+              "rationale": "release expired lock"
+            },
+            "metadata": {
+              "support_roles": [
+                "obtain",
+                "refresh",
+                "release"
+              ],
+              "support_surfaces": [
+                "counterexamples",
+                "description",
+                "execution_traces",
+                "failing_tests",
+                "formal_spec",
+                "natural_language_spec",
+                "source_code"
+              ],
+              "support_surface_count": 7,
+              "review_score": 1.5,
+              "matched_tokens": [
+                "expired",
+                "lock",
+                "release",
+                "test"
+              ]
+            }
+          },
+          {
+            "proposal_id": "proposal_0f5dbd67",
+            "proposal_type": "evidence_query",
+            "source": "groq_chat_adapter",
+            "status": "accepted_for_structural_eval",
+            "review_reason": "artifact_structural_support",
+            "useful": true,
+            "payload": {
+              "query": "redislock refresh invariant hidden state lock live refresh window"
+            },
+            "metadata": {
+              "support_roles": [
+                "obtain",
+                "refresh",
+                "release"
+              ],
+              "support_surfaces": [
+                "counterexamples",
+                "description",
+                "execution_traces",
+                "failing_tests",
+                "formal_spec",
+                "logs",
+                "natural_language_spec",
+                "source_code"
+              ],
+              "support_surface_count": 8,
+              "review_score": 2.0,
+              "matched_tokens": [
+                "invariant",
+                "live",
+                "lock",
+                "redislock",
+                "refresh",
+                "window"
+              ]
+            }
+          }
+        ],
+        "proposal_summary": {
+          "total": 7,
+          "status_counts": {
+            "rejected": 3,
+            "accepted_for_structural_eval": 4
+          },
+          "type_counts": {
+            "atom": 1,
+            "constraint": 1,
+            "hidden_variable": 1,
+            "semantic_label": 1,
+            "test": 2,
+            "evidence_query": 1
+          },
+          "pending_ids": []
+        },
+        "telemetry_summary": {
+          "event_count": 14,
+          "event_type_counts": {
+            "proposal_submitted": 7,
+            "proposal_reviewed": 7
+          },
+          "latest_metrics": {},
+          "last_cycle": null
+        },
+        "adapter": "ReplayProposalAdapter",
+        "graph_before": {
+          "nodes": 16,
+          "edges": 47
+        },
+        "graph_after": {
+          "nodes": 16,
+          "edges": 47
+        },
+        "ontology_mutated_directly": false,
+        "stage_trace": {
+          "current_stage": null,
+          "completed_stages": [
+            "benchmark_runner",
+            "graph_setup",
+            "adapter_setup",
+            "proposal_generation",
+            "proposal_review",
+            "metrics"
+          ],
+          "stage_timings_seconds": {
+            "benchmark_runner": 0.131,
+            "graph_setup": 0.003,
+            "adapter_setup": 0.0,
+            "proposal_generation": 0.0,
+            "proposal_review": 0.01,
+            "metrics": 0.0
+          },
+          "elapsed_seconds": 0.144
+        },
+        "metrics": {
+          "total_proposals": 7,
+          "useful_proposals_total": 4,
+          "accepted_for_structural_eval": 4,
+          "useful_accepted": 3,
+          "naive_accept_all_precision": 0.5714285714285714,
+          "triage_precision": 0.75,
+          "useful_recall": 0.75,
+          "false_accept_rate": 0.25
+        }
+      },
+      "runtime_summary": {
+        "family": "redislock_refresh",
+        "artifact_version": {
+          "phase": "real_world",
+          "timestamp_utc": "20260318T223343857941Z",
+          "git_sha": "4b3ad2a"
+        },
+        "proof_contract": {
+          "core_mode": "core_frozen",
+          "core_api_version": "phase5_frozen_v1",
+          "expected_core_api_version": "phase5_frozen_v1",
+          "migration_note": null,
+          "proposal_adapter": {
+            "adapter": "ReplayProposalAdapter"
+          },
+          "verifier_stack": [
+            {
+              "claim_kind": "redislock_refresh_invariant",
+              "verifier_type": "SubprocessVerifier",
+              "command": [
+                "python",
+                "verifiers\\redislock_refresh_verifier.py"
+              ],
+              "cwd": ".",
+              "timeout_seconds": 30.0
+            },
+            {
+              "claim_kind": "redislock_refresh_invariant",
+              "verifier_type": "RoleCountVerifier"
+            },
+            {
+              "claim_kind": "redislock_refresh_invariant",
+              "verifier_type": "TraceContractVerifier"
+            }
+          ],
+          "runtime_metrics": {
+            "cycles_to_first_accepted_symbol": 3,
+            "verifier_calls_to_acceptance": 3,
+            "contradiction_before_acceptance": 4.0,
+            "false_candidate_count_before_acceptance": 0,
+            "rollback_count_before_acceptance": 0,
+            "proposal_stage_cycles": 3,
+            "max_proposal_support": 3.0,
+            "accepted_proposal_count": 4
+          },
+          "lifecycle_metrics": {
+            "total": 1,
+            "accepted": 1,
+            "rejected": 0,
+            "retired": 0,
+            "accepted_ids": [
+              "meta_af37e758"
+            ],
+            "rejected_ids": [],
+            "retired_ids": [],
+            "total_reuse_passes": 0,
+            "total_reuse_failures": 0,
+            "total_verification_passes": 3,
+            "total_verification_failures": 0
+          },
+          "transfer_metrics": {}
+        },
+        "baseline": {
+          "adapter": "none",
+          "summary": {
+            "cycles_run": 4,
+            "final_psi": 0.0,
+            "registry": {
+              "total": 1,
+              "accepted": 1,
+              "rejected": 0,
+              "retired": 0
+            },
+            "telemetry_summary": {
+              "event_count": 9,
+              "event_type_counts": {
+                "cycle": 4,
+                "verification_feedback": 3,
+                "candidate_evaluated": 1,
+                "tsl_event": 1
+              },
+              "latest_metrics": {},
+              "last_cycle": {
+                "cycle": 3,
+                "psi": 0.0,
+                "q": 0.0,
+                "collapse_method": "stalled",
+                "active_constraints": 3
+              }
+            },
+            "runtime_metrics": {
+              "cycles_to_first_accepted_symbol": 4,
+              "verifier_calls_to_acceptance": 3,
+              "contradiction_before_acceptance": 5.2,
+              "false_candidate_count_before_acceptance": 0,
+              "rollback_count_before_acceptance": 0,
+              "proposal_stage_cycles": 0,
+              "max_proposal_support": 0.0,
+              "accepted_proposal_count": 0
+            }
+          },
+          "proposal_summary": {
+            "total": 0,
+            "status_counts": {},
+            "type_counts": {},
+            "pending_ids": []
+          }
+        },
+        "proposal_assisted": {
+          "adapter": "ReplayProposalAdapter",
+          "summary": {
+            "cycles_run": 3,
+            "final_psi": 0.0,
+            "registry": {
+              "total": 1,
+              "accepted": 1,
+              "rejected": 0,
+              "retired": 0
+            },
+            "telemetry_summary": {
+              "event_count": 25,
+              "event_type_counts": {
+                "proposal_submitted": 7,
+                "proposal_reviewed": 7,
+                "proposal_stage": 3,
+                "cycle": 3,
+                "verification_feedback": 3,
+                "candidate_evaluated": 1,
+                "tsl_event": 1
+              },
+              "latest_metrics": {},
+              "last_cycle": {
+                "cycle": 2,
+                "psi": 0.0,
+                "q": 0.0,
+                "collapse_method": "stalled",
+                "active_constraints": 3
+              }
+            },
+            "runtime_metrics": {
+              "cycles_to_first_accepted_symbol": 3,
+              "verifier_calls_to_acceptance": 3,
+              "contradiction_before_acceptance": 4.0,
+              "false_candidate_count_before_acceptance": 0,
+              "rollback_count_before_acceptance": 0,
+              "proposal_stage_cycles": 3,
+              "max_proposal_support": 3.0,
+              "accepted_proposal_count": 4
+            }
+          },
+          "proposal_summary": {
+            "total": 7,
+            "status_counts": {
+              "rejected": 3,
+              "accepted_for_structural_eval": 4
+            },
+            "type_counts": {
+              "atom": 1,
+              "constraint": 1,
+              "hidden_variable": 1,
+              "semantic_label": 1,
+              "test": 2,
+              "evidence_query": 1
+            },
+            "pending_ids": []
+          }
+        },
+        "comparison": {
+          "cycles_to_first_accepted_symbol_delta": 1,
+          "verifier_calls_to_acceptance_delta": 0,
+          "false_candidate_delta": 0,
+          "rollback_delta": 0,
+          "max_proposal_support": 3.0
+        }
+      }
+    },
+    {
+      "policy": "atom_shadow_reject_plus_abstain",
+      "policy_strictness_rank": 2,
+      "quality_metrics": {
+        "total_proposals": 7,
+        "useful_proposals_total": 4,
+        "accepted_for_structural_eval": 4,
+        "useful_accepted": 3,
+        "useful_accepted_before_first_symbol": 3,
+        "false_accepts_before_first_symbol": 1,
+        "triage_precision": 0.75,
+        "useful_recall": 0.75,
+        "false_accept_rate": 0.25,
+        "abstain_count": 1
+      },
+      "runtime_metrics": {
+        "cycles_to_useful_outcome": 3,
+        "verifier_calls_to_useful_outcome": 3,
+        "contradiction_before_acceptance": 4.0,
+        "proposal_stage_cycles": 3,
+        "cycle_delta_from_no_proposals": 1,
+        "verifier_call_delta_from_no_proposals": 0,
+        "false_candidate_delta_from_no_proposals": 0,
+        "rollback_delta_from_no_proposals": 0
+      },
+      "quality_artifact": "redislock_refresh_proposal_quality_summary.json",
+      "runtime_artifact": "redislock_refresh_proposal_runtime_summary.json",
+      "quality_summary": {
+        "family": "redislock_refresh",
+        "artifact_version": {
+          "phase": "real_world",
+          "timestamp_utc": "20260318T223344067556Z",
+          "git_sha": "4b3ad2a"
+        },
+        "proof_contract": {
+          "core_mode": "core_frozen",
+          "core_api_version": "phase5_frozen_v1",
+          "expected_core_api_version": "phase5_frozen_v1",
+          "migration_note": null,
+          "proposal_adapter": {
+            "adapter": "ReplayProposalAdapter"
+          },
+          "verifier_stack": [],
+          "runtime_metrics": {
+            "cycles_to_first_accepted_symbol": null,
+            "verifier_calls_to_acceptance": 0,
+            "contradiction_before_acceptance": null,
+            "false_candidate_count_before_acceptance": 0,
+            "rollback_count_before_acceptance": 0,
+            "proposal_stage_cycles": 0,
+            "max_proposal_support": 0.0,
+            "accepted_proposal_count": 4
+          },
+          "lifecycle_metrics": {
+            "total": 0,
+            "accepted": 0,
+            "rejected": 0,
+            "retired": 0,
+            "accepted_ids": [],
+            "rejected_ids": [],
+            "retired_ids": [],
+            "total_reuse_passes": 0,
+            "total_reuse_failures": 0,
+            "total_verification_passes": 0,
+            "total_verification_failures": 0
+          },
+          "transfer_metrics": {}
+        },
+        "accepted_meta_symbol_id": "meta_57a0dd1a",
+        "proposal_ids": [
+          "proposal_bc8d5eb6",
+          "proposal_3be80234",
+          "proposal_b709189f",
+          "proposal_e7793ff8",
+          "proposal_f34fd1c8",
+          "proposal_6f9a7922",
+          "proposal_0f5dbd67"
+        ],
+        "reviewed_proposals": [
+          {
+            "proposal_id": "proposal_bc8d5eb6",
+            "proposal_type": "atom",
+            "source": "groq_chat_adapter",
+            "status": "rejected",
+            "review_reason": "redundant_low_structure_shadow_of_hidden_variable",
+            "useful": true,
+            "payload": {
+              "atom": "lock_live",
+              "artifact": "redislock",
+              "rationale": "lock liveness status"
+            },
+            "metadata": {
+              "support_roles": [
+                "obtain",
+                "refresh",
+                "release"
+              ],
+              "support_surfaces": [
+                "counterexamples",
+                "description",
+                "failing_tests",
+                "formal_spec",
+                "logs",
+                "natural_language_spec",
+                "source_code"
+              ],
+              "support_surface_count": 7,
+              "review_score": 0.5,
+              "matched_tokens": [
+                "live",
+                "lock"
+              ]
+            }
+          },
+          {
+            "proposal_id": "proposal_3be80234",
+            "proposal_type": "constraint",
+            "source": "groq_chat_adapter",
+            "status": "accepted_for_structural_eval",
+            "review_reason": "artifact_structural_support",
+            "useful": true,
+            "payload": {
+              "constraint": "OBTAIN -> lock_live",
+              "artifact": "formal rules",
+              "rationale": "acquire lock"
+            },
+            "metadata": {
+              "support_roles": [
+                "obtain",
+                "refresh",
+                "release"
+              ],
+              "support_surfaces": [
+                "counterexamples",
+                "description",
+                "execution_traces",
+                "failing_tests",
+                "formal_spec",
+                "natural_language_spec",
+                "source_code"
+              ],
+              "support_surface_count": 7,
+              "review_score": 1.0,
+              "matched_tokens": [
+                "live",
+                "lock",
+                "obtain"
+              ]
+            }
+          },
+          {
+            "proposal_id": "proposal_b709189f",
+            "proposal_type": "hidden_variable",
+            "source": "groq_chat_adapter",
+            "status": "abstain_needs_more_evidence",
+            "review_reason": "weak_support_needs_more_evidence",
+            "useful": false,
+            "payload": {
+              "hidden_variable": "lock_expired",
+              "artifact": "formal spec",
+              "rationale": "lock expiration status"
+            },
+            "metadata": {
+              "support_roles": [
+                "obtain",
+                "refresh",
+                "release"
+              ],
+              "support_surfaces": [
+                "counterexamples",
+                "description",
+                "failing_tests",
+                "formal_spec",
+                "natural_language_spec",
+                "source_code"
+              ],
+              "support_surface_count": 6,
+              "review_score": 0.75,
+              "matched_tokens": [
+                "expired",
+                "lock"
+              ]
+            }
+          },
+          {
+            "proposal_id": "proposal_e7793ff8",
+            "proposal_type": "semantic_label",
+            "source": "groq_chat_adapter",
+            "status": "rejected",
+            "review_reason": "insufficient_artifact_support",
+            "useful": false,
+            "payload": {
+              "label": "lock_owner",
+              "artifact": "redislock",
+              "rationale": "lock ownership"
+            },
+            "metadata": {
+              "support_roles": [
+                "obtain",
+                "refresh",
+                "release"
+              ],
+              "support_surfaces": [
+                "counterexamples",
+                "description",
+                "failing_tests",
+                "formal_spec",
+                "logs",
+                "natural_language_spec",
+                "source_code"
+              ],
+              "support_surface_count": 7,
+              "review_score": 0.25,
+              "matched_tokens": [
+                "lock",
+                "ownership"
+              ]
+            }
+          },
+          {
+            "proposal_id": "proposal_f34fd1c8",
+            "proposal_type": "test",
+            "source": "groq_chat_adapter",
+            "status": "accepted_for_structural_eval",
+            "review_reason": "artifact_structural_support",
+            "useful": true,
+            "payload": {
+              "test": "TestLock_Refresh_expired",
+              "artifact": "failing tests",
+              "rationale": "refresh expired lock"
+            },
+            "metadata": {
+              "support_roles": [
+                "obtain",
+                "refresh",
+                "release"
+              ],
+              "support_surfaces": [
+                "counterexamples",
+                "description",
+                "execution_traces",
+                "failing_tests",
+                "formal_spec",
+                "logs",
+                "natural_language_spec",
+                "source_code"
+              ],
+              "support_surface_count": 8,
+              "review_score": 2.5,
+              "matched_tokens": [
+                "expired",
+                "lock",
+                "refresh",
+                "test"
+              ]
+            }
+          },
+          {
+            "proposal_id": "proposal_6f9a7922",
+            "proposal_type": "test",
+            "source": "groq_chat_adapter",
+            "status": "accepted_for_structural_eval",
+            "review_reason": "artifact_structural_support",
+            "useful": false,
+            "payload": {
+              "test": "TestLock_Release_expired",
+              "artifact": "failing tests",
+              "rationale": "release expired lock"
+            },
+            "metadata": {
+              "support_roles": [
+                "obtain",
+                "refresh",
+                "release"
+              ],
+              "support_surfaces": [
+                "counterexamples",
+                "description",
+                "execution_traces",
+                "failing_tests",
+                "formal_spec",
+                "natural_language_spec",
+                "source_code"
+              ],
+              "support_surface_count": 7,
+              "review_score": 1.5,
+              "matched_tokens": [
+                "expired",
+                "lock",
+                "release",
+                "test"
+              ]
+            }
+          },
+          {
+            "proposal_id": "proposal_0f5dbd67",
+            "proposal_type": "evidence_query",
+            "source": "groq_chat_adapter",
+            "status": "accepted_for_structural_eval",
+            "review_reason": "artifact_structural_support",
+            "useful": true,
+            "payload": {
+              "query": "redislock refresh invariant hidden state lock live refresh window"
+            },
+            "metadata": {
+              "support_roles": [
+                "obtain",
+                "refresh",
+                "release"
+              ],
+              "support_surfaces": [
+                "counterexamples",
+                "description",
+                "execution_traces",
+                "failing_tests",
+                "formal_spec",
+                "logs",
+                "natural_language_spec",
+                "source_code"
+              ],
+              "support_surface_count": 8,
+              "review_score": 2.0,
+              "matched_tokens": [
+                "invariant",
+                "live",
+                "lock",
+                "redislock",
+                "refresh",
+                "window"
+              ]
+            }
+          }
+        ],
+        "proposal_summary": {
+          "total": 7,
+          "status_counts": {
+            "rejected": 2,
+            "accepted_for_structural_eval": 4,
+            "abstain_needs_more_evidence": 1
+          },
+          "type_counts": {
+            "atom": 1,
+            "constraint": 1,
+            "hidden_variable": 1,
+            "semantic_label": 1,
+            "test": 2,
+            "evidence_query": 1
+          },
+          "pending_ids": []
+        },
+        "telemetry_summary": {
+          "event_count": 14,
+          "event_type_counts": {
+            "proposal_submitted": 7,
+            "proposal_reviewed": 7
+          },
+          "latest_metrics": {},
+          "last_cycle": null
+        },
+        "adapter": "ReplayProposalAdapter",
+        "graph_before": {
+          "nodes": 16,
+          "edges": 47
+        },
+        "graph_after": {
+          "nodes": 16,
+          "edges": 47
+        },
+        "ontology_mutated_directly": false,
+        "stage_trace": {
+          "current_stage": null,
+          "completed_stages": [
+            "benchmark_runner",
+            "graph_setup",
+            "adapter_setup",
+            "proposal_generation",
+            "proposal_review",
+            "metrics"
+          ],
+          "stage_timings_seconds": {
+            "benchmark_runner": 0.17,
+            "graph_setup": 0.003,
+            "adapter_setup": 0.0,
+            "proposal_generation": 0.0,
+            "proposal_review": 0.011,
+            "metrics": 0.0
+          },
+          "elapsed_seconds": 0.185
+        },
+        "metrics": {
+          "total_proposals": 7,
+          "useful_proposals_total": 4,
+          "accepted_for_structural_eval": 4,
+          "useful_accepted": 3,
+          "naive_accept_all_precision": 0.5714285714285714,
+          "triage_precision": 0.75,
+          "useful_recall": 0.75,
+          "false_accept_rate": 0.25
+        }
+      },
+      "runtime_summary": {
+        "family": "redislock_refresh",
+        "artifact_version": {
+          "phase": "real_world",
+          "timestamp_utc": "20260318T223344306463Z",
+          "git_sha": "4b3ad2a"
+        },
+        "proof_contract": {
+          "core_mode": "core_frozen",
+          "core_api_version": "phase5_frozen_v1",
+          "expected_core_api_version": "phase5_frozen_v1",
+          "migration_note": null,
+          "proposal_adapter": {
+            "adapter": "ReplayProposalAdapter"
+          },
+          "verifier_stack": [
+            {
+              "claim_kind": "redislock_refresh_invariant",
+              "verifier_type": "SubprocessVerifier",
+              "command": [
+                "python",
+                "verifiers\\redislock_refresh_verifier.py"
+              ],
+              "cwd": ".",
+              "timeout_seconds": 30.0
+            },
+            {
+              "claim_kind": "redislock_refresh_invariant",
+              "verifier_type": "RoleCountVerifier"
+            },
+            {
+              "claim_kind": "redislock_refresh_invariant",
+              "verifier_type": "TraceContractVerifier"
+            }
+          ],
+          "runtime_metrics": {
+            "cycles_to_first_accepted_symbol": 3,
+            "verifier_calls_to_acceptance": 3,
+            "contradiction_before_acceptance": 4.0,
+            "false_candidate_count_before_acceptance": 0,
+            "rollback_count_before_acceptance": 0,
+            "proposal_stage_cycles": 3,
+            "max_proposal_support": 3.0,
+            "accepted_proposal_count": 4
+          },
+          "lifecycle_metrics": {
+            "total": 1,
+            "accepted": 1,
+            "rejected": 0,
+            "retired": 0,
+            "accepted_ids": [
+              "meta_26d0f71b"
+            ],
+            "rejected_ids": [],
+            "retired_ids": [],
+            "total_reuse_passes": 0,
+            "total_reuse_failures": 0,
+            "total_verification_passes": 3,
+            "total_verification_failures": 0
+          },
+          "transfer_metrics": {}
+        },
+        "baseline": {
+          "adapter": "none",
+          "summary": {
+            "cycles_run": 4,
+            "final_psi": 0.0,
+            "registry": {
+              "total": 1,
+              "accepted": 1,
+              "rejected": 0,
+              "retired": 0
+            },
+            "telemetry_summary": {
+              "event_count": 9,
+              "event_type_counts": {
+                "cycle": 4,
+                "verification_feedback": 3,
+                "candidate_evaluated": 1,
+                "tsl_event": 1
+              },
+              "latest_metrics": {},
+              "last_cycle": {
+                "cycle": 3,
+                "psi": 0.0,
+                "q": 0.0,
+                "collapse_method": "stalled",
+                "active_constraints": 3
+              }
+            },
+            "runtime_metrics": {
+              "cycles_to_first_accepted_symbol": 4,
+              "verifier_calls_to_acceptance": 3,
+              "contradiction_before_acceptance": 5.2,
+              "false_candidate_count_before_acceptance": 0,
+              "rollback_count_before_acceptance": 0,
+              "proposal_stage_cycles": 0,
+              "max_proposal_support": 0.0,
+              "accepted_proposal_count": 0
+            }
+          },
+          "proposal_summary": {
+            "total": 0,
+            "status_counts": {},
+            "type_counts": {},
+            "pending_ids": []
+          }
+        },
+        "proposal_assisted": {
+          "adapter": "ReplayProposalAdapter",
+          "summary": {
+            "cycles_run": 3,
+            "final_psi": 0.0,
+            "registry": {
+              "total": 1,
+              "accepted": 1,
+              "rejected": 0,
+              "retired": 0
+            },
+            "telemetry_summary": {
+              "event_count": 25,
+              "event_type_counts": {
+                "proposal_submitted": 7,
+                "proposal_reviewed": 7,
+                "proposal_stage": 3,
+                "cycle": 3,
+                "verification_feedback": 3,
+                "candidate_evaluated": 1,
+                "tsl_event": 1
+              },
+              "latest_metrics": {},
+              "last_cycle": {
+                "cycle": 2,
+                "psi": 0.0,
+                "q": 0.0,
+                "collapse_method": "stalled",
+                "active_constraints": 3
+              }
+            },
+            "runtime_metrics": {
+              "cycles_to_first_accepted_symbol": 3,
+              "verifier_calls_to_acceptance": 3,
+              "contradiction_before_acceptance": 4.0,
+              "false_candidate_count_before_acceptance": 0,
+              "rollback_count_before_acceptance": 0,
+              "proposal_stage_cycles": 3,
+              "max_proposal_support": 3.0,
+              "accepted_proposal_count": 4
+            }
+          },
+          "proposal_summary": {
+            "total": 7,
+            "status_counts": {
+              "rejected": 2,
+              "accepted_for_structural_eval": 4,
+              "abstain_needs_more_evidence": 1
+            },
+            "type_counts": {
+              "atom": 1,
+              "constraint": 1,
+              "hidden_variable": 1,
+              "semantic_label": 1,
+              "test": 2,
+              "evidence_query": 1
+            },
+            "pending_ids": []
+          }
+        },
+        "comparison": {
+          "cycles_to_first_accepted_symbol_delta": 1,
+          "verifier_calls_to_acceptance_delta": 0,
+          "false_candidate_delta": 0,
+          "rollback_delta": 0,
+          "max_proposal_support": 3.0
+        }
+      }
+    },
+    {
+      "policy": "real_world_strict",
+      "policy_strictness_rank": 3,
+      "quality_metrics": {
+        "total_proposals": 7,
+        "useful_proposals_total": 4,
+        "accepted_for_structural_eval": 3,
+        "useful_accepted": 3,
+        "useful_accepted_before_first_symbol": 3,
+        "false_accepts_before_first_symbol": 0,
+        "triage_precision": 1.0,
+        "useful_recall": 0.75,
+        "false_accept_rate": 0.0,
+        "abstain_count": 3
+      },
+      "runtime_metrics": {
+        "cycles_to_useful_outcome": 3,
+        "verifier_calls_to_useful_outcome": 3,
+        "contradiction_before_acceptance": 4.0,
+        "proposal_stage_cycles": 3,
+        "cycle_delta_from_no_proposals": 1,
+        "verifier_call_delta_from_no_proposals": 0,
+        "false_candidate_delta_from_no_proposals": 0,
+        "rollback_delta_from_no_proposals": 0
+      },
+      "quality_artifact": "redislock_refresh_proposal_quality_summary.json",
+      "runtime_artifact": "redislock_refresh_proposal_runtime_summary.json",
+      "quality_summary": {
+        "family": "redislock_refresh",
+        "artifact_version": {
+          "phase": "real_world",
+          "timestamp_utc": "20260318T223344516092Z",
+          "git_sha": "4b3ad2a"
+        },
+        "proof_contract": {
+          "core_mode": "core_frozen",
+          "core_api_version": "phase5_frozen_v1",
+          "expected_core_api_version": "phase5_frozen_v1",
+          "migration_note": null,
+          "proposal_adapter": {
+            "adapter": "ReplayProposalAdapter"
+          },
+          "verifier_stack": [],
+          "runtime_metrics": {
+            "cycles_to_first_accepted_symbol": null,
+            "verifier_calls_to_acceptance": 0,
+            "contradiction_before_acceptance": null,
+            "false_candidate_count_before_acceptance": 0,
+            "rollback_count_before_acceptance": 0,
+            "proposal_stage_cycles": 0,
+            "max_proposal_support": 0.0,
+            "accepted_proposal_count": 3
+          },
+          "lifecycle_metrics": {
+            "total": 0,
+            "accepted": 0,
+            "rejected": 0,
+            "retired": 0,
+            "accepted_ids": [],
+            "rejected_ids": [],
+            "retired_ids": [],
+            "total_reuse_passes": 0,
+            "total_reuse_failures": 0,
+            "total_verification_passes": 0,
+            "total_verification_failures": 0
+          },
+          "transfer_metrics": {}
+        },
+        "accepted_meta_symbol_id": "meta_890bab2d",
+        "proposal_ids": [
+          "proposal_bc8d5eb6",
+          "proposal_3be80234",
+          "proposal_b709189f",
+          "proposal_e7793ff8",
+          "proposal_f34fd1c8",
+          "proposal_6f9a7922",
+          "proposal_0f5dbd67"
+        ],
+        "reviewed_proposals": [
+          {
+            "proposal_id": "proposal_bc8d5eb6",
+            "proposal_type": "atom",
+            "source": "groq_chat_adapter",
+            "status": "rejected",
+            "review_reason": "redundant_low_structure_shadow_of_hidden_variable",
+            "useful": true,
+            "payload": {
+              "atom": "lock_live",
+              "artifact": "redislock",
+              "rationale": "lock liveness status"
+            },
+            "metadata": {
+              "support_roles": [
+                "obtain",
+                "refresh",
+                "release"
+              ],
+              "support_surfaces": [
+                "counterexamples",
+                "description",
+                "failing_tests",
+                "formal_spec",
+                "logs",
+                "natural_language_spec",
+                "source_code"
+              ],
+              "support_surface_count": 7,
+              "review_score": 0.5,
+              "matched_tokens": [
+                "live",
+                "lock"
+              ]
+            }
+          },
+          {
+            "proposal_id": "proposal_3be80234",
+            "proposal_type": "constraint",
+            "source": "groq_chat_adapter",
+            "status": "accepted_for_structural_eval",
+            "review_reason": "artifact_structural_support",
+            "useful": true,
+            "payload": {
+              "constraint": "OBTAIN -> lock_live",
+              "artifact": "formal rules",
+              "rationale": "acquire lock"
+            },
+            "metadata": {
+              "support_roles": [
+                "obtain",
+                "refresh",
+                "release"
+              ],
+              "support_surfaces": [
+                "counterexamples",
+                "description",
+                "execution_traces",
+                "failing_tests",
+                "formal_spec",
+                "natural_language_spec",
+                "source_code"
+              ],
+              "support_surface_count": 7,
+              "review_score": 1.0,
+              "matched_tokens": [
+                "live",
+                "lock",
+                "obtain"
+              ]
+            }
+          },
+          {
+            "proposal_id": "proposal_b709189f",
+            "proposal_type": "hidden_variable",
+            "source": "groq_chat_adapter",
+            "status": "abstain_needs_more_evidence",
+            "review_reason": "weak_support_needs_more_evidence",
+            "useful": false,
+            "payload": {
+              "hidden_variable": "lock_expired",
+              "artifact": "formal spec",
+              "rationale": "lock expiration status"
+            },
+            "metadata": {
+              "support_roles": [
+                "obtain",
+                "refresh",
+                "release"
+              ],
+              "support_surfaces": [
+                "counterexamples",
+                "description",
+                "failing_tests",
+                "formal_spec",
+                "natural_language_spec",
+                "source_code"
+              ],
+              "support_surface_count": 6,
+              "review_score": 0.75,
+              "matched_tokens": [
+                "expired",
+                "lock"
+              ]
+            }
+          },
+          {
+            "proposal_id": "proposal_e7793ff8",
+            "proposal_type": "semantic_label",
+            "source": "groq_chat_adapter",
+            "status": "abstain_needs_more_evidence",
+            "review_reason": "semantic_labels_deferred_by_policy",
+            "useful": false,
+            "payload": {
+              "label": "lock_owner",
+              "artifact": "redislock",
+              "rationale": "lock ownership"
+            },
+            "metadata": {
+              "support_roles": [
+                "obtain",
+                "refresh",
+                "release"
+              ],
+              "support_surfaces": [
+                "counterexamples",
+                "description",
+                "failing_tests",
+                "formal_spec",
+                "logs",
+                "natural_language_spec",
+                "source_code"
+              ],
+              "support_surface_count": 7,
+              "review_score": 0.25,
+              "matched_tokens": [
+                "lock",
+                "ownership"
+              ]
+            }
+          },
+          {
+            "proposal_id": "proposal_f34fd1c8",
+            "proposal_type": "test",
+            "source": "groq_chat_adapter",
+            "status": "accepted_for_structural_eval",
+            "review_reason": "artifact_structural_support",
+            "useful": true,
+            "payload": {
+              "test": "TestLock_Refresh_expired",
+              "artifact": "failing tests",
+              "rationale": "refresh expired lock"
+            },
+            "metadata": {
+              "support_roles": [
+                "obtain",
+                "refresh",
+                "release"
+              ],
+              "support_surfaces": [
+                "counterexamples",
+                "description",
+                "execution_traces",
+                "failing_tests",
+                "formal_spec",
+                "logs",
+                "natural_language_spec",
+                "source_code"
+              ],
+              "support_surface_count": 8,
+              "review_score": 2.5,
+              "matched_tokens": [
+                "expired",
+                "lock",
+                "refresh",
+                "test"
+              ]
+            }
+          },
+          {
+            "proposal_id": "proposal_6f9a7922",
+            "proposal_type": "test",
+            "source": "groq_chat_adapter",
+            "status": "abstain_needs_more_evidence",
+            "review_reason": "test_targets_only_parent_roles",
+            "useful": false,
+            "payload": {
+              "test": "TestLock_Release_expired",
+              "artifact": "failing tests",
+              "rationale": "release expired lock"
+            },
+            "metadata": {
+              "support_roles": [
+                "obtain",
+                "refresh",
+                "release"
+              ],
+              "support_surfaces": [
+                "counterexamples",
+                "description",
+                "execution_traces",
+                "failing_tests",
+                "formal_spec",
+                "natural_language_spec",
+                "source_code"
+              ],
+              "support_surface_count": 7,
+              "review_score": 1.5,
+              "matched_tokens": [
+                "expired",
+                "lock",
+                "release",
+                "test"
+              ]
+            }
+          },
+          {
+            "proposal_id": "proposal_0f5dbd67",
+            "proposal_type": "evidence_query",
+            "source": "groq_chat_adapter",
+            "status": "accepted_for_structural_eval",
+            "review_reason": "artifact_structural_support",
+            "useful": true,
+            "payload": {
+              "query": "redislock refresh invariant hidden state lock live refresh window"
+            },
+            "metadata": {
+              "support_roles": [
+                "obtain",
+                "refresh",
+                "release"
+              ],
+              "support_surfaces": [
+                "counterexamples",
+                "description",
+                "execution_traces",
+                "failing_tests",
+                "formal_spec",
+                "logs",
+                "natural_language_spec",
+                "source_code"
+              ],
+              "support_surface_count": 8,
+              "review_score": 2.0,
+              "matched_tokens": [
+                "invariant",
+                "live",
+                "lock",
+                "redislock",
+                "refresh",
+                "window"
+              ]
+            }
+          }
+        ],
+        "proposal_summary": {
+          "total": 7,
+          "status_counts": {
+            "rejected": 1,
+            "accepted_for_structural_eval": 3,
+            "abstain_needs_more_evidence": 3
+          },
+          "type_counts": {
+            "atom": 1,
+            "constraint": 1,
+            "hidden_variable": 1,
+            "semantic_label": 1,
+            "test": 2,
+            "evidence_query": 1
+          },
+          "pending_ids": []
+        },
+        "telemetry_summary": {
+          "event_count": 14,
+          "event_type_counts": {
+            "proposal_submitted": 7,
+            "proposal_reviewed": 7
+          },
+          "latest_metrics": {},
+          "last_cycle": null
+        },
+        "adapter": "ReplayProposalAdapter",
+        "graph_before": {
+          "nodes": 16,
+          "edges": 47
+        },
+        "graph_after": {
+          "nodes": 16,
+          "edges": 47
+        },
+        "ontology_mutated_directly": false,
+        "stage_trace": {
+          "current_stage": null,
+          "completed_stages": [
+            "benchmark_runner",
+            "graph_setup",
+            "adapter_setup",
+            "proposal_generation",
+            "proposal_review",
+            "metrics"
+          ],
+          "stage_timings_seconds": {
+            "benchmark_runner": 0.137,
+            "graph_setup": 0.002,
+            "adapter_setup": 0.0,
+            "proposal_generation": 0.0,
+            "proposal_review": 0.011,
+            "metrics": 0.0
+          },
+          "elapsed_seconds": 0.15
+        },
+        "metrics": {
+          "total_proposals": 7,
+          "useful_proposals_total": 4,
+          "accepted_for_structural_eval": 3,
+          "useful_accepted": 3,
+          "naive_accept_all_precision": 0.5714285714285714,
+          "triage_precision": 1.0,
+          "useful_recall": 0.75,
+          "false_accept_rate": 0.0
+        }
+      },
+      "runtime_summary": {
+        "family": "redislock_refresh",
+        "artifact_version": {
+          "phase": "real_world",
+          "timestamp_utc": "20260318T223344705296Z",
+          "git_sha": "4b3ad2a"
+        },
+        "proof_contract": {
+          "core_mode": "core_frozen",
+          "core_api_version": "phase5_frozen_v1",
+          "expected_core_api_version": "phase5_frozen_v1",
+          "migration_note": null,
+          "proposal_adapter": {
+            "adapter": "ReplayProposalAdapter"
+          },
+          "verifier_stack": [
+            {
+              "claim_kind": "redislock_refresh_invariant",
+              "verifier_type": "SubprocessVerifier",
+              "command": [
+                "python",
+                "verifiers\\redislock_refresh_verifier.py"
+              ],
+              "cwd": ".",
+              "timeout_seconds": 30.0
+            },
+            {
+              "claim_kind": "redislock_refresh_invariant",
+              "verifier_type": "RoleCountVerifier"
+            },
+            {
+              "claim_kind": "redislock_refresh_invariant",
+              "verifier_type": "TraceContractVerifier"
+            }
+          ],
+          "runtime_metrics": {
+            "cycles_to_first_accepted_symbol": 3,
+            "verifier_calls_to_acceptance": 3,
+            "contradiction_before_acceptance": 4.0,
+            "false_candidate_count_before_acceptance": 0,
+            "rollback_count_before_acceptance": 0,
+            "proposal_stage_cycles": 3,
+            "max_proposal_support": 2.25,
+            "accepted_proposal_count": 3
+          },
+          "lifecycle_metrics": {
+            "total": 1,
+            "accepted": 1,
+            "rejected": 0,
+            "retired": 0,
+            "accepted_ids": [
+              "meta_8a3f2e36"
+            ],
+            "rejected_ids": [],
+            "retired_ids": [],
+            "total_reuse_passes": 0,
+            "total_reuse_failures": 0,
+            "total_verification_passes": 3,
+            "total_verification_failures": 0
+          },
+          "transfer_metrics": {}
+        },
+        "baseline": {
+          "adapter": "none",
+          "summary": {
+            "cycles_run": 4,
+            "final_psi": 0.0,
+            "registry": {
+              "total": 1,
+              "accepted": 1,
+              "rejected": 0,
+              "retired": 0
+            },
+            "telemetry_summary": {
+              "event_count": 9,
+              "event_type_counts": {
+                "cycle": 4,
+                "verification_feedback": 3,
+                "candidate_evaluated": 1,
+                "tsl_event": 1
+              },
+              "latest_metrics": {},
+              "last_cycle": {
+                "cycle": 3,
+                "psi": 0.0,
+                "q": 0.0,
+                "collapse_method": "stalled",
+                "active_constraints": 3
+              }
+            },
+            "runtime_metrics": {
+              "cycles_to_first_accepted_symbol": 4,
+              "verifier_calls_to_acceptance": 3,
+              "contradiction_before_acceptance": 5.2,
+              "false_candidate_count_before_acceptance": 0,
+              "rollback_count_before_acceptance": 0,
+              "proposal_stage_cycles": 0,
+              "max_proposal_support": 0.0,
+              "accepted_proposal_count": 0
+            }
+          },
+          "proposal_summary": {
+            "total": 0,
+            "status_counts": {},
+            "type_counts": {},
+            "pending_ids": []
+          }
+        },
+        "proposal_assisted": {
+          "adapter": "ReplayProposalAdapter",
+          "summary": {
+            "cycles_run": 3,
+            "final_psi": 0.0,
+            "registry": {
+              "total": 1,
+              "accepted": 1,
+              "rejected": 0,
+              "retired": 0
+            },
+            "telemetry_summary": {
+              "event_count": 25,
+              "event_type_counts": {
+                "proposal_submitted": 7,
+                "proposal_reviewed": 7,
+                "proposal_stage": 3,
+                "cycle": 3,
+                "verification_feedback": 3,
+                "candidate_evaluated": 1,
+                "tsl_event": 1
+              },
+              "latest_metrics": {},
+              "last_cycle": {
+                "cycle": 2,
+                "psi": 0.0,
+                "q": 0.0,
+                "collapse_method": "stalled",
+                "active_constraints": 3
+              }
+            },
+            "runtime_metrics": {
+              "cycles_to_first_accepted_symbol": 3,
+              "verifier_calls_to_acceptance": 3,
+              "contradiction_before_acceptance": 4.0,
+              "false_candidate_count_before_acceptance": 0,
+              "rollback_count_before_acceptance": 0,
+              "proposal_stage_cycles": 3,
+              "max_proposal_support": 2.25,
+              "accepted_proposal_count": 3
+            }
+          },
+          "proposal_summary": {
+            "total": 7,
+            "status_counts": {
+              "rejected": 1,
+              "accepted_for_structural_eval": 3,
+              "abstain_needs_more_evidence": 3
+            },
+            "type_counts": {
+              "atom": 1,
+              "constraint": 1,
+              "hidden_variable": 1,
+              "semantic_label": 1,
+              "test": 2,
+              "evidence_query": 1
+            },
+            "pending_ids": []
+          }
+        },
+        "comparison": {
+          "cycles_to_first_accepted_symbol_delta": 1,
+          "verifier_calls_to_acceptance_delta": 0,
+          "false_candidate_delta": 0,
+          "rollback_delta": 0,
+          "max_proposal_support": 2.25
+        }
+      }
+    }
+  ],
+  "selection": {
+    "recommended_policy": "real_world_strict",
+    "selection_priority": [
+      "false_accept_rate",
+      "useful_recall",
+      "cycles_to_useful_outcome",
+      "verifier_calls_to_useful_outcome",
+      "useful_accepted_before_first_symbol",
+      "policy_strictness_rank",
+      "abstain_count"
+    ],
+    "rationale": "Prefer the strictest reviewer that preserves false-accept control, recall, and runtime. Abstentions are tolerated when they do not reduce useful outcomes."
+  },
+  "checks": {
+    "fixed_model_held_constant": true,
+    "campaign_family_supported": true,
+    "recommended_policy_reduces_false_accepts": true,
+    "recommended_policy_preserves_or_improves_recall": true,
+    "recommended_policy_non_regressed_runtime": true
+  }
+}

@@ -1,0 +1,428 @@
+{
+  "artifact_version": {
+    "phase": "real_world",
+    "timestamp_utc": "20260318T214742759609Z",
+    "git_sha": "4b3ad2a"
+  },
+  "domain": "real_world_lock_transfer",
+  "rows": [
+    {
+      "source_family": "redsync_mutex_extend",
+      "source_meta_symbol_id": "meta_26fd3fe8",
+      "target_family": "redislock_refresh",
+      "target_task_id": "redislock_refresh_train",
+      "case_kind": "positive_transfer",
+      "mapping_class": "role_remap",
+      "mapping_confidence": 0.85,
+      "baseline_final_psi": 10.6,
+      "transfer_final_psi": 0.0,
+      "contradiction_gain": 10.6,
+      "reuse_application_count": 1,
+      "instantiated_meta_symbol_id": "meta_8c43ce2d",
+      "verifier_results": [
+        {
+          "status": "pass",
+          "passed": true,
+          "failed": false,
+          "counterexample": null,
+          "cost": 0.05200679998961277,
+          "artifact_ids": [],
+          "verifier_name": "redislock_refresh_verifier",
+          "details": {
+            "manifest_path": "fixtures\\redislock_refresh\\train\\manifest.json",
+            "source_path": "fixtures\\redislock_refresh\\train\\source_excerpt.go",
+            "valid_trace_count": 2,
+            "invalid_trace_count": 4,
+            "upstream_commit": "6ba61a38e6e67c455ea775ad521ebbd0868cf97b",
+            "markers": {
+              "Obtain(": true,
+              "Refresh(": true,
+              "Release(": true,
+              "ErrNotObtained": true,
+              "ErrLockNotHeld": true,
+              "TestLock_Refresh": true,
+              "TestLock_Refresh_expired": true,
+              "TestLock_Release_expired": true,
+              "Yay, I still have my lock!": true
+            },
+            "command": [
+              "python",
+              "verifiers\\redislock_refresh_verifier.py"
+            ],
+            "returncode": 0
+          }
+        },
+        {
+          "status": "pass",
+          "passed": true,
+          "failed": false,
+          "counterexample": null,
+          "cost": 2.190002123825252e-05,
+          "artifact_ids": [],
+          "verifier_name": "role_count_verifier",
+          "details": {
+            "parent_roles": {
+              "open": 1,
+              "close": 1
+            },
+            "blanket_roles": {
+              "write": 2
+            },
+            "expected_parent": {
+              "open": 1,
+              "close": 1
+            },
+            "expected_blanket": {
+              "write": 2
+            }
+          }
+        },
+        {
+          "status": "pass",
+          "passed": true,
+          "failed": false,
+          "counterexample": null,
+          "cost": 0.00014360001659952104,
+          "artifact_ids": [],
+          "verifier_name": "trace_contract_verifier",
+          "details": {
+            "manifest_path": "fixtures\\redislock_refresh\\train\\manifest.json",
+            "trace_contract_type": "window_guard"
+          }
+        }
+      ],
+      "verifier_agreement": {
+        "verifier_count": 3,
+        "passed_count": 3,
+        "failed_count": 0,
+        "agreement_rate": 1.0,
+        "all_agree": true,
+        "disagreed": false
+      },
+      "source_runtime_metrics": {
+        "cycles_to_first_accepted_symbol": 4,
+        "verifier_calls_to_acceptance": 3,
+        "contradiction_before_acceptance": 5.2,
+        "false_candidate_count_before_acceptance": 0,
+        "rollback_count_before_acceptance": 0,
+        "proposal_stage_cycles": 0,
+        "max_proposal_support": 0.0,
+        "accepted_proposal_count": 0
+      },
+      "positive_transfer": true
+    },
+    {
+      "source_family": "redislock_refresh",
+      "source_meta_symbol_id": "meta_ba645727",
+      "target_family": "redsync_mutex_extend",
+      "target_task_id": "redsync_mutex_extend_train",
+      "case_kind": "positive_transfer",
+      "mapping_class": "role_remap",
+      "mapping_confidence": 0.85,
+      "baseline_final_psi": 10.6,
+      "transfer_final_psi": 0.0,
+      "contradiction_gain": 10.6,
+      "reuse_application_count": 1,
+      "instantiated_meta_symbol_id": "meta_8a3c1a17",
+      "verifier_results": [
+        {
+          "status": "pass",
+          "passed": true,
+          "failed": false,
+          "counterexample": null,
+          "cost": 0.05110640000202693,
+          "artifact_ids": [],
+          "verifier_name": "redsync_mutex_extend_verifier",
+          "details": {
+            "manifest_path": "fixtures\\redsync_mutex_extend\\train\\manifest.json",
+            "source_path": "fixtures\\redsync_mutex_extend\\train\\source_excerpt.go",
+            "valid_trace_count": 2,
+            "invalid_trace_count": 4,
+            "upstream_commit": "7a6f793e6fdad02673681d67bac13a1f04c9c7de",
+            "markers": {
+              "ExtendContext": true,
+              "ErrExtendFailed": true,
+              "touch(": true,
+              "TestMutexExtendExpired": true,
+              "TestSetNXOnExtendFailsToAcquireLockWhenKeyIsTaken": true,
+              "redsync: failed to extend lock": true
+            },
+            "command": [
+              "python",
+              "verifiers\\redsync_mutex_extend_verifier.py"
+            ],
+            "returncode": 0
+          }
+        },
+        {
+          "status": "pass",
+          "passed": true,
+          "failed": false,
+          "counterexample": null,
+          "cost": 2.400000812485814e-05,
+          "artifact_ids": [],
+          "verifier_name": "role_count_verifier",
+          "details": {
+            "parent_roles": {
+              "open": 1,
+              "close": 1
+            },
+            "blanket_roles": {
+              "write": 2
+            },
+            "expected_parent": {
+              "open": 1,
+              "close": 1
+            },
+            "expected_blanket": {
+              "write": 2
+            }
+          }
+        },
+        {
+          "status": "pass",
+          "passed": true,
+          "failed": false,
+          "counterexample": null,
+          "cost": 0.00016039999900385737,
+          "artifact_ids": [],
+          "verifier_name": "trace_contract_verifier",
+          "details": {
+            "manifest_path": "fixtures\\redsync_mutex_extend\\train\\manifest.json",
+            "trace_contract_type": "window_guard"
+          }
+        }
+      ],
+      "verifier_agreement": {
+        "verifier_count": 3,
+        "passed_count": 3,
+        "failed_count": 0,
+        "agreement_rate": 1.0,
+        "all_agree": true,
+        "disagreed": false
+      },
+      "source_runtime_metrics": {
+        "cycles_to_first_accepted_symbol": 4,
+        "verifier_calls_to_acceptance": 3,
+        "contradiction_before_acceptance": 5.2,
+        "false_candidate_count_before_acceptance": 0,
+        "rollback_count_before_acceptance": 0,
+        "proposal_stage_cycles": 0,
+        "max_proposal_support": 0.0,
+        "accepted_proposal_count": 0
+      },
+      "positive_transfer": true
+    },
+    {
+      "source_family": "credit_window",
+      "target_family": "redislock_refresh",
+      "target_task_id": "redislock_refresh_train",
+      "case_kind": "negative_transfer",
+      "mapping_class": "invalid_transfer",
+      "baseline_final_psi": 10.6,
+      "transfer_final_psi": 10.6,
+      "contradiction_gain": 0.0,
+      "reuse_application_count": 0,
+      "verifier_results": [
+        {
+          "status": "pass",
+          "passed": true,
+          "failed": false,
+          "counterexample": null,
+          "cost": 0.051359200006118044,
+          "artifact_ids": [],
+          "verifier_name": "redislock_refresh_verifier",
+          "details": {
+            "manifest_path": "fixtures\\redislock_refresh\\train\\manifest.json",
+            "source_path": "fixtures\\redislock_refresh\\train\\source_excerpt.go",
+            "valid_trace_count": 2,
+            "invalid_trace_count": 4,
+            "upstream_commit": "6ba61a38e6e67c455ea775ad521ebbd0868cf97b",
+            "markers": {
+              "Obtain(": true,
+              "Refresh(": true,
+              "Release(": true,
+              "ErrNotObtained": true,
+              "ErrLockNotHeld": true,
+              "TestLock_Refresh": true,
+              "TestLock_Refresh_expired": true,
+              "TestLock_Release_expired": true,
+              "Yay, I still have my lock!": true
+            },
+            "command": [
+              "python",
+              "verifiers\\redislock_refresh_verifier.py"
+            ],
+            "returncode": 0
+          }
+        },
+        {
+          "status": "pass",
+          "passed": true,
+          "failed": false,
+          "counterexample": null,
+          "cost": 2.2499996703118086e-05,
+          "artifact_ids": [],
+          "verifier_name": "role_count_verifier",
+          "details": {
+            "parent_roles": {
+              "open": 1,
+              "close": 1
+            },
+            "blanket_roles": {
+              "epoch": 1,
+              "write": 2
+            },
+            "expected_parent": {
+              "open": 1,
+              "close": 1
+            },
+            "expected_blanket": {
+              "epoch": 1,
+              "write": 2
+            }
+          }
+        },
+        {
+          "status": "pass",
+          "passed": true,
+          "failed": false,
+          "counterexample": null,
+          "cost": 0.00013799997395835817,
+          "artifact_ids": [],
+          "verifier_name": "trace_contract_verifier",
+          "details": {
+            "manifest_path": "fixtures\\redislock_refresh\\train\\manifest.json",
+            "trace_contract_type": "window_guard"
+          }
+        }
+      ],
+      "verifier_agreement": {
+        "verifier_count": 3,
+        "passed_count": 3,
+        "failed_count": 0,
+        "agreement_rate": 1.0,
+        "all_agree": true,
+        "disagreed": false
+      },
+      "source_runtime_metrics": {
+        "cycles_to_first_accepted_symbol": 4,
+        "verifier_calls_to_acceptance": 1,
+        "contradiction_before_acceptance": 5.2,
+        "false_candidate_count_before_acceptance": 0,
+        "rollback_count_before_acceptance": 0,
+        "proposal_stage_cycles": 0,
+        "max_proposal_support": 0.0,
+        "accepted_proposal_count": 0
+      },
+      "positive_transfer": false
+    },
+    {
+      "source_family": "redislock_refresh",
+      "target_family": "credit_window",
+      "target_task_id": "credit_window_train",
+      "case_kind": "negative_transfer",
+      "mapping_class": "role_remap",
+      "baseline_final_psi": 10.6,
+      "transfer_final_psi": 0.0,
+      "contradiction_gain": 10.6,
+      "reuse_application_count": 1,
+      "verifier_results": [
+        {
+          "status": "fail",
+          "passed": false,
+          "failed": true,
+          "counterexample": {
+            "reason": "missing_parent_roles",
+            "parent_roles": {
+              "grant": 1,
+              "revoke": 1
+            }
+          },
+          "cost": 0.0486502000130713,
+          "artifact_ids": [],
+          "verifier_name": "credit_window_verifier",
+          "details": {
+            "manifest_path": "fixtures\\credit_window\\train\\manifest.json",
+            "command": [
+              "python",
+              "verifiers\\credit_window_verifier.py"
+            ],
+            "returncode": 0
+          }
+        },
+        {
+          "status": "pass",
+          "passed": true,
+          "failed": false,
+          "counterexample": null,
+          "cost": 2.2599997464567423e-05,
+          "artifact_ids": [],
+          "verifier_name": "role_count_verifier",
+          "details": {
+            "parent_roles": {
+              "open": 1,
+              "close": 1
+            },
+            "blanket_roles": {
+              "write": 2
+            },
+            "expected_parent": {
+              "open": 1,
+              "close": 1
+            },
+            "expected_blanket": {
+              "write": 2
+            }
+          }
+        },
+        {
+          "status": "fail",
+          "passed": false,
+          "failed": true,
+          "counterexample": {
+            "reason": "valid_trace_rejected"
+          },
+          "cost": 0.00014170000213198364,
+          "artifact_ids": [],
+          "verifier_name": "trace_contract_verifier",
+          "details": {
+            "manifest_path": "fixtures\\credit_window\\train\\manifest.json"
+          }
+        }
+      ],
+      "verifier_agreement": {
+        "verifier_count": 3,
+        "passed_count": 1,
+        "failed_count": 2,
+        "agreement_rate": 0.6666666666666666,
+        "all_agree": false,
+        "disagreed": true
+      },
+      "source_runtime_metrics": {
+        "cycles_to_first_accepted_symbol": 4,
+        "verifier_calls_to_acceptance": 3,
+        "contradiction_before_acceptance": 5.2,
+        "false_candidate_count_before_acceptance": 0,
+        "rollback_count_before_acceptance": 0,
+        "proposal_stage_cycles": 0,
+        "max_proposal_support": 0.0,
+        "accepted_proposal_count": 0
+      },
+      "positive_transfer": false
+    }
+  ],
+  "transfer_metrics": {
+    "transfer_case_count": 2,
+    "positive_transfer_count": 2,
+    "transfer_verifier_pass_count": 2,
+    "transfer_contradiction_gain_sum": 21.2
+  },
+  "checks": {
+    "positive_cases_pass": true,
+    "positive_cases_are_role_remap": true,
+    "positive_cases_zero_final_tension": true,
+    "negative_cases_blocked": true,
+    "negative_cases_explained_by_no_application_or_verifier_failure": true
+  }
+}

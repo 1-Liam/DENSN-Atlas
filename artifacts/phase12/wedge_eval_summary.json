@@ -1,0 +1,147 @@
+{
+  "artifact_version": {
+    "phase": "phase12",
+    "timestamp_utc": "20260318T201333220606Z",
+    "git_sha": "ad9f6a1"
+  },
+  "product_statement": "Verifier-backed abstraction invention for formal systems.",
+  "source_artifacts": {
+    "final_proof_bundle": "artifacts\\phase11\\final_proof_bundle.json",
+    "proof_manifest": "artifacts\\phase10\\proof_manifest.json",
+    "repro_verification_summary": "artifacts\\phase12\\repro_verification_summary.json",
+    "credit_window_summary": "artifacts\\phase12\\credit_window_summary.json",
+    "decisive_demo_summary": "artifacts\\phase12\\decisive_demo_summary.json"
+  },
+  "input_contract": [
+    "natural-language spec",
+    "formal rules or formal spec",
+    "traces",
+    "failing tests",
+    "logs",
+    "counterexamples"
+  ],
+  "output_contract": [
+    "missing invariant or hidden state",
+    "reusable remapped abstraction when applicable",
+    "verifier-backed explanation",
+    "explicit non-transfer reason when blocked"
+  ],
+  "headline_proof": {
+    "pathway_b": {
+      "positive_remap_targets": {
+        "ladder_a": 2,
+        "ladder_b": 2
+      },
+      "blocked_negative_transfer": {
+        "ladder_a": 1,
+        "ladder_b": 1
+      },
+      "blocked_cross_ladder_misuse": 2,
+      "baseline_superiority": {
+        "densn_positive_transfer_pass_rate": 1.0,
+        "model_baseline_transfer_pass_rate": 0.5,
+        "densn_mean_cycles_to_first_accepted_symbol": 3.0,
+        "model_baseline_mean_cycles_to_first_accepted_symbol": null,
+        "densn_mean_cycles_to_useful_outcome": 3.0,
+        "model_baseline_mean_cycles_to_useful_outcome": 8.0,
+        "densn_mean_verifier_calls_to_acceptance": 1.0,
+        "model_baseline_mean_verifier_calls_to_acceptance": 3.0,
+        "densn_mean_contradiction_gain": 10.6,
+        "model_baseline_mean_contradiction_gain": 0.0
+      }
+    },
+    "pathway_a": {
+      "compression_gain": 3.0,
+      "mdl_or_symbolic_tax_reduction": 3.0,
+      "ontology_size_before_after": {
+        "node_count_before": 20,
+        "node_count_after": 21,
+        "active_constraints_before": 6,
+        "active_constraints_after": 3
+      },
+      "downstream_cycles_reduction": 1.0,
+      "downstream_verifier_calls_reduction": 1.0,
+      "reuse_of_compressed_structure_count": 2,
+      "pathway_a_vs_cache_only_ablation": {
+        "average_active_constraint_reduction": 3.0
+      },
+      "pathway_a_vs_no_pathway_a_ablation": {
+        "average_active_constraint_reduction": 3.0,
+        "average_cycle_reduction": 1.0
+      }
+    },
+    "live_model_contribution": {
+      "median_cycle_reduction": 0.25,
+      "contradiction_reduction_before_acceptance": {
+        "protocol_cycle_delta": 1,
+        "quorum_cycle_delta": 1,
+        "protocol_contradiction_before_acceptance_delta": 1.2000000000000002,
+        "quorum_contradiction_before_acceptance_delta": 1.2000000000000002
+      },
+      "protocol_false_accept_rate": 0.0,
+      "precision_campaign_false_accept_rate": 0.0,
+      "zero_direct_ontology_mutation": true
+    },
+    "verifier_reliability": {
+      "agreement_rate": 0.5,
+      "disagreement_rate": 0.5,
+      "disagreement_resolved_rate": 1.0,
+      "effective_agreement_quality": 1.0,
+      "unresolved_disagreement_count": 0,
+      "contradiction_added_from_disagreement_count": 4,
+      "verifier_surface_pairs": {
+        "lease_lock_verifier__role_count_verifier": 2,
+        "lease_lock_verifier__trace_contract_verifier": 2,
+        "role_count_verifier__trace_contract_verifier": 8,
+        "role_count_verifier__session_epoch_verifier": 2,
+        "session_epoch_verifier__trace_contract_verifier": 2,
+        "role_count_verifier__vote_majority_commit_verifier": 3,
+        "trace_contract_verifier__vote_majority_commit_verifier": 3,
+        "replication_barrier_verifier__role_count_verifier": 1,
+        "replication_barrier_verifier__trace_contract_verifier": 1
+      },
+      "family_diagnostics": {
+        "protocol_guard": {
+          "agreement": 2,
+          "true_structural_contradiction": 1,
+          "benign_verifier_surface_mismatch": 1
+        },
+        "quorum_commit": {
+          "agreement": 2,
+          "benign_verifier_surface_mismatch": 2
+        }
+      }
+    }
+  },
+  "external_wedge_family": {
+    "family": "credit_window",
+    "accepted_symbol": "BalanceChargeGrantRevoke",
+    "accepted_interface_non_constant": true,
+    "heldout_reuse_success": true,
+    "negative_transfer_blocked": true,
+    "live_model_baseline_beaten": true
+  },
+  "frozen_core": {
+    "core_frozen": true,
+    "git_sha": "ad9f6a1",
+    "model_backend_manifest": {
+      "backend": "Groq OpenAI-compatible API",
+      "model_name": "openai/gpt-oss-120b",
+      "adapter": "GroqChatTransformerAdapter"
+    }
+  },
+  "demo_ready": {
+    "family": "credit_window",
+    "invention_verified": true,
+    "positive_transfer_verified": true,
+    "negative_transfer_blocked": true,
+    "baseline_beaten": true
+  },
+  "checks": {
+    "canonical_proof_intact": true,
+    "reproducibility_verified": true,
+    "external_wedge_family_solved": true,
+    "live_model_baseline_beaten": true,
+    "wedge_ready": true
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "task_id": "protocol_guard_train",
+  "family": "protocol_guard",
+  "split": "train",
+  "description": "Guarded write protocol inferred from specs, traces, logs, failing tests, and a buggy validator implementation.",
+  "roles": {
+    "open": "BEGIN",
+    "close": "END",
+    "action": "WRITE"
+  },
+  "natural_language_spec": "BEGIN opens a guarded region. WRITE is legal only while the guarded region is active. END closes the region. END may not appear before BEGIN, and the trace must finish with the guard closed.",
+  "formal_spec": {
+    "rules": [
+      "BEGIN -> guard_active",
+      "WRITE -> guard_active",
+      "END -> previously guard_active",
+      "trace_end -> not guard_active"
+    ],
+    "safety_property": "No WRITE occurs while the guard is inactive."
+  },
+  "execution_traces": [
+    [
+      "BEGIN",
+      "WRITE",
+      "END"
+    ],
+    [
+      "BEGIN",
+      "WRITE",
+      "WRITE",
+      "END"
+    ]
+  ],
+  "failing_tests": [
+    {
+      "name": "write_after_end",
+      "trace": [
+        "BEGIN",
+        "END",
+        "WRITE"
+      ],
+      "expected": "fail"
+    },
+    {
+      "name": "end_before_begin",
+      "trace": [
+        "END",
+        "WRITE"
+      ],
+      "expected": "fail"
+    }
+  ],
+  "logs": [
+    {
+      "level": "ERROR",
+      "message": "WRITE observed while guard inactive",
+      "trace": [
+        "WRITE",
+        "END"
+      ]
+    }
+  ],
+  "counterexamples": [
+    {
+      "name": "write_without_begin",
+      "trace": [
+        "WRITE"
+      ],
+      "reason": "action_outside_guard"
+    }
+  ],
+  "source_code_path": "validator.py",
+  "write_count": 2
+}

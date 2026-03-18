@@ -1,0 +1,316 @@
+{
+  "artifact_version": {
+    "phase": "phase13",
+    "timestamp_utc": "20260318T223336995275Z",
+    "git_sha": "4b3ad2a"
+  },
+  "family": "etcd_raft_current_term",
+  "campaign_type": "reviewer_policy_precision_fixed_pool",
+  "adapter": {
+    "adapter": "ReplayProposalAdapter"
+  },
+  "proposal_count": 6,
+  "proposals": [
+    {
+      "proposal_id": "proposal_b670f5fb",
+      "proposal_type": "constraint",
+      "source": "groq_chat_adapter",
+      "payload": {
+        "constraint": "ADVANCE_COMMIT_INDEX -> CURRENT_TERM_ENTRY",
+        "artifact": "formal rules",
+        "rationale": "The leader must have an entry from its current term to advance the commit index."
+      },
+      "task_id": null,
+      "metadata": {
+        "support_roles": [
+          "advance_commit",
+          "current_term_entry",
+          "leader_ready",
+          "prior_term_log",
+          "quorum_ready",
+          "replica_match"
+        ],
+        "support_surfaces": [
+          "counterexamples",
+          "description",
+          "execution_traces",
+          "failing_tests",
+          "formal_spec",
+          "logs",
+          "natural_language_spec",
+          "source_code"
+        ],
+        "support_surface_count": 8,
+        "review_score": 1.0,
+        "matched_tokens": [
+          "advance",
+          "an",
+          "commit",
+          "current",
+          "entry",
+          "from",
+          "index",
+          "its",
+          "leader",
+          "term",
+          "the",
+          "to"
+        ]
+      }
+    },
+    {
+      "proposal_id": "proposal_d1e3507e",
+      "proposal_type": "hidden_variable",
+      "source": "groq_chat_adapter",
+      "payload": {
+        "hidden_variable": "leader_has_current_term_entry",
+        "artifact": "formal specification",
+        "rationale": "Whether the leader has an entry from its current term."
+      },
+      "task_id": null,
+      "metadata": {
+        "support_roles": [
+          "advance_commit",
+          "current_term_entry",
+          "leader_ready",
+          "prior_term_log"
+        ],
+        "support_surfaces": [
+          "counterexamples",
+          "description",
+          "execution_traces",
+          "failing_tests",
+          "formal_spec",
+          "logs",
+          "natural_language_spec",
+          "source_code"
+        ],
+        "support_surface_count": 8,
+        "review_score": 2.25,
+        "matched_tokens": [
+          "an",
+          "current",
+          "entry",
+          "from",
+          "has",
+          "its",
+          "leader",
+          "term",
+          "the"
+        ]
+      }
+    },
+    {
+      "proposal_id": "proposal_afe2742c",
+      "proposal_type": "semantic_label",
+      "source": "groq_chat_adapter",
+      "payload": {
+        "label": "current_term_commit",
+        "artifact": "formal rules",
+        "rationale": "The commit index is advanced only with entries from the current term."
+      },
+      "task_id": null,
+      "metadata": {
+        "support_roles": [
+          "advance_commit",
+          "current_term_entry",
+          "leader_ready",
+          "prior_term_log",
+          "quorum_ready",
+          "replica_match"
+        ],
+        "support_surfaces": [
+          "counterexamples",
+          "description",
+          "execution_traces",
+          "failing_tests",
+          "formal_spec",
+          "logs",
+          "natural_language_spec",
+          "source_code"
+        ],
+        "support_surface_count": 8,
+        "review_score": 0.25,
+        "matched_tokens": [
+          "commit",
+          "current",
+          "entries",
+          "from",
+          "index",
+          "is",
+          "only",
+          "term",
+          "the"
+        ]
+      }
+    },
+    {
+      "proposal_id": "proposal_ad1bbff5",
+      "proposal_type": "test",
+      "source": "groq_chat_adapter",
+      "payload": {
+        "test": "TestLeaderOnlyCommitsLogFromCurrentTerm_previous_term_case_1",
+        "artifact": "failing tests",
+        "rationale": "A leader should not advance commit on quorum replicas alone when the highest committed entry is still from a previous term."
+      },
+      "task_id": null,
+      "metadata": {
+        "support_roles": [
+          "advance_commit",
+          "current_term_entry",
+          "leader_ready",
+          "prior_term_log",
+          "quorum_ready",
+          "replica_match"
+        ],
+        "support_surfaces": [
+          "counterexamples",
+          "description",
+          "execution_traces",
+          "failing_tests",
+          "formal_spec",
+          "logs",
+          "natural_language_spec",
+          "source_code"
+        ],
+        "support_surface_count": 8,
+        "review_score": 2.5,
+        "matched_tokens": [
+          "1",
+          "a",
+          "advance",
+          "case",
+          "commit",
+          "commits",
+          "committed",
+          "current",
+          "entry",
+          "from",
+          "is",
+          "leader",
+          "log",
+          "not",
+          "on",
+          "only",
+          "previous",
+          "quorum",
+          "replicas",
+          "should",
+          "still",
+          "term",
+          "test",
+          "the"
+        ]
+      }
+    },
+    {
+      "proposal_id": "proposal_b1bf81fd",
+      "proposal_type": "test",
+      "source": "groq_chat_adapter",
+      "payload": {
+        "test": "TestLeaderOnlyCommitsLogFromCurrentTerm_previous_term_case_2",
+        "artifact": "failing tests",
+        "rationale": "A leader should not advance commit on quorum replicas alone when the highest committed entry is still from a previous term."
+      },
+      "task_id": null,
+      "metadata": {
+        "support_roles": [
+          "advance_commit",
+          "current_term_entry",
+          "leader_ready",
+          "prior_term_log",
+          "quorum_ready",
+          "replica_match"
+        ],
+        "support_surfaces": [
+          "counterexamples",
+          "description",
+          "execution_traces",
+          "failing_tests",
+          "formal_spec",
+          "logs",
+          "natural_language_spec",
+          "source_code"
+        ],
+        "support_surface_count": 8,
+        "review_score": 2.5,
+        "matched_tokens": [
+          "2",
+          "a",
+          "advance",
+          "case",
+          "commit",
+          "commits",
+          "committed",
+          "current",
+          "entry",
+          "from",
+          "is",
+          "leader",
+          "log",
+          "not",
+          "on",
+          "only",
+          "previous",
+          "quorum",
+          "replicas",
+          "should",
+          "still",
+          "term",
+          "test",
+          "the"
+        ]
+      }
+    },
+    {
+      "proposal_id": "proposal_ef32e8ee",
+      "proposal_type": "evidence_query",
+      "source": "groq_chat_adapter",
+      "payload": {
+        "query": "etcd raft current term commit invariant hidden state quorum current term"
+      },
+      "task_id": null,
+      "metadata": {
+        "support_roles": [
+          "advance_commit",
+          "current_term_entry",
+          "leader_ready",
+          "prior_term_log",
+          "quorum_ready",
+          "replica_match"
+        ],
+        "support_surfaces": [
+          "counterexamples",
+          "description",
+          "execution_traces",
+          "failing_tests",
+          "formal_spec",
+          "logs",
+          "natural_language_spec",
+          "source_code"
+        ],
+        "support_surface_count": 8,
+        "review_score": 2.0,
+        "matched_tokens": [
+          "commit",
+          "current",
+          "etcd",
+          "invariant",
+          "quorum",
+          "raft",
+          "term"
+        ]
+      }
+    }
+  ],
+  "pool_source": {
+    "mode": "loaded_fixed_pool",
+    "source_kind": "proposal_quality_summary",
+    "source_path": "artifacts\\real_world\\etcd_raft_current_term_proposal_quality_summary.json",
+    "source_artifact_version": {
+      "phase": "real_world",
+      "timestamp_utc": "20260318T222023534119Z",
+      "git_sha": "4b3ad2a"
+    }
+  }
+}

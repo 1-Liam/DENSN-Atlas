@@ -1,0 +1,122 @@
+{
+  "artifact_version": {
+    "phase": "phase13",
+    "timestamp_utc": "20260318T201313263256Z",
+    "git_sha": "ad9f6a1"
+  },
+  "family": "credit_window",
+  "campaign_type": "reviewer_policy_precision_fixed_pool",
+  "adapter": {
+    "adapter": "GroqChatTransformerAdapter",
+    "configured": true,
+    "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+    "base_url": "https://api.groq.com/openai/v1/chat/completions",
+    "api_key_env": "GROQ_API_KEY",
+    "candidate_models": [
+      "openai/gpt-oss-120b",
+      "meta-llama/llama-4-scout-17b-16e-instruct",
+      "llama-3.3-70b-versatile",
+      "llama-3.1-8b-instant",
+      "groq/compound-mini"
+    ],
+    "quota_ledger_path": "artifacts\\runtime\\groq_quota_ledger.json"
+  },
+  "proposal_count": 6,
+  "proposals": [
+    {
+      "proposal_id": "proposal_0cf3a5fb",
+      "proposal_type": "constraint",
+      "source": "groq_chat_adapter",
+      "payload": {
+        "constraint": "credit_live",
+        "artifact": "formal rules",
+        "rationale": "safety property"
+      },
+      "task_id": "proposal_precision_credit_window_pool",
+      "metadata": {
+        "support_roles": [
+          "formal spec"
+        ]
+      }
+    },
+    {
+      "proposal_id": "proposal_2e232dd1",
+      "proposal_type": "hidden_variable",
+      "source": "groq_chat_adapter",
+      "payload": {
+        "hidden_variable": "credit_live",
+        "artifact": "formal rules",
+        "rationale": "latent state"
+      },
+      "task_id": "proposal_precision_credit_window_pool",
+      "metadata": {
+        "support_roles": [
+          "formal spec"
+        ]
+      }
+    },
+    {
+      "proposal_id": "proposal_3c3d00e3",
+      "proposal_type": "semantic_label",
+      "source": "groq_chat_adapter",
+      "payload": {
+        "label": "credit_window",
+        "artifact": "natural language spec",
+        "rationale": "structural role"
+      },
+      "task_id": "proposal_precision_credit_window_pool",
+      "metadata": {
+        "support_roles": [
+          "natural language spec"
+        ]
+      }
+    },
+    {
+      "proposal_id": "proposal_05eda306",
+      "proposal_type": "test",
+      "source": "groq_chat_adapter",
+      "payload": {
+        "test": "charge_without_balance",
+        "artifact": "failing tests",
+        "rationale": "failing test"
+      },
+      "task_id": "proposal_precision_credit_window_pool",
+      "metadata": {
+        "support_roles": [
+          "failing tests"
+        ]
+      }
+    },
+    {
+      "proposal_id": "proposal_b6aa74c0",
+      "proposal_type": "test",
+      "source": "groq_chat_adapter",
+      "payload": {
+        "test": "charge_after_revoke",
+        "artifact": "failing tests",
+        "rationale": "failing test"
+      },
+      "task_id": "proposal_precision_credit_window_pool",
+      "metadata": {
+        "support_roles": [
+          "failing tests"
+        ]
+      }
+    },
+    {
+      "proposal_id": "proposal_3bbfa495",
+      "proposal_type": "evidence_query",
+      "source": "groq_chat_adapter",
+      "payload": {
+        "query": "credit window invariant hidden state verifier-backed abstraction"
+      },
+      "task_id": "proposal_precision_credit_window_pool",
+      "metadata": {
+        "support_roles": []
+      }
+    }
+  ],
+  "pool_source": {
+    "mode": "fresh_live_generation"
+  }
+}

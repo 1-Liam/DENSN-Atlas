@@ -1,0 +1,80 @@
+{
+  "task_id": "session_epoch_target",
+  "family": "session_epoch",
+  "split": "transfer_target",
+  "description": "Session epoch protocol with renamed surface roles and a buggy validator that lacks an explicit epoch-live hidden state.",
+  "roles": {
+    "start": "START_SESSION",
+    "finish": "FINISH_SESSION",
+    "update": "UPDATE"
+  },
+  "canonical_roles": {
+    "start": "open",
+    "finish": "close",
+    "update": "write"
+  },
+  "natural_language_spec": "START_SESSION opens a session epoch. UPDATE is legal only while the epoch is live. FINISH_SESSION closes the epoch. FINISH_SESSION may not appear before START_SESSION, and a trace must finish with the epoch closed.",
+  "formal_spec": {
+    "rules": [
+      "START_SESSION -> epoch_live",
+      "UPDATE -> epoch_live",
+      "FINISH_SESSION -> previously epoch_live",
+      "trace_end -> not epoch_live"
+    ],
+    "safety_property": "No UPDATE occurs while the epoch is inactive."
+  },
+  "execution_traces": [
+    [
+      "START_SESSION",
+      "UPDATE",
+      "FINISH_SESSION"
+    ],
+    [
+      "START_SESSION",
+      "UPDATE",
+      "UPDATE",
+      "UPDATE",
+      "FINISH_SESSION"
+    ]
+  ],
+  "failing_tests": [
+    {
+      "name": "update_after_finish",
+      "trace": [
+        "START_SESSION",
+        "FINISH_SESSION",
+        "UPDATE"
+      ],
+      "expected": "fail"
+    },
+    {
+      "name": "finish_before_start",
+      "trace": [
+        "FINISH_SESSION",
+        "UPDATE"
+      ],
+      "expected": "fail"
+    }
+  ],
+  "logs": [
+    {
+      "level": "ERROR",
+      "message": "UPDATE observed while epoch inactive",
+      "trace": [
+        "UPDATE",
+        "FINISH_SESSION"
+      ]
+    }
+  ],
+  "counterexamples": [
+    {
+      "name": "update_without_start",
+      "trace": [
+        "UPDATE"
+      ],
+      "reason": "action_outside_epoch"
+    }
+  ],
+  "source_code_path": "validator.py",
+  "update_count": 4
+}

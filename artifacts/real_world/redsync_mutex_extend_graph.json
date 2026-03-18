@@ -1,0 +1,1042 @@
+{
+  "graph_version": "0.1.0",
+  "created_at": "2026-03-18T22:33:42.885521+00:00",
+  "updated_at": "2026-03-18T22:33:42.958302+00:00",
+  "nodes": [
+    {
+      "id": "redsync_mutex_extend_train",
+      "family": "redsync_mutex_extend",
+      "split": "train",
+      "description": "Real-world external artifact bundle derived from go-redsync/redsync. The target invariant is the mutex-extend window rule: Extend is legal only while the lock window is still active; expired or closed locks must not extend successfully.",
+      "created_at": "2026-03-18T22:33:42.886018+00:00",
+      "metadata": {
+        "manifest_path": "fixtures\\redsync_mutex_extend\\train\\manifest.json"
+      },
+      "node_type": "Task"
+    },
+    {
+      "id": "evidence_5a10b6be",
+      "kind": "natural_language_spec",
+      "content_ref": "fixtures\\redsync_mutex_extend\\train\\manifest.json#natural_language_spec",
+      "source": "artifact_manifest",
+      "created_at": "2026-03-18T22:33:42.886054+00:00",
+      "task_id": "redsync_mutex_extend_train",
+      "metadata": {
+        "inline": true
+      },
+      "node_type": "Evidence"
+    },
+    {
+      "id": "evidence_2c8b29a3",
+      "kind": "formal_spec",
+      "content_ref": "fixtures\\redsync_mutex_extend\\train\\manifest.json#formal_spec",
+      "source": "artifact_manifest",
+      "created_at": "2026-03-18T22:33:42.886082+00:00",
+      "task_id": "redsync_mutex_extend_train",
+      "metadata": {
+        "inline": true
+      },
+      "node_type": "Evidence"
+    },
+    {
+      "id": "evidence_5b24e885",
+      "kind": "execution_traces",
+      "content_ref": "fixtures\\redsync_mutex_extend\\train\\manifest.json#execution_traces",
+      "source": "artifact_manifest",
+      "created_at": "2026-03-18T22:33:42.886104+00:00",
+      "task_id": "redsync_mutex_extend_train",
+      "metadata": {
+        "inline": true
+      },
+      "node_type": "Evidence"
+    },
+    {
+      "id": "evidence_7f14cf9a",
+      "kind": "failing_tests",
+      "content_ref": "fixtures\\redsync_mutex_extend\\train\\manifest.json#failing_tests",
+      "source": "artifact_manifest",
+      "created_at": "2026-03-18T22:33:42.886127+00:00",
+      "task_id": "redsync_mutex_extend_train",
+      "metadata": {
+        "inline": true
+      },
+      "node_type": "Evidence"
+    },
+    {
+      "id": "evidence_93e4d5b0",
+      "kind": "logs",
+      "content_ref": "fixtures\\redsync_mutex_extend\\train\\manifest.json#logs",
+      "source": "artifact_manifest",
+      "created_at": "2026-03-18T22:33:42.886149+00:00",
+      "task_id": "redsync_mutex_extend_train",
+      "metadata": {
+        "inline": true
+      },
+      "node_type": "Evidence"
+    },
+    {
+      "id": "evidence_86075fa2",
+      "kind": "counterexamples",
+      "content_ref": "fixtures\\redsync_mutex_extend\\train\\manifest.json#counterexamples",
+      "source": "artifact_manifest",
+      "created_at": "2026-03-18T22:33:42.886170+00:00",
+      "task_id": "redsync_mutex_extend_train",
+      "metadata": {
+        "inline": true
+      },
+      "node_type": "Evidence"
+    },
+    {
+      "id": "evidence_837af527",
+      "kind": "source_code_path",
+      "content_ref": "fixtures\\redsync_mutex_extend\\train\\source_excerpt.go",
+      "source": "artifact_manifest",
+      "created_at": "2026-03-18T22:33:42.886444+00:00",
+      "task_id": "redsync_mutex_extend_train",
+      "metadata": {
+        "path": "fixtures\\redsync_mutex_extend\\train\\source_excerpt.go"
+      },
+      "node_type": "Evidence"
+    },
+    {
+      "id": "REDSYNC_REAL_ACQUIRE",
+      "name": "LOCK",
+      "truth_value": true,
+      "locked": true,
+      "created_at": "2026-03-18T22:33:42.886488+00:00",
+      "updated_at": "2026-03-18T22:33:42.886492+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "provenance_ids": [
+        "evidence_5a10b6be",
+        "evidence_2c8b29a3",
+        "evidence_5b24e885",
+        "evidence_7f14cf9a",
+        "evidence_93e4d5b0",
+        "evidence_86075fa2",
+        "evidence_837af527"
+      ],
+      "task_ids": [],
+      "metadata": {
+        "role": "acquire",
+        "canonical_role": "open",
+        "token": "LOCK",
+        "task_id": "redsync_mutex_extend_train"
+      },
+      "node_type": "AtomicSymbol"
+    },
+    {
+      "id": "REDSYNC_REAL_RELEASE",
+      "name": "UNLOCK",
+      "truth_value": true,
+      "locked": true,
+      "created_at": "2026-03-18T22:33:42.886498+00:00",
+      "updated_at": "2026-03-18T22:33:42.886501+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "provenance_ids": [
+        "evidence_5a10b6be",
+        "evidence_2c8b29a3",
+        "evidence_5b24e885",
+        "evidence_7f14cf9a",
+        "evidence_93e4d5b0",
+        "evidence_86075fa2",
+        "evidence_837af527"
+      ],
+      "task_ids": [],
+      "metadata": {
+        "role": "release",
+        "canonical_role": "close",
+        "token": "UNLOCK",
+        "task_id": "redsync_mutex_extend_train"
+      },
+      "node_type": "AtomicSymbol"
+    },
+    {
+      "id": "REDSYNC_REAL_EXTEND_1",
+      "name": "EXTEND_1",
+      "truth_value": true,
+      "locked": true,
+      "created_at": "2026-03-18T22:33:42.886515+00:00",
+      "updated_at": "2026-03-18T22:33:42.886518+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "provenance_ids": [
+        "evidence_5a10b6be",
+        "evidence_2c8b29a3",
+        "evidence_5b24e885",
+        "evidence_7f14cf9a",
+        "evidence_93e4d5b0",
+        "evidence_86075fa2",
+        "evidence_837af527"
+      ],
+      "task_ids": [],
+      "metadata": {
+        "role": "extend",
+        "canonical_role": "write",
+        "token": "EXTEND",
+        "position": 1,
+        "task_id": "redsync_mutex_extend_train"
+      },
+      "node_type": "AtomicSymbol"
+    },
+    {
+      "id": "REDSYNC_REAL_EXTEND_2",
+      "name": "EXTEND_2",
+      "truth_value": true,
+      "locked": true,
+      "created_at": "2026-03-18T22:33:42.886527+00:00",
+      "updated_at": "2026-03-18T22:33:42.886529+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "provenance_ids": [
+        "evidence_5a10b6be",
+        "evidence_2c8b29a3",
+        "evidence_5b24e885",
+        "evidence_7f14cf9a",
+        "evidence_93e4d5b0",
+        "evidence_86075fa2",
+        "evidence_837af527"
+      ],
+      "task_ids": [],
+      "metadata": {
+        "role": "extend",
+        "canonical_role": "write",
+        "token": "EXTEND",
+        "position": 2,
+        "task_id": "redsync_mutex_extend_train"
+      },
+      "node_type": "AtomicSymbol"
+    },
+    {
+      "id": "REDSYNC_REAL_C_OPEN_ACTION",
+      "constraint_kind": "implies",
+      "symbol_ids": [
+        "REDSYNC_REAL_ACQUIRE",
+        "REDSYNC_REAL_EXTEND_1"
+      ],
+      "weight": 1.0,
+      "base_weight": 1.0,
+      "max_weight": 16.0,
+      "locked": false,
+      "active": true,
+      "created_at": "2026-03-18T22:33:42.886540+00:00",
+      "updated_at": "2026-03-18T22:33:42.886543+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "persistence": 0,
+      "provenance_ids": [
+        "evidence_2c8b29a3",
+        "evidence_5a10b6be"
+      ],
+      "evaluator_key": "",
+      "metadata": {
+        "rule": "open_implies_first_action",
+        "manifest_path": "fixtures\\redsync_mutex_extend\\train\\manifest.json"
+      },
+      "node_type": "Constraint"
+    },
+    {
+      "id": "REDSYNC_REAL_C_OPEN_CLOSE_XOR",
+      "constraint_kind": "xor",
+      "symbol_ids": [
+        "REDSYNC_REAL_ACQUIRE",
+        "REDSYNC_REAL_RELEASE"
+      ],
+      "weight": 1.0,
+      "base_weight": 1.0,
+      "max_weight": 16.0,
+      "locked": false,
+      "active": false,
+      "created_at": "2026-03-18T22:33:42.886549+00:00",
+      "updated_at": "2026-03-18T22:33:42.886551+00:00",
+      "support_count": 0,
+      "failure_count": 8,
+      "persistence": 0,
+      "provenance_ids": [
+        "evidence_2c8b29a3",
+        "evidence_7f14cf9a"
+      ],
+      "evaluator_key": "",
+      "metadata": {
+        "rule": "open_close_mutex",
+        "manifest_path": "fixtures\\redsync_mutex_extend\\train\\manifest.json",
+        "abstracted_by": "meta_d00b93d6"
+      },
+      "node_type": "Constraint"
+    },
+    {
+      "id": "REDSYNC_REAL_C_ACTION_CHAIN_1",
+      "constraint_kind": "implies",
+      "symbol_ids": [
+        "REDSYNC_REAL_EXTEND_1",
+        "REDSYNC_REAL_EXTEND_2"
+      ],
+      "weight": 1.0,
+      "base_weight": 1.0,
+      "max_weight": 16.0,
+      "locked": false,
+      "active": true,
+      "created_at": "2026-03-18T22:33:42.886558+00:00",
+      "updated_at": "2026-03-18T22:33:42.886560+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "persistence": 0,
+      "provenance_ids": [
+        "evidence_5b24e885",
+        "evidence_93e4d5b0",
+        "evidence_86075fa2"
+      ],
+      "evaluator_key": "",
+      "metadata": {
+        "rule": "action_progression",
+        "manifest_path": "fixtures\\redsync_mutex_extend\\train\\manifest.json"
+      },
+      "node_type": "Constraint"
+    },
+    {
+      "id": "REDSYNC_REAL_C_ACTION_CHAIN_2",
+      "constraint_kind": "implies",
+      "symbol_ids": [
+        "REDSYNC_REAL_EXTEND_2",
+        "REDSYNC_REAL_RELEASE"
+      ],
+      "weight": 1.0,
+      "base_weight": 1.0,
+      "max_weight": 16.0,
+      "locked": false,
+      "active": true,
+      "created_at": "2026-03-18T22:33:42.886566+00:00",
+      "updated_at": "2026-03-18T22:33:42.886569+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "persistence": 0,
+      "provenance_ids": [
+        "evidence_5b24e885",
+        "evidence_93e4d5b0",
+        "evidence_86075fa2"
+      ],
+      "evaluator_key": "",
+      "metadata": {
+        "rule": "action_progression",
+        "manifest_path": "fixtures\\redsync_mutex_extend\\train\\manifest.json"
+      },
+      "node_type": "Constraint"
+    },
+    {
+      "id": "meta_d00b93d6",
+      "structural_name": "META_D00B93D6",
+      "truth_value": true,
+      "locked": false,
+      "semantic_label": "ExtendWindowReady",
+      "semantic_status": "grounded",
+      "interface_kind": "exact",
+      "interface_inputs": [
+        "REDSYNC_REAL_EXTEND_1",
+        "REDSYNC_REAL_EXTEND_2"
+      ],
+      "interface_definition": {
+        "truth_table": {
+          "REDSYNC_REAL_EXTEND_1=0,REDSYNC_REAL_EXTEND_2=0": false,
+          "REDSYNC_REAL_EXTEND_1=0,REDSYNC_REAL_EXTEND_2=1": false,
+          "REDSYNC_REAL_EXTEND_1=1,REDSYNC_REAL_EXTEND_2=0": true,
+          "REDSYNC_REAL_EXTEND_1=1,REDSYNC_REAL_EXTEND_2=1": true
+        },
+        "notes": "exact_boundary_projection_interface"
+      },
+      "parent_cluster_symbol_ids": [
+        "REDSYNC_REAL_ACQUIRE",
+        "REDSYNC_REAL_RELEASE"
+      ],
+      "markov_blanket_symbol_ids": [
+        "REDSYNC_REAL_EXTEND_1",
+        "REDSYNC_REAL_EXTEND_2"
+      ],
+      "admission_status": "accepted",
+      "admission_metrics": {
+        "novel": true,
+        "novelty_conflicts": [],
+        "verifier_passed": true,
+        "reuse_passed": true,
+        "heldout_contradiction_gain": 5.2,
+        "complexity_penalty": 3.0,
+        "rent_paid": true,
+        "verifier_agreement": {
+          "verifier_count": 3,
+          "passed_count": 3,
+          "failed_count": 0,
+          "agreement_rate": 1.0,
+          "all_agree": true,
+          "disagreed": false
+        },
+        "semantic_accept_count": 3,
+        "pathway": "B"
+      },
+      "created_at": "2026-03-18T22:33:42.889505+00:00",
+      "updated_at": "2026-03-18T22:33:42.958364+00:00",
+      "provenance_ids": [],
+      "metadata": {
+        "cluster_id": "hotspot_1",
+        "tsl_pathway": "B",
+        "structural_roles": [
+          "acquire",
+          "release",
+          "extend",
+          "extend"
+        ],
+        "proposal_support_roles": [],
+        "proposal_hidden_variables": []
+      },
+      "node_type": "MetaSymbol"
+    },
+    {
+      "id": "verifier_2deecbdd",
+      "verifier_name": "redsync_mutex_extend_verifier",
+      "artifact_kind": "verification_result",
+      "status": "pass",
+      "cost": 0.06289319999632426,
+      "counterexample_ref": null,
+      "created_at": "2026-03-18T22:33:42.957980+00:00",
+      "metadata": {
+        "details": {
+          "manifest_path": "fixtures\\redsync_mutex_extend\\train\\manifest.json",
+          "source_path": "fixtures\\redsync_mutex_extend\\train\\source_excerpt.go",
+          "valid_trace_count": 2,
+          "invalid_trace_count": 4,
+          "upstream_commit": "7a6f793e6fdad02673681d67bac13a1f04c9c7de",
+          "markers": {
+            "ExtendContext": true,
+            "ErrExtendFailed": true,
+            "touch(": true,
+            "TestMutexExtendExpired": true,
+            "TestSetNXOnExtendFailsToAcquireLockWhenKeyIsTaken": true,
+            "redsync: failed to extend lock": true
+          },
+          "command": [
+            "python",
+            "verifiers\\redsync_mutex_extend_verifier.py"
+          ],
+          "returncode": 0
+        }
+      },
+      "node_type": "VerifierArtifact"
+    },
+    {
+      "id": "verifier_c3f23db2",
+      "verifier_name": "role_count_verifier",
+      "artifact_kind": "verification_result",
+      "status": "pass",
+      "cost": 5.509998300112784e-05,
+      "counterexample_ref": null,
+      "created_at": "2026-03-18T22:33:42.958050+00:00",
+      "metadata": {
+        "details": {
+          "parent_roles": {
+            "open": 1,
+            "close": 1
+          },
+          "blanket_roles": {
+            "write": 2
+          },
+          "expected_parent": {
+            "open": 1,
+            "close": 1
+          },
+          "expected_blanket": {
+            "write": 2
+          }
+        }
+      },
+      "node_type": "VerifierArtifact"
+    },
+    {
+      "id": "verifier_f3fdcf6a",
+      "verifier_name": "trace_contract_verifier",
+      "artifact_kind": "verification_result",
+      "status": "pass",
+      "cost": 0.00044329999946057796,
+      "counterexample_ref": null,
+      "created_at": "2026-03-18T22:33:42.958091+00:00",
+      "metadata": {
+        "details": {
+          "manifest_path": "fixtures\\redsync_mutex_extend\\train\\manifest.json",
+          "trace_contract_type": "window_guard"
+        }
+      },
+      "node_type": "VerifierArtifact"
+    },
+    {
+      "id": "verifier_7ec3b35e",
+      "verifier_name": "redsync_mutex_extend_verifier",
+      "artifact_kind": "verification_result",
+      "status": "pass",
+      "cost": 0.06289319999632426,
+      "counterexample_ref": null,
+      "created_at": "2026-03-18T22:33:42.958174+00:00",
+      "metadata": {
+        "details": {
+          "manifest_path": "fixtures\\redsync_mutex_extend\\train\\manifest.json",
+          "source_path": "fixtures\\redsync_mutex_extend\\train\\source_excerpt.go",
+          "valid_trace_count": 2,
+          "invalid_trace_count": 4,
+          "upstream_commit": "7a6f793e6fdad02673681d67bac13a1f04c9c7de",
+          "markers": {
+            "ExtendContext": true,
+            "ErrExtendFailed": true,
+            "touch(": true,
+            "TestMutexExtendExpired": true,
+            "TestSetNXOnExtendFailsToAcquireLockWhenKeyIsTaken": true,
+            "redsync: failed to extend lock": true
+          },
+          "command": [
+            "python",
+            "verifiers\\redsync_mutex_extend_verifier.py"
+          ],
+          "returncode": 0
+        }
+      },
+      "node_type": "VerifierArtifact"
+    },
+    {
+      "id": "verifier_a424915b",
+      "verifier_name": "role_count_verifier",
+      "artifact_kind": "verification_result",
+      "status": "pass",
+      "cost": 5.509998300112784e-05,
+      "counterexample_ref": null,
+      "created_at": "2026-03-18T22:33:42.958226+00:00",
+      "metadata": {
+        "details": {
+          "parent_roles": {
+            "open": 1,
+            "close": 1
+          },
+          "blanket_roles": {
+            "write": 2
+          },
+          "expected_parent": {
+            "open": 1,
+            "close": 1
+          },
+          "expected_blanket": {
+            "write": 2
+          }
+        }
+      },
+      "node_type": "VerifierArtifact"
+    },
+    {
+      "id": "verifier_3156dc3d",
+      "verifier_name": "trace_contract_verifier",
+      "artifact_kind": "verification_result",
+      "status": "pass",
+      "cost": 0.00044329999946057796,
+      "counterexample_ref": null,
+      "created_at": "2026-03-18T22:33:42.958278+00:00",
+      "metadata": {
+        "details": {
+          "manifest_path": "fixtures\\redsync_mutex_extend\\train\\manifest.json",
+          "trace_contract_type": "window_guard"
+        }
+      },
+      "node_type": "VerifierArtifact"
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge_0192ec8a",
+      "src_id": "evidence_5a10b6be",
+      "dst_id": "redsync_mutex_extend_train",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:42.886068+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_ce75e3e0",
+      "src_id": "evidence_2c8b29a3",
+      "dst_id": "redsync_mutex_extend_train",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:42.886093+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_1a900f95",
+      "src_id": "evidence_5b24e885",
+      "dst_id": "redsync_mutex_extend_train",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:42.886115+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_8d4218ab",
+      "src_id": "evidence_7f14cf9a",
+      "dst_id": "redsync_mutex_extend_train",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:42.886138+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_d1ac94ef",
+      "src_id": "evidence_93e4d5b0",
+      "dst_id": "redsync_mutex_extend_train",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:42.886159+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_e52e2a8d",
+      "src_id": "evidence_86075fa2",
+      "dst_id": "redsync_mutex_extend_train",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:42.886179+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_f8d1945e",
+      "src_id": "evidence_837af527",
+      "dst_id": "redsync_mutex_extend_train",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:42.886458+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_a1fe99d2",
+      "src_id": "REDSYNC_REAL_ACQUIRE",
+      "dst_id": "REDSYNC_REAL_C_OPEN_ACTION",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T22:33:42.886581+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_9fb404bd",
+      "src_id": "REDSYNC_REAL_EXTEND_1",
+      "dst_id": "REDSYNC_REAL_C_OPEN_ACTION",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T22:33:42.886592+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_e6215a36",
+      "src_id": "REDSYNC_REAL_ACQUIRE",
+      "dst_id": "REDSYNC_REAL_C_OPEN_CLOSE_XOR",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T22:33:42.886604+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_81f7d9c4",
+      "src_id": "REDSYNC_REAL_RELEASE",
+      "dst_id": "REDSYNC_REAL_C_OPEN_CLOSE_XOR",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T22:33:42.886614+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_1169b793",
+      "src_id": "REDSYNC_REAL_EXTEND_1",
+      "dst_id": "REDSYNC_REAL_C_ACTION_CHAIN_1",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T22:33:42.886626+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_5cebdc30",
+      "src_id": "REDSYNC_REAL_EXTEND_2",
+      "dst_id": "REDSYNC_REAL_C_ACTION_CHAIN_1",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T22:33:42.886635+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_789bd54a",
+      "src_id": "REDSYNC_REAL_EXTEND_2",
+      "dst_id": "REDSYNC_REAL_C_ACTION_CHAIN_2",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T22:33:42.886647+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_75935077",
+      "src_id": "REDSYNC_REAL_RELEASE",
+      "dst_id": "REDSYNC_REAL_C_ACTION_CHAIN_2",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T22:33:42.886656+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_46645237",
+      "src_id": "evidence_5a10b6be",
+      "dst_id": "REDSYNC_REAL_ACQUIRE",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:42.886669+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_a7569102",
+      "src_id": "evidence_5a10b6be",
+      "dst_id": "REDSYNC_REAL_RELEASE",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:42.886680+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_e5c7e8e3",
+      "src_id": "evidence_5a10b6be",
+      "dst_id": "REDSYNC_REAL_EXTEND_1",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:42.886705+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_1c0ef911",
+      "src_id": "evidence_5a10b6be",
+      "dst_id": "REDSYNC_REAL_EXTEND_2",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:42.886715+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_fb1c913b",
+      "src_id": "evidence_2c8b29a3",
+      "dst_id": "REDSYNC_REAL_ACQUIRE",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:42.886724+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_0561b90c",
+      "src_id": "evidence_2c8b29a3",
+      "dst_id": "REDSYNC_REAL_RELEASE",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:42.886733+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_e1f02a7f",
+      "src_id": "evidence_2c8b29a3",
+      "dst_id": "REDSYNC_REAL_EXTEND_1",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:42.886742+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_64694e46",
+      "src_id": "evidence_2c8b29a3",
+      "dst_id": "REDSYNC_REAL_EXTEND_2",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:42.886753+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_80c2d12f",
+      "src_id": "evidence_837af527",
+      "dst_id": "REDSYNC_REAL_ACQUIRE",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:42.886762+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_6aebfadf",
+      "src_id": "evidence_837af527",
+      "dst_id": "REDSYNC_REAL_RELEASE",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:42.886772+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_433433f7",
+      "src_id": "evidence_837af527",
+      "dst_id": "REDSYNC_REAL_EXTEND_1",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:42.886781+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_fa2b5989",
+      "src_id": "evidence_837af527",
+      "dst_id": "REDSYNC_REAL_EXTEND_2",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:42.886790+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_dad94f87",
+      "src_id": "evidence_93e4d5b0",
+      "dst_id": "REDSYNC_REAL_ACQUIRE",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:42.886799+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_22f6a17f",
+      "src_id": "evidence_93e4d5b0",
+      "dst_id": "REDSYNC_REAL_RELEASE",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:42.886808+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_fe677262",
+      "src_id": "evidence_93e4d5b0",
+      "dst_id": "REDSYNC_REAL_EXTEND_1",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:42.886817+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_273a3943",
+      "src_id": "evidence_93e4d5b0",
+      "dst_id": "REDSYNC_REAL_EXTEND_2",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:42.886826+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_03c5549d",
+      "src_id": "evidence_2c8b29a3",
+      "dst_id": "REDSYNC_REAL_C_OPEN_ACTION",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:42.886836+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_91453622",
+      "src_id": "evidence_2c8b29a3",
+      "dst_id": "REDSYNC_REAL_C_OPEN_CLOSE_XOR",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:42.886845+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_1133d134",
+      "src_id": "evidence_2c8b29a3",
+      "dst_id": "REDSYNC_REAL_C_ACTION_CHAIN_1",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:42.886854+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_3932dfb7",
+      "src_id": "evidence_2c8b29a3",
+      "dst_id": "REDSYNC_REAL_C_ACTION_CHAIN_2",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:42.886863+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_2d036da7",
+      "src_id": "evidence_7f14cf9a",
+      "dst_id": "REDSYNC_REAL_C_OPEN_ACTION",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:42.886872+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_26ec01d3",
+      "src_id": "evidence_7f14cf9a",
+      "dst_id": "REDSYNC_REAL_C_OPEN_CLOSE_XOR",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:42.886881+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_22b260f2",
+      "src_id": "evidence_7f14cf9a",
+      "dst_id": "REDSYNC_REAL_C_ACTION_CHAIN_1",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:42.886890+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_f2868aeb",
+      "src_id": "evidence_7f14cf9a",
+      "dst_id": "REDSYNC_REAL_C_ACTION_CHAIN_2",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:42.886899+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_433c2ce4",
+      "src_id": "evidence_86075fa2",
+      "dst_id": "REDSYNC_REAL_C_OPEN_ACTION",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:42.886908+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_9bb14b2b",
+      "src_id": "evidence_86075fa2",
+      "dst_id": "REDSYNC_REAL_C_OPEN_CLOSE_XOR",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:42.886917+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_3dd379d0",
+      "src_id": "evidence_86075fa2",
+      "dst_id": "REDSYNC_REAL_C_ACTION_CHAIN_1",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:42.886926+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_0b8c1882",
+      "src_id": "evidence_86075fa2",
+      "dst_id": "REDSYNC_REAL_C_ACTION_CHAIN_2",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:42.886935+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_22b26258",
+      "src_id": "evidence_5b24e885",
+      "dst_id": "REDSYNC_REAL_C_OPEN_ACTION",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:42.886946+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_1eac4ede",
+      "src_id": "evidence_5b24e885",
+      "dst_id": "REDSYNC_REAL_C_OPEN_CLOSE_XOR",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:42.886955+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_c23e2bf6",
+      "src_id": "evidence_5b24e885",
+      "dst_id": "REDSYNC_REAL_C_ACTION_CHAIN_1",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:42.886964+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_c4f9644f",
+      "src_id": "evidence_5b24e885",
+      "dst_id": "REDSYNC_REAL_C_ACTION_CHAIN_2",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T22:33:42.886972+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_32878187",
+      "src_id": "meta_d00b93d6",
+      "dst_id": "REDSYNC_REAL_ACQUIRE",
+      "edge_kind": "abstracts",
+      "created_at": "2026-03-18T22:33:42.889616+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_6d1ae459",
+      "src_id": "meta_d00b93d6",
+      "dst_id": "REDSYNC_REAL_RELEASE",
+      "edge_kind": "abstracts",
+      "created_at": "2026-03-18T22:33:42.889627+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_3781b810",
+      "src_id": "verifier_2deecbdd",
+      "dst_id": "meta_d00b93d6",
+      "edge_kind": "supports",
+      "created_at": "2026-03-18T22:33:42.958025+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_986d78d1",
+      "src_id": "verifier_c3f23db2",
+      "dst_id": "meta_d00b93d6",
+      "edge_kind": "supports",
+      "created_at": "2026-03-18T22:33:42.958071+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_7174d463",
+      "src_id": "verifier_f3fdcf6a",
+      "dst_id": "meta_d00b93d6",
+      "edge_kind": "supports",
+      "created_at": "2026-03-18T22:33:42.958109+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_a43bae8d",
+      "src_id": "verifier_7ec3b35e",
+      "dst_id": "meta_d00b93d6",
+      "edge_kind": "supports",
+      "created_at": "2026-03-18T22:33:42.958195+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_32552c3c",
+      "src_id": "verifier_a424915b",
+      "dst_id": "meta_d00b93d6",
+      "edge_kind": "supports",
+      "created_at": "2026-03-18T22:33:42.958248+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_8f7774f7",
+      "src_id": "verifier_3156dc3d",
+      "dst_id": "meta_d00b93d6",
+      "edge_kind": "supports",
+      "created_at": "2026-03-18T22:33:42.958296+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "task_id": "quorum_commit_heldout_4",
+  "family": "quorum_commit",
+  "split": "heldout",
+  "description": "Held-out quorum commit task with four acknowledgement channels but the same latent commit-ready abstraction.",
+  "roles": {
+    "prepare": "PREPARE",
+    "commit": "COMMIT",
+    "pending": "PENDING",
+    "ack": "ACK",
+    "clear": "CLEAR"
+  },
+  "natural_language_spec": "PREPARE starts a pending commit round. COMMIT is legal only when the round is clear and at least two acknowledgements have arrived. Additional acknowledgement channels increase observability but not the underlying commit-ready condition.",
+  "formal_spec": {
+    "rules": [
+      "PENDING -> PREPARE",
+      "COMMIT -> CLEAR",
+      "COMMIT -> ACK_1",
+      "COMMIT -> ACK_2",
+      "COMMIT xor PENDING"
+    ],
+    "safety_property": "No COMMIT occurs before two acknowledgements and the clear condition are satisfied."
+  },
+  "execution_traces": [
+    [
+      "PREPARE",
+      "CLEAR",
+      "ACK_1",
+      "ACK_4",
+      "COMMIT"
+    ],
+    [
+      "PREPARE",
+      "CLEAR",
+      "ACK_2",
+      "ACK_3",
+      "COMMIT"
+    ]
+  ],
+  "failing_tests": [
+    {
+      "name": "commit_with_single_ack",
+      "trace": [
+        "PREPARE",
+        "CLEAR",
+        "ACK_4",
+        "COMMIT"
+      ],
+      "expected": "fail"
+    },
+    {
+      "name": "commit_without_clear",
+      "trace": [
+        "PREPARE",
+        "ACK_1",
+        "ACK_2",
+        "COMMIT"
+      ],
+      "expected": "fail"
+    }
+  ],
+  "logs": [
+    {
+      "level": "ERROR",
+      "message": "COMMIT observed before commit-ready conditions held",
+      "trace": [
+        "PREPARE",
+        "ACK_4",
+        "COMMIT"
+      ]
+    }
+  ],
+  "counterexamples": [
+    {
+      "name": "orphan_commit",
+      "trace": [
+        "COMMIT"
+      ],
+      "reason": "commit_without_pending_round"
+    }
+  ],
+  "source_code_path": "validator.py",
+  "ack_count": 4,
+  "required_ack_count": 2
+}

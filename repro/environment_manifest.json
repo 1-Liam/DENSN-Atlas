@@ -1,0 +1,16 @@
+{
+  "python_version": "3.15.0a6",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "required_env": [
+    "GROQ_API_KEY"
+  ],
+  "optional_env": [
+    "GROQ_MODEL",
+    "GROQ_BASE_URL"
+  ],
+  "canonical_model_backend": {
+    "backend": "Groq OpenAI-compatible API",
+    "model_name": "openai/gpt-oss-120b",
+    "adapter": "GroqChatTransformerAdapter"
+  }
+}

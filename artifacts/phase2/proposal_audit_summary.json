@@ -1,0 +1,51 @@
+{
+  "artifact_version": {
+    "phase": "phase2",
+    "timestamp_utc": "20260318T134126013700Z",
+    "git_sha": "nogit"
+  },
+  "adapter": "GroqChatTransformerAdapter",
+  "proposal_ids": [
+    "proposal_07506809",
+    "proposal_2866afb7",
+    "proposal_4872a074",
+    "proposal_63b42a8a",
+    "proposal_c10a54b4",
+    "proposal_83f1fd72",
+    "proposal_a333b201"
+  ],
+  "proposal_summary": {
+    "total": 7,
+    "status_counts": {
+      "rejected": 2,
+      "accepted_for_structural_eval": 5
+    },
+    "type_counts": {
+      "atom": 1,
+      "constraint": 1,
+      "hidden_variable": 1,
+      "semantic_label": 1,
+      "test": 2,
+      "evidence_query": 1
+    },
+    "pending_ids": []
+  },
+  "telemetry_summary": {
+    "event_count": 14,
+    "event_type_counts": {
+      "proposal_submitted": 7,
+      "proposal_reviewed": 7
+    },
+    "latest_metrics": {},
+    "last_cycle": null
+  },
+  "graph_before": {
+    "nodes": 16,
+    "edges": 47
+  },
+  "graph_after": {
+    "nodes": 16,
+    "edges": 47
+  },
+  "ontology_mutated_directly": false
+}

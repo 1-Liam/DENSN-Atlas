@@ -1,0 +1,453 @@
+{
+  "family": "raft_rs_read_index_current_term",
+  "artifact_version": {
+    "phase": "real_world",
+    "timestamp_utc": "20260318T223341160918Z",
+    "git_sha": "4b3ad2a"
+  },
+  "proof_contract": {
+    "core_mode": "core_frozen",
+    "core_api_version": "phase5_frozen_v1",
+    "expected_core_api_version": "phase5_frozen_v1",
+    "migration_note": null,
+    "proposal_adapter": {
+      "adapter": "ReplayProposalAdapter"
+    },
+    "verifier_stack": [],
+    "runtime_metrics": {
+      "cycles_to_first_accepted_symbol": null,
+      "verifier_calls_to_acceptance": 0,
+      "contradiction_before_acceptance": null,
+      "false_candidate_count_before_acceptance": 0,
+      "rollback_count_before_acceptance": 0,
+      "proposal_stage_cycles": 0,
+      "max_proposal_support": 0.0,
+      "accepted_proposal_count": 5
+    },
+    "lifecycle_metrics": {
+      "total": 0,
+      "accepted": 0,
+      "rejected": 0,
+      "retired": 0,
+      "accepted_ids": [],
+      "rejected_ids": [],
+      "retired_ids": [],
+      "total_reuse_passes": 0,
+      "total_reuse_failures": 0,
+      "total_verification_passes": 0,
+      "total_verification_failures": 0
+    },
+    "transfer_metrics": {}
+  },
+  "accepted_meta_symbol_id": "meta_0fbd1e16",
+  "proposal_ids": [
+    "proposal_26ec4adb",
+    "proposal_09dcbf50",
+    "proposal_6c6c9707",
+    "proposal_b4a08c00",
+    "proposal_6aae2e91",
+    "proposal_82428ab8",
+    "proposal_8efe2ddb"
+  ],
+  "reviewed_proposals": [
+    {
+      "proposal_id": "proposal_26ec4adb",
+      "proposal_type": "atom",
+      "source": "groq_chat_adapter",
+      "status": "rejected",
+      "review_reason": "redundant_low_structure_shadow_of_hidden_variable",
+      "useful": true,
+      "payload": {
+        "atom": "COMMITTED_CURRENT_TERM",
+        "artifact": "commit_to_current_term",
+        "rationale": "Leader checks if logs are committed to its term"
+      },
+      "metadata": {
+        "support_roles": [
+          "accept_read_index",
+          "current_term_committed",
+          "leader_ready",
+          "read_ctx_ready",
+          "read_pending"
+        ],
+        "support_surfaces": [
+          "counterexamples",
+          "description",
+          "execution_traces",
+          "failing_tests",
+          "formal_spec",
+          "logs",
+          "natural_language_spec",
+          "source_code"
+        ],
+        "support_surface_count": 8,
+        "review_score": -0.5,
+        "matched_tokens": [
+          "are",
+          "checks",
+          "committed",
+          "current",
+          "if",
+          "its",
+          "leader",
+          "logs",
+          "term",
+          "to"
+        ]
+      }
+    },
+    {
+      "proposal_id": "proposal_09dcbf50",
+      "proposal_type": "constraint",
+      "source": "groq_chat_adapter",
+      "status": "accepted_for_structural_eval",
+      "review_reason": "artifact_structural_support",
+      "useful": true,
+      "payload": {
+        "constraint": "NEW_LEADER_READ_INDEX_RULE",
+        "artifact": "handle_read_index",
+        "rationale": "Leader only accepts MsgReadIndex after committing at least one log entry in its current term"
+      },
+      "metadata": {
+        "support_roles": [
+          "accept_read_index",
+          "append_response",
+          "current_term_committed",
+          "leader_ready",
+          "read_ctx_ready",
+          "read_pending"
+        ],
+        "support_surfaces": [
+          "counterexamples",
+          "description",
+          "execution_traces",
+          "failing_tests",
+          "formal_spec",
+          "logs",
+          "natural_language_spec",
+          "source_code"
+        ],
+        "support_surface_count": 8,
+        "review_score": 1.0,
+        "matched_tokens": [
+          "accepts",
+          "after",
+          "at",
+          "current",
+          "entry",
+          "in",
+          "index",
+          "its",
+          "leader",
+          "least",
+          "log",
+          "msg",
+          "new",
+          "one",
+          "only",
+          "read",
+          "rule",
+          "term"
+        ]
+      }
+    },
+    {
+      "proposal_id": "proposal_6c6c9707",
+      "proposal_type": "hidden_variable",
+      "source": "groq_chat_adapter",
+      "status": "accepted_for_structural_eval",
+      "review_reason": "artifact_structural_support",
+      "useful": true,
+      "payload": {
+        "hidden_variable": "leader_committed_current_term",
+        "artifact": "",
+        "rationale": "Leader's commit status in current term"
+      },
+      "metadata": {
+        "support_roles": [
+          "accept_read_index",
+          "current_term_committed",
+          "leader_ready",
+          "read_ctx_ready",
+          "read_pending"
+        ],
+        "support_surfaces": [
+          "counterexamples",
+          "description",
+          "execution_traces",
+          "failing_tests",
+          "formal_spec",
+          "logs",
+          "natural_language_spec",
+          "source_code"
+        ],
+        "support_surface_count": 8,
+        "review_score": 2.25,
+        "matched_tokens": [
+          "commit",
+          "committed",
+          "current",
+          "in",
+          "leader",
+          "term"
+        ]
+      }
+    },
+    {
+      "proposal_id": "proposal_b4a08c00",
+      "proposal_type": "semantic_label",
+      "source": "groq_chat_adapter",
+      "status": "abstain_needs_more_evidence",
+      "review_reason": "semantic_labels_deferred_by_policy",
+      "useful": false,
+      "payload": {
+        "label": "leader_read_index_ready",
+        "artifact": "handle_read_index",
+        "rationale": "Leader is ready to accept read index"
+      },
+      "metadata": {
+        "support_roles": [
+          "accept_read_index",
+          "append_response",
+          "current_term_committed",
+          "leader_ready",
+          "read_ctx_ready",
+          "read_pending"
+        ],
+        "support_surfaces": [
+          "counterexamples",
+          "description",
+          "execution_traces",
+          "failing_tests",
+          "formal_spec",
+          "logs",
+          "natural_language_spec",
+          "source_code"
+        ],
+        "support_surface_count": 8,
+        "review_score": 1.0,
+        "matched_tokens": [
+          "accept",
+          "index",
+          "is",
+          "leader",
+          "read",
+          "ready",
+          "to"
+        ]
+      }
+    },
+    {
+      "proposal_id": "proposal_6aae2e91",
+      "proposal_type": "test",
+      "source": "groq_chat_adapter",
+      "status": "accepted_for_structural_eval",
+      "review_reason": "artifact_structural_support",
+      "useful": true,
+      "payload": {
+        "test": "test_read_only_for_new_leader_before_current_term_commit",
+        "artifact": "test_read_only_for_new_leader",
+        "rationale": "Test leader dropping read only request before committing in its term"
+      },
+      "metadata": {
+        "support_roles": [
+          "accept_read_index",
+          "append_response",
+          "current_term_committed",
+          "leader_ready",
+          "read_ctx_ready",
+          "read_pending"
+        ],
+        "support_surfaces": [
+          "counterexamples",
+          "description",
+          "execution_traces",
+          "failing_tests",
+          "formal_spec",
+          "logs",
+          "natural_language_spec",
+          "source_code"
+        ],
+        "support_surface_count": 8,
+        "review_score": 2.5,
+        "matched_tokens": [
+          "before",
+          "commit",
+          "current",
+          "dropping",
+          "for",
+          "in",
+          "its",
+          "leader",
+          "new",
+          "only",
+          "read",
+          "request",
+          "term",
+          "test"
+        ]
+      }
+    },
+    {
+      "proposal_id": "proposal_82428ab8",
+      "proposal_type": "test",
+      "source": "groq_chat_adapter",
+      "status": "accepted_for_structural_eval",
+      "review_reason": "artifact_structural_support",
+      "useful": true,
+      "payload": {
+        "test": "test_read_only_for_new_leader_without_current_term_commit",
+        "artifact": "test_read_only_for_new_leader",
+        "rationale": "Test leader dropping read only request without committing in its term"
+      },
+      "metadata": {
+        "support_roles": [
+          "accept_read_index",
+          "append_response",
+          "current_term_committed",
+          "leader_ready",
+          "read_ctx_ready",
+          "read_pending"
+        ],
+        "support_surfaces": [
+          "counterexamples",
+          "description",
+          "execution_traces",
+          "failing_tests",
+          "formal_spec",
+          "logs",
+          "natural_language_spec",
+          "source_code"
+        ],
+        "support_surface_count": 8,
+        "review_score": 2.5,
+        "matched_tokens": [
+          "commit",
+          "current",
+          "dropping",
+          "for",
+          "in",
+          "its",
+          "leader",
+          "new",
+          "only",
+          "read",
+          "request",
+          "term",
+          "test",
+          "without"
+        ]
+      }
+    },
+    {
+      "proposal_id": "proposal_8efe2ddb",
+      "proposal_type": "evidence_query",
+      "source": "groq_chat_adapter",
+      "status": "accepted_for_structural_eval",
+      "review_reason": "artifact_structural_support",
+      "useful": true,
+      "payload": {
+        "query": "raft rs read index current term invariant hidden state quorum leader"
+      },
+      "metadata": {
+        "support_roles": [
+          "accept_read_index",
+          "append_response",
+          "current_term_committed",
+          "leader_ready",
+          "read_ctx_ready",
+          "read_pending"
+        ],
+        "support_surfaces": [
+          "counterexamples",
+          "description",
+          "execution_traces",
+          "failing_tests",
+          "formal_spec",
+          "logs",
+          "natural_language_spec",
+          "source_code"
+        ],
+        "support_surface_count": 8,
+        "review_score": 2.0,
+        "matched_tokens": [
+          "current",
+          "index",
+          "invariant",
+          "leader",
+          "quorum",
+          "raft",
+          "read",
+          "rs",
+          "term"
+        ]
+      }
+    }
+  ],
+  "proposal_summary": {
+    "total": 7,
+    "status_counts": {
+      "rejected": 1,
+      "accepted_for_structural_eval": 5,
+      "abstain_needs_more_evidence": 1
+    },
+    "type_counts": {
+      "atom": 1,
+      "constraint": 1,
+      "hidden_variable": 1,
+      "semantic_label": 1,
+      "test": 2,
+      "evidence_query": 1
+    },
+    "pending_ids": []
+  },
+  "telemetry_summary": {
+    "event_count": 14,
+    "event_type_counts": {
+      "proposal_submitted": 7,
+      "proposal_reviewed": 7
+    },
+    "latest_metrics": {},
+    "last_cycle": null
+  },
+  "adapter": "ReplayProposalAdapter",
+  "graph_before": {
+    "nodes": 22,
+    "edges": 75
+  },
+  "graph_after": {
+    "nodes": 22,
+    "edges": 75
+  },
+  "ontology_mutated_directly": false,
+  "stage_trace": {
+    "current_stage": null,
+    "completed_stages": [
+      "benchmark_runner",
+      "graph_setup",
+      "adapter_setup",
+      "proposal_generation",
+      "proposal_review",
+      "metrics"
+    ],
+    "stage_timings_seconds": {
+      "benchmark_runner": 0.158,
+      "graph_setup": 0.002,
+      "adapter_setup": 0.0,
+      "proposal_generation": 0.0,
+      "proposal_review": 0.009,
+      "metrics": 0.0
+    },
+    "elapsed_seconds": 0.169
+  },
+  "metrics": {
+    "total_proposals": 7,
+    "useful_proposals_total": 6,
+    "accepted_for_structural_eval": 5,
+    "useful_accepted": 5,
+    "naive_accept_all_precision": 0.8571428571428571,
+    "triage_precision": 1.0,
+    "useful_recall": 0.8333333333333334,
+    "false_accept_rate": 0.0
+  }
+}

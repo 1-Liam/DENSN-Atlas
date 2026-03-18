@@ -1,0 +1,75 @@
+{
+  "cycles_run": 8,
+  "final_psi": 0.0,
+  "registry": {
+    "total": 1,
+    "accepted": 1,
+    "rejected": 0,
+    "retired": 0
+  },
+  "telemetry_summary": {
+    "event_count": 10,
+    "event_type_counts": {
+      "cycle": 8,
+      "candidate_evaluated": 1,
+      "tsl_event": 1
+    },
+    "latest_metrics": {},
+    "last_cycle": {
+      "cycle": 7,
+      "psi": 0.0,
+      "q": 0.0,
+      "collapse_method": "greedy",
+      "active_constraints": 3
+    }
+  },
+  "runtime_metrics": {
+    "cycles_to_first_accepted_symbol": 4,
+    "verifier_calls_to_acceptance": 0,
+    "contradiction_before_acceptance": 5.2,
+    "false_candidate_count_before_acceptance": 0,
+    "rollback_count_before_acceptance": 0,
+    "proposal_stage_cycles": 0,
+    "max_proposal_support": 0.0,
+    "accepted_proposal_count": 0
+  },
+  "artifact_version": {
+    "phase": "phase0",
+    "timestamp_utc": "20260318T200855549960Z",
+    "git_sha": "44a99b9"
+  },
+  "proof_contract": {
+    "core_mode": "core_frozen",
+    "core_api_version": "phase5_frozen_v1",
+    "expected_core_api_version": "phase5_frozen_v1",
+    "migration_note": null,
+    "proposal_adapter": null,
+    "verifier_stack": [],
+    "runtime_metrics": {
+      "cycles_to_first_accepted_symbol": 4,
+      "verifier_calls_to_acceptance": 0,
+      "contradiction_before_acceptance": 5.2,
+      "false_candidate_count_before_acceptance": 0,
+      "rollback_count_before_acceptance": 0,
+      "proposal_stage_cycles": 0,
+      "max_proposal_support": 0.0,
+      "accepted_proposal_count": 0
+    },
+    "lifecycle_metrics": {
+      "total": 1,
+      "accepted": 1,
+      "rejected": 0,
+      "retired": 0,
+      "accepted_ids": [
+        "meta_3efae181"
+      ],
+      "rejected_ids": [],
+      "retired_ids": [],
+      "total_reuse_passes": 0,
+      "total_reuse_failures": 0,
+      "total_verification_passes": 0,
+      "total_verification_failures": 0
+    },
+    "transfer_metrics": {}
+  }
+}

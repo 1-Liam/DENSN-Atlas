@@ -1,0 +1,87 @@
+{
+  "task_id": "lease_lock_negative_epoch",
+  "family": "lease_lock",
+  "split": "negative_transfer",
+  "description": "Lease-guarded mutation protocol that additionally requires a lease epoch token absent from WriteGuard-style abstractions.",
+  "roles": {
+    "acquire": "ACQUIRE",
+    "release": "RELEASE",
+    "mutate": "MUTATE",
+    "epoch": "EPOCH"
+  },
+  "canonical_roles": {
+    "acquire": "open",
+    "release": "close",
+    "mutate": "write",
+    "epoch": "epoch"
+  },
+  "natural_language_spec": "ACQUIRE opens a lease window. MUTATE is legal only while the lease is live and the current epoch is valid. RELEASE closes the lease. A valid mutation requires a prior EPOCH marker inside the lease.",
+  "formal_spec": {
+    "rules": [
+      "ACQUIRE -> lease_live",
+      "MUTATE -> lease_live",
+      "MUTATE -> EPOCH",
+      "RELEASE -> previously lease_live",
+      "trace_end -> not lease_live"
+    ],
+    "safety_property": "No MUTATE occurs while the lease is inactive or before the current epoch is established."
+  },
+  "execution_traces": [
+    [
+      "ACQUIRE",
+      "EPOCH",
+      "MUTATE",
+      "RELEASE"
+    ],
+    [
+      "ACQUIRE",
+      "EPOCH",
+      "MUTATE",
+      "MUTATE",
+      "RELEASE"
+    ]
+  ],
+  "failing_tests": [
+    {
+      "name": "mutate_without_epoch",
+      "trace": [
+        "ACQUIRE",
+        "MUTATE",
+        "RELEASE"
+      ],
+      "expected": "fail"
+    },
+    {
+      "name": "mutate_after_release",
+      "trace": [
+        "ACQUIRE",
+        "EPOCH",
+        "RELEASE",
+        "MUTATE"
+      ],
+      "expected": "fail"
+    }
+  ],
+  "logs": [
+    {
+      "level": "ERROR",
+      "message": "MUTATE observed before lease epoch established",
+      "trace": [
+        "ACQUIRE",
+        "MUTATE"
+      ]
+    }
+  ],
+  "counterexamples": [
+    {
+      "name": "mutate_without_acquire",
+      "trace": [
+        "MUTATE"
+      ],
+      "reason": "action_outside_lease"
+    }
+  ],
+  "source_code_path": "validator.py",
+  "mutate_count": 3,
+  "required_epoch": true
+}

@@ -1,0 +1,129 @@
+{
+  "task_id": "raft_rs_read_index_current_term_train",
+  "family": "raft_rs_read_index_current_term",
+  "split": "train",
+  "description": "Real-world external artifact bundle derived from tikv/raft-rs. The target invariant is the new-leader read-index rule: a leader only accepts MsgReadIndex after it has committed at least one log entry in its current term.",
+  "roles": {
+    "leader_ready": "BECOME_LEADER",
+    "accept_read_index": "ACCEPT_READ_INDEX",
+    "read_pending": "READ_PENDING",
+    "append_response": "APPEND_RESPONSE",
+    "read_ctx_ready": "READ_CTX_READY",
+    "current_term_committed": "CURRENT_TERM_COMMITTED"
+  },
+  "canonical_roles": {
+    "leader_ready": "prepare",
+    "accept_read_index": "commit",
+    "read_pending": "pending",
+    "append_response": "ack",
+    "read_ctx_ready": "clear",
+    "current_term_committed": "stable"
+  },
+  "natural_language_spec": "raft-rs only accepts MsgReadIndex on a new leader after that leader has committed at least one log entry in its current term. Before that point, read-only requests are dropped even if the node is already leader.",
+  "formal_spec": {
+    "rules": [
+      "READ_PENDING -> BECOME_LEADER",
+      "ACCEPT_READ_INDEX -> READ_CTX_READY",
+      "ACCEPT_READ_INDEX -> CURRENT_TERM_COMMITTED",
+      "ACCEPT_READ_INDEX -> two APPEND_RESPONSE signals",
+      "ACCEPT_READ_INDEX xor READ_PENDING"
+    ],
+    "safety_property": "A new leader must not accept MsgReadIndex until it has committed an entry in its own term and quorum evidence is present."
+  },
+  "execution_traces": [
+    [
+      "BECOME_LEADER",
+      "READ_CTX_READY",
+      "APPEND_RESPONSE_1",
+      "APPEND_RESPONSE_2",
+      "CURRENT_TERM_COMMITTED",
+      "ACCEPT_READ_INDEX"
+    ],
+    [
+      "BECOME_LEADER",
+      "READ_CTX_READY",
+      "APPEND_RESPONSE_2",
+      "APPEND_RESPONSE_1",
+      "APPEND_RESPONSE_3",
+      "CURRENT_TERM_COMMITTED",
+      "ACCEPT_READ_INDEX"
+    ]
+  ],
+  "failing_tests": [
+    {
+      "name": "test_read_only_for_new_leader_before_current_term_commit",
+      "trace": [
+        "BECOME_LEADER",
+        "READ_PENDING",
+        "READ_CTX_READY",
+        "ACCEPT_READ_INDEX"
+      ],
+      "expected": "fail"
+    },
+    {
+      "name": "test_read_only_for_new_leader_without_current_term_commit",
+      "trace": [
+        "BECOME_LEADER",
+        "READ_PENDING",
+        "READ_CTX_READY",
+        "APPEND_RESPONSE_1",
+        "APPEND_RESPONSE_2",
+        "ACCEPT_READ_INDEX"
+      ],
+      "expected": "fail"
+    }
+  ],
+  "logs": [
+    {
+      "level": "INFO",
+      "message": "leader has not yet committed in its term; dropping read index msg",
+      "trace": [
+        "BECOME_LEADER",
+        "READ_PENDING",
+        "READ_CTX_READY",
+        "DROP_READ_INDEX"
+      ]
+    }
+  ],
+  "counterexamples": [
+    {
+      "name": "read_index_without_leadership",
+      "trace": [
+        "READ_PENDING",
+        "READ_CTX_READY",
+        "ACCEPT_READ_INDEX"
+      ],
+      "reason": "read_index_requires_current_leader"
+    },
+    {
+      "name": "read_index_without_quorum_or_current_term_commit",
+      "trace": [
+        "BECOME_LEADER",
+        "READ_PENDING",
+        "READ_CTX_READY",
+        "CURRENT_TERM_COMMITTED",
+        "ACCEPT_READ_INDEX"
+      ],
+      "reason": "read_index_requires_replication_quorum"
+    }
+  ],
+  "source_code_path": "source_excerpt.rs",
+  "ack_count": 3,
+  "required_ack_count": 2,
+  "required_stable": true,
+  "provenance": {
+    "repo": "https://github.com/tikv/raft-rs",
+    "upstream_commit": "aafb07c7bab439c6139926a77dfafc5b10e9bc84",
+    "upstream_commit_short": "aafb07c",
+    "upstream_commit_date": "2026-03-18",
+    "source_files": [
+      "src/raft.rs",
+      "harness/tests/integration_cases/test_raft.rs"
+    ],
+    "source_urls": [
+      "https://github.com/tikv/raft-rs/blob/aafb07c7bab439c6139926a77dfafc5b10e9bc84/src/raft.rs",
+      "https://github.com/tikv/raft-rs/blob/aafb07c7bab439c6139926a77dfafc5b10e9bc84/harness/tests/integration_cases/test_raft.rs"
+    ],
+    "license": "Apache-2.0"
+  }
+}

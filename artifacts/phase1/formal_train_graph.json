@@ -1,0 +1,879 @@
+{
+  "graph_version": "0.1.0",
+  "created_at": "2026-03-18T20:13:46.960233+00:00",
+  "updated_at": "2026-03-18T20:13:47.153799+00:00",
+  "nodes": [
+    {
+      "id": "protocol_guard_train",
+      "family": "protocol_guard",
+      "split": "train",
+      "description": "Guarded write protocol inferred from specs, traces, logs, failing tests, and a buggy validator implementation.",
+      "created_at": "2026-03-18T20:13:46.960536+00:00",
+      "metadata": {
+        "manifest_path": "fixtures\\protocol_guard\\train\\manifest.json"
+      },
+      "node_type": "Task"
+    },
+    {
+      "id": "evidence_e66cb394",
+      "kind": "natural_language_spec",
+      "content_ref": "fixtures\\protocol_guard\\train\\manifest.json#natural_language_spec",
+      "source": "artifact_manifest",
+      "created_at": "2026-03-18T20:13:46.960560+00:00",
+      "task_id": "protocol_guard_train",
+      "metadata": {
+        "inline": true
+      },
+      "node_type": "Evidence"
+    },
+    {
+      "id": "evidence_82109524",
+      "kind": "formal_spec",
+      "content_ref": "fixtures\\protocol_guard\\train\\manifest.json#formal_spec",
+      "source": "artifact_manifest",
+      "created_at": "2026-03-18T20:13:46.960575+00:00",
+      "task_id": "protocol_guard_train",
+      "metadata": {
+        "inline": true
+      },
+      "node_type": "Evidence"
+    },
+    {
+      "id": "evidence_28f7d791",
+      "kind": "execution_traces",
+      "content_ref": "fixtures\\protocol_guard\\train\\manifest.json#execution_traces",
+      "source": "artifact_manifest",
+      "created_at": "2026-03-18T20:13:46.960586+00:00",
+      "task_id": "protocol_guard_train",
+      "metadata": {
+        "inline": true
+      },
+      "node_type": "Evidence"
+    },
+    {
+      "id": "evidence_d17d217f",
+      "kind": "failing_tests",
+      "content_ref": "fixtures\\protocol_guard\\train\\manifest.json#failing_tests",
+      "source": "artifact_manifest",
+      "created_at": "2026-03-18T20:13:46.960595+00:00",
+      "task_id": "protocol_guard_train",
+      "metadata": {
+        "inline": true
+      },
+      "node_type": "Evidence"
+    },
+    {
+      "id": "evidence_7ce9b436",
+      "kind": "logs",
+      "content_ref": "fixtures\\protocol_guard\\train\\manifest.json#logs",
+      "source": "artifact_manifest",
+      "created_at": "2026-03-18T20:13:46.960604+00:00",
+      "task_id": "protocol_guard_train",
+      "metadata": {
+        "inline": true
+      },
+      "node_type": "Evidence"
+    },
+    {
+      "id": "evidence_15b0e935",
+      "kind": "counterexamples",
+      "content_ref": "fixtures\\protocol_guard\\train\\manifest.json#counterexamples",
+      "source": "artifact_manifest",
+      "created_at": "2026-03-18T20:13:46.960627+00:00",
+      "task_id": "protocol_guard_train",
+      "metadata": {
+        "inline": true
+      },
+      "node_type": "Evidence"
+    },
+    {
+      "id": "evidence_3a2f51da",
+      "kind": "source_code_path",
+      "content_ref": "fixtures\\protocol_guard\\train\\validator.py",
+      "source": "artifact_manifest",
+      "created_at": "2026-03-18T20:13:46.960733+00:00",
+      "task_id": "protocol_guard_train",
+      "metadata": {
+        "path": "fixtures\\protocol_guard\\train\\validator.py"
+      },
+      "node_type": "Evidence"
+    },
+    {
+      "id": "TRAIN_PROTOCOL_BEGIN",
+      "name": "BEGIN",
+      "truth_value": true,
+      "locked": true,
+      "created_at": "2026-03-18T20:13:46.960749+00:00",
+      "updated_at": "2026-03-18T20:13:46.960751+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "provenance_ids": [
+        "evidence_e66cb394",
+        "evidence_82109524",
+        "evidence_28f7d791",
+        "evidence_d17d217f",
+        "evidence_7ce9b436",
+        "evidence_15b0e935",
+        "evidence_3a2f51da"
+      ],
+      "task_ids": [],
+      "metadata": {
+        "role": "open",
+        "token": "BEGIN",
+        "task_id": "protocol_guard_train"
+      },
+      "node_type": "AtomicSymbol"
+    },
+    {
+      "id": "TRAIN_PROTOCOL_END",
+      "name": "END",
+      "truth_value": true,
+      "locked": true,
+      "created_at": "2026-03-18T20:13:46.960754+00:00",
+      "updated_at": "2026-03-18T20:13:46.960755+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "provenance_ids": [
+        "evidence_e66cb394",
+        "evidence_82109524",
+        "evidence_28f7d791",
+        "evidence_d17d217f",
+        "evidence_7ce9b436",
+        "evidence_15b0e935",
+        "evidence_3a2f51da"
+      ],
+      "task_ids": [],
+      "metadata": {
+        "role": "close",
+        "token": "END",
+        "task_id": "protocol_guard_train"
+      },
+      "node_type": "AtomicSymbol"
+    },
+    {
+      "id": "TRAIN_PROTOCOL_WRITE_1",
+      "name": "WRITE_1",
+      "truth_value": true,
+      "locked": true,
+      "created_at": "2026-03-18T20:13:46.960763+00:00",
+      "updated_at": "2026-03-18T20:13:46.960764+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "provenance_ids": [
+        "evidence_e66cb394",
+        "evidence_82109524",
+        "evidence_28f7d791",
+        "evidence_d17d217f",
+        "evidence_7ce9b436",
+        "evidence_15b0e935",
+        "evidence_3a2f51da"
+      ],
+      "task_ids": [],
+      "metadata": {
+        "role": "write",
+        "token": "WRITE",
+        "position": 1,
+        "task_id": "protocol_guard_train"
+      },
+      "node_type": "AtomicSymbol"
+    },
+    {
+      "id": "TRAIN_PROTOCOL_WRITE_2",
+      "name": "WRITE_2",
+      "truth_value": true,
+      "locked": true,
+      "created_at": "2026-03-18T20:13:46.960769+00:00",
+      "updated_at": "2026-03-18T20:13:46.960771+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "provenance_ids": [
+        "evidence_e66cb394",
+        "evidence_82109524",
+        "evidence_28f7d791",
+        "evidence_d17d217f",
+        "evidence_7ce9b436",
+        "evidence_15b0e935",
+        "evidence_3a2f51da"
+      ],
+      "task_ids": [],
+      "metadata": {
+        "role": "write",
+        "token": "WRITE",
+        "position": 2,
+        "task_id": "protocol_guard_train"
+      },
+      "node_type": "AtomicSymbol"
+    },
+    {
+      "id": "TRAIN_PROTOCOL_C_BEGIN_WRITE",
+      "constraint_kind": "implies",
+      "symbol_ids": [
+        "TRAIN_PROTOCOL_BEGIN",
+        "TRAIN_PROTOCOL_WRITE_1"
+      ],
+      "weight": 1.0,
+      "base_weight": 1.0,
+      "max_weight": 16.0,
+      "locked": false,
+      "active": true,
+      "created_at": "2026-03-18T20:13:46.960777+00:00",
+      "updated_at": "2026-03-18T20:13:46.960778+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "persistence": 0,
+      "provenance_ids": [
+        "evidence_82109524",
+        "evidence_e66cb394"
+      ],
+      "evaluator_key": "",
+      "metadata": {
+        "rule": "begin_implies_first_write",
+        "manifest_path": "fixtures\\protocol_guard\\train\\manifest.json"
+      },
+      "node_type": "Constraint"
+    },
+    {
+      "id": "TRAIN_PROTOCOL_C_BEGIN_END_XOR",
+      "constraint_kind": "xor",
+      "symbol_ids": [
+        "TRAIN_PROTOCOL_BEGIN",
+        "TRAIN_PROTOCOL_END"
+      ],
+      "weight": 1.0,
+      "base_weight": 1.0,
+      "max_weight": 16.0,
+      "locked": false,
+      "active": false,
+      "created_at": "2026-03-18T20:13:46.960781+00:00",
+      "updated_at": "2026-03-18T20:13:46.960782+00:00",
+      "support_count": 0,
+      "failure_count": 8,
+      "persistence": 0,
+      "provenance_ids": [
+        "evidence_82109524",
+        "evidence_d17d217f"
+      ],
+      "evaluator_key": "",
+      "metadata": {
+        "rule": "begin_end_mutex",
+        "manifest_path": "fixtures\\protocol_guard\\train\\manifest.json",
+        "abstracted_by": "meta_a54406b5"
+      },
+      "node_type": "Constraint"
+    },
+    {
+      "id": "TRAIN_PROTOCOL_C_WRITE_CHAIN_1",
+      "constraint_kind": "implies",
+      "symbol_ids": [
+        "TRAIN_PROTOCOL_WRITE_1",
+        "TRAIN_PROTOCOL_WRITE_2"
+      ],
+      "weight": 1.0,
+      "base_weight": 1.0,
+      "max_weight": 16.0,
+      "locked": false,
+      "active": true,
+      "created_at": "2026-03-18T20:13:46.960786+00:00",
+      "updated_at": "2026-03-18T20:13:46.960788+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "persistence": 0,
+      "provenance_ids": [
+        "evidence_28f7d791",
+        "evidence_7ce9b436",
+        "evidence_15b0e935"
+      ],
+      "evaluator_key": "",
+      "metadata": {
+        "rule": "write_progression",
+        "manifest_path": "fixtures\\protocol_guard\\train\\manifest.json"
+      },
+      "node_type": "Constraint"
+    },
+    {
+      "id": "TRAIN_PROTOCOL_C_WRITE_CHAIN_2",
+      "constraint_kind": "implies",
+      "symbol_ids": [
+        "TRAIN_PROTOCOL_WRITE_2",
+        "TRAIN_PROTOCOL_END"
+      ],
+      "weight": 1.0,
+      "base_weight": 1.0,
+      "max_weight": 16.0,
+      "locked": false,
+      "active": true,
+      "created_at": "2026-03-18T20:13:46.960791+00:00",
+      "updated_at": "2026-03-18T20:13:46.960792+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "persistence": 0,
+      "provenance_ids": [
+        "evidence_28f7d791",
+        "evidence_7ce9b436",
+        "evidence_15b0e935"
+      ],
+      "evaluator_key": "",
+      "metadata": {
+        "rule": "write_progression",
+        "manifest_path": "fixtures\\protocol_guard\\train\\manifest.json"
+      },
+      "node_type": "Constraint"
+    },
+    {
+      "id": "meta_a54406b5",
+      "structural_name": "META_A54406B5",
+      "truth_value": true,
+      "locked": false,
+      "semantic_label": "WriteGuard",
+      "semantic_status": "grounded",
+      "interface_kind": "exact",
+      "interface_inputs": [
+        "TRAIN_PROTOCOL_WRITE_1",
+        "TRAIN_PROTOCOL_WRITE_2"
+      ],
+      "interface_definition": {
+        "truth_table": {
+          "TRAIN_PROTOCOL_WRITE_1=0,TRAIN_PROTOCOL_WRITE_2=0": false,
+          "TRAIN_PROTOCOL_WRITE_1=0,TRAIN_PROTOCOL_WRITE_2=1": false,
+          "TRAIN_PROTOCOL_WRITE_1=1,TRAIN_PROTOCOL_WRITE_2=0": true,
+          "TRAIN_PROTOCOL_WRITE_1=1,TRAIN_PROTOCOL_WRITE_2=1": true
+        },
+        "notes": "exact_boundary_projection_interface"
+      },
+      "parent_cluster_symbol_ids": [
+        "TRAIN_PROTOCOL_BEGIN",
+        "TRAIN_PROTOCOL_END"
+      ],
+      "markov_blanket_symbol_ids": [
+        "TRAIN_PROTOCOL_WRITE_1",
+        "TRAIN_PROTOCOL_WRITE_2"
+      ],
+      "admission_status": "accepted",
+      "admission_metrics": {
+        "novel": true,
+        "novelty_conflicts": [],
+        "verifier_passed": true,
+        "reuse_passed": true,
+        "heldout_contradiction_gain": 10.6,
+        "complexity_penalty": 4.0,
+        "rent_paid": true,
+        "heldout_results": [
+          {
+            "task_id": "protocol_guard_heldout_3",
+            "family": "protocol_guard",
+            "split": "heldout",
+            "baseline_final_psi": 10.6,
+            "reuse_final_psi": 0.0,
+            "contradiction_gain": 10.6,
+            "reuse_applied": true,
+            "verifier_passed": true
+          },
+          {
+            "task_id": "protocol_guard_heldout_4",
+            "family": "protocol_guard",
+            "split": "heldout",
+            "baseline_final_psi": 10.6,
+            "reuse_final_psi": 0.0,
+            "contradiction_gain": 10.6,
+            "reuse_applied": true,
+            "verifier_passed": true
+          }
+        ],
+        "semantic_accept_count": 1,
+        "pathway": "B"
+      },
+      "created_at": "2026-03-18T20:13:46.962559+00:00",
+      "updated_at": "2026-03-18T20:13:47.153823+00:00",
+      "provenance_ids": [],
+      "metadata": {
+        "cluster_id": "hotspot_1",
+        "tsl_pathway": "B",
+        "structural_roles": [
+          "open",
+          "close",
+          "write",
+          "write"
+        ],
+        "proposal_support_roles": [],
+        "proposal_hidden_variables": []
+      },
+      "node_type": "MetaSymbol"
+    },
+    {
+      "id": "verifier_54a16aa7",
+      "verifier_name": "protocol_guard_verifier",
+      "artifact_kind": "verification_result",
+      "status": "pass",
+      "cost": 0.06224710002425127,
+      "counterexample_ref": null,
+      "created_at": "2026-03-18T20:13:47.153788+00:00",
+      "metadata": {
+        "details": {
+          "manifest_path": "fixtures\\protocol_guard\\train\\manifest.json",
+          "source_path": "fixtures\\protocol_guard\\train\\validator.py",
+          "valid_trace_count": 2,
+          "invalid_trace_count": 3,
+          "source_contains_explicit_guard_state": false,
+          "command": [
+            "python",
+            "verifiers\\protocol_guard_verifier.py"
+          ],
+          "returncode": 0
+        }
+      },
+      "node_type": "VerifierArtifact"
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge_cbe6ebe2",
+      "src_id": "evidence_e66cb394",
+      "dst_id": "protocol_guard_train",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:46.960568+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_fb7f6556",
+      "src_id": "evidence_82109524",
+      "dst_id": "protocol_guard_train",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:46.960580+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_2d88297c",
+      "src_id": "evidence_28f7d791",
+      "dst_id": "protocol_guard_train",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:46.960590+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_dad709f1",
+      "src_id": "evidence_d17d217f",
+      "dst_id": "protocol_guard_train",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:46.960599+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_44a237f9",
+      "src_id": "evidence_7ce9b436",
+      "dst_id": "protocol_guard_train",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:46.960622+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_f5ef0208",
+      "src_id": "evidence_15b0e935",
+      "dst_id": "protocol_guard_train",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:46.960631+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_3616c83f",
+      "src_id": "evidence_3a2f51da",
+      "dst_id": "protocol_guard_train",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:46.960738+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_9ec72934",
+      "src_id": "TRAIN_PROTOCOL_BEGIN",
+      "dst_id": "TRAIN_PROTOCOL_C_BEGIN_WRITE",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T20:13:46.960798+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_300bd9d8",
+      "src_id": "TRAIN_PROTOCOL_WRITE_1",
+      "dst_id": "TRAIN_PROTOCOL_C_BEGIN_WRITE",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T20:13:46.960803+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_af94c860",
+      "src_id": "TRAIN_PROTOCOL_BEGIN",
+      "dst_id": "TRAIN_PROTOCOL_C_BEGIN_END_XOR",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T20:13:46.960809+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_2155b9e3",
+      "src_id": "TRAIN_PROTOCOL_END",
+      "dst_id": "TRAIN_PROTOCOL_C_BEGIN_END_XOR",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T20:13:46.960813+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_00982e6c",
+      "src_id": "TRAIN_PROTOCOL_WRITE_1",
+      "dst_id": "TRAIN_PROTOCOL_C_WRITE_CHAIN_1",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T20:13:46.960820+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_58c5a367",
+      "src_id": "TRAIN_PROTOCOL_WRITE_2",
+      "dst_id": "TRAIN_PROTOCOL_C_WRITE_CHAIN_1",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T20:13:46.960824+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_15610feb",
+      "src_id": "TRAIN_PROTOCOL_WRITE_2",
+      "dst_id": "TRAIN_PROTOCOL_C_WRITE_CHAIN_2",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T20:13:46.960829+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_0b385f47",
+      "src_id": "TRAIN_PROTOCOL_END",
+      "dst_id": "TRAIN_PROTOCOL_C_WRITE_CHAIN_2",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T20:13:46.960833+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_0254f8b5",
+      "src_id": "evidence_e66cb394",
+      "dst_id": "TRAIN_PROTOCOL_BEGIN",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:46.960840+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_43416adb",
+      "src_id": "evidence_e66cb394",
+      "dst_id": "TRAIN_PROTOCOL_END",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:46.960844+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_9475ac3c",
+      "src_id": "evidence_e66cb394",
+      "dst_id": "TRAIN_PROTOCOL_WRITE_1",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:46.960848+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_6980d8ae",
+      "src_id": "evidence_e66cb394",
+      "dst_id": "TRAIN_PROTOCOL_WRITE_2",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:46.960852+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_cb81017b",
+      "src_id": "evidence_82109524",
+      "dst_id": "TRAIN_PROTOCOL_BEGIN",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:46.960856+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_c208aa62",
+      "src_id": "evidence_82109524",
+      "dst_id": "TRAIN_PROTOCOL_END",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:46.960861+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_2489a8ca",
+      "src_id": "evidence_82109524",
+      "dst_id": "TRAIN_PROTOCOL_WRITE_1",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:46.960865+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_daa6c715",
+      "src_id": "evidence_82109524",
+      "dst_id": "TRAIN_PROTOCOL_WRITE_2",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:46.960870+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_3c179416",
+      "src_id": "evidence_3a2f51da",
+      "dst_id": "TRAIN_PROTOCOL_BEGIN",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:46.960874+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_c9a242b6",
+      "src_id": "evidence_3a2f51da",
+      "dst_id": "TRAIN_PROTOCOL_END",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:46.960878+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_104c75ad",
+      "src_id": "evidence_3a2f51da",
+      "dst_id": "TRAIN_PROTOCOL_WRITE_1",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:46.960882+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_d8a2cce4",
+      "src_id": "evidence_3a2f51da",
+      "dst_id": "TRAIN_PROTOCOL_WRITE_2",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:46.960886+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_4b43bb22",
+      "src_id": "evidence_7ce9b436",
+      "dst_id": "TRAIN_PROTOCOL_BEGIN",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:46.960890+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_b0043446",
+      "src_id": "evidence_7ce9b436",
+      "dst_id": "TRAIN_PROTOCOL_END",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:46.960894+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_8929a1dd",
+      "src_id": "evidence_7ce9b436",
+      "dst_id": "TRAIN_PROTOCOL_WRITE_1",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:46.960898+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_22ea820f",
+      "src_id": "evidence_7ce9b436",
+      "dst_id": "TRAIN_PROTOCOL_WRITE_2",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:46.960902+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_64318d87",
+      "src_id": "evidence_82109524",
+      "dst_id": "TRAIN_PROTOCOL_C_BEGIN_WRITE",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:46.960906+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_fa3cedf3",
+      "src_id": "evidence_82109524",
+      "dst_id": "TRAIN_PROTOCOL_C_BEGIN_END_XOR",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:46.960911+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_6f703c4f",
+      "src_id": "evidence_82109524",
+      "dst_id": "TRAIN_PROTOCOL_C_WRITE_CHAIN_1",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:46.960915+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_999d1119",
+      "src_id": "evidence_82109524",
+      "dst_id": "TRAIN_PROTOCOL_C_WRITE_CHAIN_2",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:46.960919+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_33185d8d",
+      "src_id": "evidence_d17d217f",
+      "dst_id": "TRAIN_PROTOCOL_C_BEGIN_WRITE",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:46.960923+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_d9c1fb21",
+      "src_id": "evidence_d17d217f",
+      "dst_id": "TRAIN_PROTOCOL_C_BEGIN_END_XOR",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:46.960927+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_73d7eedd",
+      "src_id": "evidence_d17d217f",
+      "dst_id": "TRAIN_PROTOCOL_C_WRITE_CHAIN_1",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:46.960931+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_e04e9821",
+      "src_id": "evidence_d17d217f",
+      "dst_id": "TRAIN_PROTOCOL_C_WRITE_CHAIN_2",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:46.960935+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_eb678ba8",
+      "src_id": "evidence_15b0e935",
+      "dst_id": "TRAIN_PROTOCOL_C_BEGIN_WRITE",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:46.960938+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_3aa9d461",
+      "src_id": "evidence_15b0e935",
+      "dst_id": "TRAIN_PROTOCOL_C_BEGIN_END_XOR",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:46.960942+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_40342dd9",
+      "src_id": "evidence_15b0e935",
+      "dst_id": "TRAIN_PROTOCOL_C_WRITE_CHAIN_1",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:46.960946+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_29e4a1b6",
+      "src_id": "evidence_15b0e935",
+      "dst_id": "TRAIN_PROTOCOL_C_WRITE_CHAIN_2",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:46.960950+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_aa51191c",
+      "src_id": "evidence_28f7d791",
+      "dst_id": "TRAIN_PROTOCOL_C_BEGIN_WRITE",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:46.960955+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_3d1db21a",
+      "src_id": "evidence_28f7d791",
+      "dst_id": "TRAIN_PROTOCOL_C_BEGIN_END_XOR",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:46.960958+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_d52a70a6",
+      "src_id": "evidence_28f7d791",
+      "dst_id": "TRAIN_PROTOCOL_C_WRITE_CHAIN_1",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:46.960962+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_c567add9",
+      "src_id": "evidence_28f7d791",
+      "dst_id": "TRAIN_PROTOCOL_C_WRITE_CHAIN_2",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:46.960966+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_9976c31f",
+      "src_id": "meta_a54406b5",
+      "dst_id": "TRAIN_PROTOCOL_BEGIN",
+      "edge_kind": "abstracts",
+      "created_at": "2026-03-18T20:13:46.962609+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_4fb528f1",
+      "src_id": "meta_a54406b5",
+      "dst_id": "TRAIN_PROTOCOL_END",
+      "edge_kind": "abstracts",
+      "created_at": "2026-03-18T20:13:46.962615+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_e468348a",
+      "src_id": "verifier_54a16aa7",
+      "dst_id": "meta_a54406b5",
+      "edge_kind": "supports",
+      "created_at": "2026-03-18T20:13:47.153796+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    }
+  ]
+}

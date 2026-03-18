@@ -1,0 +1,950 @@
+{
+  "artifact_version": {
+    "phase": "real_world",
+    "timestamp_utc": "20260318T223336928959Z",
+    "git_sha": "4b3ad2a"
+  },
+  "domain": "real_world_proposal_precision",
+  "fixed_pool_sources": {
+    "etcd_raft_current_term": "artifacts\\real_world\\etcd_raft_current_term_proposal_quality_summary.json",
+    "raft_rs_read_index_current_term": "artifacts\\real_world\\raft_rs_read_index_current_term_proposal_quality_summary.json",
+    "redsync_mutex_extend": "artifacts\\real_world\\redsync_mutex_extend_proposal_quality_summary.json",
+    "redislock_refresh": "artifacts\\real_world\\redislock_refresh_proposal_quality_summary.json"
+  },
+  "family_summaries": {
+    "etcd_raft_current_term": {
+      "pool_source": {
+        "mode": "loaded_fixed_pool",
+        "source_kind": "proposal_quality_summary",
+        "source_path": "artifacts\\real_world\\etcd_raft_current_term_proposal_quality_summary.json",
+        "source_artifact_version": {
+          "phase": "real_world",
+          "timestamp_utc": "20260318T222023534119Z",
+          "git_sha": "4b3ad2a"
+        }
+      },
+      "recommended_policy": "real_world_strict",
+      "variants": [
+        {
+          "policy": "current",
+          "quality_metrics": {
+            "total_proposals": 6,
+            "useful_proposals_total": 5,
+            "accepted_for_structural_eval": 5,
+            "useful_accepted": 5,
+            "useful_accepted_before_first_symbol": 5,
+            "false_accepts_before_first_symbol": 0,
+            "triage_precision": 1.0,
+            "useful_recall": 1.0,
+            "false_accept_rate": 0.0,
+            "abstain_count": 0
+          },
+          "runtime_metrics": {
+            "cycles_to_useful_outcome": 3,
+            "verifier_calls_to_useful_outcome": 3,
+            "contradiction_before_acceptance": 4.0,
+            "proposal_stage_cycles": 3,
+            "cycle_delta_from_no_proposals": 1,
+            "verifier_call_delta_from_no_proposals": 0,
+            "false_candidate_delta_from_no_proposals": 0,
+            "rollback_delta_from_no_proposals": 0
+          }
+        },
+        {
+          "policy": "atom_shadow_reject",
+          "quality_metrics": {
+            "total_proposals": 6,
+            "useful_proposals_total": 5,
+            "accepted_for_structural_eval": 5,
+            "useful_accepted": 5,
+            "useful_accepted_before_first_symbol": 5,
+            "false_accepts_before_first_symbol": 0,
+            "triage_precision": 1.0,
+            "useful_recall": 1.0,
+            "false_accept_rate": 0.0,
+            "abstain_count": 0
+          },
+          "runtime_metrics": {
+            "cycles_to_useful_outcome": 3,
+            "verifier_calls_to_useful_outcome": 3,
+            "contradiction_before_acceptance": 4.0,
+            "proposal_stage_cycles": 3,
+            "cycle_delta_from_no_proposals": 1,
+            "verifier_call_delta_from_no_proposals": 0,
+            "false_candidate_delta_from_no_proposals": 0,
+            "rollback_delta_from_no_proposals": 0
+          }
+        },
+        {
+          "policy": "atom_shadow_reject_plus_abstain",
+          "quality_metrics": {
+            "total_proposals": 6,
+            "useful_proposals_total": 5,
+            "accepted_for_structural_eval": 5,
+            "useful_accepted": 5,
+            "useful_accepted_before_first_symbol": 5,
+            "false_accepts_before_first_symbol": 0,
+            "triage_precision": 1.0,
+            "useful_recall": 1.0,
+            "false_accept_rate": 0.0,
+            "abstain_count": 0
+          },
+          "runtime_metrics": {
+            "cycles_to_useful_outcome": 3,
+            "verifier_calls_to_useful_outcome": 3,
+            "contradiction_before_acceptance": 4.0,
+            "proposal_stage_cycles": 3,
+            "cycle_delta_from_no_proposals": 1,
+            "verifier_call_delta_from_no_proposals": 0,
+            "false_candidate_delta_from_no_proposals": 0,
+            "rollback_delta_from_no_proposals": 0
+          }
+        },
+        {
+          "policy": "real_world_strict",
+          "quality_metrics": {
+            "total_proposals": 6,
+            "useful_proposals_total": 5,
+            "accepted_for_structural_eval": 5,
+            "useful_accepted": 5,
+            "useful_accepted_before_first_symbol": 5,
+            "false_accepts_before_first_symbol": 0,
+            "triage_precision": 1.0,
+            "useful_recall": 1.0,
+            "false_accept_rate": 0.0,
+            "abstain_count": 1
+          },
+          "runtime_metrics": {
+            "cycles_to_useful_outcome": 3,
+            "verifier_calls_to_useful_outcome": 3,
+            "contradiction_before_acceptance": 4.0,
+            "proposal_stage_cycles": 3,
+            "cycle_delta_from_no_proposals": 1,
+            "verifier_call_delta_from_no_proposals": 0,
+            "false_candidate_delta_from_no_proposals": 0,
+            "rollback_delta_from_no_proposals": 0
+          }
+        }
+      ]
+    },
+    "raft_rs_read_index_current_term": {
+      "pool_source": {
+        "mode": "loaded_fixed_pool",
+        "source_kind": "proposal_quality_summary",
+        "source_path": "artifacts\\real_world\\raft_rs_read_index_current_term_proposal_quality_summary.json",
+        "source_artifact_version": {
+          "phase": "real_world",
+          "timestamp_utc": "20260318T222024883063Z",
+          "git_sha": "4b3ad2a"
+        }
+      },
+      "recommended_policy": "real_world_strict",
+      "variants": [
+        {
+          "policy": "current",
+          "quality_metrics": {
+            "total_proposals": 7,
+            "useful_proposals_total": 6,
+            "accepted_for_structural_eval": 6,
+            "useful_accepted": 5,
+            "useful_accepted_before_first_symbol": 5,
+            "false_accepts_before_first_symbol": 1,
+            "triage_precision": 0.8333333333333334,
+            "useful_recall": 0.8333333333333334,
+            "false_accept_rate": 0.16666666666666666,
+            "abstain_count": 0
+          },
+          "runtime_metrics": {
+            "cycles_to_useful_outcome": 3,
+            "verifier_calls_to_useful_outcome": 3,
+            "contradiction_before_acceptance": 4.0,
+            "proposal_stage_cycles": 3,
+            "cycle_delta_from_no_proposals": 1,
+            "verifier_call_delta_from_no_proposals": 0,
+            "false_candidate_delta_from_no_proposals": 0,
+            "rollback_delta_from_no_proposals": 0
+          }
+        },
+        {
+          "policy": "atom_shadow_reject",
+          "quality_metrics": {
+            "total_proposals": 7,
+            "useful_proposals_total": 6,
+            "accepted_for_structural_eval": 6,
+            "useful_accepted": 5,
+            "useful_accepted_before_first_symbol": 5,
+            "false_accepts_before_first_symbol": 1,
+            "triage_precision": 0.8333333333333334,
+            "useful_recall": 0.8333333333333334,
+            "false_accept_rate": 0.16666666666666666,
+            "abstain_count": 0
+          },
+          "runtime_metrics": {
+            "cycles_to_useful_outcome": 3,
+            "verifier_calls_to_useful_outcome": 3,
+            "contradiction_before_acceptance": 4.0,
+            "proposal_stage_cycles": 3,
+            "cycle_delta_from_no_proposals": 1,
+            "verifier_call_delta_from_no_proposals": 0,
+            "false_candidate_delta_from_no_proposals": 0,
+            "rollback_delta_from_no_proposals": 0
+          }
+        },
+        {
+          "policy": "atom_shadow_reject_plus_abstain",
+          "quality_metrics": {
+            "total_proposals": 7,
+            "useful_proposals_total": 6,
+            "accepted_for_structural_eval": 6,
+            "useful_accepted": 5,
+            "useful_accepted_before_first_symbol": 5,
+            "false_accepts_before_first_symbol": 1,
+            "triage_precision": 0.8333333333333334,
+            "useful_recall": 0.8333333333333334,
+            "false_accept_rate": 0.16666666666666666,
+            "abstain_count": 0
+          },
+          "runtime_metrics": {
+            "cycles_to_useful_outcome": 3,
+            "verifier_calls_to_useful_outcome": 3,
+            "contradiction_before_acceptance": 4.0,
+            "proposal_stage_cycles": 3,
+            "cycle_delta_from_no_proposals": 1,
+            "verifier_call_delta_from_no_proposals": 0,
+            "false_candidate_delta_from_no_proposals": 0,
+            "rollback_delta_from_no_proposals": 0
+          }
+        },
+        {
+          "policy": "real_world_strict",
+          "quality_metrics": {
+            "total_proposals": 7,
+            "useful_proposals_total": 6,
+            "accepted_for_structural_eval": 5,
+            "useful_accepted": 5,
+            "useful_accepted_before_first_symbol": 5,
+            "false_accepts_before_first_symbol": 0,
+            "triage_precision": 1.0,
+            "useful_recall": 0.8333333333333334,
+            "false_accept_rate": 0.0,
+            "abstain_count": 1
+          },
+          "runtime_metrics": {
+            "cycles_to_useful_outcome": 3,
+            "verifier_calls_to_useful_outcome": 3,
+            "contradiction_before_acceptance": 4.0,
+            "proposal_stage_cycles": 3,
+            "cycle_delta_from_no_proposals": 1,
+            "verifier_call_delta_from_no_proposals": 0,
+            "false_candidate_delta_from_no_proposals": 0,
+            "rollback_delta_from_no_proposals": 0
+          }
+        }
+      ]
+    },
+    "redsync_mutex_extend": {
+      "pool_source": {
+        "mode": "loaded_fixed_pool",
+        "source_kind": "proposal_quality_summary",
+        "source_path": "artifacts\\real_world\\redsync_mutex_extend_proposal_quality_summary.json",
+        "source_artifact_version": {
+          "phase": "real_world",
+          "timestamp_utc": "20260318T222026131212Z",
+          "git_sha": "4b3ad2a"
+        }
+      },
+      "recommended_policy": "real_world_strict",
+      "variants": [
+        {
+          "policy": "current",
+          "quality_metrics": {
+            "total_proposals": 6,
+            "useful_proposals_total": 5,
+            "accepted_for_structural_eval": 5,
+            "useful_accepted": 5,
+            "useful_accepted_before_first_symbol": 5,
+            "false_accepts_before_first_symbol": 0,
+            "triage_precision": 1.0,
+            "useful_recall": 1.0,
+            "false_accept_rate": 0.0,
+            "abstain_count": 0
+          },
+          "runtime_metrics": {
+            "cycles_to_useful_outcome": 3,
+            "verifier_calls_to_useful_outcome": 3,
+            "contradiction_before_acceptance": 4.0,
+            "proposal_stage_cycles": 3,
+            "cycle_delta_from_no_proposals": 1,
+            "verifier_call_delta_from_no_proposals": 0,
+            "false_candidate_delta_from_no_proposals": 0,
+            "rollback_delta_from_no_proposals": 0
+          }
+        },
+        {
+          "policy": "atom_shadow_reject",
+          "quality_metrics": {
+            "total_proposals": 6,
+            "useful_proposals_total": 5,
+            "accepted_for_structural_eval": 5,
+            "useful_accepted": 5,
+            "useful_accepted_before_first_symbol": 5,
+            "false_accepts_before_first_symbol": 0,
+            "triage_precision": 1.0,
+            "useful_recall": 1.0,
+            "false_accept_rate": 0.0,
+            "abstain_count": 0
+          },
+          "runtime_metrics": {
+            "cycles_to_useful_outcome": 3,
+            "verifier_calls_to_useful_outcome": 3,
+            "contradiction_before_acceptance": 4.0,
+            "proposal_stage_cycles": 3,
+            "cycle_delta_from_no_proposals": 1,
+            "verifier_call_delta_from_no_proposals": 0,
+            "false_candidate_delta_from_no_proposals": 0,
+            "rollback_delta_from_no_proposals": 0
+          }
+        },
+        {
+          "policy": "atom_shadow_reject_plus_abstain",
+          "quality_metrics": {
+            "total_proposals": 6,
+            "useful_proposals_total": 5,
+            "accepted_for_structural_eval": 5,
+            "useful_accepted": 5,
+            "useful_accepted_before_first_symbol": 5,
+            "false_accepts_before_first_symbol": 0,
+            "triage_precision": 1.0,
+            "useful_recall": 1.0,
+            "false_accept_rate": 0.0,
+            "abstain_count": 1
+          },
+          "runtime_metrics": {
+            "cycles_to_useful_outcome": 3,
+            "verifier_calls_to_useful_outcome": 3,
+            "contradiction_before_acceptance": 4.0,
+            "proposal_stage_cycles": 3,
+            "cycle_delta_from_no_proposals": 1,
+            "verifier_call_delta_from_no_proposals": 0,
+            "false_candidate_delta_from_no_proposals": 0,
+            "rollback_delta_from_no_proposals": 0
+          }
+        },
+        {
+          "policy": "real_world_strict",
+          "quality_metrics": {
+            "total_proposals": 6,
+            "useful_proposals_total": 5,
+            "accepted_for_structural_eval": 5,
+            "useful_accepted": 5,
+            "useful_accepted_before_first_symbol": 5,
+            "false_accepts_before_first_symbol": 0,
+            "triage_precision": 1.0,
+            "useful_recall": 1.0,
+            "false_accept_rate": 0.0,
+            "abstain_count": 1
+          },
+          "runtime_metrics": {
+            "cycles_to_useful_outcome": 3,
+            "verifier_calls_to_useful_outcome": 3,
+            "contradiction_before_acceptance": 4.0,
+            "proposal_stage_cycles": 3,
+            "cycle_delta_from_no_proposals": 1,
+            "verifier_call_delta_from_no_proposals": 0,
+            "false_candidate_delta_from_no_proposals": 0,
+            "rollback_delta_from_no_proposals": 0
+          }
+        }
+      ]
+    },
+    "redislock_refresh": {
+      "pool_source": {
+        "mode": "loaded_fixed_pool",
+        "source_kind": "proposal_quality_summary",
+        "source_path": "artifacts\\real_world\\redislock_refresh_proposal_quality_summary.json",
+        "source_artifact_version": {
+          "phase": "real_world",
+          "timestamp_utc": "20260318T222027354226Z",
+          "git_sha": "4b3ad2a"
+        }
+      },
+      "recommended_policy": "real_world_strict",
+      "variants": [
+        {
+          "policy": "current",
+          "quality_metrics": {
+            "total_proposals": 7,
+            "useful_proposals_total": 4,
+            "accepted_for_structural_eval": 4,
+            "useful_accepted": 3,
+            "useful_accepted_before_first_symbol": 3,
+            "false_accepts_before_first_symbol": 1,
+            "triage_precision": 0.75,
+            "useful_recall": 0.75,
+            "false_accept_rate": 0.25,
+            "abstain_count": 0
+          },
+          "runtime_metrics": {
+            "cycles_to_useful_outcome": 3,
+            "verifier_calls_to_useful_outcome": 3,
+            "contradiction_before_acceptance": 4.0,
+            "proposal_stage_cycles": 3,
+            "cycle_delta_from_no_proposals": 1,
+            "verifier_call_delta_from_no_proposals": 0,
+            "false_candidate_delta_from_no_proposals": 0,
+            "rollback_delta_from_no_proposals": 0
+          }
+        },
+        {
+          "policy": "atom_shadow_reject",
+          "quality_metrics": {
+            "total_proposals": 7,
+            "useful_proposals_total": 4,
+            "accepted_for_structural_eval": 4,
+            "useful_accepted": 3,
+            "useful_accepted_before_first_symbol": 3,
+            "false_accepts_before_first_symbol": 1,
+            "triage_precision": 0.75,
+            "useful_recall": 0.75,
+            "false_accept_rate": 0.25,
+            "abstain_count": 0
+          },
+          "runtime_metrics": {
+            "cycles_to_useful_outcome": 3,
+            "verifier_calls_to_useful_outcome": 3,
+            "contradiction_before_acceptance": 4.0,
+            "proposal_stage_cycles": 3,
+            "cycle_delta_from_no_proposals": 1,
+            "verifier_call_delta_from_no_proposals": 0,
+            "false_candidate_delta_from_no_proposals": 0,
+            "rollback_delta_from_no_proposals": 0
+          }
+        },
+        {
+          "policy": "atom_shadow_reject_plus_abstain",
+          "quality_metrics": {
+            "total_proposals": 7,
+            "useful_proposals_total": 4,
+            "accepted_for_structural_eval": 4,
+            "useful_accepted": 3,
+            "useful_accepted_before_first_symbol": 3,
+            "false_accepts_before_first_symbol": 1,
+            "triage_precision": 0.75,
+            "useful_recall": 0.75,
+            "false_accept_rate": 0.25,
+            "abstain_count": 1
+          },
+          "runtime_metrics": {
+            "cycles_to_useful_outcome": 3,
+            "verifier_calls_to_useful_outcome": 3,
+            "contradiction_before_acceptance": 4.0,
+            "proposal_stage_cycles": 3,
+            "cycle_delta_from_no_proposals": 1,
+            "verifier_call_delta_from_no_proposals": 0,
+            "false_candidate_delta_from_no_proposals": 0,
+            "rollback_delta_from_no_proposals": 0
+          }
+        },
+        {
+          "policy": "real_world_strict",
+          "quality_metrics": {
+            "total_proposals": 7,
+            "useful_proposals_total": 4,
+            "accepted_for_structural_eval": 3,
+            "useful_accepted": 3,
+            "useful_accepted_before_first_symbol": 3,
+            "false_accepts_before_first_symbol": 0,
+            "triage_precision": 1.0,
+            "useful_recall": 0.75,
+            "false_accept_rate": 0.0,
+            "abstain_count": 3
+          },
+          "runtime_metrics": {
+            "cycles_to_useful_outcome": 3,
+            "verifier_calls_to_useful_outcome": 3,
+            "contradiction_before_acceptance": 4.0,
+            "proposal_stage_cycles": 3,
+            "cycle_delta_from_no_proposals": 1,
+            "verifier_call_delta_from_no_proposals": 0,
+            "false_candidate_delta_from_no_proposals": 0,
+            "rollback_delta_from_no_proposals": 0
+          }
+        }
+      ]
+    }
+  },
+  "policy_aggregate_rows": [
+    {
+      "policy": "current",
+      "families": [
+        {
+          "family": "etcd_raft_current_term",
+          "quality_metrics": {
+            "total_proposals": 6,
+            "useful_proposals_total": 5,
+            "accepted_for_structural_eval": 5,
+            "useful_accepted": 5,
+            "useful_accepted_before_first_symbol": 5,
+            "false_accepts_before_first_symbol": 0,
+            "triage_precision": 1.0,
+            "useful_recall": 1.0,
+            "false_accept_rate": 0.0,
+            "abstain_count": 0
+          },
+          "runtime_metrics": {
+            "cycles_to_useful_outcome": 3,
+            "verifier_calls_to_useful_outcome": 3,
+            "contradiction_before_acceptance": 4.0,
+            "proposal_stage_cycles": 3,
+            "cycle_delta_from_no_proposals": 1,
+            "verifier_call_delta_from_no_proposals": 0,
+            "false_candidate_delta_from_no_proposals": 0,
+            "rollback_delta_from_no_proposals": 0
+          }
+        },
+        {
+          "family": "raft_rs_read_index_current_term",
+          "quality_metrics": {
+            "total_proposals": 7,
+            "useful_proposals_total": 6,
+            "accepted_for_structural_eval": 6,
+            "useful_accepted": 5,
+            "useful_accepted_before_first_symbol": 5,
+            "false_accepts_before_first_symbol": 1,
+            "triage_precision": 0.8333333333333334,
+            "useful_recall": 0.8333333333333334,
+            "false_accept_rate": 0.16666666666666666,
+            "abstain_count": 0
+          },
+          "runtime_metrics": {
+            "cycles_to_useful_outcome": 3,
+            "verifier_calls_to_useful_outcome": 3,
+            "contradiction_before_acceptance": 4.0,
+            "proposal_stage_cycles": 3,
+            "cycle_delta_from_no_proposals": 1,
+            "verifier_call_delta_from_no_proposals": 0,
+            "false_candidate_delta_from_no_proposals": 0,
+            "rollback_delta_from_no_proposals": 0
+          }
+        },
+        {
+          "family": "redsync_mutex_extend",
+          "quality_metrics": {
+            "total_proposals": 6,
+            "useful_proposals_total": 5,
+            "accepted_for_structural_eval": 5,
+            "useful_accepted": 5,
+            "useful_accepted_before_first_symbol": 5,
+            "false_accepts_before_first_symbol": 0,
+            "triage_precision": 1.0,
+            "useful_recall": 1.0,
+            "false_accept_rate": 0.0,
+            "abstain_count": 0
+          },
+          "runtime_metrics": {
+            "cycles_to_useful_outcome": 3,
+            "verifier_calls_to_useful_outcome": 3,
+            "contradiction_before_acceptance": 4.0,
+            "proposal_stage_cycles": 3,
+            "cycle_delta_from_no_proposals": 1,
+            "verifier_call_delta_from_no_proposals": 0,
+            "false_candidate_delta_from_no_proposals": 0,
+            "rollback_delta_from_no_proposals": 0
+          }
+        },
+        {
+          "family": "redislock_refresh",
+          "quality_metrics": {
+            "total_proposals": 7,
+            "useful_proposals_total": 4,
+            "accepted_for_structural_eval": 4,
+            "useful_accepted": 3,
+            "useful_accepted_before_first_symbol": 3,
+            "false_accepts_before_first_symbol": 1,
+            "triage_precision": 0.75,
+            "useful_recall": 0.75,
+            "false_accept_rate": 0.25,
+            "abstain_count": 0
+          },
+          "runtime_metrics": {
+            "cycles_to_useful_outcome": 3,
+            "verifier_calls_to_useful_outcome": 3,
+            "contradiction_before_acceptance": 4.0,
+            "proposal_stage_cycles": 3,
+            "cycle_delta_from_no_proposals": 1,
+            "verifier_call_delta_from_no_proposals": 0,
+            "false_candidate_delta_from_no_proposals": 0,
+            "rollback_delta_from_no_proposals": 0
+          }
+        }
+      ],
+      "aggregate": {
+        "max_false_accept_rate": 0.25,
+        "mean_false_accept_rate": 0.10416666666666666,
+        "min_useful_recall": 0.75,
+        "mean_useful_recall": 0.8958333333333334,
+        "min_cycle_delta": 1,
+        "mean_cycle_delta": 1.0,
+        "max_cycles_to_useful_outcome": 3
+      }
+    },
+    {
+      "policy": "atom_shadow_reject",
+      "families": [
+        {
+          "family": "etcd_raft_current_term",
+          "quality_metrics": {
+            "total_proposals": 6,
+            "useful_proposals_total": 5,
+            "accepted_for_structural_eval": 5,
+            "useful_accepted": 5,
+            "useful_accepted_before_first_symbol": 5,
+            "false_accepts_before_first_symbol": 0,
+            "triage_precision": 1.0,
+            "useful_recall": 1.0,
+            "false_accept_rate": 0.0,
+            "abstain_count": 0
+          },
+          "runtime_metrics": {
+            "cycles_to_useful_outcome": 3,
+            "verifier_calls_to_useful_outcome": 3,
+            "contradiction_before_acceptance": 4.0,
+            "proposal_stage_cycles": 3,
+            "cycle_delta_from_no_proposals": 1,
+            "verifier_call_delta_from_no_proposals": 0,
+            "false_candidate_delta_from_no_proposals": 0,
+            "rollback_delta_from_no_proposals": 0
+          }
+        },
+        {
+          "family": "raft_rs_read_index_current_term",
+          "quality_metrics": {
+            "total_proposals": 7,
+            "useful_proposals_total": 6,
+            "accepted_for_structural_eval": 6,
+            "useful_accepted": 5,
+            "useful_accepted_before_first_symbol": 5,
+            "false_accepts_before_first_symbol": 1,
+            "triage_precision": 0.8333333333333334,
+            "useful_recall": 0.8333333333333334,
+            "false_accept_rate": 0.16666666666666666,
+            "abstain_count": 0
+          },
+          "runtime_metrics": {
+            "cycles_to_useful_outcome": 3,
+            "verifier_calls_to_useful_outcome": 3,
+            "contradiction_before_acceptance": 4.0,
+            "proposal_stage_cycles": 3,
+            "cycle_delta_from_no_proposals": 1,
+            "verifier_call_delta_from_no_proposals": 0,
+            "false_candidate_delta_from_no_proposals": 0,
+            "rollback_delta_from_no_proposals": 0
+          }
+        },
+        {
+          "family": "redsync_mutex_extend",
+          "quality_metrics": {
+            "total_proposals": 6,
+            "useful_proposals_total": 5,
+            "accepted_for_structural_eval": 5,
+            "useful_accepted": 5,
+            "useful_accepted_before_first_symbol": 5,
+            "false_accepts_before_first_symbol": 0,
+            "triage_precision": 1.0,
+            "useful_recall": 1.0,
+            "false_accept_rate": 0.0,
+            "abstain_count": 0
+          },
+          "runtime_metrics": {
+            "cycles_to_useful_outcome": 3,
+            "verifier_calls_to_useful_outcome": 3,
+            "contradiction_before_acceptance": 4.0,
+            "proposal_stage_cycles": 3,
+            "cycle_delta_from_no_proposals": 1,
+            "verifier_call_delta_from_no_proposals": 0,
+            "false_candidate_delta_from_no_proposals": 0,
+            "rollback_delta_from_no_proposals": 0
+          }
+        },
+        {
+          "family": "redislock_refresh",
+          "quality_metrics": {
+            "total_proposals": 7,
+            "useful_proposals_total": 4,
+            "accepted_for_structural_eval": 4,
+            "useful_accepted": 3,
+            "useful_accepted_before_first_symbol": 3,
+            "false_accepts_before_first_symbol": 1,
+            "triage_precision": 0.75,
+            "useful_recall": 0.75,
+            "false_accept_rate": 0.25,
+            "abstain_count": 0
+          },
+          "runtime_metrics": {
+            "cycles_to_useful_outcome": 3,
+            "verifier_calls_to_useful_outcome": 3,
+            "contradiction_before_acceptance": 4.0,
+            "proposal_stage_cycles": 3,
+            "cycle_delta_from_no_proposals": 1,
+            "verifier_call_delta_from_no_proposals": 0,
+            "false_candidate_delta_from_no_proposals": 0,
+            "rollback_delta_from_no_proposals": 0
+          }
+        }
+      ],
+      "aggregate": {
+        "max_false_accept_rate": 0.25,
+        "mean_false_accept_rate": 0.10416666666666666,
+        "min_useful_recall": 0.75,
+        "mean_useful_recall": 0.8958333333333334,
+        "min_cycle_delta": 1,
+        "mean_cycle_delta": 1.0,
+        "max_cycles_to_useful_outcome": 3
+      }
+    },
+    {
+      "policy": "atom_shadow_reject_plus_abstain",
+      "families": [
+        {
+          "family": "etcd_raft_current_term",
+          "quality_metrics": {
+            "total_proposals": 6,
+            "useful_proposals_total": 5,
+            "accepted_for_structural_eval": 5,
+            "useful_accepted": 5,
+            "useful_accepted_before_first_symbol": 5,
+            "false_accepts_before_first_symbol": 0,
+            "triage_precision": 1.0,
+            "useful_recall": 1.0,
+            "false_accept_rate": 0.0,
+            "abstain_count": 0
+          },
+          "runtime_metrics": {
+            "cycles_to_useful_outcome": 3,
+            "verifier_calls_to_useful_outcome": 3,
+            "contradiction_before_acceptance": 4.0,
+            "proposal_stage_cycles": 3,
+            "cycle_delta_from_no_proposals": 1,
+            "verifier_call_delta_from_no_proposals": 0,
+            "false_candidate_delta_from_no_proposals": 0,
+            "rollback_delta_from_no_proposals": 0
+          }
+        },
+        {
+          "family": "raft_rs_read_index_current_term",
+          "quality_metrics": {
+            "total_proposals": 7,
+            "useful_proposals_total": 6,
+            "accepted_for_structural_eval": 6,
+            "useful_accepted": 5,
+            "useful_accepted_before_first_symbol": 5,
+            "false_accepts_before_first_symbol": 1,
+            "triage_precision": 0.8333333333333334,
+            "useful_recall": 0.8333333333333334,
+            "false_accept_rate": 0.16666666666666666,
+            "abstain_count": 0
+          },
+          "runtime_metrics": {
+            "cycles_to_useful_outcome": 3,
+            "verifier_calls_to_useful_outcome": 3,
+            "contradiction_before_acceptance": 4.0,
+            "proposal_stage_cycles": 3,
+            "cycle_delta_from_no_proposals": 1,
+            "verifier_call_delta_from_no_proposals": 0,
+            "false_candidate_delta_from_no_proposals": 0,
+            "rollback_delta_from_no_proposals": 0
+          }
+        },
+        {
+          "family": "redsync_mutex_extend",
+          "quality_metrics": {
+            "total_proposals": 6,
+            "useful_proposals_total": 5,
+            "accepted_for_structural_eval": 5,
+            "useful_accepted": 5,
+            "useful_accepted_before_first_symbol": 5,
+            "false_accepts_before_first_symbol": 0,
+            "triage_precision": 1.0,
+            "useful_recall": 1.0,
+            "false_accept_rate": 0.0,
+            "abstain_count": 1
+          },
+          "runtime_metrics": {
+            "cycles_to_useful_outcome": 3,
+            "verifier_calls_to_useful_outcome": 3,
+            "contradiction_before_acceptance": 4.0,
+            "proposal_stage_cycles": 3,
+            "cycle_delta_from_no_proposals": 1,
+            "verifier_call_delta_from_no_proposals": 0,
+            "false_candidate_delta_from_no_proposals": 0,
+            "rollback_delta_from_no_proposals": 0
+          }
+        },
+        {
+          "family": "redislock_refresh",
+          "quality_metrics": {
+            "total_proposals": 7,
+            "useful_proposals_total": 4,
+            "accepted_for_structural_eval": 4,
+            "useful_accepted": 3,
+            "useful_accepted_before_first_symbol": 3,
+            "false_accepts_before_first_symbol": 1,
+            "triage_precision": 0.75,
+            "useful_recall": 0.75,
+            "false_accept_rate": 0.25,
+            "abstain_count": 1
+          },
+          "runtime_metrics": {
+            "cycles_to_useful_outcome": 3,
+            "verifier_calls_to_useful_outcome": 3,
+            "contradiction_before_acceptance": 4.0,
+            "proposal_stage_cycles": 3,
+            "cycle_delta_from_no_proposals": 1,
+            "verifier_call_delta_from_no_proposals": 0,
+            "false_candidate_delta_from_no_proposals": 0,
+            "rollback_delta_from_no_proposals": 0
+          }
+        }
+      ],
+      "aggregate": {
+        "max_false_accept_rate": 0.25,
+        "mean_false_accept_rate": 0.10416666666666666,
+        "min_useful_recall": 0.75,
+        "mean_useful_recall": 0.8958333333333334,
+        "min_cycle_delta": 1,
+        "mean_cycle_delta": 1.0,
+        "max_cycles_to_useful_outcome": 3
+      }
+    },
+    {
+      "policy": "real_world_strict",
+      "families": [
+        {
+          "family": "etcd_raft_current_term",
+          "quality_metrics": {
+            "total_proposals": 6,
+            "useful_proposals_total": 5,
+            "accepted_for_structural_eval": 5,
+            "useful_accepted": 5,
+            "useful_accepted_before_first_symbol": 5,
+            "false_accepts_before_first_symbol": 0,
+            "triage_precision": 1.0,
+            "useful_recall": 1.0,
+            "false_accept_rate": 0.0,
+            "abstain_count": 1
+          },
+          "runtime_metrics": {
+            "cycles_to_useful_outcome": 3,
+            "verifier_calls_to_useful_outcome": 3,
+            "contradiction_before_acceptance": 4.0,
+            "proposal_stage_cycles": 3,
+            "cycle_delta_from_no_proposals": 1,
+            "verifier_call_delta_from_no_proposals": 0,
+            "false_candidate_delta_from_no_proposals": 0,
+            "rollback_delta_from_no_proposals": 0
+          }
+        },
+        {
+          "family": "raft_rs_read_index_current_term",
+          "quality_metrics": {
+            "total_proposals": 7,
+            "useful_proposals_total": 6,
+            "accepted_for_structural_eval": 5,
+            "useful_accepted": 5,
+            "useful_accepted_before_first_symbol": 5,
+            "false_accepts_before_first_symbol": 0,
+            "triage_precision": 1.0,
+            "useful_recall": 0.8333333333333334,
+            "false_accept_rate": 0.0,
+            "abstain_count": 1
+          },
+          "runtime_metrics": {
+            "cycles_to_useful_outcome": 3,
+            "verifier_calls_to_useful_outcome": 3,
+            "contradiction_before_acceptance": 4.0,
+            "proposal_stage_cycles": 3,
+            "cycle_delta_from_no_proposals": 1,
+            "verifier_call_delta_from_no_proposals": 0,
+            "false_candidate_delta_from_no_proposals": 0,
+            "rollback_delta_from_no_proposals": 0
+          }
+        },
+        {
+          "family": "redsync_mutex_extend",
+          "quality_metrics": {
+            "total_proposals": 6,
+            "useful_proposals_total": 5,
+            "accepted_for_structural_eval": 5,
+            "useful_accepted": 5,
+            "useful_accepted_before_first_symbol": 5,
+            "false_accepts_before_first_symbol": 0,
+            "triage_precision": 1.0,
+            "useful_recall": 1.0,
+            "false_accept_rate": 0.0,
+            "abstain_count": 1
+          },
+          "runtime_metrics": {
+            "cycles_to_useful_outcome": 3,
+            "verifier_calls_to_useful_outcome": 3,
+            "contradiction_before_acceptance": 4.0,
+            "proposal_stage_cycles": 3,
+            "cycle_delta_from_no_proposals": 1,
+            "verifier_call_delta_from_no_proposals": 0,
+            "false_candidate_delta_from_no_proposals": 0,
+            "rollback_delta_from_no_proposals": 0
+          }
+        },
+        {
+          "family": "redislock_refresh",
+          "quality_metrics": {
+            "total_proposals": 7,
+            "useful_proposals_total": 4,
+            "accepted_for_structural_eval": 3,
+            "useful_accepted": 3,
+            "useful_accepted_before_first_symbol": 3,
+            "false_accepts_before_first_symbol": 0,
+            "triage_precision": 1.0,
+            "useful_recall": 0.75,
+            "false_accept_rate": 0.0,
+            "abstain_count": 3
+          },
+          "runtime_metrics": {
+            "cycles_to_useful_outcome": 3,
+            "verifier_calls_to_useful_outcome": 3,
+            "contradiction_before_acceptance": 4.0,
+            "proposal_stage_cycles": 3,
+            "cycle_delta_from_no_proposals": 1,
+            "verifier_call_delta_from_no_proposals": 0,
+            "false_candidate_delta_from_no_proposals": 0,
+            "rollback_delta_from_no_proposals": 0
+          }
+        }
+      ],
+      "aggregate": {
+        "max_false_accept_rate": 0.0,
+        "mean_false_accept_rate": 0.0,
+        "min_useful_recall": 0.75,
+        "mean_useful_recall": 0.8958333333333334,
+        "min_cycle_delta": 1,
+        "mean_cycle_delta": 1.0,
+        "max_cycles_to_useful_outcome": 3
+      }
+    }
+  ],
+  "selection": {
+    "recommended_global_policy": "real_world_strict",
+    "selection_priority": [
+      "max_false_accept_rate",
+      "min_useful_recall",
+      "min_cycle_delta",
+      "mean_false_accept_rate",
+      "max_cycles_to_useful_outcome"
+    ]
+  },
+  "checks": {
+    "all_four_families_replayed": true,
+    "no_live_generation_used": true,
+    "recommended_policy_preserves_cycle_gain": true,
+    "recommended_policy_improves_false_accept_bound": true
+  }
+}

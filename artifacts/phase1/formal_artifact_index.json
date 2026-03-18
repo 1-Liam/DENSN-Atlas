@@ -1,0 +1,44 @@
+{
+  "artifact_version": {
+    "phase": "phase1",
+    "timestamp_utc": "20260318T201346934342Z",
+    "git_sha": "ad9f6a1"
+  },
+  "files": {
+    "formal_train_graph": {
+      "phase": "phase1",
+      "timestamp_utc": "20260318T201346934342Z",
+      "git_sha": "ad9f6a1",
+      "stable_path": "artifacts\\phase1\\formal_train_graph.json",
+      "versioned_path": "artifacts\\phase1\\formal_train_graph.phase1.20260318T201346934342Z.ad9f6a1.json"
+    },
+    "formal_train_telemetry": {
+      "phase": "phase1",
+      "timestamp_utc": "20260318T201346934342Z",
+      "git_sha": "ad9f6a1",
+      "stable_path": "artifacts\\phase1\\formal_train_telemetry.jsonl",
+      "versioned_path": "artifacts\\phase1\\formal_train_telemetry.phase1.20260318T201346934342Z.ad9f6a1.jsonl"
+    },
+    "formal_registry": {
+      "phase": "phase1",
+      "timestamp_utc": "20260318T201346934342Z",
+      "git_sha": "ad9f6a1",
+      "stable_path": "artifacts\\phase1\\formal_registry.json",
+      "versioned_path": "artifacts\\phase1\\formal_registry.phase1.20260318T201346934342Z.ad9f6a1.json"
+    },
+    "formal_train_telemetry_summary": {
+      "phase": "phase1",
+      "timestamp_utc": "20260318T201346934342Z",
+      "git_sha": "ad9f6a1",
+      "stable_path": "artifacts\\phase1\\formal_train_telemetry_summary.json",
+      "versioned_path": "artifacts\\phase1\\formal_train_telemetry_summary.phase1.20260318T201346934342Z.ad9f6a1.json"
+    },
+    "formal_summary": {
+      "phase": "phase1",
+      "timestamp_utc": "20260318T201346934342Z",
+      "git_sha": "ad9f6a1",
+      "stable_path": "artifacts\\phase1\\formal_summary.json",
+      "versioned_path": "artifacts\\phase1\\formal_summary.phase1.20260318T201346934342Z.ad9f6a1.json"
+    }
+  }
+}

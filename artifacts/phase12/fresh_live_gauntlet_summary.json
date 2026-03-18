@@ -1,0 +1,2375 @@
+{
+  "artifact_version": {
+    "phase": "phase7",
+    "timestamp_utc": "20260318T201343225480Z",
+    "git_sha": "ad9f6a1"
+  },
+  "proof_contract": {
+    "core_mode": "core_frozen",
+    "core_api_version": "phase5_frozen_v1",
+    "expected_core_api_version": "phase5_frozen_v1",
+    "migration_note": null,
+    "proposal_adapter": {
+      "adapters_used": [
+        "ArtifactHeuristicTransformerAdapter",
+        "GroqChatTransformerAdapter",
+        "none"
+      ]
+    },
+    "verifier_stack": [
+      "lease_lock_verifier",
+      "replication_barrier_verifier",
+      "role_count_verifier",
+      "session_epoch_verifier",
+      "trace_contract_verifier",
+      "vote_majority_commit_verifier"
+    ]
+  },
+  "rows": [
+    {
+      "cycles_to_first_accepted_symbol": 3,
+      "verifier_calls_to_acceptance": 1,
+      "rollback_count": 0,
+      "retirement_count": 0,
+      "false_candidate_count": 0,
+      "contradiction_before_acceptance": 4.0,
+      "proposal_adapter": "GroqChatTransformerAdapter",
+      "system": "densn_live",
+      "family": "protocol_guard",
+      "target_family": "lease_lock",
+      "case_kind": "positive_transfer",
+      "mapping_class": "role_remap",
+      "baseline_final_psi": 10.6,
+      "transfer_final_psi": 0.0,
+      "contradiction_gain": 10.6,
+      "verifier_status": "pass",
+      "verifier_reason": null,
+      "verifier_results": [
+        {
+          "status": "pass",
+          "passed": true,
+          "failed": false,
+          "counterexample": null,
+          "cost": 0.058777700003702193,
+          "artifact_ids": [],
+          "verifier_name": "lease_lock_verifier",
+          "details": {
+            "manifest_path": "fixtures\\lease_lock\\target\\manifest.json",
+            "source_path": "fixtures\\lease_lock\\target\\validator.py",
+            "valid_trace_count": 2,
+            "invalid_trace_count": 3,
+            "source_contains_explicit_lease_live": false,
+            "command": [
+              "python",
+              "verifiers\\lease_lock_verifier.py"
+            ],
+            "returncode": 0
+          }
+        },
+        {
+          "status": "pass",
+          "passed": true,
+          "failed": false,
+          "counterexample": null,
+          "cost": 3.770002513192594e-05,
+          "artifact_ids": [],
+          "verifier_name": "role_count_verifier",
+          "details": {
+            "parent_roles": {
+              "open": 1,
+              "close": 1
+            },
+            "blanket_roles": {
+              "write": 3
+            },
+            "expected_parent": {
+              "open": 1,
+              "close": 1
+            },
+            "expected_blanket": {
+              "write": 2
+            }
+          }
+        },
+        {
+          "status": "pass",
+          "passed": true,
+          "failed": false,
+          "counterexample": null,
+          "cost": 0.00014519999967887998,
+          "artifact_ids": [],
+          "verifier_name": "trace_contract_verifier",
+          "details": {
+            "manifest_path": "fixtures\\lease_lock\\target\\manifest.json",
+            "trace_contract_type": "window_guard"
+          }
+        }
+      ],
+      "verifier_stack": [
+        {
+          "claim_kind": "lease_lock_invariant",
+          "verifier_type": "SubprocessVerifier",
+          "command": [
+            "python",
+            "verifiers\\lease_lock_verifier.py"
+          ],
+          "cwd": ".",
+          "timeout_seconds": 30.0
+        },
+        {
+          "claim_kind": "lease_lock_invariant",
+          "verifier_type": "RoleCountVerifier"
+        },
+        {
+          "claim_kind": "lease_lock_invariant",
+          "verifier_type": "TraceContractVerifier"
+        }
+      ],
+      "accepted_interface_is_constant": false,
+      "artifact_version": {
+        "phase": "phase7",
+        "timestamp_utc": "20260318T201343225480Z",
+        "git_sha": "ad9f6a1"
+      },
+      "git_sha": "ad9f6a1",
+      "reuse_application_count": 1,
+      "mapping_confidence": 0.85,
+      "positive_transfer": true,
+      "cycles_to_useful_outcome": 3,
+      "useful_outcome_kind": "positive_transfer"
+    },
+    {
+      "cycles_to_first_accepted_symbol": 3,
+      "verifier_calls_to_acceptance": 1,
+      "rollback_count": 0,
+      "retirement_count": 0,
+      "false_candidate_count": 0,
+      "contradiction_before_acceptance": 4.0,
+      "proposal_adapter": "GroqChatTransformerAdapter",
+      "system": "densn_live",
+      "family": "protocol_guard",
+      "target_family": "session_epoch",
+      "case_kind": "positive_transfer",
+      "mapping_class": "role_remap",
+      "baseline_final_psi": 10.6,
+      "transfer_final_psi": 0.0,
+      "contradiction_gain": 10.6,
+      "verifier_status": "pass",
+      "verifier_reason": null,
+      "verifier_results": [
+        {
+          "status": "pass",
+          "passed": true,
+          "failed": false,
+          "counterexample": null,
+          "cost": 0.05827459998545237,
+          "artifact_ids": [],
+          "verifier_name": "session_epoch_verifier",
+          "details": {
+            "manifest_path": "fixtures\\session_epoch\\target\\manifest.json",
+            "source_path": "fixtures\\session_epoch\\target\\validator.py",
+            "valid_trace_count": 2,
+            "invalid_trace_count": 3,
+            "source_contains_explicit_epoch_live": false,
+            "command": [
+              "python",
+              "verifiers\\session_epoch_verifier.py"
+            ],
+            "returncode": 0
+          }
+        },
+        {
+          "status": "pass",
+          "passed": true,
+          "failed": false,
+          "counterexample": null,
+          "cost": 6.469999789260328e-05,
+          "artifact_ids": [],
+          "verifier_name": "role_count_verifier",
+          "details": {
+            "parent_roles": {
+              "open": 1,
+              "close": 1
+            },
+            "blanket_roles": {
+              "write": 4
+            },
+            "expected_parent": {
+              "open": 1,
+              "close": 1
+            },
+            "expected_blanket": {
+              "write": 2
+            }
+          }
+        },
+        {
+          "status": "pass",
+          "passed": true,
+          "failed": false,
+          "counterexample": null,
+          "cost": 0.0003369000041857362,
+          "artifact_ids": [],
+          "verifier_name": "trace_contract_verifier",
+          "details": {
+            "manifest_path": "fixtures\\session_epoch\\target\\manifest.json",
+            "trace_contract_type": "window_guard"
+          }
+        }
+      ],
+      "verifier_stack": [
+        {
+          "claim_kind": "session_epoch_invariant",
+          "verifier_type": "SubprocessVerifier",
+          "command": [
+            "python",
+            "verifiers\\session_epoch_verifier.py"
+          ],
+          "cwd": ".",
+          "timeout_seconds": 30.0
+        },
+        {
+          "claim_kind": "session_epoch_invariant",
+          "verifier_type": "RoleCountVerifier"
+        },
+        {
+          "claim_kind": "session_epoch_invariant",
+          "verifier_type": "TraceContractVerifier"
+        }
+      ],
+      "accepted_interface_is_constant": false,
+      "artifact_version": {
+        "phase": "phase7",
+        "timestamp_utc": "20260318T201343225480Z",
+        "git_sha": "ad9f6a1"
+      },
+      "git_sha": "ad9f6a1",
+      "reuse_application_count": 1,
+      "mapping_confidence": 0.85,
+      "positive_transfer": true,
+      "cycles_to_useful_outcome": 3,
+      "useful_outcome_kind": "positive_transfer"
+    },
+    {
+      "cycles_to_first_accepted_symbol": 3,
+      "verifier_calls_to_acceptance": 1,
+      "rollback_count": 0,
+      "retirement_count": 0,
+      "false_candidate_count": 0,
+      "contradiction_before_acceptance": 4.0,
+      "proposal_adapter": "GroqChatTransformerAdapter",
+      "system": "densn_live",
+      "family": "protocol_guard",
+      "target_family": "lease_lock",
+      "case_kind": "negative_transfer",
+      "mapping_class": "role_remap",
+      "baseline_final_psi": 10.6,
+      "transfer_final_psi": 0.0,
+      "contradiction_gain": 10.6,
+      "verifier_status": "fail",
+      "verifier_reason": "missing_epoch_blanket_role",
+      "verifier_results": [
+        {
+          "status": "fail",
+          "passed": false,
+          "failed": true,
+          "counterexample": {
+            "reason": "missing_epoch_blanket_role",
+            "blanket_roles": {
+              "write": 3
+            }
+          },
+          "cost": 0.0563442999846302,
+          "artifact_ids": [],
+          "verifier_name": "lease_lock_verifier",
+          "details": {
+            "manifest_path": "fixtures\\lease_lock\\negative_epoch\\manifest.json",
+            "command": [
+              "python",
+              "verifiers\\lease_lock_verifier.py"
+            ],
+            "returncode": 0
+          }
+        },
+        {
+          "status": "pass",
+          "passed": true,
+          "failed": false,
+          "counterexample": null,
+          "cost": 3.980001201853156e-05,
+          "artifact_ids": [],
+          "verifier_name": "role_count_verifier",
+          "details": {
+            "parent_roles": {
+              "open": 1,
+              "close": 1
+            },
+            "blanket_roles": {
+              "write": 3
+            },
+            "expected_parent": {
+              "open": 1,
+              "close": 1
+            },
+            "expected_blanket": {
+              "write": 2
+            }
+          }
+        },
+        {
+          "status": "fail",
+          "passed": false,
+          "failed": true,
+          "counterexample": {
+            "reason": "valid_trace_rejected"
+          },
+          "cost": 0.0002865999995265156,
+          "artifact_ids": [],
+          "verifier_name": "trace_contract_verifier",
+          "details": {
+            "manifest_path": "fixtures\\lease_lock\\negative_epoch\\manifest.json"
+          }
+        }
+      ],
+      "verifier_stack": [
+        {
+          "claim_kind": "lease_lock_invariant",
+          "verifier_type": "SubprocessVerifier",
+          "command": [
+            "python",
+            "verifiers\\lease_lock_verifier.py"
+          ],
+          "cwd": ".",
+          "timeout_seconds": 30.0
+        },
+        {
+          "claim_kind": "lease_lock_invariant",
+          "verifier_type": "RoleCountVerifier"
+        },
+        {
+          "claim_kind": "lease_lock_invariant",
+          "verifier_type": "TraceContractVerifier"
+        }
+      ],
+      "accepted_interface_is_constant": false,
+      "artifact_version": {
+        "phase": "phase7",
+        "timestamp_utc": "20260318T201343225480Z",
+        "git_sha": "ad9f6a1"
+      },
+      "git_sha": "ad9f6a1",
+      "reuse_application_count": 1,
+      "mapping_confidence": 0.85,
+      "positive_transfer": false,
+      "cycles_to_useful_outcome": 3,
+      "useful_outcome_kind": "positive_transfer"
+    },
+    {
+      "cycles_to_first_accepted_symbol": 3,
+      "verifier_calls_to_acceptance": 1,
+      "rollback_count": 0,
+      "retirement_count": 0,
+      "false_candidate_count": 0,
+      "contradiction_before_acceptance": 4.0,
+      "proposal_adapter": "GroqChatTransformerAdapter",
+      "system": "densn_live",
+      "family": "quorum_commit",
+      "target_family": "vote_majority_commit",
+      "case_kind": "positive_transfer",
+      "mapping_class": "role_remap",
+      "baseline_final_psi": 10.6,
+      "transfer_final_psi": 0.0,
+      "contradiction_gain": 10.6,
+      "verifier_status": "pass",
+      "verifier_reason": null,
+      "verifier_results": [
+        {
+          "status": "pass",
+          "passed": true,
+          "failed": false,
+          "counterexample": null,
+          "cost": 0.058141899993643165,
+          "artifact_ids": [],
+          "verifier_name": "vote_majority_commit_verifier",
+          "details": {
+            "manifest_path": "fixtures\\vote_majority_commit\\target\\manifest.json",
+            "source_path": "fixtures\\vote_majority_commit\\target\\validator.py",
+            "valid_trace_count": 2,
+            "invalid_trace_count": 3,
+            "source_contains_explicit_majority_ready": false,
+            "command": [
+              "python",
+              "verifiers\\vote_majority_commit_verifier.py"
+            ],
+            "returncode": 0
+          }
+        },
+        {
+          "status": "pass",
+          "passed": true,
+          "failed": false,
+          "counterexample": null,
+          "cost": 2.7400004910305142e-05,
+          "artifact_ids": [],
+          "verifier_name": "role_count_verifier",
+          "details": {
+            "parent_roles": {
+              "commit": 1,
+              "pending": 1
+            },
+            "blanket_roles": {
+              "ack": 3,
+              "clear": 1,
+              "prepare": 1
+            },
+            "expected_parent": {
+              "commit": 1,
+              "pending": 1
+            },
+            "expected_blanket": {
+              "ack": 2,
+              "clear": 1,
+              "prepare": 1
+            }
+          }
+        },
+        {
+          "status": "pass",
+          "passed": true,
+          "failed": false,
+          "counterexample": null,
+          "cost": 0.00017079999088309705,
+          "artifact_ids": [],
+          "verifier_name": "trace_contract_verifier",
+          "details": {
+            "manifest_path": "fixtures\\vote_majority_commit\\target\\manifest.json",
+            "trace_contract_type": "gated_commit"
+          }
+        }
+      ],
+      "verifier_stack": [
+        {
+          "claim_kind": "vote_majority_commit_invariant",
+          "verifier_type": "SubprocessVerifier",
+          "command": [
+            "python",
+            "verifiers\\vote_majority_commit_verifier.py"
+          ],
+          "cwd": ".",
+          "timeout_seconds": 30.0
+        },
+        {
+          "claim_kind": "vote_majority_commit_invariant",
+          "verifier_type": "RoleCountVerifier"
+        },
+        {
+          "claim_kind": "vote_majority_commit_invariant",
+          "verifier_type": "TraceContractVerifier"
+        }
+      ],
+      "accepted_interface_is_constant": false,
+      "artifact_version": {
+        "phase": "phase7",
+        "timestamp_utc": "20260318T201343225480Z",
+        "git_sha": "ad9f6a1"
+      },
+      "git_sha": "ad9f6a1",
+      "reuse_application_count": 1,
+      "mapping_confidence": 0.85,
+      "positive_transfer": true,
+      "cycles_to_useful_outcome": 3,
+      "useful_outcome_kind": "positive_transfer"
+    },
+    {
+      "cycles_to_first_accepted_symbol": 3,
+      "verifier_calls_to_acceptance": 1,
+      "rollback_count": 0,
+      "retirement_count": 0,
+      "false_candidate_count": 0,
+      "contradiction_before_acceptance": 4.0,
+      "proposal_adapter": "GroqChatTransformerAdapter",
+      "system": "densn_live",
+      "family": "quorum_commit",
+      "target_family": "replication_barrier",
+      "case_kind": "positive_transfer",
+      "mapping_class": "role_remap",
+      "baseline_final_psi": 10.6,
+      "transfer_final_psi": 0.0,
+      "contradiction_gain": 10.6,
+      "verifier_status": "pass",
+      "verifier_reason": null,
+      "verifier_results": [
+        {
+          "status": "pass",
+          "passed": true,
+          "failed": false,
+          "counterexample": null,
+          "cost": 0.056575700000394136,
+          "artifact_ids": [],
+          "verifier_name": "replication_barrier_verifier",
+          "details": {
+            "manifest_path": "fixtures\\replication_barrier\\target\\manifest.json",
+            "source_path": "fixtures\\replication_barrier\\target\\validator.py",
+            "valid_trace_count": 2,
+            "invalid_trace_count": 3,
+            "source_contains_explicit_barrier_ready": false,
+            "command": [
+              "python",
+              "verifiers\\replication_barrier_verifier.py"
+            ],
+            "returncode": 0
+          }
+        },
+        {
+          "status": "pass",
+          "passed": true,
+          "failed": false,
+          "counterexample": null,
+          "cost": 2.609999501146376e-05,
+          "artifact_ids": [],
+          "verifier_name": "role_count_verifier",
+          "details": {
+            "parent_roles": {
+              "commit": 1,
+              "pending": 1
+            },
+            "blanket_roles": {
+              "ack": 4,
+              "clear": 1,
+              "prepare": 1
+            },
+            "expected_parent": {
+              "commit": 1,
+              "pending": 1
+            },
+            "expected_blanket": {
+              "ack": 2,
+              "clear": 1,
+              "prepare": 1
+            }
+          }
+        },
+        {
+          "status": "pass",
+          "passed": true,
+          "failed": false,
+          "counterexample": null,
+          "cost": 0.00016739999409765005,
+          "artifact_ids": [],
+          "verifier_name": "trace_contract_verifier",
+          "details": {
+            "manifest_path": "fixtures\\replication_barrier\\target\\manifest.json",
+            "trace_contract_type": "gated_commit"
+          }
+        }
+      ],
+      "verifier_stack": [
+        {
+          "claim_kind": "replication_barrier_invariant",
+          "verifier_type": "SubprocessVerifier",
+          "command": [
+            "python",
+            "verifiers\\replication_barrier_verifier.py"
+          ],
+          "cwd": ".",
+          "timeout_seconds": 30.0
+        },
+        {
+          "claim_kind": "replication_barrier_invariant",
+          "verifier_type": "RoleCountVerifier"
+        },
+        {
+          "claim_kind": "replication_barrier_invariant",
+          "verifier_type": "TraceContractVerifier"
+        }
+      ],
+      "accepted_interface_is_constant": false,
+      "artifact_version": {
+        "phase": "phase7",
+        "timestamp_utc": "20260318T201343225480Z",
+        "git_sha": "ad9f6a1"
+      },
+      "git_sha": "ad9f6a1",
+      "reuse_application_count": 1,
+      "mapping_confidence": 0.85,
+      "positive_transfer": true,
+      "cycles_to_useful_outcome": 3,
+      "useful_outcome_kind": "positive_transfer"
+    },
+    {
+      "cycles_to_first_accepted_symbol": 3,
+      "verifier_calls_to_acceptance": 1,
+      "rollback_count": 0,
+      "retirement_count": 0,
+      "false_candidate_count": 0,
+      "contradiction_before_acceptance": 4.0,
+      "proposal_adapter": "GroqChatTransformerAdapter",
+      "system": "densn_live",
+      "family": "quorum_commit",
+      "target_family": "quorum_commit",
+      "case_kind": "negative_transfer",
+      "mapping_class": "exact_blanket_expansion",
+      "baseline_final_psi": 10.6,
+      "transfer_final_psi": 0.0,
+      "contradiction_gain": 10.6,
+      "verifier_status": "fail",
+      "verifier_reason": "valid_trace_rejected",
+      "verifier_results": [
+        {
+          "status": "fail",
+          "passed": false,
+          "failed": true,
+          "counterexample": {
+            "reason": "valid_trace_rejected",
+            "trace": [
+              "PREPARE",
+              "CLEAR",
+              "ACK_1",
+              "ACK_2",
+              "STABLE",
+              "COMMIT"
+            ]
+          },
+          "cost": 0.054895399982342497,
+          "artifact_ids": [],
+          "verifier_name": "vote_majority_commit_verifier",
+          "details": {
+            "manifest_path": "fixtures\\quorum_commit\\negative_commit_strict_3\\manifest.json",
+            "command": [
+              "python",
+              "verifiers\\vote_majority_commit_verifier.py"
+            ],
+            "returncode": 0
+          }
+        },
+        {
+          "status": "pass",
+          "passed": true,
+          "failed": false,
+          "counterexample": null,
+          "cost": 2.5899993488565087e-05,
+          "artifact_ids": [],
+          "verifier_name": "role_count_verifier",
+          "details": {
+            "parent_roles": {
+              "commit": 1,
+              "pending": 1
+            },
+            "blanket_roles": {
+              "ack": 2,
+              "clear": 1,
+              "prepare": 1
+            },
+            "expected_parent": {
+              "commit": 1,
+              "pending": 1
+            },
+            "expected_blanket": {
+              "ack": 2,
+              "clear": 1,
+              "prepare": 1
+            }
+          }
+        },
+        {
+          "status": "pass",
+          "passed": true,
+          "failed": false,
+          "counterexample": null,
+          "cost": 0.00017400001524947584,
+          "artifact_ids": [],
+          "verifier_name": "trace_contract_verifier",
+          "details": {
+            "manifest_path": "fixtures\\quorum_commit\\negative_commit_strict_3\\manifest.json",
+            "trace_contract_type": "gated_commit"
+          }
+        }
+      ],
+      "verifier_stack": [
+        {
+          "claim_kind": "vote_majority_commit_invariant",
+          "verifier_type": "SubprocessVerifier",
+          "command": [
+            "python",
+            "verifiers\\vote_majority_commit_verifier.py"
+          ],
+          "cwd": ".",
+          "timeout_seconds": 30.0
+        },
+        {
+          "claim_kind": "vote_majority_commit_invariant",
+          "verifier_type": "RoleCountVerifier"
+        },
+        {
+          "claim_kind": "vote_majority_commit_invariant",
+          "verifier_type": "TraceContractVerifier"
+        }
+      ],
+      "accepted_interface_is_constant": false,
+      "artifact_version": {
+        "phase": "phase7",
+        "timestamp_utc": "20260318T201343225480Z",
+        "git_sha": "ad9f6a1"
+      },
+      "git_sha": "ad9f6a1",
+      "reuse_application_count": 1,
+      "mapping_confidence": 1.0,
+      "positive_transfer": false,
+      "cycles_to_useful_outcome": 3,
+      "useful_outcome_kind": "positive_transfer"
+    },
+    {
+      "cycles_to_first_accepted_symbol": 3,
+      "verifier_calls_to_acceptance": 1,
+      "rollback_count": 0,
+      "retirement_count": 0,
+      "false_candidate_count": 0,
+      "contradiction_before_acceptance": 4.0,
+      "proposal_adapter": "GroqChatTransformerAdapter",
+      "system": "densn_live",
+      "family": "protocol_guard",
+      "target_family": "vote_majority_commit",
+      "case_kind": "cross_ladder_invalid",
+      "mapping_class": "invalid_transfer",
+      "baseline_final_psi": 10.6,
+      "transfer_final_psi": 10.6,
+      "contradiction_gain": 0.0,
+      "verifier_status": "fail",
+      "verifier_reason": "missing_parent_roles",
+      "verifier_results": [
+        {
+          "status": "fail",
+          "passed": false,
+          "failed": true,
+          "counterexample": {
+            "reason": "missing_parent_roles",
+            "parent_roles": {
+              "open": 1,
+              "close": 1
+            }
+          },
+          "cost": 0.05142199998954311,
+          "artifact_ids": [],
+          "verifier_name": "vote_majority_commit_verifier",
+          "details": {
+            "manifest_path": "fixtures\\vote_majority_commit\\target\\manifest.json",
+            "command": [
+              "python",
+              "verifiers\\vote_majority_commit_verifier.py"
+            ],
+            "returncode": 0
+          }
+        },
+        {
+          "status": "pass",
+          "passed": true,
+          "failed": false,
+          "counterexample": null,
+          "cost": 2.3200002033263445e-05,
+          "artifact_ids": [],
+          "verifier_name": "role_count_verifier",
+          "details": {
+            "parent_roles": {
+              "open": 1,
+              "close": 1
+            },
+            "blanket_roles": {
+              "write": 2
+            },
+            "expected_parent": {
+              "open": 1,
+              "close": 1
+            },
+            "expected_blanket": {
+              "write": 2
+            }
+          }
+        },
+        {
+          "status": "pass",
+          "passed": true,
+          "failed": false,
+          "counterexample": null,
+          "cost": 0.00014069999451749027,
+          "artifact_ids": [],
+          "verifier_name": "trace_contract_verifier",
+          "details": {
+            "manifest_path": "fixtures\\vote_majority_commit\\target\\manifest.json",
+            "trace_contract_type": "gated_commit"
+          }
+        }
+      ],
+      "verifier_stack": [
+        {
+          "claim_kind": "vote_majority_commit_invariant",
+          "verifier_type": "SubprocessVerifier",
+          "command": [
+            "python",
+            "verifiers\\vote_majority_commit_verifier.py"
+          ],
+          "cwd": ".",
+          "timeout_seconds": 30.0
+        },
+        {
+          "claim_kind": "vote_majority_commit_invariant",
+          "verifier_type": "RoleCountVerifier"
+        },
+        {
+          "claim_kind": "vote_majority_commit_invariant",
+          "verifier_type": "TraceContractVerifier"
+        }
+      ],
+      "accepted_interface_is_constant": false,
+      "artifact_version": {
+        "phase": "phase7",
+        "timestamp_utc": "20260318T201343225480Z",
+        "git_sha": "ad9f6a1"
+      },
+      "git_sha": "ad9f6a1",
+      "reuse_application_count": 0,
+      "mapping_confidence": 0.0,
+      "positive_transfer": false
+    },
+    {
+      "cycles_to_first_accepted_symbol": 3,
+      "verifier_calls_to_acceptance": 1,
+      "rollback_count": 0,
+      "retirement_count": 0,
+      "false_candidate_count": 0,
+      "contradiction_before_acceptance": 4.0,
+      "proposal_adapter": "GroqChatTransformerAdapter",
+      "system": "densn_live",
+      "family": "quorum_commit",
+      "target_family": "session_epoch",
+      "case_kind": "cross_ladder_invalid",
+      "mapping_class": "invalid_transfer",
+      "baseline_final_psi": 10.6,
+      "transfer_final_psi": 10.6,
+      "contradiction_gain": 0.0,
+      "verifier_status": "fail",
+      "verifier_reason": "missing_parent_roles",
+      "verifier_results": [
+        {
+          "status": "fail",
+          "passed": false,
+          "failed": true,
+          "counterexample": {
+            "reason": "missing_parent_roles",
+            "parent_roles": {
+              "commit": 1,
+              "pending": 1
+            }
+          },
+          "cost": 0.05396759998984635,
+          "artifact_ids": [],
+          "verifier_name": "session_epoch_verifier",
+          "details": {
+            "manifest_path": "fixtures\\session_epoch\\target\\manifest.json",
+            "command": [
+              "python",
+              "verifiers\\session_epoch_verifier.py"
+            ],
+            "returncode": 0
+          }
+        },
+        {
+          "status": "pass",
+          "passed": true,
+          "failed": false,
+          "counterexample": null,
+          "cost": 2.400000812485814e-05,
+          "artifact_ids": [],
+          "verifier_name": "role_count_verifier",
+          "details": {
+            "parent_roles": {
+              "commit": 1,
+              "pending": 1
+            },
+            "blanket_roles": {
+              "ack": 2,
+              "clear": 1,
+              "prepare": 1
+            },
+            "expected_parent": {
+              "commit": 1,
+              "pending": 1
+            },
+            "expected_blanket": {
+              "ack": 2,
+              "clear": 1,
+              "prepare": 1
+            }
+          }
+        },
+        {
+          "status": "pass",
+          "passed": true,
+          "failed": false,
+          "counterexample": null,
+          "cost": 0.00014609997742809355,
+          "artifact_ids": [],
+          "verifier_name": "trace_contract_verifier",
+          "details": {
+            "manifest_path": "fixtures\\session_epoch\\target\\manifest.json",
+            "trace_contract_type": "window_guard"
+          }
+        }
+      ],
+      "verifier_stack": [
+        {
+          "claim_kind": "session_epoch_invariant",
+          "verifier_type": "SubprocessVerifier",
+          "command": [
+            "python",
+            "verifiers\\session_epoch_verifier.py"
+          ],
+          "cwd": ".",
+          "timeout_seconds": 30.0
+        },
+        {
+          "claim_kind": "session_epoch_invariant",
+          "verifier_type": "RoleCountVerifier"
+        },
+        {
+          "claim_kind": "session_epoch_invariant",
+          "verifier_type": "TraceContractVerifier"
+        }
+      ],
+      "accepted_interface_is_constant": false,
+      "artifact_version": {
+        "phase": "phase7",
+        "timestamp_utc": "20260318T201343225480Z",
+        "git_sha": "ad9f6a1"
+      },
+      "git_sha": "ad9f6a1",
+      "reuse_application_count": 0,
+      "mapping_confidence": 0.0,
+      "positive_transfer": false
+    },
+    {
+      "cycles_to_first_accepted_symbol": null,
+      "verifier_calls_to_acceptance": 3,
+      "rollback_count": 0,
+      "retirement_count": 0,
+      "false_candidate_count": 0,
+      "contradiction_before_acceptance": null,
+      "system": "live_model_tools_no_ontology",
+      "family": "protocol_guard",
+      "target_family": "lease_lock",
+      "case_kind": "baseline_transfer",
+      "mapping_class": "direct_model_hypothesis",
+      "baseline_final_psi": 10.6,
+      "transfer_final_psi": 10.6,
+      "contradiction_gain": 0.0,
+      "verifier_status": "pass",
+      "verifier_reason": null,
+      "verifier_results": [
+        {
+          "status": "pass",
+          "passed": true,
+          "failed": false,
+          "counterexample": null,
+          "cost": 0.05897689997800626,
+          "artifact_ids": [],
+          "verifier_name": "lease_lock_verifier",
+          "details": {
+            "manifest_path": "fixtures\\lease_lock\\target\\manifest.json",
+            "source_path": "fixtures\\lease_lock\\target\\validator.py",
+            "valid_trace_count": 2,
+            "invalid_trace_count": 3,
+            "source_contains_explicit_lease_live": false,
+            "command": [
+              "python",
+              "verifiers\\lease_lock_verifier.py"
+            ],
+            "returncode": 0
+          }
+        },
+        {
+          "status": "pass",
+          "passed": true,
+          "failed": false,
+          "counterexample": null,
+          "cost": 2.81000102404505e-05,
+          "artifact_ids": [],
+          "verifier_name": "role_count_verifier",
+          "details": {
+            "parent_roles": {
+              "open": 1,
+              "close": 1
+            },
+            "blanket_roles": {
+              "write": 1,
+              "pending": 1
+            },
+            "expected_parent": {
+              "open": 1,
+              "close": 1
+            },
+            "expected_blanket": {
+              "write": 1,
+              "pending": 1
+            }
+          }
+        },
+        {
+          "status": "pass",
+          "passed": true,
+          "failed": false,
+          "counterexample": null,
+          "cost": 0.00018339999951422215,
+          "artifact_ids": [],
+          "verifier_name": "trace_contract_verifier",
+          "details": {
+            "manifest_path": "fixtures\\lease_lock\\target\\manifest.json",
+            "trace_contract_type": "window_guard"
+          }
+        }
+      ],
+      "verifier_stack": [
+        {
+          "claim_kind": "lease_lock_invariant",
+          "verifier_type": "SubprocessVerifier",
+          "command": [
+            "python",
+            "verifiers\\lease_lock_verifier.py"
+          ],
+          "cwd": ".",
+          "timeout_seconds": 30.0
+        },
+        {
+          "claim_kind": "lease_lock_invariant",
+          "verifier_type": "RoleCountVerifier"
+        },
+        {
+          "claim_kind": "lease_lock_invariant",
+          "verifier_type": "TraceContractVerifier"
+        }
+      ],
+      "proposal_adapter": "GroqChatTransformerAdapter",
+      "accepted_interface_is_constant": null,
+      "artifact_version": {
+        "phase": "phase7",
+        "timestamp_utc": "20260318T201343225480Z",
+        "git_sha": "ad9f6a1"
+      },
+      "git_sha": "ad9f6a1",
+      "hypothesis": {
+        "abstain": false,
+        "label": "GuardedWriteProtocol",
+        "canonical_parent_roles": [
+          "open",
+          "close"
+        ],
+        "canonical_blanket_roles": [
+          "write",
+          "pending"
+        ],
+        "rationale": "The guarded write protocol requires a region to be opened before writes are allowed, and the region must be closed before the trace ends."
+      },
+      "positive_transfer": false,
+      "cycles_to_useful_outcome": 8,
+      "useful_outcome_kind": "budget_exhausted_without_transfer"
+    },
+    {
+      "cycles_to_first_accepted_symbol": null,
+      "verifier_calls_to_acceptance": 3,
+      "rollback_count": 0,
+      "retirement_count": 0,
+      "false_candidate_count": 0,
+      "contradiction_before_acceptance": null,
+      "system": "live_model_retrieval_verifiers",
+      "family": "protocol_guard",
+      "target_family": "lease_lock",
+      "case_kind": "baseline_transfer",
+      "mapping_class": "retrieval_guided_hypothesis",
+      "baseline_final_psi": 10.6,
+      "transfer_final_psi": 10.6,
+      "contradiction_gain": 0.0,
+      "verifier_status": "pass",
+      "verifier_reason": null,
+      "verifier_results": [
+        {
+          "status": "pass",
+          "passed": true,
+          "failed": false,
+          "counterexample": null,
+          "cost": 0.05538200002047233,
+          "artifact_ids": [],
+          "verifier_name": "lease_lock_verifier",
+          "details": {
+            "manifest_path": "fixtures\\lease_lock\\target\\manifest.json",
+            "source_path": "fixtures\\lease_lock\\target\\validator.py",
+            "valid_trace_count": 2,
+            "invalid_trace_count": 3,
+            "source_contains_explicit_lease_live": false,
+            "command": [
+              "python",
+              "verifiers\\lease_lock_verifier.py"
+            ],
+            "returncode": 0
+          }
+        },
+        {
+          "status": "pass",
+          "passed": true,
+          "failed": false,
+          "counterexample": null,
+          "cost": 3.960001049563289e-05,
+          "artifact_ids": [],
+          "verifier_name": "role_count_verifier",
+          "details": {
+            "parent_roles": {
+              "open": 1,
+              "close": 1
+            },
+            "blanket_roles": {
+              "write": 2
+            },
+            "expected_parent": {
+              "open": 1,
+              "close": 1
+            },
+            "expected_blanket": {
+              "write": 2
+            }
+          }
+        },
+        {
+          "status": "pass",
+          "passed": true,
+          "failed": false,
+          "counterexample": null,
+          "cost": 0.00015819998225197196,
+          "artifact_ids": [],
+          "verifier_name": "trace_contract_verifier",
+          "details": {
+            "manifest_path": "fixtures\\lease_lock\\target\\manifest.json",
+            "trace_contract_type": "window_guard"
+          }
+        }
+      ],
+      "verifier_stack": [
+        {
+          "claim_kind": "lease_lock_invariant",
+          "verifier_type": "SubprocessVerifier",
+          "command": [
+            "python",
+            "verifiers\\lease_lock_verifier.py"
+          ],
+          "cwd": ".",
+          "timeout_seconds": 30.0
+        },
+        {
+          "claim_kind": "lease_lock_invariant",
+          "verifier_type": "RoleCountVerifier"
+        },
+        {
+          "claim_kind": "lease_lock_invariant",
+          "verifier_type": "TraceContractVerifier"
+        }
+      ],
+      "proposal_adapter": "GroqChatTransformerAdapter",
+      "accepted_interface_is_constant": null,
+      "artifact_version": {
+        "phase": "phase7",
+        "timestamp_utc": "20260318T201343225480Z",
+        "git_sha": "ad9f6a1"
+      },
+      "git_sha": "ad9f6a1",
+      "hypothesis": {
+        "abstain": false,
+        "label": "GuardedAccess",
+        "canonical_parent_roles": [
+          "open",
+          "close"
+        ],
+        "canonical_blanket_roles": [
+          "write",
+          "write"
+        ],
+        "rationale": "Both protocols involve a guarded region that must be opened before modifications are allowed and closed afterwards, with a focus on the correct ordering and state of the guard."
+      },
+      "positive_transfer": false,
+      "cycles_to_useful_outcome": 8,
+      "useful_outcome_kind": "budget_exhausted_without_transfer"
+    },
+    {
+      "cycles_to_first_accepted_symbol": null,
+      "verifier_calls_to_acceptance": 3,
+      "rollback_count": 0,
+      "retirement_count": 0,
+      "false_candidate_count": 0,
+      "contradiction_before_acceptance": null,
+      "system": "live_model_tools_no_ontology",
+      "family": "protocol_guard",
+      "target_family": "session_epoch",
+      "case_kind": "baseline_transfer",
+      "mapping_class": "direct_model_hypothesis",
+      "baseline_final_psi": 10.6,
+      "transfer_final_psi": 10.6,
+      "contradiction_gain": 0.0,
+      "verifier_status": "pass",
+      "verifier_reason": null,
+      "verifier_results": [
+        {
+          "status": "pass",
+          "passed": true,
+          "failed": false,
+          "counterexample": null,
+          "cost": 0.06703750000451691,
+          "artifact_ids": [],
+          "verifier_name": "session_epoch_verifier",
+          "details": {
+            "manifest_path": "fixtures\\session_epoch\\target\\manifest.json",
+            "source_path": "fixtures\\session_epoch\\target\\validator.py",
+            "valid_trace_count": 2,
+            "invalid_trace_count": 3,
+            "source_contains_explicit_epoch_live": false,
+            "command": [
+              "python",
+              "verifiers\\session_epoch_verifier.py"
+            ],
+            "returncode": 0
+          }
+        },
+        {
+          "status": "pass",
+          "passed": true,
+          "failed": false,
+          "counterexample": null,
+          "cost": 4.0000013541430235e-05,
+          "artifact_ids": [],
+          "verifier_name": "role_count_verifier",
+          "details": {
+            "parent_roles": {
+              "open": 1,
+              "close": 1
+            },
+            "blanket_roles": {
+              "write": 2
+            },
+            "expected_parent": {
+              "open": 1,
+              "close": 1
+            },
+            "expected_blanket": {
+              "write": 2
+            }
+          }
+        },
+        {
+          "status": "pass",
+          "passed": true,
+          "failed": false,
+          "counterexample": null,
+          "cost": 0.00014960000407882035,
+          "artifact_ids": [],
+          "verifier_name": "trace_contract_verifier",
+          "details": {
+            "manifest_path": "fixtures\\session_epoch\\target\\manifest.json",
+            "trace_contract_type": "window_guard"
+          }
+        }
+      ],
+      "verifier_stack": [
+        {
+          "claim_kind": "session_epoch_invariant",
+          "verifier_type": "SubprocessVerifier",
+          "command": [
+            "python",
+            "verifiers\\session_epoch_verifier.py"
+          ],
+          "cwd": ".",
+          "timeout_seconds": 30.0
+        },
+        {
+          "claim_kind": "session_epoch_invariant",
+          "verifier_type": "RoleCountVerifier"
+        },
+        {
+          "claim_kind": "session_epoch_invariant",
+          "verifier_type": "TraceContractVerifier"
+        }
+      ],
+      "proposal_adapter": "GroqChatTransformerAdapter",
+      "accepted_interface_is_constant": null,
+      "artifact_version": {
+        "phase": "phase7",
+        "timestamp_utc": "20260318T201343225480Z",
+        "git_sha": "ad9f6a1"
+      },
+      "git_sha": "ad9f6a1",
+      "hypothesis": {
+        "abstain": false,
+        "label": "WriteGuard",
+        "canonical_parent_roles": [
+          "open",
+          "close"
+        ],
+        "canonical_blanket_roles": [
+          "write",
+          "write"
+        ],
+        "rationale": "Guarded write protocol requires a region to be opened before writes are allowed, and the region must be closed before the trace ends."
+      },
+      "positive_transfer": false,
+      "cycles_to_useful_outcome": 8,
+      "useful_outcome_kind": "budget_exhausted_without_transfer"
+    },
+    {
+      "cycles_to_first_accepted_symbol": null,
+      "verifier_calls_to_acceptance": 3,
+      "rollback_count": 0,
+      "retirement_count": 0,
+      "false_candidate_count": 0,
+      "contradiction_before_acceptance": null,
+      "system": "live_model_retrieval_verifiers",
+      "family": "protocol_guard",
+      "target_family": "session_epoch",
+      "case_kind": "baseline_transfer",
+      "mapping_class": "retrieval_guided_hypothesis",
+      "baseline_final_psi": 10.6,
+      "transfer_final_psi": 10.6,
+      "contradiction_gain": 0.0,
+      "verifier_status": "fail",
+      "verifier_reason": "missing_write_blanket",
+      "verifier_results": [
+        {
+          "status": "fail",
+          "passed": false,
+          "failed": true,
+          "counterexample": {
+            "reason": "missing_write_blanket",
+            "blanket_roles": {
+              "stable": 1,
+              "pending": 1
+            }
+          },
+          "cost": 0.07153620000462979,
+          "artifact_ids": [],
+          "verifier_name": "session_epoch_verifier",
+          "details": {
+            "manifest_path": "fixtures\\session_epoch\\target\\manifest.json",
+            "command": [
+              "python",
+              "verifiers\\session_epoch_verifier.py"
+            ],
+            "returncode": 0
+          }
+        },
+        {
+          "status": "pass",
+          "passed": true,
+          "failed": false,
+          "counterexample": null,
+          "cost": 3.6299985367804766e-05,
+          "artifact_ids": [],
+          "verifier_name": "role_count_verifier",
+          "details": {
+            "parent_roles": {
+              "open": 1,
+              "close": 1
+            },
+            "blanket_roles": {
+              "stable": 1,
+              "pending": 1
+            },
+            "expected_parent": {
+              "open": 1,
+              "close": 1
+            },
+            "expected_blanket": {
+              "stable": 1,
+              "pending": 1
+            }
+          }
+        },
+        {
+          "status": "pass",
+          "passed": true,
+          "failed": false,
+          "counterexample": null,
+          "cost": 0.00016419999883510172,
+          "artifact_ids": [],
+          "verifier_name": "trace_contract_verifier",
+          "details": {
+            "manifest_path": "fixtures\\session_epoch\\target\\manifest.json",
+            "trace_contract_type": "window_guard"
+          }
+        }
+      ],
+      "verifier_stack": [
+        {
+          "claim_kind": "session_epoch_invariant",
+          "verifier_type": "SubprocessVerifier",
+          "command": [
+            "python",
+            "verifiers\\session_epoch_verifier.py"
+          ],
+          "cwd": ".",
+          "timeout_seconds": 30.0
+        },
+        {
+          "claim_kind": "session_epoch_invariant",
+          "verifier_type": "RoleCountVerifier"
+        },
+        {
+          "claim_kind": "session_epoch_invariant",
+          "verifier_type": "TraceContractVerifier"
+        }
+      ],
+      "proposal_adapter": "GroqChatTransformerAdapter",
+      "accepted_interface_is_constant": null,
+      "artifact_version": {
+        "phase": "phase7",
+        "timestamp_utc": "20260318T201343225480Z",
+        "git_sha": "ad9f6a1"
+      },
+      "git_sha": "ad9f6a1",
+      "hypothesis": {
+        "abstain": false,
+        "label": "EpochGuard",
+        "canonical_parent_roles": [
+          "open",
+          "close"
+        ],
+        "canonical_blanket_roles": [
+          "stable",
+          "pending"
+        ],
+        "rationale": "The source task protocol_guard_train and target task session_epoch_target both involve opening and closing a guarded region or epoch, with specific rules governing the legality of write or update operations within that region. The abstraction hypothesis is that both tasks can be represented using a common set of canonical roles, including open, close, and stable or pending states, which capture the essential structure of the protocols."
+      },
+      "positive_transfer": false,
+      "cycles_to_useful_outcome": 8,
+      "useful_outcome_kind": "budget_exhausted_without_transfer"
+    },
+    {
+      "cycles_to_first_accepted_symbol": null,
+      "verifier_calls_to_acceptance": 3,
+      "rollback_count": 0,
+      "retirement_count": 0,
+      "false_candidate_count": 0,
+      "contradiction_before_acceptance": null,
+      "system": "live_model_tools_no_ontology",
+      "family": "quorum_commit",
+      "target_family": "vote_majority_commit",
+      "case_kind": "baseline_transfer",
+      "mapping_class": "direct_model_hypothesis",
+      "baseline_final_psi": 10.6,
+      "transfer_final_psi": 10.6,
+      "contradiction_gain": 0.0,
+      "verifier_status": "fail",
+      "verifier_reason": "missing_parent_roles",
+      "verifier_results": [
+        {
+          "status": "fail",
+          "passed": false,
+          "failed": true,
+          "counterexample": {
+            "reason": "missing_parent_roles",
+            "parent_roles": {
+              "prepare": 1,
+              "commit": 1
+            }
+          },
+          "cost": 0.056033500004559755,
+          "artifact_ids": [],
+          "verifier_name": "vote_majority_commit_verifier",
+          "details": {
+            "manifest_path": "fixtures\\vote_majority_commit\\target\\manifest.json",
+            "command": [
+              "python",
+              "verifiers\\vote_majority_commit_verifier.py"
+            ],
+            "returncode": 0
+          }
+        },
+        {
+          "status": "pass",
+          "passed": true,
+          "failed": false,
+          "counterexample": null,
+          "cost": 2.6699999580159783e-05,
+          "artifact_ids": [],
+          "verifier_name": "role_count_verifier",
+          "details": {
+            "parent_roles": {
+              "prepare": 1,
+              "commit": 1
+            },
+            "blanket_roles": {
+              "pending": 1,
+              "stable": 1
+            },
+            "expected_parent": {
+              "prepare": 1,
+              "commit": 1
+            },
+            "expected_blanket": {
+              "pending": 1,
+              "stable": 1
+            }
+          }
+        },
+        {
+          "status": "pass",
+          "passed": true,
+          "failed": false,
+          "counterexample": null,
+          "cost": 0.0001866999955382198,
+          "artifact_ids": [],
+          "verifier_name": "trace_contract_verifier",
+          "details": {
+            "manifest_path": "fixtures\\vote_majority_commit\\target\\manifest.json",
+            "trace_contract_type": "gated_commit"
+          }
+        }
+      ],
+      "verifier_stack": [
+        {
+          "claim_kind": "vote_majority_commit_invariant",
+          "verifier_type": "SubprocessVerifier",
+          "command": [
+            "python",
+            "verifiers\\vote_majority_commit_verifier.py"
+          ],
+          "cwd": ".",
+          "timeout_seconds": 30.0
+        },
+        {
+          "claim_kind": "vote_majority_commit_invariant",
+          "verifier_type": "RoleCountVerifier"
+        },
+        {
+          "claim_kind": "vote_majority_commit_invariant",
+          "verifier_type": "TraceContractVerifier"
+        }
+      ],
+      "proposal_adapter": "GroqChatTransformerAdapter",
+      "accepted_interface_is_constant": null,
+      "artifact_version": {
+        "phase": "phase7",
+        "timestamp_utc": "20260318T201343225480Z",
+        "git_sha": "ad9f6a1"
+      },
+      "git_sha": "ad9f6a1",
+      "hypothesis": {
+        "abstain": false,
+        "label": "CommitGuard",
+        "canonical_parent_roles": [
+          "prepare",
+          "commit"
+        ],
+        "canonical_blanket_roles": [
+          "pending",
+          "stable"
+        ],
+        "rationale": "The quorum_commit_train task involves managing commit rounds with acknowledgements, which requires tracking pending and committed states. This abstraction captures the essence of commit control by relating preparation, commitment, and stability, while ensuring that pending and committed states are mutually exclusive."
+      },
+      "positive_transfer": false,
+      "cycles_to_useful_outcome": 8,
+      "useful_outcome_kind": "budget_exhausted_without_transfer"
+    },
+    {
+      "cycles_to_first_accepted_symbol": null,
+      "verifier_calls_to_acceptance": 3,
+      "rollback_count": 0,
+      "retirement_count": 0,
+      "false_candidate_count": 0,
+      "contradiction_before_acceptance": null,
+      "system": "live_model_retrieval_verifiers",
+      "family": "quorum_commit",
+      "target_family": "vote_majority_commit",
+      "case_kind": "baseline_transfer",
+      "mapping_class": "retrieval_guided_hypothesis",
+      "baseline_final_psi": 10.6,
+      "transfer_final_psi": 10.6,
+      "contradiction_gain": 0.0,
+      "verifier_status": "fail",
+      "verifier_reason": "missing_parent_roles",
+      "verifier_results": [
+        {
+          "status": "fail",
+          "passed": false,
+          "failed": true,
+          "counterexample": {
+            "reason": "missing_parent_roles",
+            "parent_roles": {
+              "prepare": 1,
+              "commit": 1
+            }
+          },
+          "cost": 0.0601920000044629,
+          "artifact_ids": [],
+          "verifier_name": "vote_majority_commit_verifier",
+          "details": {
+            "manifest_path": "fixtures\\vote_majority_commit\\target\\manifest.json",
+            "command": [
+              "python",
+              "verifiers\\vote_majority_commit_verifier.py"
+            ],
+            "returncode": 0
+          }
+        },
+        {
+          "status": "pass",
+          "passed": true,
+          "failed": false,
+          "counterexample": null,
+          "cost": 3.700001980178058e-05,
+          "artifact_ids": [],
+          "verifier_name": "role_count_verifier",
+          "details": {
+            "parent_roles": {
+              "prepare": 1,
+              "commit": 1
+            },
+            "blanket_roles": {
+              "pending": 1,
+              "stable": 1
+            },
+            "expected_parent": {
+              "prepare": 1,
+              "commit": 1
+            },
+            "expected_blanket": {
+              "pending": 1,
+              "stable": 1
+            }
+          }
+        },
+        {
+          "status": "pass",
+          "passed": true,
+          "failed": false,
+          "counterexample": null,
+          "cost": 0.0001532999740447849,
+          "artifact_ids": [],
+          "verifier_name": "trace_contract_verifier",
+          "details": {
+            "manifest_path": "fixtures\\vote_majority_commit\\target\\manifest.json",
+            "trace_contract_type": "gated_commit"
+          }
+        }
+      ],
+      "verifier_stack": [
+        {
+          "claim_kind": "vote_majority_commit_invariant",
+          "verifier_type": "SubprocessVerifier",
+          "command": [
+            "python",
+            "verifiers\\vote_majority_commit_verifier.py"
+          ],
+          "cwd": ".",
+          "timeout_seconds": 30.0
+        },
+        {
+          "claim_kind": "vote_majority_commit_invariant",
+          "verifier_type": "RoleCountVerifier"
+        },
+        {
+          "claim_kind": "vote_majority_commit_invariant",
+          "verifier_type": "TraceContractVerifier"
+        }
+      ],
+      "proposal_adapter": "GroqChatTransformerAdapter",
+      "accepted_interface_is_constant": null,
+      "artifact_version": {
+        "phase": "phase7",
+        "timestamp_utc": "20260318T201343225480Z",
+        "git_sha": "ad9f6a1"
+      },
+      "git_sha": "ad9f6a1",
+      "hypothesis": {
+        "abstain": false,
+        "label": "CommitGuard",
+        "canonical_parent_roles": [
+          "prepare",
+          "commit"
+        ],
+        "canonical_blanket_roles": [
+          "pending",
+          "stable"
+        ],
+        "rationale": "The quorum_commit_train and vote_majority_commit_target tasks share a common abstraction of a guarded commit or decision process, where a prepare or propose phase initiates a pending or waiting round, and a commit or decide phase concludes the round when certain conditions are met, such as sufficient acknowledgements or votes, and the round must not remain both pending and committed or waiting and decided at the end of the trace."
+      },
+      "positive_transfer": false,
+      "cycles_to_useful_outcome": 8,
+      "useful_outcome_kind": "budget_exhausted_without_transfer"
+    },
+    {
+      "cycles_to_first_accepted_symbol": null,
+      "verifier_calls_to_acceptance": 3,
+      "rollback_count": 0,
+      "retirement_count": 0,
+      "false_candidate_count": 0,
+      "contradiction_before_acceptance": null,
+      "system": "live_model_tools_no_ontology",
+      "family": "quorum_commit",
+      "target_family": "replication_barrier",
+      "case_kind": "baseline_transfer",
+      "mapping_class": "direct_model_hypothesis",
+      "baseline_final_psi": 10.6,
+      "transfer_final_psi": 10.6,
+      "contradiction_gain": 0.0,
+      "verifier_status": "fail",
+      "verifier_reason": "missing_parent_roles",
+      "verifier_results": [
+        {
+          "status": "fail",
+          "passed": false,
+          "failed": true,
+          "counterexample": {
+            "reason": "missing_parent_roles",
+            "parent_roles": {
+              "prepare": 1,
+              "commit": 1
+            }
+          },
+          "cost": 0.058995300001697615,
+          "artifact_ids": [],
+          "verifier_name": "replication_barrier_verifier",
+          "details": {
+            "manifest_path": "fixtures\\replication_barrier\\target\\manifest.json",
+            "command": [
+              "python",
+              "verifiers\\replication_barrier_verifier.py"
+            ],
+            "returncode": 0
+          }
+        },
+        {
+          "status": "pass",
+          "passed": true,
+          "failed": false,
+          "counterexample": null,
+          "cost": 2.4600012693554163e-05,
+          "artifact_ids": [],
+          "verifier_name": "role_count_verifier",
+          "details": {
+            "parent_roles": {
+              "prepare": 1,
+              "commit": 1
+            },
+            "blanket_roles": {
+              "pending": 1,
+              "stable": 1
+            },
+            "expected_parent": {
+              "prepare": 1,
+              "commit": 1
+            },
+            "expected_blanket": {
+              "pending": 1,
+              "stable": 1
+            }
+          }
+        },
+        {
+          "status": "pass",
+          "passed": true,
+          "failed": false,
+          "counterexample": null,
+          "cost": 0.00030339998193085194,
+          "artifact_ids": [],
+          "verifier_name": "trace_contract_verifier",
+          "details": {
+            "manifest_path": "fixtures\\replication_barrier\\target\\manifest.json",
+            "trace_contract_type": "gated_commit"
+          }
+        }
+      ],
+      "verifier_stack": [
+        {
+          "claim_kind": "replication_barrier_invariant",
+          "verifier_type": "SubprocessVerifier",
+          "command": [
+            "python",
+            "verifiers\\replication_barrier_verifier.py"
+          ],
+          "cwd": ".",
+          "timeout_seconds": 30.0
+        },
+        {
+          "claim_kind": "replication_barrier_invariant",
+          "verifier_type": "RoleCountVerifier"
+        },
+        {
+          "claim_kind": "replication_barrier_invariant",
+          "verifier_type": "TraceContractVerifier"
+        }
+      ],
+      "proposal_adapter": "GroqChatTransformerAdapter",
+      "accepted_interface_is_constant": null,
+      "artifact_version": {
+        "phase": "phase7",
+        "timestamp_utc": "20260318T201343225480Z",
+        "git_sha": "ad9f6a1"
+      },
+      "git_sha": "ad9f6a1",
+      "hypothesis": {
+        "abstain": false,
+        "label": "CommitGuard",
+        "canonical_parent_roles": [
+          "prepare",
+          "commit"
+        ],
+        "canonical_blanket_roles": [
+          "pending",
+          "stable"
+        ],
+        "rationale": "The quorum_commit_train task requires a commit controller that adheres to specific rules, including the transition from pending to committed states, and the requirement for acknowledgements before committing. This abstraction hypothesis proposes a CommitGuard that oversees the commit process, ensuring that it only proceeds when the round is clear and sufficient acknowledgements have been received, thus maintaining the integrity of the commit process."
+      },
+      "positive_transfer": false,
+      "cycles_to_useful_outcome": 8,
+      "useful_outcome_kind": "budget_exhausted_without_transfer"
+    },
+    {
+      "cycles_to_first_accepted_symbol": null,
+      "verifier_calls_to_acceptance": 3,
+      "rollback_count": 0,
+      "retirement_count": 0,
+      "false_candidate_count": 0,
+      "contradiction_before_acceptance": null,
+      "system": "live_model_retrieval_verifiers",
+      "family": "quorum_commit",
+      "target_family": "replication_barrier",
+      "case_kind": "baseline_transfer",
+      "mapping_class": "retrieval_guided_hypothesis",
+      "baseline_final_psi": 10.6,
+      "transfer_final_psi": 10.6,
+      "contradiction_gain": 0.0,
+      "verifier_status": "fail",
+      "verifier_reason": "missing_parent_roles",
+      "verifier_results": [
+        {
+          "status": "fail",
+          "passed": false,
+          "failed": true,
+          "counterexample": {
+            "reason": "missing_parent_roles",
+            "parent_roles": {
+              "prepare": 1,
+              "commit": 1
+            }
+          },
+          "cost": 0.05697320000035688,
+          "artifact_ids": [],
+          "verifier_name": "replication_barrier_verifier",
+          "details": {
+            "manifest_path": "fixtures\\replication_barrier\\target\\manifest.json",
+            "command": [
+              "python",
+              "verifiers\\replication_barrier_verifier.py"
+            ],
+            "returncode": 0
+          }
+        },
+        {
+          "status": "pass",
+          "passed": true,
+          "failed": false,
+          "counterexample": null,
+          "cost": 3.37999954354018e-05,
+          "artifact_ids": [],
+          "verifier_name": "role_count_verifier",
+          "details": {
+            "parent_roles": {
+              "prepare": 1,
+              "commit": 1
+            },
+            "blanket_roles": {
+              "pending": 1,
+              "stable": 1
+            },
+            "expected_parent": {
+              "prepare": 1,
+              "commit": 1
+            },
+            "expected_blanket": {
+              "pending": 1,
+              "stable": 1
+            }
+          }
+        },
+        {
+          "status": "pass",
+          "passed": true,
+          "failed": false,
+          "counterexample": null,
+          "cost": 0.0002007999864872545,
+          "artifact_ids": [],
+          "verifier_name": "trace_contract_verifier",
+          "details": {
+            "manifest_path": "fixtures\\replication_barrier\\target\\manifest.json",
+            "trace_contract_type": "gated_commit"
+          }
+        }
+      ],
+      "verifier_stack": [
+        {
+          "claim_kind": "replication_barrier_invariant",
+          "verifier_type": "SubprocessVerifier",
+          "command": [
+            "python",
+            "verifiers\\replication_barrier_verifier.py"
+          ],
+          "cwd": ".",
+          "timeout_seconds": 30.0
+        },
+        {
+          "claim_kind": "replication_barrier_invariant",
+          "verifier_type": "RoleCountVerifier"
+        },
+        {
+          "claim_kind": "replication_barrier_invariant",
+          "verifier_type": "TraceContractVerifier"
+        }
+      ],
+      "proposal_adapter": "GroqChatTransformerAdapter",
+      "accepted_interface_is_constant": null,
+      "artifact_version": {
+        "phase": "phase7",
+        "timestamp_utc": "20260318T201343225480Z",
+        "git_sha": "ad9f6a1"
+      },
+      "git_sha": "ad9f6a1",
+      "hypothesis": {
+        "abstain": false,
+        "label": "CommitGuard",
+        "canonical_parent_roles": [
+          "prepare",
+          "commit"
+        ],
+        "canonical_blanket_roles": [
+          "pending",
+          "stable"
+        ],
+        "rationale": "The quorum_commit_train task and replication_barrier_target task both involve a pending or queued state that must be resolved before a commit or publish can occur, suggesting a common abstraction around guarding the transition to a committed or published state."
+      },
+      "positive_transfer": false,
+      "cycles_to_useful_outcome": 8,
+      "useful_outcome_kind": "budget_exhausted_without_transfer"
+    },
+    {
+      "cycles_to_first_accepted_symbol": null,
+      "verifier_calls_to_acceptance": 0,
+      "rollback_count": 0,
+      "retirement_count": 0,
+      "false_candidate_count": 0,
+      "contradiction_before_acceptance": null,
+      "system": "graph_memory_without_tsl",
+      "family": "protocol_guard",
+      "target_family": "protocol_guard",
+      "case_kind": "source_ablation",
+      "mapping_class": "no_tsl",
+      "baseline_final_psi": 10.6,
+      "transfer_final_psi": 10.6,
+      "contradiction_gain": 0.0,
+      "verifier_status": "missing",
+      "verifier_reason": null,
+      "verifier_results": [],
+      "verifier_stack": [
+        {
+          "claim_kind": "protocol_guard_invariant",
+          "verifier_type": "SubprocessVerifier",
+          "command": [
+            "python",
+            "verifiers\\protocol_guard_verifier.py"
+          ],
+          "cwd": ".",
+          "timeout_seconds": 30.0
+        }
+      ],
+      "proposal_adapter": null,
+      "accepted_interface_is_constant": null,
+      "artifact_version": {
+        "phase": "phase7",
+        "timestamp_utc": "20260318T201343225480Z",
+        "git_sha": "ad9f6a1"
+      },
+      "git_sha": "ad9f6a1",
+      "positive_transfer": false
+    },
+    {
+      "cycles_to_first_accepted_symbol": null,
+      "verifier_calls_to_acceptance": 0,
+      "rollback_count": 0,
+      "retirement_count": 0,
+      "false_candidate_count": 0,
+      "contradiction_before_acceptance": null,
+      "system": "graph_memory_without_tsl",
+      "family": "quorum_commit",
+      "target_family": "quorum_commit",
+      "case_kind": "source_ablation",
+      "mapping_class": "no_tsl",
+      "baseline_final_psi": 10.6,
+      "transfer_final_psi": 10.6,
+      "contradiction_gain": 0.0,
+      "verifier_status": "missing",
+      "verifier_reason": null,
+      "verifier_results": [],
+      "verifier_stack": [
+        {
+          "claim_kind": "quorum_commit_invariant",
+          "verifier_type": "SubprocessVerifier",
+          "command": [
+            "python",
+            "verifiers\\quorum_commit_verifier.py"
+          ],
+          "cwd": ".",
+          "timeout_seconds": 30.0
+        }
+      ],
+      "proposal_adapter": null,
+      "accepted_interface_is_constant": null,
+      "artifact_version": {
+        "phase": "phase7",
+        "timestamp_utc": "20260318T201343225480Z",
+        "git_sha": "ad9f6a1"
+      },
+      "git_sha": "ad9f6a1",
+      "positive_transfer": false
+    },
+    {
+      "cycles_to_first_accepted_symbol": null,
+      "verifier_calls_to_acceptance": 0,
+      "rollback_count": 0,
+      "retirement_count": 0,
+      "false_candidate_count": 0,
+      "contradiction_before_acceptance": null,
+      "system": "densn_without_conflict_memory",
+      "family": "protocol_guard",
+      "target_family": "protocol_guard",
+      "case_kind": "source_ablation",
+      "mapping_class": "no_conflict_memory",
+      "baseline_final_psi": 1.0,
+      "transfer_final_psi": 1.0,
+      "contradiction_gain": 0.0,
+      "verifier_status": "missing",
+      "verifier_reason": null,
+      "verifier_results": [],
+      "verifier_stack": [
+        {
+          "claim_kind": "protocol_guard_invariant",
+          "verifier_type": "SubprocessVerifier",
+          "command": [
+            "python",
+            "verifiers\\protocol_guard_verifier.py"
+          ],
+          "cwd": ".",
+          "timeout_seconds": 30.0
+        }
+      ],
+      "proposal_adapter": null,
+      "accepted_interface_is_constant": null,
+      "artifact_version": {
+        "phase": "phase7",
+        "timestamp_utc": "20260318T201343225480Z",
+        "git_sha": "ad9f6a1"
+      },
+      "git_sha": "ad9f6a1",
+      "positive_transfer": false
+    },
+    {
+      "cycles_to_first_accepted_symbol": null,
+      "verifier_calls_to_acceptance": 0,
+      "rollback_count": 0,
+      "retirement_count": 0,
+      "false_candidate_count": 0,
+      "contradiction_before_acceptance": null,
+      "system": "densn_without_conflict_memory",
+      "family": "quorum_commit",
+      "target_family": "quorum_commit",
+      "case_kind": "source_ablation",
+      "mapping_class": "no_conflict_memory",
+      "baseline_final_psi": 1.0,
+      "transfer_final_psi": 1.0,
+      "contradiction_gain": 0.0,
+      "verifier_status": "missing",
+      "verifier_reason": null,
+      "verifier_results": [],
+      "verifier_stack": [
+        {
+          "claim_kind": "quorum_commit_invariant",
+          "verifier_type": "SubprocessVerifier",
+          "command": [
+            "python",
+            "verifiers\\quorum_commit_verifier.py"
+          ],
+          "cwd": ".",
+          "timeout_seconds": 30.0
+        }
+      ],
+      "proposal_adapter": null,
+      "accepted_interface_is_constant": null,
+      "artifact_version": {
+        "phase": "phase7",
+        "timestamp_utc": "20260318T201343225480Z",
+        "git_sha": "ad9f6a1"
+      },
+      "git_sha": "ad9f6a1",
+      "positive_transfer": false
+    },
+    {
+      "cycles_to_first_accepted_symbol": 4,
+      "verifier_calls_to_acceptance": 1,
+      "rollback_count": 0,
+      "retirement_count": 0,
+      "false_candidate_count": 0,
+      "contradiction_before_acceptance": 5.2,
+      "system": "densn_without_proposal_assistance",
+      "family": "protocol_guard",
+      "target_family": "protocol_guard",
+      "case_kind": "proposal_runtime",
+      "mapping_class": "source_invention",
+      "baseline_final_psi": 0.0,
+      "transfer_final_psi": 0.0,
+      "contradiction_gain": 0.0,
+      "verifier_status": "missing",
+      "verifier_reason": null,
+      "verifier_results": [],
+      "verifier_stack": [
+        {
+          "claim_kind": "protocol_guard_invariant",
+          "verifier_type": "SubprocessVerifier",
+          "command": [
+            "python",
+            "verifiers\\protocol_guard_verifier.py"
+          ],
+          "cwd": ".",
+          "timeout_seconds": 30.0
+        }
+      ],
+      "proposal_adapter": "none",
+      "accepted_interface_is_constant": null,
+      "artifact_version": {
+        "phase": "phase7",
+        "timestamp_utc": "20260318T201343225480Z",
+        "git_sha": "ad9f6a1"
+      },
+      "git_sha": "ad9f6a1",
+      "positive_transfer": false,
+      "cycle_delta_from_no_proposals": 1,
+      "verifier_call_delta_from_no_proposals": 0
+    },
+    {
+      "cycles_to_first_accepted_symbol": 4,
+      "verifier_calls_to_acceptance": 1,
+      "rollback_count": 0,
+      "retirement_count": 0,
+      "false_candidate_count": 0,
+      "contradiction_before_acceptance": 5.2,
+      "system": "densn_without_proposal_assistance",
+      "family": "quorum_commit",
+      "target_family": "quorum_commit",
+      "case_kind": "proposal_runtime",
+      "mapping_class": "source_invention",
+      "baseline_final_psi": 0.0,
+      "transfer_final_psi": 0.0,
+      "contradiction_gain": 0.0,
+      "verifier_status": "missing",
+      "verifier_reason": null,
+      "verifier_results": [],
+      "verifier_stack": [
+        {
+          "claim_kind": "quorum_commit_invariant",
+          "verifier_type": "SubprocessVerifier",
+          "command": [
+            "python",
+            "verifiers\\quorum_commit_verifier.py"
+          ],
+          "cwd": ".",
+          "timeout_seconds": 30.0
+        }
+      ],
+      "proposal_adapter": "none",
+      "accepted_interface_is_constant": null,
+      "artifact_version": {
+        "phase": "phase7",
+        "timestamp_utc": "20260318T201343225480Z",
+        "git_sha": "ad9f6a1"
+      },
+      "git_sha": "ad9f6a1",
+      "positive_transfer": false,
+      "cycle_delta_from_no_proposals": 1,
+      "verifier_call_delta_from_no_proposals": 0
+    },
+    {
+      "cycles_to_first_accepted_symbol": 3,
+      "verifier_calls_to_acceptance": 1,
+      "rollback_count": 0,
+      "retirement_count": 0,
+      "false_candidate_count": 0,
+      "contradiction_before_acceptance": 4.0,
+      "system": "live_model_proposal_adapter",
+      "family": "protocol_guard",
+      "target_family": "protocol_guard",
+      "case_kind": "proposal_runtime",
+      "mapping_class": "source_invention",
+      "baseline_final_psi": 0.0,
+      "transfer_final_psi": 0.0,
+      "contradiction_gain": 0.0,
+      "verifier_status": "missing",
+      "verifier_reason": null,
+      "verifier_results": [],
+      "verifier_stack": [
+        {
+          "claim_kind": "protocol_guard_invariant",
+          "verifier_type": "SubprocessVerifier",
+          "command": [
+            "python",
+            "verifiers\\protocol_guard_verifier.py"
+          ],
+          "cwd": ".",
+          "timeout_seconds": 30.0
+        }
+      ],
+      "proposal_adapter": "GroqChatTransformerAdapter",
+      "accepted_interface_is_constant": null,
+      "artifact_version": {
+        "phase": "phase7",
+        "timestamp_utc": "20260318T201343225480Z",
+        "git_sha": "ad9f6a1"
+      },
+      "git_sha": "ad9f6a1",
+      "positive_transfer": false,
+      "cycle_delta_from_no_proposals": 1,
+      "verifier_call_delta_from_no_proposals": 0
+    },
+    {
+      "cycles_to_first_accepted_symbol": 3,
+      "verifier_calls_to_acceptance": 1,
+      "rollback_count": 0,
+      "retirement_count": 0,
+      "false_candidate_count": 0,
+      "contradiction_before_acceptance": 4.0,
+      "system": "live_model_proposal_adapter",
+      "family": "quorum_commit",
+      "target_family": "quorum_commit",
+      "case_kind": "proposal_runtime",
+      "mapping_class": "source_invention",
+      "baseline_final_psi": 0.0,
+      "transfer_final_psi": 0.0,
+      "contradiction_gain": 0.0,
+      "verifier_status": "missing",
+      "verifier_reason": null,
+      "verifier_results": [],
+      "verifier_stack": [
+        {
+          "claim_kind": "quorum_commit_invariant",
+          "verifier_type": "SubprocessVerifier",
+          "command": [
+            "python",
+            "verifiers\\quorum_commit_verifier.py"
+          ],
+          "cwd": ".",
+          "timeout_seconds": 30.0
+        }
+      ],
+      "proposal_adapter": "GroqChatTransformerAdapter",
+      "accepted_interface_is_constant": null,
+      "artifact_version": {
+        "phase": "phase7",
+        "timestamp_utc": "20260318T201343225480Z",
+        "git_sha": "ad9f6a1"
+      },
+      "git_sha": "ad9f6a1",
+      "positive_transfer": false,
+      "cycle_delta_from_no_proposals": 1,
+      "verifier_call_delta_from_no_proposals": 0
+    },
+    {
+      "cycles_to_first_accepted_symbol": 3,
+      "verifier_calls_to_acceptance": 1,
+      "rollback_count": 0,
+      "retirement_count": 0,
+      "false_candidate_count": 0,
+      "contradiction_before_acceptance": 4.0,
+      "system": "heuristic_proposal_adapter",
+      "family": "protocol_guard",
+      "target_family": "protocol_guard",
+      "case_kind": "proposal_runtime",
+      "mapping_class": "source_invention",
+      "baseline_final_psi": 0.0,
+      "transfer_final_psi": 0.0,
+      "contradiction_gain": 0.0,
+      "verifier_status": "missing",
+      "verifier_reason": null,
+      "verifier_results": [],
+      "verifier_stack": [],
+      "proposal_adapter": "ArtifactHeuristicTransformerAdapter",
+      "accepted_interface_is_constant": null,
+      "artifact_version": {
+        "phase": "phase7",
+        "timestamp_utc": "20260318T201343225480Z",
+        "git_sha": "ad9f6a1"
+      },
+      "git_sha": "ad9f6a1",
+      "positive_transfer": false
+    },
+    {
+      "cycles_to_first_accepted_symbol": 3,
+      "verifier_calls_to_acceptance": 1,
+      "rollback_count": 0,
+      "retirement_count": 0,
+      "false_candidate_count": 0,
+      "contradiction_before_acceptance": 4.0,
+      "system": "heuristic_proposal_adapter",
+      "family": "quorum_commit",
+      "target_family": "quorum_commit",
+      "case_kind": "proposal_runtime",
+      "mapping_class": "source_invention",
+      "baseline_final_psi": 0.0,
+      "transfer_final_psi": 0.0,
+      "contradiction_gain": 0.0,
+      "verifier_status": "missing",
+      "verifier_reason": null,
+      "verifier_results": [],
+      "verifier_stack": [],
+      "proposal_adapter": "ArtifactHeuristicTransformerAdapter",
+      "accepted_interface_is_constant": null,
+      "artifact_version": {
+        "phase": "phase7",
+        "timestamp_utc": "20260318T201343225480Z",
+        "git_sha": "ad9f6a1"
+      },
+      "git_sha": "ad9f6a1",
+      "positive_transfer": false
+    }
+  ],
+  "summary_metrics": {
+    "densn_positive_transfer_rate": 1.0,
+    "densn_negative_block_rate": 1.0,
+    "densn_cross_ladder_block_rate": 1.0,
+    "live_proposal_cycle_reduction_median": 0.25,
+    "verifier_agreement_rate": 0.5,
+    "accepted_interface_non_constant_rate": 1.0,
+    "transfer_metrics": {
+      "transfer_case_count": 4,
+      "positive_transfer_count": 4,
+      "transfer_verifier_pass_count": 4,
+      "transfer_contradiction_gain_sum": 42.4
+    },
+    "baseline_superiority": {
+      "densn_positive_transfer_pass_rate": 1.0,
+      "model_baseline_transfer_pass_rate": 0.375,
+      "densn_mean_cycles_to_first_accepted_symbol": 3.0,
+      "model_baseline_mean_cycles_to_first_accepted_symbol": null,
+      "densn_mean_cycles_to_useful_outcome": 3.0,
+      "model_baseline_mean_cycles_to_useful_outcome": 8.0,
+      "densn_mean_verifier_calls_to_acceptance": 1.0,
+      "model_baseline_mean_verifier_calls_to_acceptance": 3.0,
+      "densn_mean_contradiction_gain": 10.6,
+      "model_baseline_mean_contradiction_gain": 0.0
+    }
+  },
+  "checks": {
+    "ladder_a_positive_targets": 2,
+    "ladder_b_positive_targets": 2,
+    "ladder_a_negative_blocks": 1,
+    "ladder_b_negative_blocks": 1,
+    "cross_ladder_blocks": 2
+  }
+}

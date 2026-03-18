@@ -1,0 +1,97 @@
+{
+  "task_id": "redislock_refresh_train",
+  "family": "redislock_refresh",
+  "split": "train",
+  "description": "Real-world external artifact bundle derived from bsm/redislock. The target invariant is the lock-refresh window rule: Refresh is legal only while the lock is still held; expired or released locks must not refresh successfully.",
+  "roles": {
+    "obtain": "OBTAIN",
+    "release": "RELEASE",
+    "refresh": "REFRESH"
+  },
+  "canonical_roles": {
+    "obtain": "open",
+    "release": "close",
+    "refresh": "write"
+  },
+  "natural_language_spec": "OBTAIN opens a lock ownership window. REFRESH is legal only while that lock is still held. RELEASE closes the window. After expiry or release, REFRESH must fail.",
+  "formal_spec": {
+    "rules": [
+      "OBTAIN -> lock_live",
+      "REFRESH -> lock_live",
+      "RELEASE -> previously lock_live",
+      "trace_end -> not lock_live"
+    ],
+    "safety_property": "No REFRESH occurs after the lock has expired or after the lock has been released."
+  },
+  "execution_traces": [
+    [
+      "OBTAIN",
+      "REFRESH",
+      "RELEASE"
+    ],
+    [
+      "OBTAIN",
+      "REFRESH",
+      "REFRESH",
+      "RELEASE"
+    ]
+  ],
+  "failing_tests": [
+    {
+      "name": "TestLock_Refresh_expired",
+      "trace": [
+        "OBTAIN",
+        "RELEASE",
+        "REFRESH"
+      ],
+      "expected": "fail"
+    },
+    {
+      "name": "TestLock_Release_expired",
+      "trace": [
+        "OBTAIN",
+        "RELEASE",
+        "REFRESH",
+        "RELEASE"
+      ],
+      "expected": "fail"
+    }
+  ],
+  "logs": [
+    {
+      "level": "ERROR",
+      "message": "redislock: not obtained",
+      "trace": [
+        "REFRESH"
+      ]
+    }
+  ],
+  "counterexamples": [
+    {
+      "name": "refresh_without_obtain",
+      "trace": [
+        "REFRESH"
+      ],
+      "reason": "refresh_requires_live_lock"
+    }
+  ],
+  "source_code_path": "source_excerpt.go",
+  "write_count": 2,
+  "provenance": {
+    "repo": "https://github.com/bsm/redislock",
+    "upstream_commit": "6ba61a38e6e67c455ea775ad521ebbd0868cf97b",
+    "upstream_commit_short": "6ba61a3",
+    "upstream_commit_date": "2025-06-09",
+    "source_files": [
+      "redislock.go",
+      "redislock_test.go",
+      "example_test.go"
+    ],
+    "source_urls": [
+      "https://github.com/bsm/redislock/blob/6ba61a38e6e67c455ea775ad521ebbd0868cf97b/redislock.go",
+      "https://github.com/bsm/redislock/blob/6ba61a38e6e67c455ea775ad521ebbd0868cf97b/redislock_test.go",
+      "https://github.com/bsm/redislock/blob/6ba61a38e6e67c455ea775ad521ebbd0868cf97b/example_test.go"
+    ],
+    "license": "BSD-2-Clause"
+  }
+}

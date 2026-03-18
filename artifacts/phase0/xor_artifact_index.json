@@ -1,0 +1,37 @@
+{
+  "artifact_version": {
+    "phase": "phase0",
+    "timestamp_utc": "20260318T200855549960Z",
+    "git_sha": "44a99b9"
+  },
+  "files": {
+    "xor_graph": {
+      "phase": "phase0",
+      "timestamp_utc": "20260318T200855549960Z",
+      "git_sha": "44a99b9",
+      "stable_path": "artifacts\\phase0\\xor_graph.json",
+      "versioned_path": "artifacts\\phase0\\xor_graph.phase0.20260318T200855549960Z.44a99b9.json"
+    },
+    "xor_telemetry": {
+      "phase": "phase0",
+      "timestamp_utc": "20260318T200855549960Z",
+      "git_sha": "44a99b9",
+      "stable_path": "artifacts\\phase0\\xor_telemetry.jsonl",
+      "versioned_path": "artifacts\\phase0\\xor_telemetry.phase0.20260318T200855549960Z.44a99b9.jsonl"
+    },
+    "xor_registry": {
+      "phase": "phase0",
+      "timestamp_utc": "20260318T200855549960Z",
+      "git_sha": "44a99b9",
+      "stable_path": "artifacts\\phase0\\xor_registry.json",
+      "versioned_path": "artifacts\\phase0\\xor_registry.phase0.20260318T200855549960Z.44a99b9.json"
+    },
+    "xor_summary": {
+      "phase": "phase0",
+      "timestamp_utc": "20260318T200855549960Z",
+      "git_sha": "44a99b9",
+      "stable_path": "artifacts\\phase0\\xor_summary.json",
+      "versioned_path": "artifacts\\phase0\\xor_summary.phase0.20260318T200855549960Z.44a99b9.json"
+    }
+  }
+}

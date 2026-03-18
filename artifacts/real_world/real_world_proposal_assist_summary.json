@@ -1,0 +1,115 @@
+{
+  "artifact_version": {
+    "phase": "real_world",
+    "timestamp_utc": "20260318T221132948452Z",
+    "git_sha": "4b3ad2a"
+  },
+  "domain": "real_world_proposal_assist",
+  "families": [
+    "etcd_raft_current_term",
+    "raft_rs_read_index_current_term",
+    "redsync_mutex_extend",
+    "redislock_refresh"
+  ],
+  "quality_rows": [
+    {
+      "family": "etcd_raft_current_term",
+      "adapter": "GroqChatTransformerAdapter",
+      "total_proposals": 6,
+      "accepted_for_structural_eval": 5,
+      "triage_precision": 1.0,
+      "useful_recall": 1.0,
+      "false_accept_rate": 0.0,
+      "ontology_mutated_directly": false
+    },
+    {
+      "family": "raft_rs_read_index_current_term",
+      "adapter": "GroqChatTransformerAdapter",
+      "total_proposals": 7,
+      "accepted_for_structural_eval": 6,
+      "triage_precision": 0.8333333333333334,
+      "useful_recall": 0.8333333333333334,
+      "false_accept_rate": 0.16666666666666666,
+      "ontology_mutated_directly": false
+    },
+    {
+      "family": "redsync_mutex_extend",
+      "adapter": "GroqChatTransformerAdapter",
+      "total_proposals": 6,
+      "accepted_for_structural_eval": 5,
+      "triage_precision": 1.0,
+      "useful_recall": 1.0,
+      "false_accept_rate": 0.0,
+      "ontology_mutated_directly": false
+    },
+    {
+      "family": "redislock_refresh",
+      "adapter": "GroqChatTransformerAdapter",
+      "total_proposals": 7,
+      "accepted_for_structural_eval": 4,
+      "triage_precision": 0.75,
+      "useful_recall": 0.75,
+      "false_accept_rate": 0.25,
+      "ontology_mutated_directly": false
+    }
+  ],
+  "runtime_rows": [
+    {
+      "family": "etcd_raft_current_term",
+      "adapter": "GroqChatTransformerAdapter",
+      "cycles_delta": 1,
+      "verifier_calls_delta": 0,
+      "false_candidate_delta": 0,
+      "rollback_delta": 0,
+      "proposal_stage_cycles": 3,
+      "accepted_proposal_count": 6,
+      "contradiction_before_acceptance": 4.0
+    },
+    {
+      "family": "raft_rs_read_index_current_term",
+      "adapter": "GroqChatTransformerAdapter",
+      "cycles_delta": 1,
+      "verifier_calls_delta": 0,
+      "false_candidate_delta": 0,
+      "rollback_delta": 0,
+      "proposal_stage_cycles": 3,
+      "accepted_proposal_count": 5,
+      "contradiction_before_acceptance": 4.0
+    },
+    {
+      "family": "redsync_mutex_extend",
+      "adapter": "GroqChatTransformerAdapter",
+      "cycles_delta": 1,
+      "verifier_calls_delta": 0,
+      "false_candidate_delta": 0,
+      "rollback_delta": 0,
+      "proposal_stage_cycles": 3,
+      "accepted_proposal_count": 5,
+      "contradiction_before_acceptance": 4.0
+    },
+    {
+      "family": "redislock_refresh",
+      "adapter": "GroqChatTransformerAdapter",
+      "cycles_delta": 1,
+      "verifier_calls_delta": 0,
+      "false_candidate_delta": 0,
+      "rollback_delta": 0,
+      "proposal_stage_cycles": 3,
+      "accepted_proposal_count": 4,
+      "contradiction_before_acceptance": 4.0
+    }
+  ],
+  "metrics": {
+    "family_count": 4,
+    "median_cycle_delta": 1.0,
+    "max_false_accept_rate": 0.25,
+    "all_false_accept_rates_zero": false,
+    "all_ontology_mutation_blocked": true,
+    "mean_contradiction_before_acceptance": 4.0
+  },
+  "checks": {
+    "all_families_reported": true,
+    "all_runtime_rows_show_gain": true,
+    "all_quarantine_checks_hold": true
+  }
+}

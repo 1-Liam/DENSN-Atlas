@@ -1,0 +1,85 @@
+{
+  "task_id": "quorum_commit_train",
+  "family": "quorum_commit",
+  "split": "train",
+  "description": "Quorum-based commit controller inferred from specs, traces, logs, failing tests, and a buggy validator implementation that lacks an explicit commit-ready latent state.",
+  "roles": {
+    "prepare": "PREPARE",
+    "commit": "COMMIT",
+    "pending": "PENDING",
+    "ack": "ACK",
+    "clear": "CLEAR"
+  },
+  "natural_language_spec": "PREPARE starts a pending commit round. COMMIT is legal only when the round is still clear and enough acknowledgements have arrived. PENDING tracks an unfinished round. At trace end, the round must not remain both pending and committed.",
+  "formal_spec": {
+    "rules": [
+      "PENDING -> PREPARE",
+      "COMMIT -> CLEAR",
+      "COMMIT -> ACK_1",
+      "COMMIT -> ACK_2",
+      "COMMIT xor PENDING"
+    ],
+    "safety_property": "No COMMIT occurs before the required acknowledgements and clear condition are satisfied."
+  },
+  "execution_traces": [
+    [
+      "PREPARE",
+      "CLEAR",
+      "ACK_1",
+      "ACK_2",
+      "COMMIT"
+    ],
+    [
+      "PREPARE",
+      "CLEAR",
+      "ACK_2",
+      "ACK_1",
+      "COMMIT"
+    ]
+  ],
+  "failing_tests": [
+    {
+      "name": "commit_without_quorum",
+      "trace": [
+        "PREPARE",
+        "CLEAR",
+        "ACK_1",
+        "COMMIT"
+      ],
+      "expected": "fail"
+    },
+    {
+      "name": "commit_without_clear",
+      "trace": [
+        "PREPARE",
+        "ACK_1",
+        "ACK_2",
+        "COMMIT"
+      ],
+      "expected": "fail"
+    }
+  ],
+  "logs": [
+    {
+      "level": "ERROR",
+      "message": "COMMIT observed before commit-ready conditions held",
+      "trace": [
+        "PREPARE",
+        "ACK_1",
+        "COMMIT"
+      ]
+    }
+  ],
+  "counterexamples": [
+    {
+      "name": "stale_commit_attempt",
+      "trace": [
+        "COMMIT"
+      ],
+      "reason": "commit_without_pending_round"
+    }
+  ],
+  "source_code_path": "validator.py",
+  "ack_count": 2,
+  "required_ack_count": 2
+}

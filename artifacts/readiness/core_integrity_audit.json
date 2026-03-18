@@ -1,0 +1,50 @@
+{
+  "artifact_version": {
+    "phase": "readiness",
+    "timestamp_utc": "20260318T225242478744Z",
+    "git_sha": "4b3ad2a"
+  },
+  "core_import_findings": [],
+  "benchmark_token_findings": [],
+  "private_core_call_findings": [],
+  "proposal_audit": {
+    "ontology_mutated_directly": false,
+    "proposal_status_counts": {
+      "rejected": 2,
+      "accepted_for_structural_eval": 5
+    }
+  },
+  "xor_summary": {
+    "final_psi": 0.0,
+    "registry": {
+      "total": 1,
+      "accepted": 1,
+      "rejected": 0,
+      "retired": 0
+    }
+  },
+  "formal_summary": {
+    "accepted_meta_symbol_id": "meta_a54406b5",
+    "heldout_case_count": 2,
+    "accepted_candidate_count": 1,
+    "rejected_candidate_count": 0,
+    "rollback_count": 0,
+    "heldout_results_count": 2,
+    "registry_status": "accepted",
+    "graph_admission_status": "accepted",
+    "registry_semantic_label": "WriteGuard",
+    "graph_semantic_label": "WriteGuard"
+  },
+  "readiness": {
+    "core_imports_benchmark_free": true,
+    "core_tokens_benchmark_free": true,
+    "benchmarks_use_public_core_api_only": true,
+    "proposal_quarantine_non_mutating": true,
+    "xor_zero_tension": true,
+    "formal_has_accepted_symbol": true,
+    "formal_reports_multiple_heldout_cases": true,
+    "formal_candidate_lifecycle_logged": true,
+    "formal_registry_graph_lifecycle_consistent": true,
+    "proceed_recommended": true
+  }
+}

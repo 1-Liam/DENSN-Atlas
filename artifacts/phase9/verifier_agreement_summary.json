@@ -1,0 +1,337 @@
+{
+  "artifact_version": {
+    "phase": "phase9",
+    "timestamp_utc": "20260318T201354856989Z",
+    "git_sha": "ad9f6a1"
+  },
+  "proof_contract": {
+    "core_mode": "core_frozen",
+    "core_api_version": "phase5_frozen_v1",
+    "expected_core_api_version": "phase5_frozen_v1",
+    "migration_note": null,
+    "proposal_adapter": {
+      "adapters_used": [
+        "ArtifactHeuristicTransformerAdapter",
+        "GroqChatTransformerAdapter",
+        "none"
+      ]
+    },
+    "verifier_stack": [
+      "lease_lock_verifier",
+      "replication_barrier_verifier",
+      "role_count_verifier",
+      "session_epoch_verifier",
+      "trace_contract_verifier",
+      "vote_majority_commit_verifier"
+    ]
+  },
+  "source_artifact": "artifacts\\phase7\\gauntlet_summary.json",
+  "agreement_rate": 0.5,
+  "disagreement_rate": 0.5,
+  "disagreement_resolved_rate": 1.0,
+  "effective_agreement_quality": 1.0,
+  "unresolved_disagreement_count": 0,
+  "contradiction_added_from_disagreement_count": 4,
+  "verifier_surface_pairs": {
+    "lease_lock_verifier__role_count_verifier": 2,
+    "lease_lock_verifier__trace_contract_verifier": 2,
+    "role_count_verifier__trace_contract_verifier": 8,
+    "role_count_verifier__session_epoch_verifier": 2,
+    "session_epoch_verifier__trace_contract_verifier": 2,
+    "role_count_verifier__vote_majority_commit_verifier": 3,
+    "trace_contract_verifier__vote_majority_commit_verifier": 3,
+    "replication_barrier_verifier__role_count_verifier": 1,
+    "replication_barrier_verifier__trace_contract_verifier": 1
+  },
+  "family_diagnostics": {
+    "protocol_guard": {
+      "agreement": 2,
+      "true_structural_contradiction": 1,
+      "benign_verifier_surface_mismatch": 1
+    },
+    "quorum_commit": {
+      "agreement": 2,
+      "benign_verifier_surface_mismatch": 2
+    }
+  },
+  "diagnostic_rows": [
+    {
+      "family": "protocol_guard",
+      "target_family": "lease_lock",
+      "case_kind": "positive_transfer",
+      "mapping_class": "role_remap",
+      "verifier_statuses": [
+        {
+          "verifier_name": "lease_lock_verifier",
+          "status": "pass",
+          "passed": true,
+          "counterexample": null
+        },
+        {
+          "verifier_name": "role_count_verifier",
+          "status": "pass",
+          "passed": true,
+          "counterexample": null
+        },
+        {
+          "verifier_name": "trace_contract_verifier",
+          "status": "pass",
+          "passed": true,
+          "counterexample": null
+        }
+      ],
+      "classification": "agreement",
+      "resolved": true,
+      "reason": null,
+      "expanded_counterexamples": []
+    },
+    {
+      "family": "protocol_guard",
+      "target_family": "session_epoch",
+      "case_kind": "positive_transfer",
+      "mapping_class": "role_remap",
+      "verifier_statuses": [
+        {
+          "verifier_name": "session_epoch_verifier",
+          "status": "pass",
+          "passed": true,
+          "counterexample": null
+        },
+        {
+          "verifier_name": "role_count_verifier",
+          "status": "pass",
+          "passed": true,
+          "counterexample": null
+        },
+        {
+          "verifier_name": "trace_contract_verifier",
+          "status": "pass",
+          "passed": true,
+          "counterexample": null
+        }
+      ],
+      "classification": "agreement",
+      "resolved": true,
+      "reason": null,
+      "expanded_counterexamples": []
+    },
+    {
+      "family": "protocol_guard",
+      "target_family": "lease_lock",
+      "case_kind": "negative_transfer",
+      "mapping_class": "role_remap",
+      "verifier_statuses": [
+        {
+          "verifier_name": "lease_lock_verifier",
+          "status": "fail",
+          "passed": false,
+          "counterexample": {
+            "reason": "missing_epoch_blanket_role",
+            "blanket_roles": {
+              "write": 3
+            }
+          }
+        },
+        {
+          "verifier_name": "role_count_verifier",
+          "status": "pass",
+          "passed": true,
+          "counterexample": null
+        },
+        {
+          "verifier_name": "trace_contract_verifier",
+          "status": "fail",
+          "passed": false,
+          "counterexample": {
+            "reason": "valid_trace_rejected"
+          }
+        }
+      ],
+      "classification": "true_structural_contradiction",
+      "resolved": true,
+      "reason": "missing_epoch_blanket_role",
+      "expanded_counterexamples": [
+        "missing_epoch_blanket_role",
+        "valid_trace_rejected"
+      ]
+    },
+    {
+      "family": "quorum_commit",
+      "target_family": "vote_majority_commit",
+      "case_kind": "positive_transfer",
+      "mapping_class": "role_remap",
+      "verifier_statuses": [
+        {
+          "verifier_name": "vote_majority_commit_verifier",
+          "status": "pass",
+          "passed": true,
+          "counterexample": null
+        },
+        {
+          "verifier_name": "role_count_verifier",
+          "status": "pass",
+          "passed": true,
+          "counterexample": null
+        },
+        {
+          "verifier_name": "trace_contract_verifier",
+          "status": "pass",
+          "passed": true,
+          "counterexample": null
+        }
+      ],
+      "classification": "agreement",
+      "resolved": true,
+      "reason": null,
+      "expanded_counterexamples": []
+    },
+    {
+      "family": "quorum_commit",
+      "target_family": "replication_barrier",
+      "case_kind": "positive_transfer",
+      "mapping_class": "role_remap",
+      "verifier_statuses": [
+        {
+          "verifier_name": "replication_barrier_verifier",
+          "status": "pass",
+          "passed": true,
+          "counterexample": null
+        },
+        {
+          "verifier_name": "role_count_verifier",
+          "status": "pass",
+          "passed": true,
+          "counterexample": null
+        },
+        {
+          "verifier_name": "trace_contract_verifier",
+          "status": "pass",
+          "passed": true,
+          "counterexample": null
+        }
+      ],
+      "classification": "agreement",
+      "resolved": true,
+      "reason": null,
+      "expanded_counterexamples": []
+    },
+    {
+      "family": "quorum_commit",
+      "target_family": "quorum_commit",
+      "case_kind": "negative_transfer",
+      "mapping_class": "exact_blanket_expansion",
+      "verifier_statuses": [
+        {
+          "verifier_name": "vote_majority_commit_verifier",
+          "status": "fail",
+          "passed": false,
+          "counterexample": {
+            "reason": "valid_trace_rejected",
+            "trace": [
+              "PREPARE",
+              "CLEAR",
+              "ACK_1",
+              "ACK_2",
+              "STABLE",
+              "COMMIT"
+            ]
+          }
+        },
+        {
+          "verifier_name": "role_count_verifier",
+          "status": "pass",
+          "passed": true,
+          "counterexample": null
+        },
+        {
+          "verifier_name": "trace_contract_verifier",
+          "status": "pass",
+          "passed": true,
+          "counterexample": null
+        }
+      ],
+      "classification": "benign_verifier_surface_mismatch",
+      "resolved": true,
+      "reason": "valid_trace_rejected",
+      "expanded_counterexamples": [
+        "valid_trace_rejected"
+      ]
+    },
+    {
+      "family": "protocol_guard",
+      "target_family": "vote_majority_commit",
+      "case_kind": "cross_ladder_invalid",
+      "mapping_class": "invalid_transfer",
+      "verifier_statuses": [
+        {
+          "verifier_name": "vote_majority_commit_verifier",
+          "status": "fail",
+          "passed": false,
+          "counterexample": {
+            "reason": "missing_parent_roles",
+            "parent_roles": {
+              "open": 1,
+              "close": 1
+            }
+          }
+        },
+        {
+          "verifier_name": "role_count_verifier",
+          "status": "pass",
+          "passed": true,
+          "counterexample": null
+        },
+        {
+          "verifier_name": "trace_contract_verifier",
+          "status": "pass",
+          "passed": true,
+          "counterexample": null
+        }
+      ],
+      "classification": "benign_verifier_surface_mismatch",
+      "resolved": true,
+      "reason": "missing_parent_roles",
+      "expanded_counterexamples": [
+        "missing_parent_roles"
+      ]
+    },
+    {
+      "family": "quorum_commit",
+      "target_family": "session_epoch",
+      "case_kind": "cross_ladder_invalid",
+      "mapping_class": "invalid_transfer",
+      "verifier_statuses": [
+        {
+          "verifier_name": "session_epoch_verifier",
+          "status": "fail",
+          "passed": false,
+          "counterexample": {
+            "reason": "missing_parent_roles",
+            "parent_roles": {
+              "commit": 1,
+              "pending": 1
+            }
+          }
+        },
+        {
+          "verifier_name": "role_count_verifier",
+          "status": "pass",
+          "passed": true,
+          "counterexample": null
+        },
+        {
+          "verifier_name": "trace_contract_verifier",
+          "status": "pass",
+          "passed": true,
+          "counterexample": null
+        }
+      ],
+      "classification": "benign_verifier_surface_mismatch",
+      "resolved": true,
+      "reason": "missing_parent_roles",
+      "expanded_counterexamples": [
+        "missing_parent_roles"
+      ]
+    }
+  ]
+}

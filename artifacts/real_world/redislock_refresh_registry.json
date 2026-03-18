@@ -1,0 +1,208 @@
+{
+  "meta_890bab2d": {
+    "meta_symbol_id": "meta_890bab2d",
+    "structural_name": "META_890BAB2D",
+    "status": "accepted",
+    "semantic_label": "RefreshWindowReady",
+    "semantic_status": "grounded",
+    "interface_kind": "exact",
+    "interface_definition": {
+      "truth_table": {
+        "REDISLOCK_REAL_REFRESH_1=0,REDISLOCK_REAL_REFRESH_2=0": false,
+        "REDISLOCK_REAL_REFRESH_1=0,REDISLOCK_REAL_REFRESH_2=1": false,
+        "REDISLOCK_REAL_REFRESH_1=1,REDISLOCK_REAL_REFRESH_2=0": true,
+        "REDISLOCK_REAL_REFRESH_1=1,REDISLOCK_REAL_REFRESH_2=1": true
+      },
+      "notes": "exact_boundary_projection_interface"
+    },
+    "parent_cluster_symbol_ids": [
+      "REDISLOCK_REAL_OBTAIN",
+      "REDISLOCK_REAL_RELEASE"
+    ],
+    "markov_blanket_symbol_ids": [
+      "REDISLOCK_REAL_REFRESH_1",
+      "REDISLOCK_REAL_REFRESH_2"
+    ],
+    "admission_metrics": {
+      "novel": true,
+      "novelty_conflicts": [],
+      "verifier_passed": true,
+      "reuse_passed": true,
+      "heldout_contradiction_gain": 5.2,
+      "complexity_penalty": 3.0,
+      "rent_paid": true,
+      "verifier_agreement": {
+        "verifier_count": 3,
+        "passed_count": 3,
+        "failed_count": 0,
+        "agreement_rate": 1.0,
+        "all_agree": true,
+        "disagreed": false
+      },
+      "semantic_accept_count": 3,
+      "pathway": "B"
+    },
+    "audits": [
+      {
+        "label": "RefreshWindowReady",
+        "delta_psi": 0.06666666666666668,
+        "accepted": true,
+        "reason": "bridge_pass"
+      },
+      {
+        "label": "RedislockRefreshWindow",
+        "delta_psi": 0.06666666666666668,
+        "accepted": true,
+        "reason": "bridge_pass"
+      },
+      {
+        "label": "ObtainRefreshRelease",
+        "delta_psi": 0.05,
+        "accepted": true,
+        "reason": "bridge_pass"
+      }
+    ],
+    "verifications": [
+      {
+        "status": "pass",
+        "passed": true,
+        "failed": false,
+        "counterexample": null,
+        "cost": 0.06103480001911521,
+        "artifact_ids": [],
+        "verifier_name": "redislock_refresh_verifier",
+        "details": {
+          "manifest_path": "fixtures\\redislock_refresh\\train\\manifest.json",
+          "source_path": "fixtures\\redislock_refresh\\train\\source_excerpt.go",
+          "valid_trace_count": 2,
+          "invalid_trace_count": 4,
+          "upstream_commit": "6ba61a38e6e67c455ea775ad521ebbd0868cf97b",
+          "markers": {
+            "Obtain(": true,
+            "Refresh(": true,
+            "Release(": true,
+            "ErrNotObtained": true,
+            "ErrLockNotHeld": true,
+            "TestLock_Refresh": true,
+            "TestLock_Refresh_expired": true,
+            "TestLock_Release_expired": true,
+            "Yay, I still have my lock!": true
+          },
+          "command": [
+            "python",
+            "verifiers\\redislock_refresh_verifier.py"
+          ],
+          "returncode": 0
+        }
+      },
+      {
+        "status": "pass",
+        "passed": true,
+        "failed": false,
+        "counterexample": null,
+        "cost": 5.139998393133283e-05,
+        "artifact_ids": [],
+        "verifier_name": "role_count_verifier",
+        "details": {
+          "parent_roles": {
+            "open": 1,
+            "close": 1
+          },
+          "blanket_roles": {
+            "write": 2
+          },
+          "expected_parent": {
+            "open": 1,
+            "close": 1
+          },
+          "expected_blanket": {
+            "write": 2
+          }
+        }
+      },
+      {
+        "status": "pass",
+        "passed": true,
+        "failed": false,
+        "counterexample": null,
+        "cost": 0.00038520002271980047,
+        "artifact_ids": [],
+        "verifier_name": "trace_contract_verifier",
+        "details": {
+          "manifest_path": "fixtures\\redislock_refresh\\train\\manifest.json",
+          "trace_contract_type": "window_guard"
+        }
+      }
+    ],
+    "reuse": [],
+    "rejection_history": [],
+    "retirement_history": [],
+    "lineage": {
+      "created_at": "2026-03-18T22:33:44.593040+00:00",
+      "parent_cluster_symbol_ids": [
+        "REDISLOCK_REAL_OBTAIN",
+        "REDISLOCK_REAL_RELEASE"
+      ],
+      "markov_blanket_symbol_ids": [
+        "REDISLOCK_REAL_REFRESH_1",
+        "REDISLOCK_REAL_REFRESH_2"
+      ]
+    },
+    "support_count": 3,
+    "failure_count": 0,
+    "verification_pass_count": 3,
+    "verification_fail_count": 0,
+    "reuse_pass_count": 0,
+    "reuse_fail_count": 0,
+    "times_reused": 0,
+    "metadata": {
+      "cluster_id": "hotspot_1",
+      "tsl_pathway": "B",
+      "structural_roles": [
+        "obtain",
+        "release",
+        "refresh",
+        "refresh"
+      ],
+      "proposal_support_roles": [],
+      "proposal_hidden_variables": []
+    },
+    "reuse_signature": {
+      "parent_roles": [
+        "obtain",
+        "release"
+      ],
+      "blanket_roles": [
+        "refresh",
+        "refresh"
+      ],
+      "retired_constraint_signatures": [
+        {
+          "kind": "xor",
+          "roles": [
+            "obtain",
+            "release"
+          ]
+        }
+      ],
+      "canonical_parent_roles": [
+        "open",
+        "close"
+      ],
+      "canonical_blanket_roles": [
+        "write",
+        "write"
+      ],
+      "canonical_retired_constraint_signatures": [
+        {
+          "kind": "xor",
+          "roles": [
+            "open",
+            "close"
+          ]
+        }
+      ]
+    },
+    "admission_reason": "accepted:structural_relief"
+  }
+}

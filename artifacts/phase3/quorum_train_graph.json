@@ -1,0 +1,1099 @@
+{
+  "graph_version": "0.1.0",
+  "created_at": "2026-03-18T20:13:47.338741+00:00",
+  "updated_at": "2026-03-18T20:13:47.526432+00:00",
+  "nodes": [
+    {
+      "id": "quorum_commit_train",
+      "family": "quorum_commit",
+      "split": "train",
+      "description": "Quorum-based commit controller inferred from specs, traces, logs, failing tests, and a buggy validator implementation that lacks an explicit commit-ready latent state.",
+      "created_at": "2026-03-18T20:13:47.339045+00:00",
+      "metadata": {
+        "manifest_path": "fixtures\\quorum_commit\\train\\manifest.json"
+      },
+      "node_type": "Task"
+    },
+    {
+      "id": "evidence_929b7ffd",
+      "kind": "natural_language_spec",
+      "content_ref": "fixtures\\quorum_commit\\train\\manifest.json#natural_language_spec",
+      "source": "artifact_manifest",
+      "created_at": "2026-03-18T20:13:47.339071+00:00",
+      "task_id": "quorum_commit_train",
+      "metadata": {
+        "inline": true
+      },
+      "node_type": "Evidence"
+    },
+    {
+      "id": "evidence_b816d1eb",
+      "kind": "formal_spec",
+      "content_ref": "fixtures\\quorum_commit\\train\\manifest.json#formal_spec",
+      "source": "artifact_manifest",
+      "created_at": "2026-03-18T20:13:47.339086+00:00",
+      "task_id": "quorum_commit_train",
+      "metadata": {
+        "inline": true
+      },
+      "node_type": "Evidence"
+    },
+    {
+      "id": "evidence_a9665ba1",
+      "kind": "execution_traces",
+      "content_ref": "fixtures\\quorum_commit\\train\\manifest.json#execution_traces",
+      "source": "artifact_manifest",
+      "created_at": "2026-03-18T20:13:47.339097+00:00",
+      "task_id": "quorum_commit_train",
+      "metadata": {
+        "inline": true
+      },
+      "node_type": "Evidence"
+    },
+    {
+      "id": "evidence_25c9dc93",
+      "kind": "failing_tests",
+      "content_ref": "fixtures\\quorum_commit\\train\\manifest.json#failing_tests",
+      "source": "artifact_manifest",
+      "created_at": "2026-03-18T20:13:47.339106+00:00",
+      "task_id": "quorum_commit_train",
+      "metadata": {
+        "inline": true
+      },
+      "node_type": "Evidence"
+    },
+    {
+      "id": "evidence_bc4bd932",
+      "kind": "logs",
+      "content_ref": "fixtures\\quorum_commit\\train\\manifest.json#logs",
+      "source": "artifact_manifest",
+      "created_at": "2026-03-18T20:13:47.339116+00:00",
+      "task_id": "quorum_commit_train",
+      "metadata": {
+        "inline": true
+      },
+      "node_type": "Evidence"
+    },
+    {
+      "id": "evidence_530ebc2e",
+      "kind": "counterexamples",
+      "content_ref": "fixtures\\quorum_commit\\train\\manifest.json#counterexamples",
+      "source": "artifact_manifest",
+      "created_at": "2026-03-18T20:13:47.339125+00:00",
+      "task_id": "quorum_commit_train",
+      "metadata": {
+        "inline": true
+      },
+      "node_type": "Evidence"
+    },
+    {
+      "id": "evidence_148e7b0a",
+      "kind": "source_code_path",
+      "content_ref": "fixtures\\quorum_commit\\train\\validator.py",
+      "source": "artifact_manifest",
+      "created_at": "2026-03-18T20:13:47.339240+00:00",
+      "task_id": "quorum_commit_train",
+      "metadata": {
+        "path": "fixtures\\quorum_commit\\train\\validator.py"
+      },
+      "node_type": "Evidence"
+    },
+    {
+      "id": "TRAIN_QUORUM_PREPARE",
+      "name": "PREPARE",
+      "truth_value": true,
+      "locked": true,
+      "created_at": "2026-03-18T20:13:47.339259+00:00",
+      "updated_at": "2026-03-18T20:13:47.339260+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "provenance_ids": [
+        "evidence_929b7ffd",
+        "evidence_b816d1eb",
+        "evidence_a9665ba1",
+        "evidence_25c9dc93",
+        "evidence_bc4bd932",
+        "evidence_530ebc2e",
+        "evidence_148e7b0a"
+      ],
+      "task_ids": [],
+      "metadata": {
+        "role": "prepare",
+        "token": "PREPARE",
+        "task_id": "quorum_commit_train"
+      },
+      "node_type": "AtomicSymbol"
+    },
+    {
+      "id": "TRAIN_QUORUM_COMMIT",
+      "name": "COMMIT",
+      "truth_value": true,
+      "locked": true,
+      "created_at": "2026-03-18T20:13:47.339264+00:00",
+      "updated_at": "2026-03-18T20:13:47.339266+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "provenance_ids": [
+        "evidence_929b7ffd",
+        "evidence_b816d1eb",
+        "evidence_a9665ba1",
+        "evidence_25c9dc93",
+        "evidence_bc4bd932",
+        "evidence_530ebc2e",
+        "evidence_148e7b0a"
+      ],
+      "task_ids": [],
+      "metadata": {
+        "role": "commit",
+        "token": "COMMIT",
+        "task_id": "quorum_commit_train"
+      },
+      "node_type": "AtomicSymbol"
+    },
+    {
+      "id": "TRAIN_QUORUM_PENDING",
+      "name": "PENDING",
+      "truth_value": true,
+      "locked": true,
+      "created_at": "2026-03-18T20:13:47.339268+00:00",
+      "updated_at": "2026-03-18T20:13:47.339270+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "provenance_ids": [
+        "evidence_929b7ffd",
+        "evidence_b816d1eb",
+        "evidence_a9665ba1",
+        "evidence_25c9dc93",
+        "evidence_bc4bd932",
+        "evidence_530ebc2e",
+        "evidence_148e7b0a"
+      ],
+      "task_ids": [],
+      "metadata": {
+        "role": "pending",
+        "token": "PENDING",
+        "task_id": "quorum_commit_train"
+      },
+      "node_type": "AtomicSymbol"
+    },
+    {
+      "id": "TRAIN_QUORUM_CLEAR",
+      "name": "CLEAR",
+      "truth_value": true,
+      "locked": true,
+      "created_at": "2026-03-18T20:13:47.339272+00:00",
+      "updated_at": "2026-03-18T20:13:47.339273+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "provenance_ids": [
+        "evidence_929b7ffd",
+        "evidence_b816d1eb",
+        "evidence_a9665ba1",
+        "evidence_25c9dc93",
+        "evidence_bc4bd932",
+        "evidence_530ebc2e",
+        "evidence_148e7b0a"
+      ],
+      "task_ids": [],
+      "metadata": {
+        "role": "clear",
+        "token": "CLEAR",
+        "task_id": "quorum_commit_train"
+      },
+      "node_type": "AtomicSymbol"
+    },
+    {
+      "id": "TRAIN_QUORUM_ACK_1",
+      "name": "ACK_1",
+      "truth_value": true,
+      "locked": true,
+      "created_at": "2026-03-18T20:13:47.339284+00:00",
+      "updated_at": "2026-03-18T20:13:47.339285+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "provenance_ids": [
+        "evidence_929b7ffd",
+        "evidence_b816d1eb",
+        "evidence_a9665ba1",
+        "evidence_25c9dc93",
+        "evidence_bc4bd932",
+        "evidence_530ebc2e",
+        "evidence_148e7b0a"
+      ],
+      "task_ids": [],
+      "metadata": {
+        "role": "ack",
+        "position": 1,
+        "task_id": "quorum_commit_train"
+      },
+      "node_type": "AtomicSymbol"
+    },
+    {
+      "id": "TRAIN_QUORUM_ACK_2",
+      "name": "ACK_2",
+      "truth_value": true,
+      "locked": true,
+      "created_at": "2026-03-18T20:13:47.339290+00:00",
+      "updated_at": "2026-03-18T20:13:47.339291+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "provenance_ids": [
+        "evidence_929b7ffd",
+        "evidence_b816d1eb",
+        "evidence_a9665ba1",
+        "evidence_25c9dc93",
+        "evidence_bc4bd932",
+        "evidence_530ebc2e",
+        "evidence_148e7b0a"
+      ],
+      "task_ids": [],
+      "metadata": {
+        "role": "ack",
+        "position": 2,
+        "task_id": "quorum_commit_train"
+      },
+      "node_type": "AtomicSymbol"
+    },
+    {
+      "id": "TRAIN_QUORUM_C_COMMIT_PENDING_MUTEX",
+      "constraint_kind": "mutex",
+      "symbol_ids": [
+        "TRAIN_QUORUM_COMMIT",
+        "TRAIN_QUORUM_PENDING"
+      ],
+      "weight": 1.0,
+      "base_weight": 1.0,
+      "max_weight": 16.0,
+      "locked": false,
+      "active": false,
+      "created_at": "2026-03-18T20:13:47.339298+00:00",
+      "updated_at": "2026-03-18T20:13:47.339299+00:00",
+      "support_count": 0,
+      "failure_count": 8,
+      "persistence": 0,
+      "provenance_ids": [
+        "evidence_b816d1eb",
+        "evidence_25c9dc93"
+      ],
+      "evaluator_key": "",
+      "metadata": {
+        "rule": "commit_pending_mutex",
+        "manifest_path": "fixtures\\quorum_commit\\train\\manifest.json",
+        "abstracted_by": "meta_a2dd0f76"
+      },
+      "node_type": "Constraint"
+    },
+    {
+      "id": "TRAIN_QUORUM_C_PENDING_PREPARE",
+      "constraint_kind": "implies",
+      "symbol_ids": [
+        "TRAIN_QUORUM_PENDING",
+        "TRAIN_QUORUM_PREPARE"
+      ],
+      "weight": 1.0,
+      "base_weight": 1.0,
+      "max_weight": 16.0,
+      "locked": false,
+      "active": true,
+      "created_at": "2026-03-18T20:13:47.339302+00:00",
+      "updated_at": "2026-03-18T20:13:47.339303+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "persistence": 0,
+      "provenance_ids": [
+        "evidence_b816d1eb",
+        "evidence_929b7ffd"
+      ],
+      "evaluator_key": "",
+      "metadata": {
+        "rule": "pending_requires_prepare",
+        "manifest_path": "fixtures\\quorum_commit\\train\\manifest.json"
+      },
+      "node_type": "Constraint"
+    },
+    {
+      "id": "TRAIN_QUORUM_C_COMMIT_CLEAR",
+      "constraint_kind": "implies",
+      "symbol_ids": [
+        "TRAIN_QUORUM_COMMIT",
+        "TRAIN_QUORUM_CLEAR"
+      ],
+      "weight": 1.0,
+      "base_weight": 1.0,
+      "max_weight": 16.0,
+      "locked": false,
+      "active": true,
+      "created_at": "2026-03-18T20:13:47.339306+00:00",
+      "updated_at": "2026-03-18T20:13:47.339307+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "persistence": 0,
+      "provenance_ids": [
+        "evidence_b816d1eb",
+        "evidence_bc4bd932"
+      ],
+      "evaluator_key": "",
+      "metadata": {
+        "rule": "commit_requires_clear",
+        "manifest_path": "fixtures\\quorum_commit\\train\\manifest.json"
+      },
+      "node_type": "Constraint"
+    },
+    {
+      "id": "TRAIN_QUORUM_C_COMMIT_ACK_1",
+      "constraint_kind": "implies",
+      "symbol_ids": [
+        "TRAIN_QUORUM_COMMIT",
+        "TRAIN_QUORUM_ACK_1"
+      ],
+      "weight": 1.0,
+      "base_weight": 1.0,
+      "max_weight": 16.0,
+      "locked": false,
+      "active": true,
+      "created_at": "2026-03-18T20:13:47.339311+00:00",
+      "updated_at": "2026-03-18T20:13:47.339312+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "persistence": 0,
+      "provenance_ids": [
+        "evidence_a9665ba1",
+        "evidence_530ebc2e"
+      ],
+      "evaluator_key": "",
+      "metadata": {
+        "rule": "commit_requires_ack",
+        "manifest_path": "fixtures\\quorum_commit\\train\\manifest.json"
+      },
+      "node_type": "Constraint"
+    },
+    {
+      "id": "TRAIN_QUORUM_C_COMMIT_ACK_2",
+      "constraint_kind": "implies",
+      "symbol_ids": [
+        "TRAIN_QUORUM_COMMIT",
+        "TRAIN_QUORUM_ACK_2"
+      ],
+      "weight": 1.0,
+      "base_weight": 1.0,
+      "max_weight": 16.0,
+      "locked": false,
+      "active": true,
+      "created_at": "2026-03-18T20:13:47.339314+00:00",
+      "updated_at": "2026-03-18T20:13:47.339316+00:00",
+      "support_count": 0,
+      "failure_count": 0,
+      "persistence": 0,
+      "provenance_ids": [
+        "evidence_a9665ba1",
+        "evidence_530ebc2e"
+      ],
+      "evaluator_key": "",
+      "metadata": {
+        "rule": "commit_requires_ack",
+        "manifest_path": "fixtures\\quorum_commit\\train\\manifest.json"
+      },
+      "node_type": "Constraint"
+    },
+    {
+      "id": "meta_a2dd0f76",
+      "structural_name": "META_A2DD0F76",
+      "truth_value": true,
+      "locked": false,
+      "semantic_label": "CommitReady",
+      "semantic_status": "grounded",
+      "interface_kind": "exact",
+      "interface_inputs": [
+        "TRAIN_QUORUM_ACK_1",
+        "TRAIN_QUORUM_ACK_2",
+        "TRAIN_QUORUM_CLEAR",
+        "TRAIN_QUORUM_PREPARE"
+      ],
+      "interface_definition": {
+        "truth_table": {
+          "TRAIN_QUORUM_ACK_1=0,TRAIN_QUORUM_ACK_2=0,TRAIN_QUORUM_CLEAR=0,TRAIN_QUORUM_PREPARE=0": false,
+          "TRAIN_QUORUM_ACK_1=0,TRAIN_QUORUM_ACK_2=0,TRAIN_QUORUM_CLEAR=0,TRAIN_QUORUM_PREPARE=1": false,
+          "TRAIN_QUORUM_ACK_1=0,TRAIN_QUORUM_ACK_2=0,TRAIN_QUORUM_CLEAR=1,TRAIN_QUORUM_PREPARE=0": false,
+          "TRAIN_QUORUM_ACK_1=0,TRAIN_QUORUM_ACK_2=0,TRAIN_QUORUM_CLEAR=1,TRAIN_QUORUM_PREPARE=1": false,
+          "TRAIN_QUORUM_ACK_1=0,TRAIN_QUORUM_ACK_2=1,TRAIN_QUORUM_CLEAR=0,TRAIN_QUORUM_PREPARE=0": false,
+          "TRAIN_QUORUM_ACK_1=0,TRAIN_QUORUM_ACK_2=1,TRAIN_QUORUM_CLEAR=0,TRAIN_QUORUM_PREPARE=1": false,
+          "TRAIN_QUORUM_ACK_1=0,TRAIN_QUORUM_ACK_2=1,TRAIN_QUORUM_CLEAR=1,TRAIN_QUORUM_PREPARE=0": false,
+          "TRAIN_QUORUM_ACK_1=0,TRAIN_QUORUM_ACK_2=1,TRAIN_QUORUM_CLEAR=1,TRAIN_QUORUM_PREPARE=1": false,
+          "TRAIN_QUORUM_ACK_1=1,TRAIN_QUORUM_ACK_2=0,TRAIN_QUORUM_CLEAR=0,TRAIN_QUORUM_PREPARE=0": false,
+          "TRAIN_QUORUM_ACK_1=1,TRAIN_QUORUM_ACK_2=0,TRAIN_QUORUM_CLEAR=0,TRAIN_QUORUM_PREPARE=1": false,
+          "TRAIN_QUORUM_ACK_1=1,TRAIN_QUORUM_ACK_2=0,TRAIN_QUORUM_CLEAR=1,TRAIN_QUORUM_PREPARE=0": false,
+          "TRAIN_QUORUM_ACK_1=1,TRAIN_QUORUM_ACK_2=0,TRAIN_QUORUM_CLEAR=1,TRAIN_QUORUM_PREPARE=1": false,
+          "TRAIN_QUORUM_ACK_1=1,TRAIN_QUORUM_ACK_2=1,TRAIN_QUORUM_CLEAR=0,TRAIN_QUORUM_PREPARE=0": false,
+          "TRAIN_QUORUM_ACK_1=1,TRAIN_QUORUM_ACK_2=1,TRAIN_QUORUM_CLEAR=0,TRAIN_QUORUM_PREPARE=1": false,
+          "TRAIN_QUORUM_ACK_1=1,TRAIN_QUORUM_ACK_2=1,TRAIN_QUORUM_CLEAR=1,TRAIN_QUORUM_PREPARE=0": false,
+          "TRAIN_QUORUM_ACK_1=1,TRAIN_QUORUM_ACK_2=1,TRAIN_QUORUM_CLEAR=1,TRAIN_QUORUM_PREPARE=1": true
+        },
+        "notes": "exact_boundary_projection_interface"
+      },
+      "parent_cluster_symbol_ids": [
+        "TRAIN_QUORUM_COMMIT",
+        "TRAIN_QUORUM_PENDING"
+      ],
+      "markov_blanket_symbol_ids": [
+        "TRAIN_QUORUM_ACK_1",
+        "TRAIN_QUORUM_ACK_2",
+        "TRAIN_QUORUM_CLEAR",
+        "TRAIN_QUORUM_PREPARE"
+      ],
+      "admission_status": "accepted",
+      "admission_metrics": {
+        "novel": true,
+        "novelty_conflicts": [],
+        "verifier_passed": true,
+        "reuse_passed": true,
+        "heldout_contradiction_gain": 10.6,
+        "complexity_penalty": 6.0,
+        "rent_paid": true,
+        "heldout_results": [
+          {
+            "task_id": "quorum_commit_heldout_3",
+            "family": "quorum_commit",
+            "split": "heldout",
+            "baseline_final_psi": 10.6,
+            "reuse_final_psi": 0.0,
+            "contradiction_gain": 10.6,
+            "reuse_applied": true,
+            "verifier_passed": true
+          },
+          {
+            "task_id": "quorum_commit_heldout_4",
+            "family": "quorum_commit",
+            "split": "heldout",
+            "baseline_final_psi": 10.6,
+            "reuse_final_psi": 0.0,
+            "contradiction_gain": 10.6,
+            "reuse_applied": true,
+            "verifier_passed": true
+          }
+        ],
+        "semantic_accept_count": 2,
+        "pathway": "B"
+      },
+      "created_at": "2026-03-18T20:13:47.341985+00:00",
+      "updated_at": "2026-03-18T20:13:47.526459+00:00",
+      "provenance_ids": [],
+      "metadata": {
+        "cluster_id": "hotspot_1",
+        "tsl_pathway": "B",
+        "structural_roles": [
+          "commit",
+          "pending",
+          "ack",
+          "ack",
+          "clear",
+          "prepare"
+        ],
+        "proposal_support_roles": [],
+        "proposal_hidden_variables": []
+      },
+      "node_type": "MetaSymbol"
+    },
+    {
+      "id": "verifier_5100403d",
+      "verifier_name": "quorum_commit_verifier",
+      "artifact_kind": "verification_result",
+      "status": "pass",
+      "cost": 0.05534399999305606,
+      "counterexample_ref": null,
+      "created_at": "2026-03-18T20:13:47.526420+00:00",
+      "metadata": {
+        "details": {
+          "manifest_path": "fixtures\\quorum_commit\\train\\manifest.json",
+          "source_path": "fixtures\\quorum_commit\\train\\validator.py",
+          "valid_trace_count": 2,
+          "invalid_trace_count": 3,
+          "source_contains_explicit_commit_ready": false,
+          "command": [
+            "python",
+            "verifiers\\quorum_commit_verifier.py"
+          ],
+          "returncode": 0
+        }
+      },
+      "node_type": "VerifierArtifact"
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge_a200dfd5",
+      "src_id": "evidence_929b7ffd",
+      "dst_id": "quorum_commit_train",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:47.339079+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_496d2d55",
+      "src_id": "evidence_b816d1eb",
+      "dst_id": "quorum_commit_train",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:47.339091+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_87feb92e",
+      "src_id": "evidence_a9665ba1",
+      "dst_id": "quorum_commit_train",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:47.339101+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_cefcb595",
+      "src_id": "evidence_25c9dc93",
+      "dst_id": "quorum_commit_train",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:47.339110+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_8898eed0",
+      "src_id": "evidence_bc4bd932",
+      "dst_id": "quorum_commit_train",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:47.339120+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_7ed98e9b",
+      "src_id": "evidence_530ebc2e",
+      "dst_id": "quorum_commit_train",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:47.339130+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_930936b0",
+      "src_id": "evidence_148e7b0a",
+      "dst_id": "quorum_commit_train",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:47.339246+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_5962bb6d",
+      "src_id": "TRAIN_QUORUM_COMMIT",
+      "dst_id": "TRAIN_QUORUM_C_COMMIT_PENDING_MUTEX",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T20:13:47.339322+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_07e26d24",
+      "src_id": "TRAIN_QUORUM_PENDING",
+      "dst_id": "TRAIN_QUORUM_C_COMMIT_PENDING_MUTEX",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T20:13:47.339327+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_003d727d",
+      "src_id": "TRAIN_QUORUM_PENDING",
+      "dst_id": "TRAIN_QUORUM_C_PENDING_PREPARE",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T20:13:47.339333+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_05a0917d",
+      "src_id": "TRAIN_QUORUM_PREPARE",
+      "dst_id": "TRAIN_QUORUM_C_PENDING_PREPARE",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T20:13:47.339337+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_acedd58a",
+      "src_id": "TRAIN_QUORUM_COMMIT",
+      "dst_id": "TRAIN_QUORUM_C_COMMIT_CLEAR",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T20:13:47.339343+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_407cf79b",
+      "src_id": "TRAIN_QUORUM_CLEAR",
+      "dst_id": "TRAIN_QUORUM_C_COMMIT_CLEAR",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T20:13:47.339346+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_2a03d451",
+      "src_id": "TRAIN_QUORUM_COMMIT",
+      "dst_id": "TRAIN_QUORUM_C_COMMIT_ACK_1",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T20:13:47.339352+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_227c7a55",
+      "src_id": "TRAIN_QUORUM_ACK_1",
+      "dst_id": "TRAIN_QUORUM_C_COMMIT_ACK_1",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T20:13:47.339356+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_ed204993",
+      "src_id": "TRAIN_QUORUM_COMMIT",
+      "dst_id": "TRAIN_QUORUM_C_COMMIT_ACK_2",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T20:13:47.339361+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_d1821aa6",
+      "src_id": "TRAIN_QUORUM_ACK_2",
+      "dst_id": "TRAIN_QUORUM_C_COMMIT_ACK_2",
+      "edge_kind": "participates_in",
+      "created_at": "2026-03-18T20:13:47.339365+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_6fe5a948",
+      "src_id": "evidence_929b7ffd",
+      "dst_id": "TRAIN_QUORUM_PREPARE",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:47.339372+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_471f946e",
+      "src_id": "evidence_929b7ffd",
+      "dst_id": "TRAIN_QUORUM_COMMIT",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:47.339376+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_b280e65b",
+      "src_id": "evidence_929b7ffd",
+      "dst_id": "TRAIN_QUORUM_PENDING",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:47.339380+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_e796e996",
+      "src_id": "evidence_929b7ffd",
+      "dst_id": "TRAIN_QUORUM_CLEAR",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:47.339384+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_72b0ef18",
+      "src_id": "evidence_929b7ffd",
+      "dst_id": "TRAIN_QUORUM_ACK_1",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:47.339388+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_ceae9253",
+      "src_id": "evidence_929b7ffd",
+      "dst_id": "TRAIN_QUORUM_ACK_2",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:47.339393+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_b36c679d",
+      "src_id": "evidence_b816d1eb",
+      "dst_id": "TRAIN_QUORUM_PREPARE",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:47.339397+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_2ea3132a",
+      "src_id": "evidence_b816d1eb",
+      "dst_id": "TRAIN_QUORUM_COMMIT",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:47.339401+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_a8b2f737",
+      "src_id": "evidence_b816d1eb",
+      "dst_id": "TRAIN_QUORUM_PENDING",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:47.339405+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_9889bd25",
+      "src_id": "evidence_b816d1eb",
+      "dst_id": "TRAIN_QUORUM_CLEAR",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:47.339409+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_af7f070b",
+      "src_id": "evidence_b816d1eb",
+      "dst_id": "TRAIN_QUORUM_ACK_1",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:47.339413+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_96fde171",
+      "src_id": "evidence_b816d1eb",
+      "dst_id": "TRAIN_QUORUM_ACK_2",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:47.339417+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_edcf1758",
+      "src_id": "evidence_148e7b0a",
+      "dst_id": "TRAIN_QUORUM_PREPARE",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:47.339421+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_704bf1ed",
+      "src_id": "evidence_148e7b0a",
+      "dst_id": "TRAIN_QUORUM_COMMIT",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:47.339425+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_b4ae0cb5",
+      "src_id": "evidence_148e7b0a",
+      "dst_id": "TRAIN_QUORUM_PENDING",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:47.339429+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_31a91376",
+      "src_id": "evidence_148e7b0a",
+      "dst_id": "TRAIN_QUORUM_CLEAR",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:47.339433+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_14aa39f2",
+      "src_id": "evidence_148e7b0a",
+      "dst_id": "TRAIN_QUORUM_ACK_1",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:47.339437+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_f96905c6",
+      "src_id": "evidence_148e7b0a",
+      "dst_id": "TRAIN_QUORUM_ACK_2",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:47.339441+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_2be9c92f",
+      "src_id": "evidence_bc4bd932",
+      "dst_id": "TRAIN_QUORUM_PREPARE",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:47.339445+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_392df2da",
+      "src_id": "evidence_bc4bd932",
+      "dst_id": "TRAIN_QUORUM_COMMIT",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:47.339449+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_3621e1a4",
+      "src_id": "evidence_bc4bd932",
+      "dst_id": "TRAIN_QUORUM_PENDING",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:47.339453+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_6fc8e660",
+      "src_id": "evidence_bc4bd932",
+      "dst_id": "TRAIN_QUORUM_CLEAR",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:47.339457+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_2d81f47b",
+      "src_id": "evidence_bc4bd932",
+      "dst_id": "TRAIN_QUORUM_ACK_1",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:47.339461+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_8ccc0f80",
+      "src_id": "evidence_bc4bd932",
+      "dst_id": "TRAIN_QUORUM_ACK_2",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:47.339465+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_7712b3e4",
+      "src_id": "evidence_b816d1eb",
+      "dst_id": "TRAIN_QUORUM_C_COMMIT_PENDING_MUTEX",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:47.339470+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_d922cf70",
+      "src_id": "evidence_b816d1eb",
+      "dst_id": "TRAIN_QUORUM_C_PENDING_PREPARE",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:47.339474+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_7fdf0e4b",
+      "src_id": "evidence_b816d1eb",
+      "dst_id": "TRAIN_QUORUM_C_COMMIT_CLEAR",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:47.339479+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_11774507",
+      "src_id": "evidence_b816d1eb",
+      "dst_id": "TRAIN_QUORUM_C_COMMIT_ACK_1",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:47.339483+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_bcec8385",
+      "src_id": "evidence_b816d1eb",
+      "dst_id": "TRAIN_QUORUM_C_COMMIT_ACK_2",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:47.339487+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_df85eec2",
+      "src_id": "evidence_25c9dc93",
+      "dst_id": "TRAIN_QUORUM_C_COMMIT_PENDING_MUTEX",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:47.339491+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_8336297d",
+      "src_id": "evidence_25c9dc93",
+      "dst_id": "TRAIN_QUORUM_C_PENDING_PREPARE",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:47.339495+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_64601f61",
+      "src_id": "evidence_25c9dc93",
+      "dst_id": "TRAIN_QUORUM_C_COMMIT_CLEAR",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:47.339499+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_3ff28c85",
+      "src_id": "evidence_25c9dc93",
+      "dst_id": "TRAIN_QUORUM_C_COMMIT_ACK_1",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:47.339503+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_18685a3e",
+      "src_id": "evidence_25c9dc93",
+      "dst_id": "TRAIN_QUORUM_C_COMMIT_ACK_2",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:47.339507+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_a266103c",
+      "src_id": "evidence_530ebc2e",
+      "dst_id": "TRAIN_QUORUM_C_COMMIT_PENDING_MUTEX",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:47.339512+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_03e4e49b",
+      "src_id": "evidence_530ebc2e",
+      "dst_id": "TRAIN_QUORUM_C_PENDING_PREPARE",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:47.339516+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_33f8c193",
+      "src_id": "evidence_530ebc2e",
+      "dst_id": "TRAIN_QUORUM_C_COMMIT_CLEAR",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:47.339520+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_64158344",
+      "src_id": "evidence_530ebc2e",
+      "dst_id": "TRAIN_QUORUM_C_COMMIT_ACK_1",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:47.339524+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_3cf7a5ea",
+      "src_id": "evidence_530ebc2e",
+      "dst_id": "TRAIN_QUORUM_C_COMMIT_ACK_2",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:47.339528+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_f49c3efb",
+      "src_id": "evidence_a9665ba1",
+      "dst_id": "TRAIN_QUORUM_C_COMMIT_PENDING_MUTEX",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:47.339532+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_32c1be98",
+      "src_id": "evidence_a9665ba1",
+      "dst_id": "TRAIN_QUORUM_C_PENDING_PREPARE",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:47.339537+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_40f88eef",
+      "src_id": "evidence_a9665ba1",
+      "dst_id": "TRAIN_QUORUM_C_COMMIT_CLEAR",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:47.339541+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_493fbf7e",
+      "src_id": "evidence_a9665ba1",
+      "dst_id": "TRAIN_QUORUM_C_COMMIT_ACK_1",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:47.339545+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_847b7ee0",
+      "src_id": "evidence_a9665ba1",
+      "dst_id": "TRAIN_QUORUM_C_COMMIT_ACK_2",
+      "edge_kind": "provenance_of",
+      "created_at": "2026-03-18T20:13:47.339549+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_7a80c640",
+      "src_id": "meta_a2dd0f76",
+      "dst_id": "TRAIN_QUORUM_COMMIT",
+      "edge_kind": "abstracts",
+      "created_at": "2026-03-18T20:13:47.342059+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_263b9da0",
+      "src_id": "meta_a2dd0f76",
+      "dst_id": "TRAIN_QUORUM_PENDING",
+      "edge_kind": "abstracts",
+      "created_at": "2026-03-18T20:13:47.342064+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "edge_5a45aade",
+      "src_id": "verifier_5100403d",
+      "dst_id": "meta_a2dd0f76",
+      "edge_kind": "supports",
+      "created_at": "2026-03-18T20:13:47.526429+00:00",
+      "provenance_ids": [],
+      "metadata": {}
+    }
+  ]
+}

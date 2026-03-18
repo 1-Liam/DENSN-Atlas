@@ -1,0 +1,94 @@
+{
+  "task_id": "quorum_commit_negative_strict_3",
+  "family": "quorum_commit",
+  "split": "negative_transfer",
+  "description": "Negative-transfer quorum task where the superficial role structure still matches CommitReady, but the held-out verifier requires three acknowledgements instead of two.",
+  "roles": {
+    "prepare": "PREPARE",
+    "commit": "COMMIT",
+    "pending": "PENDING",
+    "ack": "ACK",
+    "clear": "CLEAR",
+    "stable": "STABLE"
+  },
+  "natural_language_spec": "PREPARE starts a pending commit round. COMMIT is legal only when the round is clear, stable, and at least two acknowledgements have arrived. This task is intentionally close to the training family to test negative transfer discipline against a missing blanket requirement.",
+  "formal_spec": {
+    "rules": [
+      "PENDING -> PREPARE",
+      "COMMIT -> CLEAR",
+      "COMMIT -> ACK_1",
+      "COMMIT -> ACK_2",
+      "COMMIT -> STABLE",
+      "COMMIT xor PENDING"
+    ],
+    "safety_property": "No COMMIT occurs before the round is clear, stable, and quorum acknowledgements have arrived."
+  },
+  "execution_traces": [
+    [
+      "PREPARE",
+      "CLEAR",
+      "ACK_1",
+      "ACK_2",
+      "STABLE",
+      "COMMIT"
+    ],
+    [
+      "PREPARE",
+      "CLEAR",
+      "ACK_2",
+      "ACK_1",
+      "STABLE",
+      "COMMIT"
+    ]
+  ],
+  "failing_tests": [
+    {
+      "name": "commit_without_stable",
+      "trace": [
+        "PREPARE",
+        "CLEAR",
+        "ACK_1",
+        "ACK_2",
+        "COMMIT"
+      ],
+      "expected": "fail"
+    },
+    {
+      "name": "commit_without_clear",
+      "trace": [
+        "PREPARE",
+        "ACK_1",
+        "ACK_2",
+        "STABLE",
+        "COMMIT"
+      ],
+      "expected": "fail"
+    }
+  ],
+  "logs": [
+    {
+      "level": "ERROR",
+      "message": "COMMIT observed before stable commit-ready conditions held",
+      "trace": [
+        "PREPARE",
+        "CLEAR",
+        "ACK_1",
+        "ACK_2",
+        "COMMIT"
+      ]
+    }
+  ],
+  "counterexamples": [
+    {
+      "name": "strict_orphan_commit",
+      "trace": [
+        "COMMIT"
+      ],
+      "reason": "commit_without_pending_round"
+    }
+  ],
+  "source_code_path": "validator.py",
+  "ack_count": 2,
+  "required_ack_count": 2,
+  "required_stable": true
+}
