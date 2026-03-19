@@ -1,0 +1,37 @@
+name: Claim, docs, or scope gap
+description: Report a mismatch between public documentation and the raw evidence or supported claim surface.
+title: "[docs] "
+labels:
+  - documentation
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template when the public wording feels broader, weaker, or less precise than the raw evidence supports.
+  - type: input
+    id: page
+    attributes:
+      label: Affected file or page
+      placeholder: "README.md"
+    validations:
+      required: true
+  - type: input
+    id: artifact
+    attributes:
+      label: Raw artifact path
+      description: Which raw artifact should anchor the correction?
+      placeholder: "artifacts/phase11/final_proof_bundle.json"
+    validations:
+      required: true
+  - type: textarea
+    id: mismatch
+    attributes:
+      label: What is the mismatch?
+      description: Explain the wording problem or scope gap
+    validations:
+      required: true
+  - type: textarea
+    id: suggested_fix
+    attributes:
+      label: Suggested correction
+      description: If you have a precise wording change, propose it here

@@ -107,6 +107,8 @@ python scripts/run_release_audit.py
 - [failure_modes.md](failure_modes.md): operational risks and mitigations
 - [CHANGELOG.md](CHANGELOG.md): public release history
 - [CITATION.cff](CITATION.cff): citation metadata for the repository
+- [CONTRIBUTING.md](CONTRIBUTING.md): contribution rules for the frozen release line
+- [CODEOWNERS](CODEOWNERS): default ownership for public review
 - [SECURITY.md](SECURITY.md): security and credential-reporting policy
 - [SUPPORT.md](SUPPORT.md): issue scope and support expectations
 - [repro/README.md](repro/README.md): reproduction workflow

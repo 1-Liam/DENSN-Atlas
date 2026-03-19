@@ -1,0 +1,62 @@
+name: Reproducibility or bug report
+description: Report a reproducibility failure, raw artifact inconsistency, verifier bug, or benchmark bug.
+title: "[bug] "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please anchor the report in raw evidence. Raw JSON artifacts outrank Markdown summaries.
+  - type: input
+    id: commit
+    attributes:
+      label: Commit or tag
+      description: Exact commit SHA or release tag
+      placeholder: "e.g. 3f755e5 or densn-atlas-public-bundle-2026-03-19"
+    validations:
+      required: true
+  - type: input
+    id: command
+    attributes:
+      label: Exact command run
+      description: The exact command that triggered the issue
+      placeholder: "python scripts/run_release_audit.py"
+    validations:
+      required: true
+  - type: input
+    id: artifact
+    attributes:
+      label: Raw artifact path
+      description: Path to the JSON artifact that shows the problem
+      placeholder: "artifacts/phase11/final_proof_bundle.json"
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed behavior
+      description: What failed or what disagrees
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What you expected to happen
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment notes
+      description: Python version, OS, and whether a live model key was used
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Confirmations
+      options:
+        - label: I am not including secrets or private keys in this issue
+          required: true
+        - label: I checked the supported claim and scope in the README first
+          required: true
