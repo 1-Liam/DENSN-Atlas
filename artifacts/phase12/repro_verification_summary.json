@@ -1,8 +1,8 @@
 {
   "artifact_version": {
     "phase": "phase12",
-    "timestamp_utc": "20260318T225243040118Z",
-    "git_sha": "4b3ad2a"
+    "timestamp_utc": "20260319T084425471914Z",
+    "git_sha": "706d2d6"
   },
   "expected_metrics_path": "repro/expected_metrics.json",
   "final_bundle_path": "artifacts/phase11/final_proof_bundle.json",

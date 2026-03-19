@@ -1,8 +1,8 @@
 {
   "artifact_version": {
     "phase": "phase12",
-    "timestamp_utc": "20260318T201334617938Z",
-    "git_sha": "ad9f6a1"
+    "timestamp_utc": "20260319T084436688913Z",
+    "git_sha": "706d2d6"
   },
   "completed": true,
   "fresh_bundle_ready": true,
@@ -218,9 +218,9 @@
   ],
   "blocker": null,
   "output_artifacts": {
-    "fresh_live_gauntlet_summary": "artifacts\\phase12\\fresh_live_gauntlet_summary.json",
-    "fresh_live_final_proof_bundle": "artifacts\\phase12\\fresh_live_final_proof_bundle.json",
-    "proposal_precision_summary": "artifacts\\phase13\\proposal_precision_summary.json"
+    "fresh_live_gauntlet_summary": "artifacts/phase12/fresh_live_gauntlet_summary.json",
+    "fresh_live_final_proof_bundle": "artifacts/phase12/fresh_live_final_proof_bundle.json",
+    "proposal_precision_summary": "artifacts/phase13/proposal_precision_summary.json"
   },
   "resumed": false
 }

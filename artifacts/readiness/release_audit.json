@@ -1,8 +1,8 @@
 {
   "artifact_version": {
     "phase": "readiness",
-    "timestamp_utc": "20260318T225241855233Z",
-    "git_sha": "4b3ad2a"
+    "timestamp_utc": "20260319T084422895424Z",
+    "git_sha": "706d2d6"
   },
   "commands": [
     {
@@ -19,7 +19,7 @@
       ],
       "returncode": 0,
       "ok": true,
-      "elapsed_seconds": 0.073,
+      "elapsed_seconds": 0.93,
       "stdout_tail": "All checks passed!\n",
       "stderr_tail": ""
     },
@@ -33,8 +33,8 @@
       ],
       "returncode": 0,
       "ok": true,
-      "elapsed_seconds": 0.396,
-      "stdout_tail": "....                                                                     [100%]\n4 passed in 0.05s\n",
+      "elapsed_seconds": 0.754,
+      "stdout_tail": "....                                                                     [100%]\n4 passed in 0.06s\n",
       "stderr_tail": ""
     },
     {
@@ -45,8 +45,8 @@
       ],
       "returncode": 0,
       "ok": true,
-      "elapsed_seconds": 0.287,
-      "stdout_tail": "{\n  \"artifact_version\": {\n    \"phase\": \"readiness\",\n    \"timestamp_utc\": \"20260318T225242478744Z\",\n    \"git_sha\": \"4b3ad2a\"\n  },\n  \"core_import_findings\": [],\n  \"benchmark_token_findings\": [],\n  \"private_core_call_findings\": [],\n  \"proposal_audit\": {\n    \"ontology_mutated_directly\": false,\n    \"proposal_status_counts\": {\n      \"rejected\": 2,\n      \"accepted_for_structural_eval\": 5\n    }\n  },\n  \"xor_summary\": {\n    \"final_psi\": 0.0,\n    \"registry\": {\n      \"total\": 1,\n      \"accepted\": 1,\n      \"rejected\": 0,\n      \"retired\": 0\n    }\n  },\n  \"formal_summary\": {\n    \"accepted_meta_symbol_id\": \"meta_a54406b5\",\n    \"heldout_case_count\": 2,\n    \"accepted_candidate_count\": 1,\n    \"rejected_candidate_count\": 0,\n    \"rollback_count\": 0,\n    \"heldout_results_count\": 2,\n    \"registry_status\": \"accepted\",\n    \"graph_admission_status\": \"accepted\",\n    \"registry_semantic_label\": \"WriteGuard\",\n    \"graph_semantic_label\": \"WriteGuard\"\n  },\n  \"readiness\": {\n    \"core_imports_benchmark_free\": true,\n    \"core_tokens_benchmark_free\": true,\n    \"benchmarks_use_public_core_api_only\": true,\n    \"proposal_quarantine_non_mutating\": true,\n    \"xor_zero_tension\": true,\n    \"formal_has_accepted_symbol\": true,\n    \"formal_reports_multiple_heldout_cases\": true,\n    \"formal_candidate_lifecycle_logged\": true,\n    \"formal_registry_graph_lifecycle_consistent\": true,\n    \"proceed_recommended\": true\n  }\n}\n",
+      "elapsed_seconds": 0.442,
+      "stdout_tail": "{\n  \"artifact_version\": {\n    \"phase\": \"readiness\",\n    \"timestamp_utc\": \"20260319T084424763124Z\",\n    \"git_sha\": \"706d2d6\"\n  },\n  \"core_import_findings\": [],\n  \"benchmark_token_findings\": [],\n  \"private_core_call_findings\": [],\n  \"proposal_audit\": {\n    \"ontology_mutated_directly\": false,\n    \"proposal_status_counts\": {\n      \"rejected\": 2,\n      \"accepted_for_structural_eval\": 5\n    }\n  },\n  \"xor_summary\": {\n    \"final_psi\": 0.0,\n    \"registry\": {\n      \"total\": 1,\n      \"accepted\": 1,\n      \"rejected\": 0,\n      \"retired\": 0\n    }\n  },\n  \"formal_summary\": {\n    \"accepted_meta_symbol_id\": \"meta_a54406b5\",\n    \"heldout_case_count\": 2,\n    \"accepted_candidate_count\": 1,\n    \"rejected_candidate_count\": 0,\n    \"rollback_count\": 0,\n    \"heldout_results_count\": 2,\n    \"registry_status\": \"accepted\",\n    \"graph_admission_status\": \"accepted\",\n    \"registry_semantic_label\": \"WriteGuard\",\n    \"graph_semantic_label\": \"WriteGuard\"\n  },\n  \"readiness\": {\n    \"core_imports_benchmark_free\": true,\n    \"core_tokens_benchmark_free\": true,\n    \"benchmarks_use_public_core_api_only\": true,\n    \"proposal_quarantine_non_mutating\": true,\n    \"xor_zero_tension\": true,\n    \"formal_has_accepted_symbol\": true,\n    \"formal_reports_multiple_heldout_cases\": true,\n    \"formal_candidate_lifecycle_logged\": true,\n    \"formal_registry_graph_lifecycle_consistent\": true,\n    \"proceed_recommended\": true\n  }\n}\n",
       "stderr_tail": ""
     },
     {
@@ -57,8 +57,8 @@
       ],
       "returncode": 0,
       "ok": true,
-      "elapsed_seconds": 0.264,
-      "stdout_tail": "{\n  \"artifact_version\": {\n    \"phase\": \"phase12\",\n    \"timestamp_utc\": \"20260318T225242771105Z\",\n    \"git_sha\": \"4b3ad2a\"\n  },\n  \"canonical_bundle\": \"artifacts/phase11/final_proof_bundle.json\",\n  \"proof_manifest\": \"artifacts/phase10/proof_manifest.json\",\n  \"gauntlet\": \"artifacts/phase7/gauntlet_summary.json\",\n  \"pathway_a\": \"artifacts/phase8/pathway_a_summary.json\",\n  \"verifier_agreement\": \"artifacts/phase9/verifier_agreement_summary.json\",\n  \"repro_files\": {\n    \"readme\": \"repro/README.md\",\n    \"run_script\": \"repro/run_repro.ps1\",\n    \"expected_metrics\": \"repro/expected_metrics.json\",\n    \"environment_manifest\": \"repro/environment_manifest.json\"\n  },\n  \"expected_checks\": {\n    \"pathway_b_non_regressed\": true,\n    \"pathway_a_real\": true,\n    \"verifier_reliability_operationalized\": true,\n    \"provenance_hardened\": true,\n    \"proposal_quarantine_intact\": true\n  },\n  \"fixture_hash_count\": 30,\n  \"verifier_hash_count\": 7\n}\n",
+      "elapsed_seconds": 0.283,
+      "stdout_tail": "{\n  \"artifact_version\": {\n    \"phase\": \"phase12\",\n    \"timestamp_utc\": \"20260319T084425196788Z\",\n    \"git_sha\": \"706d2d6\"\n  },\n  \"canonical_bundle\": \"artifacts/phase11/final_proof_bundle.json\",\n  \"proof_manifest\": \"artifacts/phase10/proof_manifest.json\",\n  \"gauntlet\": \"artifacts/phase7/gauntlet_summary.json\",\n  \"pathway_a\": \"artifacts/phase8/pathway_a_summary.json\",\n  \"verifier_agreement\": \"artifacts/phase9/verifier_agreement_summary.json\",\n  \"repro_files\": {\n    \"readme\": \"repro/README.md\",\n    \"run_script\": \"repro/run_repro.ps1\",\n    \"expected_metrics\": \"repro/expected_metrics.json\",\n    \"environment_manifest\": \"repro/environment_manifest.json\"\n  },\n  \"expected_checks\": {\n    \"pathway_b_non_regressed\": true,\n    \"pathway_a_real\": true,\n    \"verifier_reliability_operationalized\": true,\n    \"provenance_hardened\": true,\n    \"proposal_quarantine_intact\": true\n  },\n  \"fixture_hash_count\": 30,\n  \"verifier_hash_count\": 7\n}\n",
       "stderr_tail": ""
     },
     {
@@ -69,8 +69,8 @@
       ],
       "returncode": 0,
       "ok": true,
-      "elapsed_seconds": 0.191,
-      "stdout_tail": "{\n  \"artifact_version\": {\n    \"phase\": \"phase12\",\n    \"timestamp_utc\": \"20260318T225243040118Z\",\n    \"git_sha\": \"4b3ad2a\"\n  },\n  \"expected_metrics_path\": \"repro/expected_metrics.json\",\n  \"final_bundle_path\": \"artifacts/phase11/final_proof_bundle.json\",\n  \"checks\": {\n    \"headline_checks_match\": true,\n    \"transfer_pass_rate_match\": true,\n    \"pathway_a_compression_non_regressed\": true,\n    \"live_false_accept_non_regressed\": true,\n    \"fixture_hash_count_match\": true,\n    \"verifier_hash_count_match\": true\n  },\n  \"verification_passed\": true,\n  \"actual_checks\": {\n    \"pathway_b_non_regressed\": true,\n    \"pathway_a_real\": true,\n    \"verifier_reliability_operationalized\": true,\n    \"provenance_hardened\": true,\n    \"proposal_quarantine_intact\": true\n  },\n  \"expected_checks\": {\n    \"pathway_b_non_regressed\": true,\n    \"pathway_a_real\": true,\n    \"verifier_reliability_operationalized\": true,\n    \"provenance_hardened\": true,\n    \"proposal_quarantine_intact\": true\n  },\n  \"actual_live_model\": {\n    \"median_cycle_reduction\": 0.25,\n    \"contradiction_reduction_before_acceptance\": {\n      \"protocol_cycle_delta\": 1,\n      \"quorum_cycle_delta\": 1,\n      \"protocol_contradiction_before_acceptance_delta\": 1.2000000000000002,\n      \"quorum_contradiction_before_acceptance_delta\": 1.2000000000000002\n    },\n    \"protocol_false_accept_rate\": 0.0,\n    \"precision_campaign_false_accept_rate\": 0.0,\n    \"zero_direct_ontology_mutation\": true\n  },\n  \"actual_pathway_b\": {\n    \"densn_positive_transfer_pass_rate\": 1.0,\n    \"model_baseline_transfer_pass_rate\": 0.375,\n    \"densn_mean_cycles_to_first_accepted_symbol\": 3.0,\n    \"model_baseline_mean_cycles_to_first_accepted_symbol\": null,\n    \"densn_mean_cycles_to_useful_outcome\": 3.0,\n    \"model_baseline_mean_cycles_to_useful_outcome\": 8.0,\n    \"densn_mean_verifier_calls_to_acceptance\": 1.0,\n    \"model_baseline_mean_verifier_calls_to_acceptance\": 3.0,\n    \"densn_mean_contradiction_gain\": 10.6,\n    \"model_baseline_mean_contradiction_gain\": 0.0\n  }\n}\n",
+      "elapsed_seconds": 0.203,
+      "stdout_tail": "{\n  \"artifact_version\": {\n    \"phase\": \"phase12\",\n    \"timestamp_utc\": \"20260319T084425471914Z\",\n    \"git_sha\": \"706d2d6\"\n  },\n  \"expected_metrics_path\": \"repro/expected_metrics.json\",\n  \"final_bundle_path\": \"artifacts/phase11/final_proof_bundle.json\",\n  \"checks\": {\n    \"headline_checks_match\": true,\n    \"transfer_pass_rate_match\": true,\n    \"pathway_a_compression_non_regressed\": true,\n    \"live_false_accept_non_regressed\": true,\n    \"fixture_hash_count_match\": true,\n    \"verifier_hash_count_match\": true\n  },\n  \"verification_passed\": true,\n  \"actual_checks\": {\n    \"pathway_b_non_regressed\": true,\n    \"pathway_a_real\": true,\n    \"verifier_reliability_operationalized\": true,\n    \"provenance_hardened\": true,\n    \"proposal_quarantine_intact\": true\n  },\n  \"expected_checks\": {\n    \"pathway_b_non_regressed\": true,\n    \"pathway_a_real\": true,\n    \"verifier_reliability_operationalized\": true,\n    \"provenance_hardened\": true,\n    \"proposal_quarantine_intact\": true\n  },\n  \"actual_live_model\": {\n    \"median_cycle_reduction\": 0.25,\n    \"contradiction_reduction_before_acceptance\": {\n      \"protocol_cycle_delta\": 1,\n      \"quorum_cycle_delta\": 1,\n      \"protocol_contradiction_before_acceptance_delta\": 1.2000000000000002,\n      \"quorum_contradiction_before_acceptance_delta\": 1.2000000000000002\n    },\n    \"protocol_false_accept_rate\": 0.0,\n    \"precision_campaign_false_accept_rate\": 0.0,\n    \"zero_direct_ontology_mutation\": true\n  },\n  \"actual_pathway_b\": {\n    \"densn_positive_transfer_pass_rate\": 1.0,\n    \"model_baseline_transfer_pass_rate\": 0.375,\n    \"densn_mean_cycles_to_first_accepted_symbol\": 3.0,\n    \"model_baseline_mean_cycles_to_first_accepted_symbol\": null,\n    \"densn_mean_cycles_to_useful_outcome\": 3.0,\n    \"model_baseline_mean_cycles_to_useful_outcome\": 8.0,\n    \"densn_mean_verifier_calls_to_acceptance\": 1.0,\n    \"model_baseline_mean_verifier_calls_to_acceptance\": 3.0,\n    \"densn_mean_contradiction_gain\": 10.6,\n    \"model_baseline_mean_contradiction_gain\": 0.0\n  }\n}\n",
       "stderr_tail": ""
     }
   ],

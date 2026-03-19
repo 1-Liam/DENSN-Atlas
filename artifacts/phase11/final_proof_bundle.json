@@ -1,8 +1,8 @@
 {
   "artifact_version": {
     "phase": "phase11",
-    "timestamp_utc": "20260318T225237632562Z",
-    "git_sha": "4b3ad2a"
+    "timestamp_utc": "20260319T084418786512Z",
+    "git_sha": "706d2d6"
   },
   "sources": {
     "gauntlet": "artifacts/phase7/gauntlet_summary.json",
@@ -123,9 +123,9 @@
     }
   },
   "provenance": {
-    "git_sha": "4b3ad2a",
-    "git_dirty": true,
-    "git_dirty_source": true,
+    "git_sha": "706d2d6",
+    "git_dirty": false,
+    "git_dirty_source": false,
     "git_dirty_full": true,
     "git_dirty_source_excludes": [
       "artifacts/**",

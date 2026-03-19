@@ -1,18 +1,18 @@
 {
   "artifact_version": {
     "phase": "phase11",
-    "timestamp_utc": "20260318T201355503007Z",
-    "git_sha": "ad9f6a1"
+    "timestamp_utc": "20260319T084418786512Z",
+    "git_sha": "706d2d6"
   },
   "sources": {
-    "gauntlet": "artifacts\\phase7\\gauntlet_summary.json",
-    "pathway_a": "artifacts\\phase8\\pathway_a_summary.json",
-    "proposal_quality": "artifacts\\phase2\\proposal_quality_summary.json",
-    "proposal_precision": "artifacts\\phase13\\proposal_precision_summary.json",
-    "protocol_runtime": "artifacts\\phase2\\proposal_runtime_summary.json",
-    "quorum_runtime": "artifacts\\phase4\\quorum_proposal_runtime_summary.json",
-    "verifier_agreement": "artifacts\\phase9\\verifier_agreement_summary.json",
-    "proof_manifest": "artifacts\\phase10\\proof_manifest.json"
+    "gauntlet": "artifacts/phase7/gauntlet_summary.json",
+    "pathway_a": "artifacts/phase8/pathway_a_summary.json",
+    "proposal_quality": "artifacts/phase2/proposal_quality_summary.json",
+    "proposal_precision": "artifacts/phase13/proposal_precision_summary.json",
+    "protocol_runtime": "artifacts/phase2/proposal_runtime_summary.json",
+    "quorum_runtime": "artifacts/phase4/quorum_proposal_runtime_summary.json",
+    "verifier_agreement": "artifacts/phase9/verifier_agreement_summary.json",
+    "proof_manifest": "artifacts/phase10/proof_manifest.json"
   },
   "pathway_b_proof": {
     "positive_remap_targets": {
@@ -123,7 +123,7 @@
     }
   },
   "provenance": {
-    "git_sha": "ad9f6a1",
+    "git_sha": "706d2d6",
     "git_dirty": false,
     "git_dirty_source": false,
     "git_dirty_full": true,
@@ -171,10 +171,11 @@
       }
     },
     "commands_used": [
-      "python scripts/run_proposal_quality.py",
-      "python scripts/run_proposal_runtime.py",
+      "python scripts/run_proposal_quality.py protocol_guard",
+      "python scripts/run_proposal_runtime.py protocol_guard",
       "python scripts/run_quorum_proposal_runtime.py",
-      "python scripts/run_proposal_precision_campaign.py",
+      "python scripts/run_proposal_precision_campaign.py --family protocol_guard --fixed-pool-source artifacts/phase2/proposal_quality_summary.json",
+      "python scripts/run_proposal_precision_campaign.py --refresh-pool",
       "python scripts/run_gauntlet.py",
       "python scripts/run_gauntlet_report.py",
       "python scripts/run_pathway_a.py",

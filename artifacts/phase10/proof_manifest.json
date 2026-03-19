@@ -1,12 +1,12 @@
 {
   "artifact_version": {
     "phase": "phase10",
-    "timestamp_utc": "20260318T225232269202Z",
-    "git_sha": "4b3ad2a"
+    "timestamp_utc": "20260319T084414077201Z",
+    "git_sha": "706d2d6"
   },
-  "git_sha": "4b3ad2a",
-  "git_dirty": true,
-  "git_dirty_source": true,
+  "git_sha": "706d2d6",
+  "git_dirty": false,
+  "git_dirty_source": false,
   "git_dirty_full": true,
   "git_dirty_source_excludes": [
     "artifacts/**",
@@ -14,7 +14,7 @@
     "repro/environment_manifest.json",
     "repro/expected_metrics.json"
   ],
-  "timestamp_utc": "20260318T225232269202Z",
+  "timestamp_utc": "20260319T084414077201Z",
   "commands_used": [
     "python scripts/run_proposal_quality.py protocol_guard",
     "python scripts/run_proposal_runtime.py protocol_guard",
@@ -82,190 +82,190 @@
   "verifier_manifest": [
     {
       "path": "verifiers/protocol_guard_verifier.py",
-      "sha256": "bca134761a0b5773c912e6038265fa27525336100bc9c83142b6a4ddcb27bde8",
-      "size_bytes": 6194
+      "sha256": "0ef51789d0ae5628dd1bf06002455bb2373656fcd657d8daba548a0f7cfafe63",
+      "size_bytes": 6369
     },
     {
       "path": "verifiers/lease_lock_verifier.py",
-      "sha256": "f9bb562f0780e9624c1b32e55e881e8f8e1b5023233b0ae40f9e59e5fc4dbe9b",
-      "size_bytes": 7249
+      "sha256": "64528146dc62875ed55220b0fbb058a32cdb747cc3afd183845c58ab3cd51e46",
+      "size_bytes": 7466
     },
     {
       "path": "verifiers/session_epoch_verifier.py",
-      "sha256": "df64440ef02816ddf6703ef1756e5fc9ba57cfe9778631701eaa6a5f7edf0b11",
-      "size_bytes": 5825
+      "sha256": "755cdb6a17d32d6351309970b5685f5ec2b88a7289fe44d1f167c8122e2d51f3",
+      "size_bytes": 5994
     },
     {
       "path": "verifiers/quorum_commit_verifier.py",
-      "sha256": "6f7f51213bf22e5f670fed2523ef6a4af2d36b9db714c8df134248292369d3d6",
-      "size_bytes": 8815
+      "sha256": "7ea5c7088d5acdeffb679fa444cfd5aa98f5dd1585690536c07753bcabc6a8e9",
+      "size_bytes": 9068
     },
     {
       "path": "verifiers/vote_majority_commit_verifier.py",
-      "sha256": "5fdeeee44f67cfb4e61a836b2998fd47d30603c09cdf5769ce530bddbc2568df",
-      "size_bytes": 7313
+      "sha256": "c1114739f5d8d3075b6e3e66e2691e0b4dcbc28416de1758aa592756cec48b58",
+      "size_bytes": 7528
     },
     {
       "path": "verifiers/replication_barrier_verifier.py",
-      "sha256": "3a30f2d8cae7d3f05ff2de5e415fa7f4ff5f79f8d9ae6a25c7257c167749526e",
-      "size_bytes": 7352
+      "sha256": "22775c6c17fabcdd100ea5b30795440e6c01fd35d31f2a3fec70c78f88725867",
+      "size_bytes": 7567
     },
     {
       "path": "verifiers/session_macro_verifier.py",
-      "sha256": "57011422307b89ea06bb6ad82e9d6a2f92cdaa3c663afcd0b1445141cad604d4",
-      "size_bytes": 5002
+      "sha256": "ef084f6f621cac239fabad76355a193e30c190a0452314f67b32d93175958e70",
+      "size_bytes": 5157
     }
   ],
   "fixture_hashes": [
     {
       "path": "fixtures/protocol_guard/heldout_guard_3/manifest.json",
-      "sha256": "3f6959a2c11f04283ea62fc579173c68643440a4cbedd3567a292b6ff3500dcf",
-      "size_bytes": 1452
+      "sha256": "5e0cef6a8a95febd264bea80d34b6c5fd808dbb9a3fb953899cec43c580e87e9",
+      "size_bytes": 1728
     },
     {
       "path": "fixtures/protocol_guard/heldout_guard_3/validator.py",
-      "sha256": "bbe0f2624ccc622a1b02ad930faf5ecdf2819841cda3cd849178daeae82732d9",
-      "size_bytes": 435
+      "sha256": "2535e42af6adca67ac5045f744cb8ada727e69f050c008eb6535d875211fafd0",
+      "size_bytes": 451
     },
     {
       "path": "fixtures/protocol_guard/heldout_guard_4/manifest.json",
-      "sha256": "ef1a535796705ecccae658d3968392a4e182888d45e8ce2cd443e8ed85073272",
-      "size_bytes": 1508
+      "sha256": "0fc42ce842f9239bda3b60e52218a0ad38f7a1d79d1aa6585a39a2c6e2267e87",
+      "size_bytes": 1808
     },
     {
       "path": "fixtures/protocol_guard/heldout_guard_4/validator.py",
-      "sha256": "2be2cdda43dcf9b91860b552d276b21047cd8f04f84848eb728b9066ec211bcb",
-      "size_bytes": 440
+      "sha256": "4136f4dacf02bf00c9f064459d9e4257746fd20ac6feba21d60fa09f0f6543af",
+      "size_bytes": 456
     },
     {
       "path": "fixtures/protocol_guard/train/manifest.json",
-      "sha256": "7c8888f03ef2cf7c77ec95d6abff92cf07ab1b96cc049a3b973a1d683dffdfd2",
-      "size_bytes": 1462
+      "sha256": "d197fe2ef7f6046d0e28be268df03ee335a38e0b08d6b356d687b73de9cc2f29",
+      "size_bytes": 1686
     },
     {
       "path": "fixtures/protocol_guard/train/validator.py",
-      "sha256": "0d4f6ecb33088f39f6280ae38894128bb17fbf3cb6dbb4036d93bdbd24b0dfe6",
-      "size_bytes": 519
+      "sha256": "55164c9b8c7bc2e32b25dc65a785c56af5a99ebf6009d3c076c0dabe2914d591",
+      "size_bytes": 536
     },
     {
       "path": "fixtures/lease_lock/negative_epoch/manifest.json",
-      "sha256": "8a06bd586f8520c7c4eeca74ec8558951482e9193df5c78e914f278df3b55dc8",
-      "size_bytes": 1835
+      "sha256": "07807c4203230880a91997a991c0b2f4aafe256907f708896c86ef966485b0e6",
+      "size_bytes": 2100
     },
     {
       "path": "fixtures/lease_lock/negative_epoch/validator.py",
-      "sha256": "d354c9e76c39242357ab1df7ada9c3b52b75c424fafe75ad7c18ae8ef487bc2a",
-      "size_bytes": 738
+      "sha256": "ba09fa5cb2dc1a5f728aa33203ee2baf1472b35143afd9c74a8e827b3283cb1d",
+      "size_bytes": 762
     },
     {
       "path": "fixtures/lease_lock/target/manifest.json",
-      "sha256": "a75bc7710aee4fc4c904b419686f78a43c9654968010abc9155631217e9b5f0c",
-      "size_bytes": 1638
+      "sha256": "76f2d32249d48304f13a9099f2aec837868cdb7d9a45a87dfd3d8eec0062bfc2",
+      "size_bytes": 1867
     },
     {
       "path": "fixtures/lease_lock/target/validator.py",
-      "sha256": "df266320007e1f295e225659bee01c10f88a993ffc93e495eb6e374d980bd547",
-      "size_bytes": 538
+      "sha256": "eb7e5c553574003da091b05f8068be81eb79da4baeb8e601076906ede46d1674",
+      "size_bytes": 555
     },
     {
       "path": "fixtures/session_epoch/target/manifest.json",
-      "sha256": "6fe626ab874178d02b471800217ce1c4d1c3e9dffd3a90d0dcba871b54d9c8a4",
-      "size_bytes": 1739
+      "sha256": "33f72669910d1f5ef699420e01eedb2fc98aa39cf8381450362dd612755f0664",
+      "size_bytes": 1975
     },
     {
       "path": "fixtures/session_epoch/target/validator.py",
-      "sha256": "40d4d3fcb2b160163af71a5e8ef9729523ee3e490c4fcbca1317e2ead18c2d0e",
-      "size_bytes": 556
+      "sha256": "f07d0d531da82ca3fe3536288192e5c7519dd704637068d837f19bb3a21a7c16",
+      "size_bytes": 573
     },
     {
       "path": "fixtures/quorum_commit/heldout_commit_3/manifest.json",
-      "sha256": "63b6bd45c85075b9d06145efa8f220c7fb5edf1da2927fc93778b6fc0ea028ea",
-      "size_bytes": 1740
+      "sha256": "6e42c4a6c053ebf7de1c789b3b730731bb50826a3348a09feb20765cb7cc66f6",
+      "size_bytes": 2025
     },
     {
       "path": "fixtures/quorum_commit/heldout_commit_3/validator.py",
-      "sha256": "81481420747f2ea04df4fe90464a7a7ba150953e288d87d60cfbb44757772859",
-      "size_bytes": 581
+      "sha256": "df8fb6a1f050e4b0ce08261f215525af9f6db8e70e0be5a8edfdac1f088983a3",
+      "size_bytes": 601
     },
     {
       "path": "fixtures/quorum_commit/heldout_commit_4/manifest.json",
-      "sha256": "952deed576ad795a60099922b850d164ef1ad9183ed148d07ba61f9ce395c69d",
-      "size_bytes": 1735
+      "sha256": "17ffd04045a7bc7b690788c877628caacabd0e23c600ea5bcbb1d0c0e9ecd801",
+      "size_bytes": 2020
     },
     {
       "path": "fixtures/quorum_commit/heldout_commit_4/validator.py",
-      "sha256": "81481420747f2ea04df4fe90464a7a7ba150953e288d87d60cfbb44757772859",
-      "size_bytes": 581
+      "sha256": "df8fb6a1f050e4b0ce08261f215525af9f6db8e70e0be5a8edfdac1f088983a3",
+      "size_bytes": 601
     },
     {
       "path": "fixtures/quorum_commit/negative_commit_strict_3/manifest.json",
-      "sha256": "4deba0c74eb1bd5571df07b37861779b6a37cc8ea4178a5b66cde5ff85c66341",
-      "size_bytes": 2004
+      "sha256": "88f9134affeea3ceaa0d8133e80d0dcf462d5cdefdebe9e059b526b8b95e5e14",
+      "size_bytes": 2342
     },
     {
       "path": "fixtures/quorum_commit/negative_commit_strict_3/validator.py",
-      "sha256": "dc5cafd06111f350e3d5762e941b052577520f02403225b8aa9a020126868418",
-      "size_bytes": 789
+      "sha256": "a4bd4a6cfe99b813f568f9be168c09a23de61bd4cc100d43546283be2864600a",
+      "size_bytes": 814
     },
     {
       "path": "fixtures/quorum_commit/train/manifest.json",
-      "sha256": "172ca02739cfe5fb5368a5a07db0dc18f3d583b03f987d2b211fb3af580882b6",
-      "size_bytes": 1797
+      "sha256": "ef65ecee1804cd152ae6718fc920c679ae92738bb51b3b3b274a58df7839750b",
+      "size_bytes": 2082
     },
     {
       "path": "fixtures/quorum_commit/train/validator.py",
-      "sha256": "dc5cafd06111f350e3d5762e941b052577520f02403225b8aa9a020126868418",
-      "size_bytes": 789
+      "sha256": "a4bd4a6cfe99b813f568f9be168c09a23de61bd4cc100d43546283be2864600a",
+      "size_bytes": 814
     },
     {
       "path": "fixtures/vote_majority_commit/target/manifest.json",
-      "sha256": "90b64f108b9c6e81776b0832daf5b236e4da591349a9afd2784cd066c8addbb1",
-      "size_bytes": 1935
+      "sha256": "919425386c79a8c2688bcc9deb5599251fdde75a2a6f404122f04a802cf0dabd",
+      "size_bytes": 2227
     },
     {
       "path": "fixtures/vote_majority_commit/target/validator.py",
-      "sha256": "4ac2b7d485069fc3365ced2e35eb64e538c3bccf150fcc0865c03500f3b50b6d",
-      "size_bytes": 795
+      "sha256": "2dc0483be7ccf9c3f3bf912c5e3d21b643edafdbdc2c216417b312645f915c87",
+      "size_bytes": 820
     },
     {
       "path": "fixtures/replication_barrier/target/manifest.json",
-      "sha256": "1cea862aacbe7d74d6a081f5638f93b8293347dec0bddfef9ecfdfd604303459",
-      "size_bytes": 2092
+      "sha256": "bea668f92b4c2c1843ab7fb7f0b7fd53380bb9b17f126076191fba3b30a35867",
+      "size_bytes": 2417
     },
     {
       "path": "fixtures/replication_barrier/target/validator.py",
-      "sha256": "7b27ca98c0083eb69830d67d62d5399349624c1ad888683840c612497f61a825",
-      "size_bytes": 800
+      "sha256": "578963686f217238073282dfd2a770968483397397aee34936e87e3e8afcdc98",
+      "size_bytes": 825
     },
     {
       "path": "fixtures/session_macro/heldout_macro_a/manifest.json",
-      "sha256": "9740d0e99b5804a52b9aa0c3fba8ef41667c4eccc722f287666841440eb8f136",
-      "size_bytes": 1365
+      "sha256": "dc452327bdb34fecebefabf700c3a4af4d3fa3ca600e7227e5710ea56ed944dd",
+      "size_bytes": 1516
     },
     {
       "path": "fixtures/session_macro/heldout_macro_a/validator.py",
-      "sha256": "d1c6cc478d93acd0ef857f724ab2f8547325ffc593f96fe3ea31737256925053",
-      "size_bytes": 391
+      "sha256": "3ac8cc5bd5fae0a4d7d1b3dfaf8b8ce24bef2ca68d72993ec0f92331eecdf851",
+      "size_bytes": 402
     },
     {
       "path": "fixtures/session_macro/heldout_macro_b/manifest.json",
-      "sha256": "9dd917cf2c5c73e4881e188643a8623c9cdb03ff618a533c771cd698c87a9cab",
-      "size_bytes": 1473
+      "sha256": "da4d9cfae4ad4a0fbc3895e3d74d93e0fdb139d125950f573dab312b22bc7817",
+      "size_bytes": 1624
     },
     {
       "path": "fixtures/session_macro/heldout_macro_b/validator.py",
-      "sha256": "89537ca23d9aa887e3af69a169a79663b7827a2da5f2342e353f2dd77540e73a",
-      "size_bytes": 422
+      "sha256": "4df6500884398a383b93da857fd6c2915aa576c1329b3e43c7da03c5d93baf79",
+      "size_bytes": 439
     },
     {
       "path": "fixtures/session_macro/train/manifest.json",
-      "sha256": "f55fa8b7a2b9383521e91041e0779a680c01ef30a1f0383a8fc475ed268c50a8",
-      "size_bytes": 1562
+      "sha256": "602f2c0dab2cec35f206654b2e93f88654c8f6fde3c77c9539ad417a5124301e",
+      "size_bytes": 1761
     },
     {
       "path": "fixtures/session_macro/train/validator.py",
-      "sha256": "d1c6cc478d93acd0ef857f724ab2f8547325ffc593f96fe3ea31737256925053",
-      "size_bytes": 391
+      "sha256": "3ac8cc5bd5fae0a4d7d1b3dfaf8b8ce24bef2ca68d72993ec0f92331eecdf851",
+      "size_bytes": 402
     }
   ],
   "core_frozen": true

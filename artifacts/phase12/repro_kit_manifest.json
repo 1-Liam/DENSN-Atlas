@@ -1,8 +1,8 @@
 {
   "artifact_version": {
     "phase": "phase12",
-    "timestamp_utc": "20260318T225242771105Z",
-    "git_sha": "4b3ad2a"
+    "timestamp_utc": "20260319T084425196788Z",
+    "git_sha": "706d2d6"
   },
   "canonical_bundle": "artifacts/phase11/final_proof_bundle.json",
   "proof_manifest": "artifacts/phase10/proof_manifest.json",
