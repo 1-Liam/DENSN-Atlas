@@ -12,6 +12,18 @@ Build a persistent contradiction-driven intelligence system whose defining behav
 
 This is a research system, not a chatbot.
 
+## Current Scope
+
+The architecture is broader than the current evidence, but the public release is intentionally scoped to what the artifacts actually support.
+
+Today this repository is strongest on:
+
+- small formal protocol and concurrency problems,
+- explicit artifact bundles with traces, tests, logs, source excerpts, and verifier hooks,
+- reusable abstractions that can be checked by external verifier surfaces.
+
+It is not yet a proof of general formal reasoning, arbitrary theorem proving, or large-scale ontology revision.
+
 ## North Star
 
 The core capability is verified abstraction invention. The system is successful only when a newly created symbol or invariant:
@@ -21,6 +33,8 @@ The core capability is verified abstraction invention. The system is successful 
 - survives external verification,
 - improves held-out behavior, and
 - is reused later.
+
+In this release, the most important mechanism behind that behavior is Pathway B, not conversational polish or large-model cleverness.
 
 ## System Shape
 
@@ -221,6 +235,8 @@ Action:
 - locally reset and re-equilibrate the affected region
 
 The system must store both the pre-abstraction cluster and the post-abstraction lineage.
+
+Pathway B is the most innovative and most evidenced part of the current release. The strongest proof artifacts, transfer results, and external-family solves are primarily Pathway B stories.
 
 ## 6. Interface synthesis
 

@@ -4,13 +4,17 @@ This is the shipping wedge for the repo:
 
 `verifier-backed abstraction invention for formal systems`
 
-The claim is narrow on purpose. Given formal artifacts, the system can:
+The claim is narrow on purpose. In this repository, "formal systems" primarily means protocol, lease/lock, distributed coordination, and related concurrency-oriented problems with objective verifier surfaces.
+
+Given those formal artifacts, the system can:
 
 - accumulate contradiction in a persistent ontology
 - invent or remap a reusable abstraction
 - verify it externally
 - transfer it where it should
 - block it where it should not
+
+This wedge does not claim broad theorem proving, arbitrary proof search, or general symbolic reasoning over open-ended mathematics.
 
 Primary raw evidence:
 

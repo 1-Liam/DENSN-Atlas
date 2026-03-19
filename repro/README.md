@@ -4,6 +4,8 @@
 
 Reproduce the current canonical DENSN proof bundle without modifying the frozen core.
 
+This repro flow is for validating the released claim surface, not for exploring new architecture changes.
+
 ## Prerequisites
 
 - Python available on `PATH`
@@ -37,3 +39,5 @@ For a full fresh live attempt instead of the current canonical chain:
 ## Verification
 
 The repro run ends by executing `python scripts/verify_repro_run.py`, which compares the current outputs against `repro/expected_metrics.json` and emits `artifacts/phase12/repro_verification_summary.json`.
+
+If the raw outputs disagree with the expected metrics, treat that as a proof discrepancy until explained. Do not silently normalize it away in Markdown.

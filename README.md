@@ -1,6 +1,6 @@
 # DENSN Atlas
 
-DENSN Atlas is a frozen DENSN proof repository for verifier-backed abstraction invention, transfer, and compression.
+DENSN Atlas is a frozen DENSN proof repository for verifier-backed abstraction invention, transfer, and compression in small formal protocol and concurrency problems.
 
 This repository is intentionally release-oriented:
 
@@ -18,6 +18,29 @@ This repository is intentionally release-oriented:
 - Pathway A compression reduces future solve cost in a low-conflict regime.
 - Bad transfer and cross-family misuse are blocked under verifier scrutiny.
 - A quarantined live model helps proposals without gaining ontology authority.
+
+## Supported Claim
+
+The strongest claim this repository is designed to support is:
+
+Given a small formal system with explicit verifier surfaces, DENSN can accumulate persistent contradiction in a long-lived ontology, synthesize a reusable abstraction that resolves the contradiction, verify it externally, and transfer it to related tasks while blocking bad transfer.
+
+In this repository, "formal system" means protocol, distributed-systems, lock/lease, or similar concurrency-oriented artifact bundles with objective external checks.
+
+## What This Repo Does Not Claim
+
+- It does not prove general intelligence.
+- It does not prove performance on arbitrary formal systems or arbitrary theorem proving.
+- It does not prove scalability to large ontologies or production-scale symbolic state spaces.
+- It does not claim broad robustness across many competing verifier ecosystems.
+- It does not show that the live model is authoritative over ontology change.
+
+## Current Evidence Envelope
+
+- The proof bundle is strongest on small protocol and concurrency families.
+- The canonical internal proof focuses on verifier-backed abstraction invention, transfer, negative-transfer blocking, and Pathway A compression.
+- The external real-world lane currently covers a small number of upstream artifact bundles rather than a broad benchmark suite.
+- The repo is intended as a rigorous `0.1.x` research release, not a finished platform.
 
 ## Canonical Raw Artifacts
 
