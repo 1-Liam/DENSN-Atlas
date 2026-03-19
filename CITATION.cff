@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+title: "DENSN Atlas"
+message: "If you use DENSN Atlas in research, please cite the repository and the canonical proof bundle."
+type: software
+authors:
+  - family-names: "O'Boyle"
+    given-names: "Liam"
+repository-code: "https://github.com/1-Liam/DENSN-Atlas"
+url: "https://github.com/1-Liam/DENSN-Atlas"
+license: "PolyForm-Strict-1.0.0"
+version: "0.1.0"
+date-released: "2026-03-19"
+abstract: >-
+  DENSN Atlas is a frozen research repository for verifier-backed abstraction
+  invention, transfer, and compression in small formal protocol and concurrency
+  problems. The canonical release centers on contradiction-driven ontology
+  revision, guarded transfer, and reproduction-ready raw proof artifacts.
+preferred-citation:
+  type: software
+  title: "DENSN Atlas"
+  authors:
+    - family-names: "O'Boyle"
+      given-names: "Liam"
+  version: "0.1.0"
+  date-released: "2026-03-19"
+  url: "https://github.com/1-Liam/DENSN-Atlas"

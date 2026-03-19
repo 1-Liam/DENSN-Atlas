@@ -105,6 +105,10 @@ python scripts/run_release_audit.py
 - [interfaces.md](interfaces.md): stable module and contract boundaries
 - [evaluation_contract.md](evaluation_contract.md): evidence hierarchy and claim rules
 - [failure_modes.md](failure_modes.md): operational risks and mitigations
+- [CHANGELOG.md](CHANGELOG.md): public release history
+- [CITATION.cff](CITATION.cff): citation metadata for the repository
+- [SECURITY.md](SECURITY.md): security and credential-reporting policy
+- [SUPPORT.md](SUPPORT.md): issue scope and support expectations
 - [repro/README.md](repro/README.md): reproduction workflow
 - [wedge/README.md](wedge/README.md): narrow formal-systems wedge
 - [DENSN_FRAMEWORK_EXPERT_BRIEF.md](DENSN_FRAMEWORK_EXPERT_BRIEF.md): manuscript-oriented framework brief

@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Reproduction guidance
+    url: https://github.com/1-Liam/DENSN-Atlas/blob/main/repro/README.md
+    about: Start here if you are trying to rerun the canonical proof bundle.
+  - name: Supported claim and scope
+    url: https://github.com/1-Liam/DENSN-Atlas/blob/main/README.md
+    about: Check the supported-claim and limitations sections before opening a scope-expansion issue.
