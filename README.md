@@ -44,11 +44,12 @@ In this repository, "formal system" means protocol, distributed-systems, lock/le
 
 ## Canonical Raw Artifacts
 
-- [artifacts/phase10/proof_manifest.json](artifacts/phase10/proof_manifest.json)
-- [artifacts/phase11/final_proof_bundle.json](artifacts/phase11/final_proof_bundle.json)
-- [artifacts/phase12/fresh_live_final_proof_bundle.json](artifacts/phase12/fresh_live_final_proof_bundle.json)
-- [artifacts/phase12/fresh_live_run_manifest.json](artifacts/phase12/fresh_live_run_manifest.json)
-- [artifacts/readiness/release_audit.json](artifacts/readiness/release_audit.json)
+- [artifacts/phase10/proof_manifest.json](artifacts/phase10/proof_manifest.json): provenance and command manifest for the canonical proof line
+- [artifacts/phase11/final_proof_bundle.json](artifacts/phase11/final_proof_bundle.json): canonical proof payload
+- [artifacts/phase12/fresh_live_run_manifest.json](artifacts/phase12/fresh_live_run_manifest.json): source of truth for the fresh-live rerun chain and completion state
+- [artifacts/phase12/fresh_live_final_proof_bundle.json](artifacts/phase12/fresh_live_final_proof_bundle.json): fresh-live alias of the canonical proof payload when the rerun re-materializes the same end state
+- [artifacts/phase12/README.md](artifacts/phase12/README.md): explains the relationship between the fresh-live manifest and the fresh-live bundle alias
+- [artifacts/readiness/release_audit.json](artifacts/readiness/release_audit.json): release gate and reproducibility checks
 
 ## Setup
 
